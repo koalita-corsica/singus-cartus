@@ -55,13 +55,14 @@
     background-color: red !important;
     font-size: 9.0083px;
     font-family: 'Montserrat', sans-serif;
-    line-height: 3;
+    line-height: 2;
 }
 
 .contact span {
     display: block;
     margin-left: 1vw;
 }
+
 
 .fright {
     color: black;
@@ -182,6 +183,7 @@
     margin-top: 4vh;  
     margin-left: 1vw;  
     line-height: 1.5;
+    width: 85%;
 }
 
 .sright span {
@@ -264,6 +266,12 @@
     width: 191.449px;
     height: 218.045px;
 }
+
+.txtDesc {
+    display: flex;
+    flex-direction: row;
+}
+
 
 section {
     margin-left: 2vw;

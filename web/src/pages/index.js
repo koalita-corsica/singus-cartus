@@ -11,6 +11,7 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import { Link } from "gatsby";
 
 export const query = graphql`
   query allNewsletterPageQuery {
@@ -22,6 +23,9 @@ export const query = graphql`
             asset {
               url
             }
+          }
+          slug {
+            current
           }
         }
       }
@@ -47,10 +51,18 @@ const IndexPage = (props) => {
       <Layout>
         <Container>
           {newsInfo.map((newsletter) => (
-            <div>
-              <h1> {newsletter.node.titleNewsLetter} </h1>
-              <img src={newsletter.node.iconEdito.asset.url} alt="" />
-            </div>
+            <Link
+              to={
+                newsletter.node.slug.current
+                  ? "/newsletter/" + `${newsletter.node.slug.current}`
+                  : ""
+              }
+            >
+              <div>
+                <h1> {newsletter.node.titleNewsLetter} </h1>
+                <img src={newsletter.node.iconEdito.asset.url} alt="" />
+              </div>
+            </Link>
           ))}
         </Container>
       </Layout>
