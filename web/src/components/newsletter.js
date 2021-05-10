@@ -10,12 +10,14 @@ import location from "../assets/location.png";
 import first from "../assets/first.jpg";
 
 const Newsletter = ({ props }) => (
+console.log(props),
   <React.Fragment>
     <section>
       <div className={styles.container}>
         <div className={styles.fleft}>
           <img src={logo} alt="logo" className={styles.logo} />
-          <img src={mascote} alt="mascote" className={styles.picto} />
+          <img src={props} alt="mascote" className={styles.picto} />
+          {/* <img src={props.iconEdito.asset.url} alt="mascote" className={styles.picto} /> */}
           <h1>
             DAERFERUM <span>VELESTIOS ILIGNIET </span>
           </h1>
