@@ -10,6 +10,7 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import Newsletter from "../components/newsletter";
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -90,21 +91,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
-      <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {postNodes && (
-          <BlogPostPreviewList
-            title="Latest blog posts"
-            nodes={postNodes}
-            browseMoreHref="/archive/"
-          />
-        )}
-      </Container>
+      <Newsletter />
     </Layout>
   );
 };

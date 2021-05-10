@@ -1,0 +1,200 @@
+/* FIRST PAGE */
+
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    height: 841.89px;
+    width: 595.276px;
+    border: 2px solid black;
+}
+
+.fleft {
+    background-color: black !important;
+    color: white;
+    width: 208.094px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fleft h1 {
+    font-size: 11.2604px;
+    font-family: sans-serif;
+    margin-left: 1vw;
+}
+
+.fleft h1 span {
+    display: block;
+}
+
+.fleft p {
+    font-size: 9.0083px;
+    font-family: sans-serif;
+    margin-left: 1vw;
+    width: 80%;
+    margin-bottom: 8vh;
+}
+.logo {
+    margin-top: 3vh;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+.picto {
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+}
+.contact {
+    height: 189.894px;
+    width: 208.094px;
+    background-color: red !important;
+    font-size: 9.0083px;
+    font-family: sans-serif;
+    line-height: 3;
+}
+
+.contact span {
+    display: block;
+    margin-left: 1vw;
+}
+
+.fright {
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.fright h1 {
+    font-size: 16.5152px;
+    font-family: sans-serif;
+    margin-top: 4vh;  
+    margin-left: 1vw;  
+    line-height: 1.5;
+}
+
+.fright span {
+    display: block;
+}
+
+.bar {
+    margin-left: 1vw;  
+    border-bottom: 5px solid red;
+    width: 85%;
+    display: block;
+}
+
+.quote {
+    font-size: 9.0083px;
+    font-family: sans-serif;
+    font-style: italic;
+    width: 85%;
+    margin-left: 1vw;
+}
+
+.desc {
+    font-size: 10.5152px;
+    font-family: sans-serif;
+    width: 85%;
+    margin-left: 1vw;
+    margin-bottom: 5vh;
+}
+
+.firstimg {
+    margin-top: 3vh;
+    width: 339.063px;
+    height: 183.565px;
+    width: 85%;
+    margin-left: 1vw;
+}
+
+/* END FIRST PAGE */
+
+/* START SECOND PAGE */
+
+.sleft {
+    width: 208.094px;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondfirstimg {
+    width: 173.858px;
+    height: 124.724px;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+.sleft h1 {
+    font-size: 11.2604px;
+    font-family: sans-serif;
+    margin-left: 1vw;
+}
+
+.sleft h1 span {
+    display: block;
+}
+
+.barLeft {
+    margin-left: 1vw;
+    border-bottom: 5px solid red;
+}
+
+.sleft p {
+    font-size: 9.0083px;
+    font-family: sans-serif;
+    margin-left: 1vw;
+    width: 80%;
+    margin-bottom: 8vh;
+}
+
+.sright {
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sright h1 {
+    font-size: 16.5152px;
+    font-family: sans-serif;
+    margin-top: 4vh;  
+    margin-left: 1vw;  
+    line-height: 1.5;
+}
+
+.sright span {
+    display: block;
+}
+
+.sright p {
+    margin-left: 1vw;
+    font-size: 10.5152px;
+    font-family: sans-serif;
+    width: 85%;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.txtRight {
+    right: 0;
+}
+
+.secondsecondimg {
+    width: 190.866px;
+    height: 199.37px;
+}
+
+.secondSection {
+    background-color: red;
+    width: 100%;
+}
+
+.lastimg {
+    width: 191.449px;
+    height: 218.045px;
+}
