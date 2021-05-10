@@ -9,7 +9,7 @@ import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import first from "../assets/first.jpg";
 
-const Newsletter = ({}) => (
+const Newsletter = ({ props }) => (
   <React.Fragment>
     <section>
       <div className={styles.container}>
