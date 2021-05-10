@@ -36,7 +36,11 @@ const Newsletter = (props) => {
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
-            <img src={iconEdito.asset.url} alt="mascote" className={styles.picto} />
+            <img
+              src={iconEdito.asset.url}
+              alt="mascote"
+              className={styles.picto}
+            />
             <h1>{titleEdito}</h1>
             <p>
               {<PortableText blocks={_rawArticleEdito} />}
@@ -64,7 +68,11 @@ const Newsletter = (props) => {
               {titleArt1}
             </h1>
             <span className={styles.bar} />
-            <img src={imgArt1.asset.url} alt="first" className={styles.firstimg} />
+            <img
+              src={imgArt1.asset.url}
+              alt="first"
+              className={styles.firstimg}
+            />
             <p className={styles.quote}>
               {imgArt1.caption} 
             </p>
