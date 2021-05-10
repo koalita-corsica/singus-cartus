@@ -4,11 +4,6 @@ export default {
     title: 'Newsletter',
     fields: [
         {
-            name: 'titleNewsLetter',
-            type: 'string',
-            title: 'Title news letter'  
-        },
-        {
             name: 'slug',
             type: 'slug',
             title:'Slug',
@@ -16,6 +11,11 @@ export default {
                 source: "titleNewsLetter",
                 maxLength: 96,
                 }
+        },
+        {
+            name: 'titleNewsLetter',
+            type: 'string',
+            title: 'Title news letter'  
         },
         {
             name: 'titleArt1',

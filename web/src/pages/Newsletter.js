@@ -30,9 +30,7 @@ export const query = graphql`
 const NewsletterPage = (props) => {
   const { data, errors } = props;
   const newsInfo = data.allSanityNewsletter.edges;
-  const news = newsInfo.map(newsletter => 
-     newsletter.node.slug.current);
-  const currentSlug = news.forEach( slug => slug);
+  
  
   
 
@@ -47,10 +45,9 @@ const NewsletterPage = (props) => {
   return (
     <Layout>
       <Container>
-      {
-      
-      news.forEach( slug => console.log(slug),
-      <h1>slug</h1>)}
+      {newsInfo.map((newsletter) =>
+          <h1> {newsletter.node.slug.current} </h1>
+        )}
         
 
       </Container>
