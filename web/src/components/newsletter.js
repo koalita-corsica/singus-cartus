@@ -41,7 +41,7 @@ const Newsletter = (props) => {
                 <img src={phone} alt="phone" width="20px" /> 04 95 23 18 92
               </span>
               <span>
-                <img src={email} alt="phone" width="20px" />{" "}
+                <img src={email} alt="phone" width="20px" />
                 secretariat@evr-pro.com
               </span>
               <span>
