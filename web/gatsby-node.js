@@ -7,21 +7,16 @@ const { isFuture } = require("date-fns");
 
 const { format } = require("date-fns");
 
-async function createBlogPostPages(graphql, actions) {
+async function createNewsLetter(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityPost(
-        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
-        edges {
-          node {
-            id
-            publishedAt
-            slug {
-              current
-            }
+      allSanityNewsletter {
+        nodes {
+          slug {
+            current
           }
+          id
         }
       }
     }
@@ -29,23 +24,20 @@ async function createBlogPostPages(graphql, actions) {
 
   if (result.errors) throw result.errors;
 
-  const postEdges = (result.data.allSanityPost || {}).edges || [];
+  const newsletterNodes = (result.data.allSanityNewsletter || {}).nodes || [];
 
-  postEdges
-    .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
-    .forEach((edge) => {
-      const { id, slug = {}, publishedAt } = edge.node;
-      const dateSegment = format(new Date(publishedAt), "yyyy/MM");
-      const path = `/blog/${dateSegment}/${slug.current}/`;
-
-      createPage({
-        path,
-        component: require.resolve("./src/templates/blog-post.js"),
-        context: { id },
-      });
+  newsletterNodes.forEach((node) => {
+    const { id, slug = {} } = node;
+    if (!slug) return;
+    const path = `/newsletter/${slug.current}`;
+    createPage({
+      path,
+      component: require.resolve("./src/templates/newsletterTemplate.js"),
+      context: { id },
     });
+  });
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  await createBlogPostPages(graphql, actions);
+  await createNewsLetter(graphql, actions);
 };
