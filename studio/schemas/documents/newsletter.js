@@ -61,17 +61,22 @@ export default {
     {
       name: "titleArt3",
       type: "string",
-      title: "Title article 3",
+      title: "Para 1 article 3",
     },
     {
-      name: "article3",
+      name: "article3p1",
       type: "articleNoImage",
-      title: "Article 3",
+      title: "Article 3 para 1",
     },
     {
-      name: "imgArt3",
+      name: "article3p2",
+      type: "articleNoImage",
+      title: "Article 3 para 2",
+    },
+    {
+      name: "imgArt4",
       type: "iconImage",
-      title: "Image art 3",
+      title: "Image art 4",
     },
     {
       name: "titleArt4",
