@@ -10,15 +10,18 @@ import location from "../assets/location.png";
 import first from "../assets/first.jpg";
 
 const Newsletter = (props) => {
-  const { titleArt1 } = props;
+  const { titleArt1, imgArt1, iconEdito } = props;
   return (
     <React.Fragment>
       <section>
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
-            <img src={props} alt="mascote" className={styles.picto} />
-            {/* <img src={props.iconEdito.asset.url} alt="mascote" className={styles.picto} /> */}
+            <img
+              src={iconEdito.asset.url}
+              alt="mascote"
+              className={styles.picto}
+            />
             <h1>{titleArt1}</h1>
             <p>
               Liqui omniame solupta tem-pern aturiorpor aliqui tore peroremped
@@ -55,7 +58,11 @@ const Newsletter = (props) => {
               LOREM IPSUM DOLOR SIT <span> PISCING ELIT. </span>
             </h1>
             <span className={styles.bar} />
-            <img src={first} alt="first" className={styles.firstimg} />
+            <img
+              src={imgArt1.asset.url}
+              alt="first"
+              className={styles.firstimg}
+            />
             <p className={styles.quote}>
               «Andigni hilicipis et rae qui officipsae excesti andigen
               ditatempos venit fugia qui quame solorei umenimodi optia nem que

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import { graphql } from "gatsby";
 import {
@@ -10,54 +11,17 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Newsletter from "../components/newsletter";
 
 export const query = graphql`
-  fragment SanityImage on SanityMainImage {
-    crop {
-      _key
-      _type
-      top
-      bottom
-      left
-      right
-    }
-    hotspot {
-      _key
-      _type
-      x
-      y
-      height
-      width
-    }
-    asset {
-      _id
-    }
-  }
-
-  query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
-    }
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
+  query allNewsletterPageQuery {
+    allSanityNewsletter(filter: { slug: { current: { ne: "null" } } }) {
       edges {
         node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
+          titleNewsLetter
+          iconEdito {
+            asset {
+              url
+            }
           }
         }
       }
@@ -67,6 +31,7 @@ export const query = graphql`
 
 const IndexPage = (props) => {
   const { data, errors } = props;
+  const newsInfo = data.allSanityNewsletter.edges;
 
   if (errors) {
     return (
@@ -76,23 +41,20 @@ const IndexPage = (props) => {
     );
   }
 
-  const site = (data || {}).site;
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
-
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    );
-  }
-
   return (
-    <Layout>
-      <Newsletter />
-    </Layout>
+    console.log(newsInfo),
+    (
+      <Layout>
+        <Container>
+          {newsInfo.map((newsletter) => (
+            <div>
+              <h1> {newsletter.node.titleNewsLetter} </h1>
+              <img src={newsletter.node.iconEdito.asset.url} alt="" />
+            </div>
+          ))}
+        </Container>
+      </Layout>
+    )
   );
 };
 
