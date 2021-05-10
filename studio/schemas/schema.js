@@ -9,12 +9,15 @@ import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
+import newsletter from "./documents/newsletter";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
+import articleNoImage from "./objects/articleNoImage";
 import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
+import iconImage from "./objects/iconImage";
 import authorReference from "./objects/authorReference";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -30,9 +33,12 @@ export default createSchema({
     post,
     category,
     author,
+    newsletter,
     mainImage,
+    iconImage,
     authorReference,
     bodyPortableText,
+    articleNoImage,
     bioPortableText,
     excerptPortableText,
 
