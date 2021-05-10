@@ -100,12 +100,14 @@ const Newsletter = (props) => {
             <div className={styles.sright}>
               <h1>{titleArt3}</h1>
               <span className={styles.bar} />
-              <p>
-                {<PortableText blocks={_rawArticle3P1} />}
+              <div className={styles.txtDesc}>
+                <div className={styles.txtLeft}>
+                  {<PortableText blocks={_rawArticle3P1} />}
+                </div>
                 <div className={styles.txtRight}>
                   {<PortableText blocks={_rawArticle3P2} />}
                 </div>
-              </p>
+              </div>
             </div>
           </div>
           <div className={styles.secondSection}>
