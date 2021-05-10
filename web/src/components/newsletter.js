@@ -9,7 +9,7 @@ import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import first from "../assets/first.jpg";
 
-const Newsletter = ({}) => (
+const Newsletter = ({ props }) => (
   <React.Fragment>
     <section>
       <div className={styles.container}>
@@ -90,50 +90,55 @@ const Newsletter = ({}) => (
     </section>
     <br />
     <section>
-      <div className={styles.container}>
-        <div className={styles.sleft}>
-          <img src={first} alt="second" className={styles.secondfirstimg} />
-          <h1>
-            LOREM IPSUM <span> DOLOR </span>
-          </h1>
-          <div className={styles.barLeft} />
-          <p>
-            Taqui dolo molorero volupta-tur?Net occatem perumqui ip-sae aut
-            ipsam ium quatur si suntia cus explandit hillen-dit laceped quodita
-            tquatur ibusdandunt.Ceaquibusdae consequas ex-persp eribus
-            porrorepel modi aut dolor as eos aut aboreic tem identum rere eos
-            elles-totatem quiam, odi.
-          </p>
+      <div className={styles.containerSecond}>
+        <div className={styles.myGrid}>
+          <div className={styles.sleft}>
+            <img src={first} alt="second" className={styles.secondfirstimg} />
+            <h1>
+              LOREM IPSUM <span> DOLOR </span>
+            </h1>
+            <div className={styles.bar} />
+            <p>
+              Taqui dolo molorero volupta-tur?Net occatem perumqui ip-sae aut
+              ipsam ium quatur si suntia cus explandit hillen-dit laceped
+              quodita tquatur ibusdandunt.Ceaquibusdae consequas ex-persp eribus
+              porrorepel modi aut dolor as eos aut aboreic tem identum rere eos
+              elles-totatem quiam, odi.
+            </p>
+          </div>
+          <div className={styles.sright}>
+            <h1>
+              LOREM IPSUM DOLOR <span> SIT AMET, CONSECTETUR </span>{" "}
+            </h1>
+            <span className={styles.bar} />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              consectetur euis-mod imperdiet. Vivamus eget risus ac ligula
+              placerat suscipit. Donec at loremquis sapien viverra cursus quis
+              sit amet odio. Aenean ac arcu bibendum nibh sodales sagittis a vel
+              lorem. Aenean vehicula sollicitudin leo non varius. Duis tristique
+              mi ve-nenatis ante elementum, luctus ultricies erat ornare. Ut
+              bibendum at nisl eget iaculis. Nullam tortor eros, pellentesque id
+              ultricies ut, ultricies ac mauris. Donec mollis ac leo rhoncus
+              vulpu-tate. Curabitur vitae leo vel tortor molestie mattis eu nec
+              <div className={styles.txtRight}>
+                erat. Class aptent taciti so-ciosqu ad litora torquent per
+                conubia nostra, per inceptos himenaeos. Ut id euismod libero.
+                Cras vel malesuada nibh. Donec luctus ut leo eu sollicitudin. In
+                dapibus sem nec elit vulputate, ac moles-tie justo auctor.
+                Vestibulum ante psum primis in fauci-bus orci luctus et ultrices
+                po-suere cubilia curae.Ut bibendum at nisl eget ia-culis. Nullam
+                tortor eros, pel-lentesque id ultricies ut, ultri-cies ac
+                mauris. Donec mollis ac leo rhoncus vulputate. Curabitur vitae
+                leo vel tortor molestie mattis eu nec erat.Donec mollis ac leo
+                rhoncus vulputate.
+              </div>
+            </p>
+          </div>
         </div>
-        <div className={styles.sright}>
-          <h1>
-            LOREM IPSUM DOLOR <span> SIT AMET, CONSECTETUR </span>{" "}
-          </h1>
-          <span className={styles.bar} />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            consectetur euis-mod imperdiet. Vivamus eget risus ac ligula
-            placerat suscipit. Donec at loremquis sapien viverra cursus quis sit
-            amet odio. Aenean ac arcu bibendum nibh sodales sagittis a vel
-            lorem. Aenean vehicula sollicitudin leo non varius. Duis tristique
-            mi ve-nenatis ante elementum, luctus ultricies erat ornare. Ut
-            bibendum at nisl eget iaculis. Nullam tortor eros, pellentesque id
-            ultricies ut, ultricies ac mauris. Donec mollis ac leo rhoncus
-            vulpu-tate. Curabitur vitae leo vel tortor molestie mattis eu nec
-            <div className={styles.txtRight}>
-              erat. Class aptent taciti so-ciosqu ad litora torquent per conubia
-              nostra, per inceptos himenaeos. Ut id euismod libero. Cras vel
-              malesuada nibh. Donec luctus ut leo eu sollicitudin. In dapibus
-              sem nec elit vulputate, ac moles-tie justo auctor. Vestibulum ante
-              psum primis in fauci-bus orci luctus et ultrices po-suere cubilia
-              curae.Ut bibendum at nisl eget ia-culis. Nullam tortor eros,
-              pel-lentesque id ultricies ut, ultri-cies ac mauris. Donec mollis
-              ac leo rhoncus vulputate. Curabitur vitae leo vel tortor molestie
-              mattis eu nec erat.Donec mollis ac leo rhoncus vulputate.
-            </div>
-          </p>
-          <span className={styles.secondSection}>
-            <img src={first} alt="zs" className={styles.secondsecondimg} />
+        <div className={styles.secondSection}>
+          <img src={first} alt="" className={styles.secondsecondimg} />
+          <div>
             <h1> LOREM IPSUM DOLOR SIT AMET </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -146,7 +151,22 @@ const Newsletter = ({}) => (
               pellentesque id ultricies ut, ultricies ac mauris. Donec mollis ac
               leo rhoncus vulputate.
             </p>
-          </span>
+          </div>
+        </div>
+        <div className={styles.thirdSection}>
+          <div>
+            <h1> LOREM IPSUM DOLOR SIT </h1>
+            <p>
+              Em qui raturit aute volore odi volorum que et est plis isitatibus
+              maximus eicabor itatio. Namus. Udae aliberia quas mo qui
+              inctaturis doluptusam aligent del- labora sunt ut et, il ipsae il
+              ium nonsequunt et volore voles soluptatias mo te re la dere liquas
+              aut ate sequam nullantur? Aruntus apisqui am erum et dollab incta
+              volum hillo et vid unt qui a vendessequi unto de cus, inteturessit
+              aut ullaborero dipsant du sve.
+            </p>
+          </div>
+          <img src={first} alt="" className={styles.lastimg} />
         </div>
       </div>
     </section>

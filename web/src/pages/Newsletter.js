@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import { graphql } from "gatsby";
 import {
@@ -12,9 +13,8 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
 export const query = graphql`
-  
   query allNewsletterPageQuery {
-    allSanityNewsletter(filter: {slug: {current: {ne: "null"}}}) {
+    allSanityNewsletter(filter: { slug: { current: { ne: "null" } } }) {
       edges {
         node {
           id
@@ -30,9 +30,6 @@ export const query = graphql`
 const NewsletterPage = (props) => {
   const { data, errors } = props;
   const newsInfo = data.allSanityNewsletter.edges;
-  
- 
-  
 
   if (errors) {
     return (
@@ -45,11 +42,9 @@ const NewsletterPage = (props) => {
   return (
     <Layout>
       <Container>
-      {newsInfo.map((newsletter) =>
+        {newsInfo.map((newsletter) => 
           <h1> {newsletter.node.slug.current} </h1>
         )}
-        
-
       </Container>
     </Layout>
   );
