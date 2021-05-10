@@ -113,11 +113,29 @@
 
 /* START SECOND PAGE */
 
-.sleft {
-    width: 208.094px;
-    height: 45vh;
+.containerSecond {
+    height: 841.89px;
+    width: 595.276px;
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
+}
+
+/* .myGrid {
+    display: grid;
+    grid-template-columns: 208.094px;
+} */
+
+.myGrid {
+    display: flex;
+    flex-direction: row;
+}
+
+.sleft {
+    width: 208.094px;
+    height: 40vh;
+    grid-column-start: 0;
+    grid-column-end: 0;
 }
 
 .secondfirstimg {
@@ -137,25 +155,19 @@
     display: block;
 }
 
-.barLeft {
-    margin-left: 1vw;
-    border-bottom: 5px solid red;
-}
-
 .sleft p {
     font-size: 9.0083px;
     font-family: sans-serif;
     margin-left: 1vw;
-    width: 80%;
+    width: 85%;
     margin-bottom: 8vh;
 }
 
 .sright {
     color: black;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    
+    grid-column-start: 0;
+    grid-column-end: 0;
 }
 
 .sright h1 {
@@ -184,17 +196,69 @@
     right: 0;
 }
 
+.secondSection {
+    color: white;
+    height: 198.37px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    grid-column-start: 0;
+    grid-column-end: 1;
+}
+
+.secondSection h1 {
+    font-size: 11.2604px;
+    font-family: sans-serif;
+    margin-left: 2vw;
+    margin-top: 5vh;
+}
+
+.secondSection p {
+    font-size: 10.5152px;
+    font-family: sans-serif;
+    width: 90%;
+    margin-left: 2vw;
+    margin-bottom: 5vh;
+}
+
+.thirdSection {
+    color: black;
+    width: 100%;
+    height: 198.37px;
+    display: flex;
+    flex-direction: row;
+    grid-column-start: 0;
+    grid-column-end: 1;
+}
+
+.thirdSection h1 {
+    font-size: 11.2604px;
+    font-family: sans-serif;
+    margin-left: 2vw;
+    margin-top: 7vh;
+}
+
+.thirdSection p {
+    font-size: 10.5152px;
+    font-family: sans-serif;
+    width: 90%;
+    margin-left: 2vw;
+    margin-bottom: 5vh;
+}
+
+
 .secondsecondimg {
     width: 190.866px;
     height: 199.37px;
-}
-
-.secondSection {
-    background-color: red;
-    width: 100%;
 }
 
 .lastimg {
     width: 191.449px;
     height: 218.045px;
 }
+
+section {
+    margin-left: 2vw;
+}
+/* END SECOND PAGE */
