@@ -36,13 +36,10 @@
     font-size: 9.0083px;
     margin-left: 1vw;
     width: 80%;
-    margin-bottom: 3vh;
     font-family: 'Montserrat', sans-serif;
 }
 .logo {
-    margin-top: 3vh;
     width: 100%;
-    margin-bottom: 3vh;
 }
 .picto {
     width: 60%;
@@ -75,7 +72,6 @@
 .fright h1 {
     font-size: 16.5152px;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 4vh;  
     margin-left: 1vw;  
     line-height: 1.5;
     font-weight: bold;
@@ -105,7 +101,6 @@
     font-family: sans-serif;
     width: 85%;
     margin-left: 1vw;
-    margin-bottom: 5vh;
 }
 
 .firstimg {
@@ -148,7 +143,6 @@
 .secondfirstimg {
     width: 173.858px;
     height: 124.724px;
-    margin-top: 2vh;
     margin-left: 1vw;
 }
 
@@ -167,7 +161,6 @@
     font-family: 'Montserrat', sans-serif;
     margin-left: 1vw;
     width: 85%;
-    margin-bottom: 8vh;
 }
 
 .sright {
@@ -180,7 +173,6 @@
 .sright h1 {
     font-size: 16.5152px;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 4vh;  
     margin-left: 1vw;  
     line-height: 1.5;
     width: 85%;
@@ -195,7 +187,6 @@
     font-size: 10.5152px;
     font-family: 'Montserrat', sans-serif;
     width: 85%;
-    margin-bottom: 5vh;
     display: flex;
     flex-direction: row;
 }
@@ -213,14 +204,12 @@
     background-color: red;
     grid-column-start: 0;
     grid-column-end: 1;
-    margin-top: -2.2vh;
 }
 
 .secondSection h1 {
     font-size: 11.2604px;
     font-family: 'Montserrat', sans-serif;
     margin-left: 2vw;
-    margin-top: 5vh;
 }
 
 .secondSection p {
@@ -228,7 +217,6 @@
     font-family: 'Montserrat', sans-serif;
     width: 90%;
     margin-left: 2vw;
-    margin-bottom: 5vh;
 }
 
 .thirdSection {
@@ -245,7 +233,6 @@
     font-size: 11.2604px;
     font-family: 'Montserrat', sans-serif;
     margin-left: 2vw;
-    margin-top: 7vh;
 }
 
 .thirdSection p {
@@ -253,7 +240,6 @@
     font-family: 'Montserrat', sans-serif;
     width: 90%;
     margin-left: 2vw;
-    margin-bottom: 5vh;
 }
 
 

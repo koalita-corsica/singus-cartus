@@ -7,8 +7,57 @@ import email from "../assets/email.png";
 import globe from "../assets/globe.png";
 import phone from "../assets/phone.png";
 import location from "../assets/location.png";
-import jsPDF from 'jspdf';
+import first from "../assets/first.jpg";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import $ from "jquery";
 
+function getPDF() {
+  var HTML_Width = $(".canvas_div_pdf").width();
+  var HTML_Height = $(".canvas_div_pdf").height();
+  var top_left_margin = 15;
+  var PDF_Width = HTML_Width + top_left_margin * 2;
+  var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
+  var canvas_image_width = HTML_Width;
+  var canvas_image_height = HTML_Height;
+
+  var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+  html2canvas($(".canvas_div_pdf")[0], {
+    allowTaint: true,
+    useCORS: true,
+  }).then(function (canvas) {
+    canvas.getContext("2d");
+
+    console.log(canvas.height + "  " + canvas.width);
+
+    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+    imgData.crossOrigin = "anonymous";
+    var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
+    pdf.addImage(
+      imgData,
+      "JPG",
+      top_left_margin,
+      top_left_margin,
+      canvas_image_width,
+      canvas_image_height
+    );
+
+    for (var i = 1; i <= totalPDFPages; i++) {
+      pdf.addPage(PDF_Width, PDF_Height);
+      pdf.addImage(
+        imgData,
+        "JPG",
+        top_left_margin,
+        -(PDF_Height * i) + top_left_margin * 4,
+        canvas_image_width,
+        canvas_image_height
+      );
+    }
+
+    pdf.save("HTML-Document.pdf");
+  });
+}
 
 const Newsletter = (props) => {
   function toPdf() {
@@ -41,7 +90,7 @@ const Newsletter = (props) => {
   
   return (
     <React.Fragment>
-      <section id="toPrint">
+      <section className="canvas_div_pdf">
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
@@ -134,7 +183,7 @@ const Newsletter = (props) => {
           </div>
         </div>
       </section>
-      <button onClick={toPdf}>telecharger format pdf</button>
+      <input type="button" value="SAVE TO PDF" onClick={getPDF} />
     </React.Fragment>
   );
 };

@@ -13,6 +13,8 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { Link } from "gatsby";
 
+import * as styles from "../pages/index.module.css";
+
 export const query = graphql`
   query allNewsletterPageQuery {
     allSanityNewsletter(filter: { slug: { current: { ne: "null" } } }) {
@@ -46,10 +48,9 @@ const IndexPage = (props) => {
   }
 
   return (
-    console.log(newsInfo),
-    (
-      <Layout>
-        <Container>
+    <Layout>
+      <Container>
+        <div className={styles.container}>
           {newsInfo.map((newsletter) => (
             <Link
               to={
@@ -58,15 +59,15 @@ const IndexPage = (props) => {
                   : ""
               }
             >
-              <div>
-                <h1> {newsletter.node.titleNewsLetter} </h1>
+              <div className={styles.show}>
                 <img src={newsletter.node.iconEdito.asset.url} alt="" />
+                <h3> {newsletter.node.titleNewsLetter} </h3>
               </div>
             </Link>
           ))}
-        </Container>
-      </Layout>
-    )
+        </div>
+      </Container>
+    </Layout>
   );
 };
 

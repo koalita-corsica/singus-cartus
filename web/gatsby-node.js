@@ -41,3 +41,12 @@ async function createNewsLetter(graphql, actions) {
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  const { setWebpackConfig } = actions;
+  setWebpackConfig({
+    externals: {
+      jquery: "jQuery", // important: 'Q' capitalized
+    },
+  });
+};
