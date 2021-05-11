@@ -12,57 +12,18 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import $ from "jquery";
 
+
 function getPDF() {
-  var HTML_Width = $(".canvas_div_pdf").width();
-  var HTML_Height = $(".canvas_div_pdf").height();
-  var top_left_margin = 5;
-  var PDF_Width = HTML_Width + top_left_margin * 2;
-  var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
-  var canvas_image_width = HTML_Width;
-  var canvas_image_height = HTML_Height;
-
-  var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-
-  html2canvas($(".canvas_div_pdf")[0], {
-    allowTaint: true,
-    useCORS: true,
-  }).then(function (canvas) {
-    canvas.getContext("2d");
-
-    var imgData = canvas.toDataURL("image/jpeg", 1.0);
-    var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
-    pdf.crossOrigin = "anonymous";
-    pdf.addImage(
-      imgData,
-      "JPG",
-      top_left_margin,
-      top_left_margin,
-      canvas_image_width,
-      canvas_image_height
-    );
-
-    for (var i = 1; i <= totalPDFPages; i++) {
-      pdf.addPage(PDF_Width, PDF_Height);
-      pdf.addImage(
-        imgData,
-        "JPG",
-        top_left_margin,
-        -(PDF_Height * i) + top_left_margin * 4,
-        canvas_image_width,
-        canvas_image_height
-      );
+  var doc = new jsPDF("p", "pt", "a4");
+  doc.html(document.querySelector("#capture"), {
+    callback: function(pdf) {
+      pdf.save("newsletter.pdf");
     }
-
-    pdf.save("newsletter.pdf");
   });
-}
+};
 
 const Newsletter = (props) => {
-  // function toPdf() {
-  //   var doc = new jsPDF('p', 'px', 'a4');
-  //   doc.
-  //   doc.save({titleEdito},".pdf");
-  // }
+  
   const {
     titleArt1,
     imgArt1,
@@ -88,7 +49,8 @@ const Newsletter = (props) => {
   
   return (
     <React.Fragment>
-      <section className="canvas_div_pdf">
+      
+      <div id='capture' className={styles.capture}>
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
@@ -180,8 +142,9 @@ const Newsletter = (props) => {
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
         </div>
-      </section>
-      <input type="button" value="SAVE TO PDF" onClick={getPDF} />
+    </div>
+      
+      <input type="button" value="SAVE TO PDF" onClick={getPDF} className={styles.button}/>
     </React.Fragment>
   );
 };

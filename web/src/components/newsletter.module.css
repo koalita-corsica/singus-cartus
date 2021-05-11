@@ -2,13 +2,14 @@
 
 /* FIRST PAGE */
 
+
 .container {
-    background-color: white;
+    background-color: green;
     display: flex;
     flex-direction: row;
-    height: 841.89px;
-    width: 595.276px;
     border: 2px solid black;
+    height: 29.7cm;
+    width: 21cm;
 }
 
 .fleft {
@@ -47,7 +48,7 @@
     justify-self: center;
 }
 .contact {
-    height: 189.894px;
+    height: 189px;
     width: 208.094px;
     background-color: red !important;
     font-size: 9.0083px;
@@ -116,11 +117,11 @@
 /* START SECOND PAGE */
 
 .containerSecond {
-    height: 841.89px;
-    width: 595.276px;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
+    height: 29.7cm;
+    width: 21cm;
 }
 
 /* .myGrid {
@@ -262,4 +263,9 @@
 section {
     margin-left: 2vw;
 }
+
+/* .button{
+    margin-top: 15vh;
+    
+} */
 /* END SECOND PAGE */
