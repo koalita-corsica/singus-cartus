@@ -60,11 +60,11 @@ function getPDF() {
 }
 
 const Newsletter = (props) => {
-  function toPdf() {
-    var doc = new jsPDF('p', 'px', 'a4');
-    doc.
-    doc.save({titleEdito},".pdf");
-  }
+  // function toPdf() {
+  //   var doc = new jsPDF('p', 'px', 'a4');
+  //   doc.
+  //   doc.save({titleEdito},".pdf");
+  // }
   const {
     titleArt1,
     imgArt1,
