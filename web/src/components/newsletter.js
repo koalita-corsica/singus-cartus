@@ -15,7 +15,7 @@ import $ from "jquery";
 function getPDF() {
   var HTML_Width = $(".canvas_div_pdf").width();
   var HTML_Height = $(".canvas_div_pdf").height();
-  var top_left_margin = 15;
+  var top_left_margin = 5;
   var PDF_Width = HTML_Width + top_left_margin * 2;
   var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
   var canvas_image_width = HTML_Width;
@@ -29,11 +29,9 @@ function getPDF() {
   }).then(function (canvas) {
     canvas.getContext("2d");
 
-    console.log(canvas.height + "  " + canvas.width);
-
     var imgData = canvas.toDataURL("image/jpeg", 1.0);
-    imgData.crossOrigin = "anonymous";
     var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
+    pdf.crossOrigin = "anonymous";
     pdf.addImage(
       imgData,
       "JPG",
@@ -55,7 +53,7 @@ function getPDF() {
       );
     }
 
-    pdf.save("HTML-Document.pdf");
+    pdf.save("newsletter.pdf");
   });
 }
 
