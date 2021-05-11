@@ -2,14 +2,20 @@ import * as styles from "./newsletter.module.css";
 import React from "react";
 import PortableText from "./portableText";
 import logo from "../assets/logo.png";
-import mascote from "../assets/mascote.png";
+
 import email from "../assets/email.png";
 import globe from "../assets/globe.png";
 import phone from "../assets/phone.png";
 import location from "../assets/location.png";
-import first from "../assets/first.jpg";
+import jsPDF from 'jspdf';
+
 
 const Newsletter = (props) => {
+  function toPdf() {
+    var doc = new jsPDF('p', 'px', 'a4');
+    doc.
+    doc.save({titleEdito},".pdf");
+  }
   const {
     titleArt1,
     imgArt1,
@@ -32,9 +38,10 @@ const Newsletter = (props) => {
     titleArt6,
     _rawArticle6,
   } = props;
+  
   return (
     <React.Fragment>
-      <section>
+      <section id="toPrint">
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
@@ -82,9 +89,6 @@ const Newsletter = (props) => {
             </p>
           </div>
         </div>
-      </section>
-      <br />
-      <section>
         <div className={styles.containerSecond}>
           <div className={styles.myGrid}>
             <div className={styles.sleft}>
@@ -130,6 +134,7 @@ const Newsletter = (props) => {
           </div>
         </div>
       </section>
+      <button onClick={toPdf}>telecharger format pdf</button>
     </React.Fragment>
   );
 };
