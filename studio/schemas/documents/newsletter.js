@@ -111,7 +111,7 @@ export default {
     {
       name: "titleArt3",
       type: "string",
-      title: "Para 1 article 3",
+      title: "Titre article 3",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
       options: {
