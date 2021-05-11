@@ -12,18 +12,16 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import $ from "jquery";
 
-
 function getPDF() {
   var doc = new jsPDF("p", "pt", "a4");
   doc.html(document.querySelector("#capture"), {
-    callback: function(pdf) {
+    callback: function (pdf) {
       pdf.save("newsletter.pdf");
-    }
+    },
   });
-};
+}
 
 const Newsletter = (props) => {
-  
   const {
     titleArt1,
     imgArt1,
@@ -46,11 +44,10 @@ const Newsletter = (props) => {
     titleArt6,
     _rawArticle6,
   } = props;
-  
+
   return (
     <React.Fragment>
-      
-      <div id='capture' className={styles.capture}>
+      <div id="capture" className={styles.capture}>
         <div className={styles.container}>
           <div className={styles.fleft}>
             <img src={logo} alt="logo" className={styles.logo} />
@@ -142,9 +139,14 @@ const Newsletter = (props) => {
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
         </div>
-    </div>
-      
-      <input type="button" value="SAVE TO PDF" onClick={getPDF} className={styles.button}/>
+      </div>
+
+      <input
+        type="button"
+        value="SAVE TO PDF"
+        onClick={getPDF}
+        className={styles.button}
+      />
     </React.Fragment>
   );
 };
