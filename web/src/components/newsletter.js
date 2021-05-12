@@ -122,20 +122,29 @@ const Newsletter = (props) => {
               </div>
             </div>
           </div>
-          <img
-            src={imgArt5.asset.url}
-            alt=""
-            className={styles.secondsecondimg}
-          />
-          <div className={styles.secondSection}>
-            <h1> {titleArt5} </h1>
-            <p>{<PortableText blocks={_rawArticle5} />}</p>
+          <div className={styles.article5}>
+            <img
+              src={imgArt5.asset.url}
+              alt=""
+              className={styles.secondsecondimg}
+            />
+            <div className={styles.secondSection}>
+              <h1> {titleArt5} </h1>
+              <p>{<PortableText blocks={_rawArticle5} />}</p>
+            </div>
           </div>
-          <div className={styles.thirdSection}>
-            <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
+          <div className={styles.article6}>
+            <div className={styles.thirdSection}>
+              <div>
+                <h1> {titleArt6} </h1>
+                <p>{<PortableText blocks={_rawArticle6} />}</p>
+              </div>
+            </div>
             <div>
-              <h1> {titleArt6} </h1>
-              <p>{<PortableText blocks={_rawArticle6} />}</p>
+              <img src={imgArt6.asset.url} 
+              alt="" 
+              className={styles.lastimg} 
+              />
             </div>
           </div>
         </div>
