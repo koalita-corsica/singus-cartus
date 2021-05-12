@@ -913,10 +913,13 @@
   dependencies:
     "@octokit/openapi-types" "^7.0.0"
 
+<<<<<<< HEAD
 "@react-icons/all-files@^4.1.0":
   version "4.1.0"
   resolved "https://registry.npmjs.org/@react-icons/all-files/-/all-files-4.1.0.tgz#477284873a0821928224b6fc84c62d2534d6650b"
 
+=======
+>>>>>>> 14e4a3a0a3bb009b7fde7488403421290333e1e7
 "@sanity/cli@^2.7.4":
   version "2.10.0"
   resolved "https://registry.npmjs.org/@sanity/cli/-/cli-2.10.0.tgz#f1ea041e112d83af8c00bd678f5f9d29e1d4e7a4"

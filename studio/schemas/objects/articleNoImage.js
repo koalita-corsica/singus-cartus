@@ -30,6 +30,40 @@ export default {
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
         ],
+        lists: [
+          { title: "Bullet", value: "bullet" },
+          { title: "Number", value: "number" },
+        ],
+        // Marks let you mark up inline text in the block editor.
+        marks: {
+          // Decorators usually describe a single property – e.g. a typographic
+          // preference or highlighting by editors.
+          decorators: [
+            { title: "Strong", value: "strong" },
+            { title: "Emphasis", value: "em" },
+          ],
+          // Annotations can be any object structure – e.g. a link or a footnote.
+          annotations: [
+            {
+              name: "link",
+              type: "object",
+              title: "URL",
+              fields: [
+                {
+                  title: "URL",
+                  name: "href",
+                  type: "url",
+                },
+              ],
+            },
+            {
+              name: 'color',
+              title: 'Color',
+              type: "color",    
+            },
+          ],
+        // },
+        // of: [{ type: "authorReference" }],
         // Annotations can be any object structure – e.g. a link or a footnote.
         // annotations: [
         //   {
