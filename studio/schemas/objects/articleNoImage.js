@@ -62,23 +62,8 @@ export default {
               type: "color",    
             },
           ],
-        // },
-        // of: [{ type: "authorReference" }],
-        // Annotations can be any object structure – e.g. a link or a footnote.
-        // annotations: [
-        //   {
-        //     name: "link",
-        //     type: "object",
-        //     title: "URL",
-        //     fields: [
-        //       {
-        //         title: "URL",
-        //         name: "href",
-        //         type: "url",
-        //       },
-        //     ],
-        //   },
-        // ],
+        },
+        of: [{ type: "authorReference" }],
       },
       of: [{ type: "authorReference" }],
     },
