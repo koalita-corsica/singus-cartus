@@ -61,20 +61,18 @@ const Newsletter = (props) => {
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
-                <img src={phone} alt="phone" width="30px" />
-                <p> 04 95 23 18 92 </p>
+                <img src={phone} alt="phone" width="20px" /> 04 95 23 18 92
               </span>
               <span>
-                <img src={email} alt="phone" width="30px" />
-                <p> secretariat@evr-pro.com </p>
+                <img src={email} alt="phone" width="20px" />
+                secretariat@evr-pro.com
               </span>
               <span>
-                <img src={globe} alt="phone" width="30px" />{" "}
-                <p> www.evrpro.fr </p>
+                <img src={globe} alt="phone" width="20px" /> www.evrpro.fr
               </span>
               <span>
-                <img src={location} alt="phone" width="30px" />{" "}
-                <p> Lot Michel Ange, 20167 Afa </p>
+                <img src={location} alt="phone" width="20px" /> Lot Michel Ange,
+                20167 Afa
               </span>
             </span>
           </div>
@@ -128,10 +126,8 @@ const Newsletter = (props) => {
             className={styles.secondsecondimg}
           />
           <div className={styles.secondSection}>
-            <div>
-              <h1> {titleArt5} </h1>
-              <p>{<PortableText blocks={_rawArticle5} />}</p>
-            </div>
+            <h1> {titleArt5} </h1>
+            <p>{<PortableText blocks={_rawArticle5} />}</p>
           </div>
           <div className={styles.thirdSection}>
             <div>

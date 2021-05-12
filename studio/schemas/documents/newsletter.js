@@ -53,7 +53,7 @@ export default {
       type: "articleNoImage",
       title: "Article 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(766),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -73,7 +73,7 @@ export default {
       type: "articleNoImage",
       title: "Article 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(400),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -103,7 +103,7 @@ export default {
       type: "articleNoImage",
       title: "Article Edito",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(487),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -123,7 +123,7 @@ export default {
       type: "articleNoImage",
       title: "Article 3 para 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(495),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -133,7 +133,7 @@ export default {
       type: "articleNoImage",
       title: "Article 3 para 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(495),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -163,7 +163,7 @@ export default {
       type: "articleNoImage",
       title: "Article 4",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required().max(250),
+        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },

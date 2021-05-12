@@ -113,7 +113,7 @@
     font-family: 'Montserrat', sans-serif;
     width: 90%;
     line-height: 1.3;
-    margin-top: -5%;
+    margin-top: -3%;
 }
 
 .firstimg {
@@ -204,13 +204,13 @@
 
 .secondSection {
     color: white;
-    height: 7.0333cm;
-    width: 68%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 68%;
     background-color: #c01821;
     margin-top: -33.5%;
     margin-left: 32%;
+    height: 7.0333cm;
 }
 
 .secondSection h1 {
@@ -218,6 +218,7 @@
     font-family: 'Montserrat', sans-serif;
     margin-left: 4%;
     line-height: 1.3;
+    margin-top: 6%;
 }
 
 .secondSection p {
@@ -226,6 +227,7 @@
     width: 95%;
     margin-left: 2%;
     line-height: 1.3;
+    margin-top: 0;
 }
 
 .thirdSection {
@@ -240,8 +242,8 @@
 .thirdSection h1 {
     font-size: 15pt;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 5%;
-    margin-top: 3%;
+    margin-left: 6%;
+    margin-top: 13%;
     line-height: 1.3;
 }
 
@@ -251,6 +253,7 @@
     width: 95%;
     margin-left: 3%;
     line-height: 1.3;
+    margin-top: 5%;
 }
 
 
@@ -260,7 +263,7 @@
 }
 
 .lastimg {
-    height: 6.58cm;
+    height: 8.9cm;
     width: 6.7539cm;
 }
 
@@ -270,8 +273,8 @@
 }
 
 .imgFinal {
-    margin-top: -29%;
-    margin-left: 67.9%;;
+    margin-left: 67.85%;
+    margin-top: -33.6%;
 }
 
 /* .button{
