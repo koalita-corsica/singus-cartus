@@ -14,30 +14,33 @@ span{
 }
 
 .fleft {
-    background-color: black !important;
+    background-color: #1a181b !important;
     color: white;
-    width: 7.341cm;
+    width: 7.3411cm;
+    height: 29.7cm;
     display: flex;
     flex-direction: column;
 }
 
 .fleft h1 {
-    font-size: 19.9571px;
+    font-size: 15pt;
     font-family: sans-serif;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    margin-left: 2%;
+    font-weight: bold;
+    margin-left: 3%;
+    line-height: 1.3;
 }
 
 .fleft p {
-    font-size: 13.9657px;
+    font-size: 10pt;
     width: 95%;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 2%;
+    margin-left: 3%;
+    line-height: 1.3;
 }
 .logo {
     width: 100%;
-    margin-top: 8%;
+    margin-top: 10%;
 }
 .picto {
     width: 60%;
@@ -45,29 +48,37 @@ span{
     justify-self: center;
 }
 .contact {
-    width: 7.241cm;
+    width: 7.341cm;
     height: 6.699cm;
-    background-color: red !important;
-    font-size: 9.0083px;
+    background-color: #c01821 !important;
+    font-size: 10pt;
     font-family: 'Montserrat', sans-serif;
     line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .contact h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 19.9571px;
-    text-align: center;
+    font-size: 15pt;
+    margin-left: 7%;
+    line-height: 1.3;
 }
 
 .contact span {
-    color: white;
-    margin-left: 4%;
-    display: block;
+    margin-top: -3%;
+    margin-left: 7%;
     line-height: 2.5;
     font-size: 15.9657px;
     font-family: 'Montserrat', sans-serif;
+    justify-content: center;
 }
 
+.contact span p {
+    margin-top: -14%;
+    margin-left: 15%;
+}
 
 .fright {
     color: black;
@@ -79,43 +90,40 @@ span{
 }
 
 .fright h1 {
-    font-size: 22px;
+    font-size: 22pt;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1;
     font-weight: bold;
     width: 90%;
-}
-
-.fright span {
-    display: block;
+    line-height: 1.3;
 }
 
 .bar {
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid #c01821;
     width: 90%;
     display: block;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 .quote {
-    font-size: 15.9657px;
+    font-size: 10pt;
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    width: 90%;
-
+    width: 95%;
+    line-height: 1.3;
 }
 
 .desc {
-    font-size: 15.9657px;
-    font-family: sans-serif;
+    font-size: 11pt;
+    font-family: 'Montserrat', sans-serif;
     width: 90%;
-    line-height: 1;
+    line-height: 1.3;
+    margin-top: -3%;
 }
 
 .firstimg {
     margin-top: 4%;
     width: 11.8cm;
-    height: 8cm;
+    height: 7cm;
 }
 
 /* END FIRST PAGE */
@@ -143,38 +151,42 @@ span{
 .sleft {
     width: 7.341cm;
     margin-left: 3%;
-    margin-top: 3%;
+    margin-top: 6%;
 }
 
 .secondfirstimg {
-    width: 173.858px;
-    height: 124.724px;
+    width: 6.133cm;
+    height: 4.4cm;
 
 }
 
 .sleft h1 {
-    font-size: 20.2705px;
+    font-size: 15pt;
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.3;
 
 }
 
 .sleft p {
-    font-size: 14px;
+    font-size: 10pt;
     font-family: 'Montserrat', sans-serif;
-    width: 90%;
+    width: 95%;
+    line-height: 1.3;
 }
 
 .sright {
     color: black;
     width: 100%;
     margin-top: 2%;
+    margin-left: 3%;
 }
 
 .sright h1 {
-    font-size: 29.2705px;
+    font-size: 22pt;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
     width: 90%;
+    line-height: 1.3;
 }
 
 .sright span {
@@ -182,11 +194,12 @@ span{
 }
 
 .sright p {
-    font-size: 14.75px;
+    font-size: 10pt;
     font-family: 'Montserrat', sans-serif;
     width: 85%;
     display: flex;
     flex-direction: row;
+    line-height: 1.3;
 }
 
 .txtRight {
@@ -195,55 +208,67 @@ span{
 
 .secondSection {
     color: white;
-    height: 7.0333cm;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    background-color: red;
+    flex-direction: column;
+    width: 68%;
+    background-color: #c01821;
+    margin-top: -33.5%;
+    margin-left: 32%;
+    height: 7.0333cm;
 }
 
 .secondSection h1 {
-    font-size: 19.9571px;
+    font-size: 15pt;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 5%;
+    margin-left: 4%;
+    line-height: 1.3;
+    margin-top: 6%;
 }
 
 .secondSection p {
-    font-size: 12.9657px;
+    font-size: 11pt;
     font-family: 'Montserrat', sans-serif;
-    width: 90%;
-    margin-left: 3%;
+    width: 95%;
+    margin-left: 2%;
+    line-height: 1.3;
+    margin-top: 0;
 }
 
 .thirdSection {
     color: black;
-    width: 100%;
+    width: 67.7%;
     height: 7.0333cm;
     display: flex;
     flex-direction: row;
+    margin-left: 1%;
 }
 
 .thirdSection h1 {
-    font-size: 19.9571px;
+    font-size: 15pt;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 5%;
+    margin-left: 6%;
+    margin-top: 13%;
+    line-height: 1.3;
 }
 
 .thirdSection p {
-    font-size: 12.9657px;
+    font-size: 11pt;
     font-family: 'Montserrat', sans-serif;
-    width: 90%;
+    width: 95%;
     margin-left: 3%;
+    line-height: 1.3;
+    margin-top: 5%;
 }
 
 
 .secondsecondimg {
-    width: 15cm !important;
     height: 7.0333cm;
+    width: 6.7333cm;
 }
 
 .lastimg {
-    height: 6.5cm;
+    height: 8.9cm;
+    width: 6.7539cm;
 }
 
 .txtDesc {
@@ -251,6 +276,10 @@ span{
     flex-direction: row;
 }
 
+.imgFinal {
+    margin-left: 67.85%;
+    margin-top: -33.6%;
+}
 
 /* .button{
     margin-top: 15vh;

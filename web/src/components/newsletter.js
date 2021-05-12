@@ -13,17 +13,12 @@ import jsPDF from "jspdf";
 import $ from "jquery";
 
 function getPDF() {
-  // var doc = new jsPDF({ orientation: 'p', format: 'a4'  });
-  // doc.html(document.getElementById('test'), {
-  //  callback: function (doc) {
-  //     doc.addPage('a4', 'p');
-  //     doc.html(document.getElementById('test'), {
-  //        callback: function (doc) {
-  //           doc.output('dataurlnewwindow');
-  //         }
-  //       }
-  //   }
-  // }
+  var doc = new jsPDF("p", "pt", [780, 1127]);
+  doc.html(document.querySelector("#capture"), {
+    callback: function (pdf) {
+      pdf.save("newsletter.pdf");
+    },
+  });
 }
 
 const Newsletter = (props) => {
@@ -125,22 +120,22 @@ const Newsletter = (props) => {
               </div>
             </div>
           </div>
+          <img
+            src={imgArt5.asset.url}
+            alt=""
+            className={styles.secondsecondimg}
+          />
           <div className={styles.secondSection}>
-            <img
-              src={imgArt5.asset.url}
-              alt=""
-              className={styles.secondsecondimg}
-            />
-            <div>
-              <h1> {titleArt5} </h1>
-              <p>{<PortableText blocks={_rawArticle5} />}</p>
-            </div>
+            <h1> {titleArt5} </h1>
+            <p>{<PortableText blocks={_rawArticle5} />}</p>
           </div>
           <div className={styles.thirdSection}>
             <div>
               <h1> {titleArt6} </h1>
               <p>{<PortableText blocks={_rawArticle6} />}</p>
             </div>
+          </div>
+          <div className={styles.imgFinal}>
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
         </div>

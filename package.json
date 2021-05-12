@@ -25,6 +25,7 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "html2canvas": "^1.0.0-rc.7",
     "html2pdf": "0.0.11",
     "html2pdf.js": "^0.9.3",
