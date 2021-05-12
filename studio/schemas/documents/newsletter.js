@@ -50,10 +50,10 @@ export default {
     },
     {
       name: "article1",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(767),
       options: {
         isHighlighted: true,
       },
@@ -70,10 +70,10 @@ export default {
     },
     {
       name: "article2",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(430),
       options: {
         isHighlighted: true,
       },
@@ -100,10 +100,10 @@ export default {
     },
     {
       name: "articleEdito",
-      type: "articleNoImage",
+      type: "text",
       title: "Article Edito",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(578),
       options: {
         isHighlighted: true,
       },
@@ -120,20 +120,20 @@ export default {
     },
     {
       name: "article3p1",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 3 para 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(590),
       options: {
         isHighlighted: true,
       },
     },
     {
       name: "article3p2",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 3 para 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(590),
       options: {
         isHighlighted: true,
       },
@@ -160,10 +160,10 @@ export default {
     },
     {
       name: "article4",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 4",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(292),
       options: {
         isHighlighted: true,
       },
@@ -190,10 +190,10 @@ export default {
     },
     {
       name: "article5",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 5",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(540),
       options: {
         isHighlighted: true,
       },
@@ -220,10 +220,10 @@ export default {
     },
     {
       name: "article6",
-      type: "articleNoImage",
+      type: "text",
       title: "Article 6",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.required().max(400),
       options: {
         isHighlighted: true,
       },

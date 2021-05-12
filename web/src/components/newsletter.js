@@ -13,36 +13,41 @@ import jsPDF from "jspdf";
 import $ from "jquery";
 
 function getPDF() {
-  var doc = new jsPDF("p", "pt", "a4");
-  doc.html(document.querySelector("#capture"), {
-    callback: function (pdf) {
-      pdf.save("newsletter.pdf");
-    },
-  });
+  // var doc = new jsPDF({ orientation: 'p', format: 'a4'  });
+  // doc.html(document.getElementById('test'), {
+  //  callback: function (doc) {
+  //     doc.addPage('a4', 'p');
+  //     doc.html(document.getElementById('test'), {
+  //        callback: function (doc) {
+  //           doc.output('dataurlnewwindow');
+  //         }
+  //       }
+  //   }
+  // }
 }
 
 const Newsletter = (props) => {
   const {
     titleArt1,
     imgArt1,
-    _rawArticle1,
+    article1,
     titleArt2,
-    _rawArticle2,
+    article2,
     iconEdito,
     titleEdito,
-    _rawArticleEdito,
+    articleEdito,
     titleArt3,
-    _rawArticle3P1,
-    _rawArticle3P2,
+    article3P1,
+    article3P2,
     imgArt4,
     titleArt4,
-    _rawArticle4,
+    article4,
     imgArt5,
     titleArt5,
-    _rawArticle5,
+    article5,
     imgArt6,
     titleArt6,
-    _rawArticle6,
+    article6,
   } = props;
 
   return (
@@ -57,7 +62,7 @@ const Newsletter = (props) => {
               className={styles.picto}
             />
             <h1>{titleEdito}</h1>
-            <p>{<PortableText blocks={_rawArticleEdito} />}</p>
+            <p>{articleEdito.children.text}</p>
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
@@ -86,12 +91,12 @@ const Newsletter = (props) => {
             />
             <p className={styles.quote}>{imgArt1.caption}</p>
             <p className={styles.desc}>
-              {<PortableText blocks={_rawArticle1} />}
+              {article1.children.text}
             </p>
             <span className={styles.bar} />
             <h1> {titleArt2} </h1>
             <p className={styles.desc}>
-              {<PortableText blocks={_rawArticle2} />}
+              {article2.children.text}
             </p>
           </div>
         </div>
@@ -105,17 +110,17 @@ const Newsletter = (props) => {
               />
               <h1>{titleArt4}</h1>
               <div className={styles.bar} />
-              <p>{<PortableText blocks={_rawArticle4} />}</p>
+              <p>{article4.children.text}</p>
             </div>
             <div className={styles.sright}>
               <h1>{titleArt3}</h1>
               <span className={styles.bar} />
               <div className={styles.txtDesc}>
                 <div className={styles.txtLeft}>
-                  {<PortableText blocks={_rawArticle3P1} />}
+                  {article3P1.children.text}
                 </div>
                 <div className={styles.txtRight}>
-                  {<PortableText blocks={_rawArticle3P2} />}
+                  {article3P2.children.text}
                 </div>
               </div>
             </div>
@@ -128,13 +133,13 @@ const Newsletter = (props) => {
             />
             <div>
               <h1> {titleArt5} </h1>
-              <p>{<PortableText blocks={_rawArticle5} />}</p>
+              <p>{article5.children.text}</p>
             </div>
           </div>
           <div className={styles.thirdSection}>
             <div>
               <h1> {titleArt6} </h1>
-              <p>{<PortableText blocks={_rawArticle6} />}</p>
+              <p>{article6.children.text}</p>
             </div>
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
