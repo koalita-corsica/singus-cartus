@@ -222,8 +222,6 @@ export default {
       name: "article6",
       type: "articleNoImage",
       title: "Article 6",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },

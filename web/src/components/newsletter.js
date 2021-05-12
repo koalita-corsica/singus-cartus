@@ -61,18 +61,20 @@ const Newsletter = (props) => {
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
-                <img src={phone} alt="phone" width="20px" /> 04 95 23 18 92
+                <img src={phone} alt="phone" width="25px" />{" "}
+                <p> 4 95 23 18 92 </p>
               </span>
               <span>
-                <img src={email} alt="phone" width="20px" />
-                secretariat@evr-pro.com
+                <img src={email} alt="phone" width="25px" />
+                <p> secretariat@evr-pro.com </p>
               </span>
               <span>
-                <img src={globe} alt="phone" width="20px" /> www.evrpro.fr
+                <img src={globe} alt="phone" width="25px" />{" "}
+                <p> www.evrpro.fr </p>
               </span>
               <span>
-                <img src={location} alt="phone" width="20px" /> Lot Michel Ange,
-                20167 Afa
+                <img src={location} alt="phone" width="25px" />{" "}
+                <p> Lot Michel Ange, 20167 Afa </p>
               </span>
             </span>
           </div>
