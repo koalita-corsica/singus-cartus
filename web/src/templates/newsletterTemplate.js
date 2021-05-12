@@ -7,49 +7,49 @@ import SEO from "../components/seo";
 import Newsletter from "../components/newsletter";
 
 export const query = graphql`
-  query NewsletterTemplateQuery($id: String!){
-    newsletter: sanityNewsletter(id:{eq: $id}) {
-        titleArt1
-        imgArt1 {
+  query NewsletterTemplateQuery($id: String!) {
+    newsletter: sanityNewsletter(id: { eq: $id }) {
+      titleArt1
+      imgArt1 {
         asset {
-            url
+          url
         }
         caption
-        }
-        _rawArticle1
-        titleArt2
-        _rawArticle2
-        iconEdito {
+      }
+      _rawArticle1
+      titleArt2
+      _rawArticle2
+      iconEdito {
         asset {
-            url
+          url
         }
-        }
-        titleEdito
-        _rawArticleEdito
-        titleArt3
-        _rawArticle3P1
-        _rawArticle3P2
-        titleArt4
-        _rawArticle4
-        imgArt4 {
+      }
+      titleEdito
+      _rawArticleEdito
+      titleArt3
+      _rawArticle3P1
+      _rawArticle3P2
+      titleArt4
+      _rawArticle4
+      imgArt4 {
         asset {
-            url
+          url
         }
-        }
-        titleArt5
-        _rawArticle5
-        imgArt5 {
+      }
+      titleArt5
+      _rawArticle5
+      imgArt5 {
         asset {
-            url
+          url
         }
-        }
-        titleArt6
-        _rawArticle6
-        imgArt6 {
+      }
+      titleArt6
+      _rawArticle6
+      imgArt6 {
         asset {
-            url
+          url
         }
-        }
+      }
     }
   }
 `;

@@ -132,13 +132,11 @@ const Newsletter = (props) => {
             <p>{<PortableText blocks={_rawArticle5} />}</p>
           </div>
           <div className={styles.thirdSection}>
+            <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
             <div>
               <h1> {titleArt6} </h1>
               <p>{<PortableText blocks={_rawArticle6} />}</p>
             </div>
-          </div>
-          <div className={styles.imgFinal}>
-            <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
         </div>
       </div>
