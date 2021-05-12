@@ -13,7 +13,7 @@ import jsPDF from "jspdf";
 import $ from "jquery";
 
 function getPDF() {
-  var doc = new jsPDF("p", "pt", "a4");
+  var doc = new jsPDF("p", "pt", [780, 1127]);
   doc.html(document.querySelector("#capture"), {
     callback: function (pdf) {
       pdf.save("newsletter.pdf");
@@ -61,18 +61,20 @@ const Newsletter = (props) => {
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
-                <img src={phone} alt="phone" width="20px" /> 04 95 23 18 92
+                <img src={phone} alt="phone" width="30px" />
+                <p> 04 95 23 18 92 </p>
               </span>
               <span>
-                <img src={email} alt="phone" width="20px" />
-                secretariat@evr-pro.com
+                <img src={email} alt="phone" width="30px" />
+                <p> secretariat@evr-pro.com </p>
               </span>
               <span>
-                <img src={globe} alt="phone" width="20px" /> www.evrpro.fr
+                <img src={globe} alt="phone" width="30px" />{" "}
+                <p> www.evrpro.fr </p>
               </span>
               <span>
-                <img src={location} alt="phone" width="20px" /> Lot Michel Ange,
-                20167 Afa
+                <img src={location} alt="phone" width="30px" />{" "}
+                <p> Lot Michel Ange, 20167 Afa </p>
               </span>
             </span>
           </div>
@@ -120,12 +122,12 @@ const Newsletter = (props) => {
               </div>
             </div>
           </div>
+          <img
+            src={imgArt5.asset.url}
+            alt=""
+            className={styles.secondsecondimg}
+          />
           <div className={styles.secondSection}>
-            <img
-              src={imgArt5.asset.url}
-              alt=""
-              className={styles.secondsecondimg}
-            />
             <div>
               <h1> {titleArt5} </h1>
               <p>{<PortableText blocks={_rawArticle5} />}</p>
@@ -136,6 +138,8 @@ const Newsletter = (props) => {
               <h1> {titleArt6} </h1>
               <p>{<PortableText blocks={_rawArticle6} />}</p>
             </div>
+          </div>
+          <div className={styles.imgFinal}>
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>
         </div>
