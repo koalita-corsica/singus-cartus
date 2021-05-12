@@ -44,6 +44,11 @@ export default {
                 },
               ],
             },
+            {
+              name: 'color',
+              title: 'Color',
+              type: "color",    
+            },
           ],
         },
         of: [{ type: "authorReference" }],

@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
-
+span{
+    color: red;
+    display: inline !important;
+}
 /* FIRST PAGE */
 
 .container {
@@ -57,6 +60,7 @@
 }
 
 .contact span {
+    color: white;
     margin-left: 4%;
     display: block;
     line-height: 2.5;
