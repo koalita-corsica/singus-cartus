@@ -30,24 +30,24 @@ const Newsletter = (props) => {
   const {
     titleArt1,
     imgArt1,
-    article1,
+    _rawArticle1,
     titleArt2,
-    article2,
+    _rawArticle2,
     iconEdito,
     titleEdito,
-    articleEdito,
+    _rawArticleEdito,
     titleArt3,
-    article3P1,
-    article3P2,
+    _rawArticle3P1,
+    _rawArticle3P2,
     imgArt4,
     titleArt4,
-    article4,
+    _rawArticle4,
     imgArt5,
     titleArt5,
-    article5,
+    _rawArticle5,
     imgArt6,
     titleArt6,
-    article6,
+    _rawArticle6,
   } = props;
 
   return (
@@ -62,7 +62,7 @@ const Newsletter = (props) => {
               className={styles.picto}
             />
             <h1>{titleEdito}</h1>
-            <p>{articleEdito.children.text}</p>
+            <p>{<PortableText blocks={_rawArticleEdito} />}</p>
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
@@ -91,12 +91,12 @@ const Newsletter = (props) => {
             />
             <p className={styles.quote}>{imgArt1.caption}</p>
             <p className={styles.desc}>
-              {article1.children.text}
+              {<PortableText blocks={_rawArticle1} />}
             </p>
             <span className={styles.bar} />
             <h1> {titleArt2} </h1>
             <p className={styles.desc}>
-              {article2.children.text}
+              {<PortableText blocks={_rawArticle2} />}
             </p>
           </div>
         </div>
@@ -110,17 +110,17 @@ const Newsletter = (props) => {
               />
               <h1>{titleArt4}</h1>
               <div className={styles.bar} />
-              <p>{article4.children.text}</p>
+              <p>{<PortableText blocks={_rawArticle4} />}</p>
             </div>
             <div className={styles.sright}>
               <h1>{titleArt3}</h1>
               <span className={styles.bar} />
               <div className={styles.txtDesc}>
                 <div className={styles.txtLeft}>
-                  {article3P1.children.text}
+                  {<PortableText blocks={_rawArticle3P1} />}
                 </div>
                 <div className={styles.txtRight}>
-                  {article3P2.children.text}
+                  {<PortableText blocks={_rawArticle3P2} />}
                 </div>
               </div>
             </div>
@@ -133,13 +133,13 @@ const Newsletter = (props) => {
             />
             <div>
               <h1> {titleArt5} </h1>
-              <p>{article5.children.text}</p>
+              <p>{<PortableText blocks={_rawArticle5} />}</p>
             </div>
           </div>
           <div className={styles.thirdSection}>
             <div>
               <h1> {titleArt6} </h1>
-              <p>{article6.children.text}</p>
+              <p>{<PortableText blocks={_rawArticle6} />}</p>
             </div>
             <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
           </div>

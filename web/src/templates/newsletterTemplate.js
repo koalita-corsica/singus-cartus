@@ -9,47 +9,47 @@ import Newsletter from "../components/newsletter";
 export const query = graphql`
   query NewsletterTemplateQuery($id: String!){
     newsletter: sanityNewsletter(id:{eq: $id}) {
-      titleArt1
-      titleArt2
-      titleArt3
-      titleArt4
-      titleArt5
-      titleArt6
-      titleEdito
-      imgArt1 {
+        titleArt1
+        imgArt1 {
         asset {
-          url
+            url
         }
-      }
-      imgArt4 {
+        caption
+        }
+        _rawArticle1
+        titleArt2
+        _rawArticle2
+        iconEdito {
         asset {
-          url
+            url
         }
-      }
-      imgArt5 {
+        }
+        titleEdito
+        _rawArticleEdito
+        titleArt3
+        _rawArticle3P1
+        _rawArticle3P2
+        titleArt4
+        _rawArticle4
+        imgArt4 {
         asset {
-          url
+            url
         }
-      }
-      imgArt6 {
+        }
+        titleArt5
+        _rawArticle5
+        imgArt5 {
         asset {
-          url
+            url
         }
-      }
-      iconEdito {
+        }
+        titleArt6
+        _rawArticle6
+        imgArt6 {
         asset {
-          url
+            url
         }
-      }
-      _rawArticle1
-      _rawArticle2
-      _rawArticle3P1
-      _rawArticle3P2
-      _rawArticle4
-      _rawArticle5
-      _rawArticle6
-      _rawArticleEdito
-      _rawIconEdito
+        }
     }
   }
 `;
