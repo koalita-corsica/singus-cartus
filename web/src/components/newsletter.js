@@ -122,7 +122,7 @@ const Newsletter = (props) => {
               </div>
             </div>
           </div>
-          <div className={styles.article5}>
+          <div className={styles.trye}>
             <img
               src={imgArt5.asset.url}
               alt=""
@@ -141,10 +141,7 @@ const Newsletter = (props) => {
               </div>
             </div>
             <div>
-              <img src={imgArt6.asset.url} 
-              alt="" 
-              className={styles.lastimg} 
-              />
+              <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
             </div>
           </div>
         </div>
