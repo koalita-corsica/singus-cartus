@@ -20,12 +20,10 @@ export default {
       options: {
         source: "titleNewsLetter",
         maxLength: 96,
+        isHighlighted: true,
       },
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
-      options: {
-        isHighlighted: true,
-      },
     },
     {
       name: "titleArt1",
@@ -53,7 +51,28 @@ export default {
       type: "articleNoImage",
       title: "Article 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log("article1 " + result);
+          return result <= 777
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -73,7 +92,28 @@ export default {
       type: "articleNoImage",
       title: "Article 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 458
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -103,7 +143,28 @@ export default {
       type: "articleNoImage",
       title: "Article Edito",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 706
+            ? true
+            : {
+                message: "qwerty",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -123,7 +184,28 @@ export default {
       type: "articleNoImage",
       title: "Article 3 para 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 687
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -133,7 +215,28 @@ export default {
       type: "articleNoImage",
       title: "Article 3 para 2",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 687
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -163,7 +266,28 @@ export default {
       type: "articleNoImage",
       title: "Article 4",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 688
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -193,7 +317,28 @@ export default {
       type: "articleNoImage",
       title: "Article 5",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 531
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },
@@ -222,6 +367,29 @@ export default {
       name: "article6",
       type: "articleNoImage",
       title: "Article 6",
+      validation: (Rule) =>
+        Rule.custom((articleNoImage) => {
+          var result = 0;
+          const emptyBlocks = (articleNoImage || []).filter(
+            (articleNoImage) =>
+              articleNoImage._type === "block" &&
+              articleNoImage.children.every((span) =>
+                span._type === "span"
+                  ? (result += span.text.trim().length)
+                  : "none"
+              )
+          );
+          const emptyPaths = emptyBlocks.map(
+            (block, index) => [{ _key: block._key }] || [index]
+          );
+          console.log(result);
+          return result <= 418
+            ? true
+            : {
+                message: "Le texte va deborder",
+                paths: emptyPaths,
+              };
+        }),
       options: {
         isHighlighted: true,
       },

@@ -9,7 +9,7 @@ import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import first from "../assets/first.jpg";
 import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 import $ from "jquery";
 
 function getPDF() {

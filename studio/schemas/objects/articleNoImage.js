@@ -1,10 +1,8 @@
-import React from 'react'
-const redIcon = () => (
-  <span style={{fontWeight: 'bold'}}>Red</span>
-  )
-const colorRed = props => (
-  <span style={{ color: 'red' }}>{props.children}</span>
-)
+import React from "react";
+const redIcon = () => <span style={{ fontWeight: "bold" }}>Red</span>;
+const colorRed = (props) => (
+  <span style={{ color: "red" }}>{props.children}</span>
+);
 export default {
   name: "articleNoImage",
   type: "array",
@@ -37,12 +35,12 @@ export default {
           { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
           {
-            title: 'Highlight',
-            value: 'highlight',
+            title: "Highlight",
+            value: "highlight",
             blockEditor: {
               icon: redIcon,
-              render: colorRed
-            }
+              render: colorRed,
+            },
           },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
@@ -59,7 +57,6 @@ export default {
               },
             ],
           },
-          
         ],
       },
       of: [{ type: "authorReference" }],
