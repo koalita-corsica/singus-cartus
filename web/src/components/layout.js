@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./header";
-import jsPDF from "jspdf";
 
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
