@@ -7,10 +7,7 @@ import email from "../assets/email.png";
 import globe from "../assets/globe.png";
 import phone from "../assets/phone.png";
 import location from "../assets/location.png";
-import first from "../assets/first.jpg";
-import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
-import $ from "jquery";
 
 function getPDF() {
   var doc = new jsPDF("p", "pt", [780, 1127]);
