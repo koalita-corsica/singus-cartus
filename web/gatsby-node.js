@@ -1,11 +1,8 @@
-const { isFuture } = require("date-fns");
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-
-const { format } = require("date-fns");
 
 async function createNewsLetter(graphql, actions) {
   const { createPage } = actions;
@@ -40,4 +37,19 @@ async function createNewsLetter(graphql, actions) {
 
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
+};
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /jspdf/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
 };
