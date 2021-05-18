@@ -47,14 +47,16 @@ const Newsletter = (props) => {
       <div id="capture" className={styles.capture}>
         <div className={styles.container}>
           <div className={styles.fleft}>
-            <img src={logo} alt="logo" className={styles.logo} />
-            <img
-              src={iconEdito.asset.url}
-              alt="mascote"
-              className={styles.picto}
-            />
-            <h1>{titleEdito}</h1>
-            <p>{<PortableText blocks={_rawArticleEdito} />}</p>
+            <div className={styles.firstLeft}>
+              <img src={logo} alt="logo" className={styles.logo} />
+              <img
+                src={iconEdito.iconsGallery.asset.url}
+                alt="mascote"
+                className={styles.picto}
+              />
+              <h1>{titleEdito}</h1>
+              <p>{<PortableText blocks={_rawArticleEdito} />}</p>
+            </div>
             <span className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
@@ -76,22 +78,26 @@ const Newsletter = (props) => {
             </span>
           </div>
           <div className={styles.fright}>
-            <h1>{titleArt1}</h1>
-            <span className={styles.bar} />
-            <img
-              src={imgArt1.asset.url}
-              alt="first"
-              className={styles.firstimg}
-            />
-            <p className={styles.quote}>{imgArt1.caption}</p>
-            <p className={styles.desc}>
-              {<PortableText blocks={_rawArticle1} />}
-            </p>
-            <span className={styles.bar} />
-            <h1> {titleArt2} </h1>
-            <p className={styles.desc}>
-              {<PortableText blocks={_rawArticle2} />}
-            </p>
+            <div className={styles.firstFirst}>
+              <h1>{titleArt1}</h1>
+              <span className={styles.bar} />
+              <img
+                src={imgArt1.asset.url}
+                alt="first"
+                className={styles.firstimg}
+              />
+              <p className={styles.quote}>{imgArt1.caption}</p>
+              <p className={styles.desc1}>
+                {<PortableText blocks={_rawArticle1} />}
+              </p>
+            </div>
+            <span className={styles.bar1} />
+            <div className={styles.firstSecond}>
+              <h1> {titleArt2} </h1>
+              <p className={styles.desc2}>
+                {<PortableText blocks={_rawArticle2} />}
+              </p>
+            </div>
           </div>
         </div>
         <div className={styles.containerSecond}>
@@ -103,12 +109,12 @@ const Newsletter = (props) => {
                 className={styles.secondfirstimg}
               />
               <h1>{titleArt4}</h1>
-              <div className={styles.bar} />
+              <span className={styles.bar3} />
               <p>{<PortableText blocks={_rawArticle4} />}</p>
             </div>
             <div className={styles.sright}>
               <h1>{titleArt3}</h1>
-              <span className={styles.bar} />
+              <span className={styles.bar4} />
               <div className={styles.txtDesc}>
                 <div className={styles.txtLeft}>
                   {<PortableText blocks={_rawArticle3P1} />}

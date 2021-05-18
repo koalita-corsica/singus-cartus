@@ -20,8 +20,10 @@ export const query = graphql`
       titleArt2
       _rawArticle2
       iconEdito {
-        asset {
-          url
+        iconsGallery {
+          asset {
+            url
+          }
         }
       }
       titleEdito

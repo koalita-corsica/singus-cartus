@@ -22,8 +22,10 @@ export const query = graphql`
         node {
           titleNewsLetter
           iconEdito {
-            asset {
-              url
+            iconsGallery {
+              asset {
+                url
+              }
             }
           }
           slug {
@@ -60,7 +62,7 @@ const IndexPage = (props) => {
               }
             >
               <div className={styles.show}>
-                <img src={newsletter.node.iconEdito.asset.url} alt="" />
+                {/* <img src={newsletter.node.iconEdito.asset.url} alt="" /> */}
                 <h3> {newsletter.node.titleNewsLetter} </h3>
               </div>
             </Link>

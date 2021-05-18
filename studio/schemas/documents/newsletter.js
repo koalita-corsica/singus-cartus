@@ -6,7 +6,7 @@ export default {
     {
       name: "titleNewsLetter",
       type: "string",
-      title: "Title news letter",
+      title: "Title Newsletter",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
       options: {
@@ -120,13 +120,14 @@ export default {
     },
     {
       name: "iconEdito",
-      type: "iconImage",
+      type: "reference",
       title: "iconEdito",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
+      to: [{ type: "icon" }],
     },
     {
       name: "titleEdito",
@@ -243,7 +244,7 @@ export default {
     },
     {
       name: "imgArt4",
-      type: "iconImage",
+      type: "mainImage",
       title: "Image art 4",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
@@ -294,7 +295,7 @@ export default {
     },
     {
       name: "imgArt5",
-      type: "iconImage",
+      type: "mainImage",
       title: "Image art 5",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
@@ -345,7 +346,7 @@ export default {
     },
     {
       name: "imgArt6",
-      type: "iconImage",
+      type: "mainImage",
       title: "Image art 6",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),

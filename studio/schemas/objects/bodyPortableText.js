@@ -31,22 +31,7 @@ export default {
           { title: "Emphasis", value: "em" },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
-        annotations: [
-          {
-            name: "link",
-            type: "object",
-            title: "URL",
-            fields: [
-              {
-                title: "URL",
-                name: "href",
-                type: "url",
-              },
-            ],
-          },
-        ],
       },
-      of: [{ type: "authorReference" }],
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array

@@ -12,8 +12,7 @@ export default {
                 "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
               sites: [
                 {
-                  buildHookId:
-                    "6094fe5f8b62f40ca6859d30",
+                  buildHookId: "6094fe5f8b62f40ca6859d30",
                   title: "Sanity Studio",
                   name: "evrpro-nl-studio",
                   apiId: "85e94fc2-104e-481a-8d8e-99a5163263c3",
@@ -31,8 +30,7 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value:
-              "https://github.com/koalita-corsica/evrpro-nl",
+            value: "https://github.com/koalita-corsica/evrpro-nl",
             category: "Code",
           },
           {
@@ -47,9 +45,8 @@ export default {
     {
       name: "document-list",
       options: {
-        title: "Recent blog posts",
-        order: "_createdAt desc",
-        types: ["post"],
+        title: "Newsletter",
+        types: ["newsletter"],
       },
       layout: { width: "medium" },
     },

@@ -10,7 +10,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
 
   const metaDescription = description || site.description || "";
   const siteTitle = site.title || "";
-  const siteAuthor = site.author?.name || "";
   const metaImage = image?.asset
     ? imageUrlFor(buildImageObj(image)).width(1200).url()
     : "";
@@ -44,10 +43,6 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         {
           name: "twitter:card",
           content: "summary",
-        },
-        {
-          name: "twitter:creator",
-          content: siteAuthor,
         },
         {
           name: "twitter:title",
@@ -93,9 +88,6 @@ const detailsQuery = graphql`
       title
       description
       keywords
-      author {
-        name
-      }
     }
   }
 `;
