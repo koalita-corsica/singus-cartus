@@ -46,18 +46,18 @@ const Newsletter = (props) => {
     <React.Fragment>
       <div id="capture" className={styles.capture}>
         <div className={styles.container}>
-          <div className={styles.fleft}>
-            <div className={styles.firstLeft}>
-              <img src={logo} alt="logo" className={styles.logo} />
-              <img
-                src={iconEdito.iconsGallery.asset.url}
-                alt="mascote"
-                className={styles.picto}
-              />
-              <h1>{titleEdito}</h1>
-              <p>{<PortableText blocks={_rawArticleEdito} />}</p>
+          <div className={styles.firstLeft}>
+            <div className={styles.logo}>
+              <img src={logo} alt="" />
             </div>
-            <span className={styles.contact}>
+            <div className={styles.icon}>
+              <img src={iconEdito.iconsGallery.asset.url} alt="" />
+            </div>
+            <div className={styles.article1}>
+              <h1> {titleEdito} </h1>
+              <PortableText blocks={_rawArticleEdito} />
+            </div>
+            <div className={styles.contact}>
               <h1> CONTACTEZ-NOUS </h1>
               <span>
                 <img src={phone} alt="phone" width="25px" />{" "}
@@ -75,76 +75,60 @@ const Newsletter = (props) => {
                 <img src={location} alt="phone" width="25px" />{" "}
                 <p> Lot Michel Ange, 20167 Afa </p>
               </span>
-            </span>
-          </div>
-          <div className={styles.fright}>
-            <div className={styles.firstFirst}>
-              <h1>{titleArt1}</h1>
-              <span className={styles.bar} />
-              <img
-                src={imgArt1.asset.url}
-                alt="first"
-                className={styles.firstimg}
-              />
-              <p className={styles.quote}>{imgArt1.caption}</p>
-              <p className={styles.desc1}>
-                {<PortableText blocks={_rawArticle1} />}
-              </p>
             </div>
-            <span className={styles.bar1} />
-            <div className={styles.firstSecond}>
-              <h1> {titleArt2} </h1>
-              <p className={styles.desc2}>
-                {<PortableText blocks={_rawArticle2} />}
-              </p>
+          </div>
+          <div className={styles.article2}>
+            <h1> {titleArt1} </h1>
+            <span className={styles.bar} />
+            <p className={styles.quote}>{imgArt1.caption}</p>
+            <img src={imgArt1.asset.url} alt="" />
+            <div className={styles.desc1}>
+              <PortableText blocks={_rawArticle1} />
+            </div>
+          </div>
+          <span className={styles.bar2} />
+          <div className={styles.article3}>
+            <h1> {titleArt2} </h1>
+            <div className={styles.desc2}>
+              <PortableText blocks={_rawArticle2} />
             </div>
           </div>
         </div>
         <div className={styles.containerSecond}>
-          <div className={styles.myGrid}>
-            <div className={styles.sleft}>
-              <img
-                src={imgArt4.asset.url}
-                alt="second"
-                className={styles.secondfirstimg}
-              />
-              <h1>{titleArt4}</h1>
-              <span className={styles.bar3} />
-              <p>{<PortableText blocks={_rawArticle4} />}</p>
+          <div className={styles.secondLeft}>
+            <img src={imgArt4.asset.url} alt="" />
+            <h1> {titleArt4} </h1>
+            <span className={styles.bar3} />
+            <div className={styles.desc4}>
+              <PortableText blocks={_rawArticle4} />
             </div>
-            <div className={styles.sright}>
-              <h1>{titleArt3}</h1>
-              <span className={styles.bar4} />
-              <div className={styles.txtDesc}>
-                <div className={styles.txtLeft}>
-                  {<PortableText blocks={_rawArticle3P1} />}
-                </div>
-                <div className={styles.txtRight}>
-                  {<PortableText blocks={_rawArticle3P2} />}
-                </div>
+          </div>
+          <div className={styles.article4}>
+            <h1> {titleArt3} </h1>
+            <span className={styles.bar4} />
+            <div className={styles.artic4desc}>
+              <div className={styles.txtLeft}>
+                {" "}
+                <PortableText blocks={_rawArticle3P1} />{" "}
+              </div>
+              <div className={styles.txtRight}>
+                {" "}
+                <PortableText blocks={_rawArticle3P2} />{" "}
               </div>
             </div>
           </div>
-          <div className={styles.trye}>
-            <img
-              src={imgArt5.asset.url}
-              alt=""
-              className={styles.secondsecondimg}
-            />
-            <div className={styles.secondSection}>
+          <div className={styles.secondSection}>
+            <img src={imgArt5.asset.url} alt="" />
+            <div className={styles.cont5}>
               <h1> {titleArt5} </h1>
-              <p>{<PortableText blocks={_rawArticle5} />}</p>
+              <PortableText blocks={_rawArticle5} />
             </div>
           </div>
-          <div className={styles.article6}>
-            <div className={styles.thirdSection}>
-              <div>
-                <h1> {titleArt6} </h1>
-                <p>{<PortableText blocks={_rawArticle6} />}</p>
-              </div>
-            </div>
-            <div>
-              <img src={imgArt6.asset.url} alt="" className={styles.lastimg} />
+          <div className={styles.thirdSection}>
+            <img src={imgArt6.asset.url} alt="" />
+            <div className={styles.cont6}>
+              <h1> {titleArt6} </h1>
+              <PortableText blocks={_rawArticle6} />
             </div>
           </div>
         </div>

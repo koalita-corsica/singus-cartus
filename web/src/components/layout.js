@@ -13,13 +13,6 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
       showNav={showNav}
     />
     <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Koalità was here!
-        </div>
-      </div>
-    </footer>
   </>
 );
 
