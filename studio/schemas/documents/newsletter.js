@@ -66,7 +66,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log("article1 " + result);
-          return result <= 777
+          return result <= 752
             ? true
             : {
                 message: "Le texte va deborder",
@@ -107,7 +107,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 458
+          return result <= 411
             ? true
             : {
                 message: "Le texte va deborder",
@@ -159,7 +159,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 706
+          return result <= 612
             ? true
             : {
                 message: "qwerty",
@@ -200,7 +200,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 687
+          return result <= 581
             ? true
             : {
                 message: "Le texte va deborder",
@@ -231,7 +231,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 687
+          return result <= 576
             ? true
             : {
                 message: "Le texte va deborder",
@@ -281,8 +281,7 @@ export default {
           const emptyPaths = emptyBlocks.map(
             (block, index) => [{ _key: block._key }] || [index]
           );
-          console.log(result);
-          return result <= 688
+          return result <= 282
             ? true
             : {
                 message: "Le texte va deborder",
@@ -333,7 +332,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 531
+          return result <= 530
             ? true
             : {
                 message: "Le texte va deborder",
@@ -384,7 +383,7 @@ export default {
             (block, index) => [{ _key: block._key }] || [index]
           );
           console.log(result);
-          return result <= 418
+          return result <= 413
             ? true
             : {
                 message: "Le texte va deborder",
