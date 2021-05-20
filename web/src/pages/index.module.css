@@ -11,8 +11,9 @@
     width: 40%;
 }
 
-a {
-    text-decoration: none;
+* a {
+    text-decoration: none !important;
+    color: black;
 }
 
 .show img{
