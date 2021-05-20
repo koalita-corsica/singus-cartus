@@ -13,6 +13,8 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { Link } from "gatsby";
 
+import { BsFillPlusSquareFill } from "react-icons/bs";
+
 import * as styles from "../pages/index.module.css";
 
 export const query = graphql`
@@ -62,11 +64,16 @@ const IndexPage = (props) => {
               }
             >
               <div className={styles.show}>
-                {/* <img src={newsletter.node.iconEdito.asset.url} alt="" /> */}
                 <h3> {newsletter.node.titleNewsLetter} </h3>
               </div>
             </Link>
           ))}
+          <div className={styles.plus}>
+            <Link to="https://evrpro-nl-studio.netlify.app/">
+              <BsFillPlusSquareFill />
+              <p> Add Newsletter </p>
+            </Link>
+          </div>
         </div>
       </Container>
     </Layout>
