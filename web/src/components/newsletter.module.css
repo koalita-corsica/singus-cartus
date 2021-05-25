@@ -331,6 +331,15 @@ span{
 /* END SECOND PAGE */
 
 .button {
-    position: absolute;
-    top: 62cm;
+    position: relative;
+    top: 0.2cm;
+    font-size: 20px;
+    border: 2px solid black;
+    margin-left: 24vw;
+}
+
+.button1 {
+    font-size: 20px;
+    border: 2px solid black;
+    margin-left: 65vw;
 }

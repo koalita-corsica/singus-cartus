@@ -9,6 +9,9 @@ import Newsletter from "../components/newsletter";
 export const query = graphql`
   query NewsletterTemplateQuery($id: String!) {
     newsletter: sanityNewsletter(id: { eq: $id }) {
+      slug {
+        current
+      }
       titleArt1
       imgArt1 {
         asset {

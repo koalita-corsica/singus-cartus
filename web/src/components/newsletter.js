@@ -9,17 +9,9 @@ import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import { jsPDF } from "jspdf";
 
-function getPDF() {
-  var doc = new jsPDF("p", "pt", [780, 1127]);
-  doc.html(document.querySelector("#capture"), {
-    callback: function (pdf) {
-      pdf.save("newsletter.pdf");
-    },
-  });
-}
-
 const Newsletter = (props) => {
   const {
+    slug,
     titleArt1,
     imgArt1,
     _rawArticle1,
@@ -42,8 +34,25 @@ const Newsletter = (props) => {
     _rawArticle6,
   } = props;
 
+  function getPDF() {
+    var doc = new jsPDF("p", "pt", [780, 1127]);
+    doc.html(document.querySelector("#capture"), {
+      callback: function (pdf) {
+        pdf.save("newsletter" + `${slug.current.toString()}` + ".pdf");
+      },
+    });
+    alert("Le download va commencer!");
+  }
+
+  console.log(slug.current.toString());
   return (
     <React.Fragment>
+      <input
+        type="button"
+        value="SAVE TO PDF"
+        onClick={getPDF}
+        className={styles.button1}
+      />
       <div id="capture" className={styles.capture}>
         <div className={styles.container}>
           <div className={styles.firstLeft}>
