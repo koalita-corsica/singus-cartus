@@ -7,8 +7,6 @@ export default {
       name: "titleNewsLetter",
       type: "string",
       title: "Title Newsletter",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -22,15 +20,12 @@ export default {
         maxLength: 96,
         isHighlighted: true,
       },
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
     },
     {
       name: "titleArt1",
       type: "string",
       title: "Title article 1",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -40,8 +35,7 @@ export default {
       name: "imgArt1",
       type: "mainImage",
       title: "Image article  1",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -81,8 +75,7 @@ export default {
       name: "titleArt2",
       type: "string",
       title: "Title article 2",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -122,8 +115,7 @@ export default {
       name: "iconEdito",
       type: "reference",
       title: "iconEdito",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -133,8 +125,7 @@ export default {
       name: "titleEdito",
       type: "string",
       title: "Title edito",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -174,8 +165,7 @@ export default {
       name: "titleArt3",
       type: "string",
       title: "Titre article 3",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -246,8 +236,6 @@ export default {
       name: "imgArt4",
       type: "mainImage",
       title: "Image art 4",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -256,8 +244,7 @@ export default {
       name: "titleArt4",
       type: "string",
       title: "Title article 4",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -296,8 +283,7 @@ export default {
       name: "imgArt5",
       type: "mainImage",
       title: "Image art 5",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -306,8 +292,7 @@ export default {
       name: "titleArt5",
       type: "string",
       title: "Title article 5",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -347,8 +332,7 @@ export default {
       name: "imgArt6",
       type: "mainImage",
       title: "Image art 6",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
@@ -357,8 +341,7 @@ export default {
       name: "titleArt6",
       type: "string",
       title: "Title article 6",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+
       options: {
         isHighlighted: true,
       },
