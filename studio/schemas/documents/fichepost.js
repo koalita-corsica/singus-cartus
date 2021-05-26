@@ -16,6 +16,16 @@ export default {
       title: "Fiche de poste",
     },
     {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "fichedeposte",
+        maxLength: 96,
+        isHighlighted: true,
+      },
+    },
+    {
       name: "entreprise",
       type: "reference",
       title: "Entreprise",
@@ -68,14 +78,15 @@ export default {
     },
     {
       name: "tache",
-      type: "tache",
+      type: "array",
       title: "Tâche exposant l’opérateur  à un risque :",
+      of: [{ type: "lestaches" }],
     },
     {
       name: "risques",
-      type: "reference",
+      type: "array",
       title: "Risques/dangers :",
-      to: [{ type: "pictos" }],
+      of: [{ type: "reference", to: [{ type: "pictos" }] }],
     },
     {
       name: "mesures",

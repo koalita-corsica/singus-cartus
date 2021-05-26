@@ -9,8 +9,8 @@ export default {
       title: "Title",
     },
     {
-      name: "Picto",
-      type: "string",
+      name: "picto",
+      type: "image",
       title: "Picto Image",
     },
   ],

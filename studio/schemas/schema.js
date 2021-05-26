@@ -20,8 +20,8 @@ import icon from "./documents/icon";
 import fichepost from "./documents/fichepost";
 import entreprise from "./documents/entreprise";
 import epis from "./documents/epis";
-import tache from "./objects/tache";
 import pictos from "./documents/pictos";
+import tache from "./objects/tache";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -43,8 +43,8 @@ export default createSchema({
     fichepost,
     entreprise,
     epis,
-    tache,
     pictos,
+    tache,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

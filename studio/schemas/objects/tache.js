@@ -1,17 +1,22 @@
 export default {
-  name: "tache",
-  type: "array",
+  name: "lestaches",
+  type: "object",
   title: "Tache",
-  of: [
+  fields: [
     {
-      name: "quand",
+      name: "quandname",
       type: "string",
       title: "Quand?",
     },
     {
-      name: "tache",
+      name: "qtachename",
       type: "string",
       title: "Quelle tâche?",
+    },
+    {
+      name: "qui",
+      type: "string",
+      title: "Qui?",
     },
   ],
 };
