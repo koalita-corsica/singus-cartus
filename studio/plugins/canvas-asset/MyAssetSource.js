@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-string-refs */
+/* eslint-disable no-unused-vars */
 import React, { Component, useRef, useState } from "react";
 import Dialog from "part:@sanity/components/dialogs/fullscreen";
 
@@ -36,76 +36,45 @@ export default class CanvasCreator extends Component {
       },
     ]);
   };
-
-  getPosition(event) {
-    var rect = this.refs.canvas.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-
-    this.drawCoordinates(x, y);
-  }
-
-  drawCoordinates(x, y) {
-    var pointSize = 6;
-    var ctx = this.refs.canvas.getContext("2d");
-
-    ctx.fillStyle = "#ff2626"; // Red color
-
-    ctx.beginPath();
-    ctx.arc(0, 0, pointSize, 0, Math.PI * 2, true);
-    ctx.fill();
-  }
-
-  handleClose = () => {
-    this.props.onClose();
-  };
-
-  getMousePos(canvas, evt) {
-    var rect = this.refs.canvas.getBoundingClientRect();
-    return {
-      x:
-        ((evt.clientX - rect.left) / (rect.right - rect.left)) *
-        this.refs.canvas.width,
-      y:
-        ((evt.clientY - rect.top) / (rect.bottom - rect.top)) *
-        this.refs.canvas.height,
-    };
-  }
-
   componentDidMount() {
-    this.updateCanvas();
-    var clicks = this.refs.canvas.onclick;
-    this.refs.canvas.addEventListener("click", (e) => {
-      var pointSize = 15;
-      var ctx = this.refs.canvas.getContext("2d");
-      var pos = this.getMousePos(this.refs.canvas, e);
+    updateCanvas();
+    let points = [];
+    let canvas = document.getElementById("mycanvas");
+    var ctx = canvas.getContext("2d");
+    var clicks = canvas.onclick;
+    var mouse = { x: 0, y: 0 };
+    var previous = { x: 0, y: 0 };
+    var pointSize = 15;
+
+    canvas.addEventListener("click", function (e) {
+      previous = { x: mouse.x, y: mouse.y };
+      mouse = oMousePos(canvas, e);
+      points.push({ x: mouse.x, y: mouse.y });
 
       ctx.fillStyle = "#ff2626"; // Red color
 
       ctx.beginPath();
-      ctx.arc(pos.x, pos.y, pointSize, 0, Math.PI * 2, true);
+      ctx.arc(mouse.x, mouse.y, pointSize, 0, Math.PI * 2, true);
       ctx.fill();
 
       ctx.font = "10pt Calibri";
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
-      ctx.fillText(++clicks, pos.x, pos.y + 3);
+      ctx.fillText(++clicks, mouse.x, mouse.y + 3);
     });
-  }
 
-  updateCanvas() {
-    const canvas = this.refs.canvas;
-    const ctx = this.refs.canvas.getContext("2d");
-    let fileInput = document.getElementById("myImg");
-    fileInput.addEventListener("change", function (ev) {
-      if (ev.target.files) {
-        let file = ev.target.files[0];
+    document.getElementById("undo").addEventListener("click", Undo);
 
-        var reader = new FileReader();
+    function Undo() {
+      points.splice(-1, 1);
+      var clicks2 = clicks--;
+      // delete everything
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let file = document.getElementById("myImg").files[0];
 
-        reader.readAsDataURL(file);
-      }
+      var reader = new FileReader();
 
+      reader.readAsDataURL(file);
       reader.onloadend = function (e) {
         var image = new Image();
         image.src = e.target.result;
@@ -115,25 +84,111 @@ export default class CanvasCreator extends Component {
           ctx.drawImage(image, 0, 0);
         };
       };
-    });
+
+      function pintar() {
+        points.forEach((item, i) => {
+          ctx.fillStyle = "#ff2626"; // Red color
+          ctx.beginPath();
+          ctx.arc(item.x, item.y, pointSize, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.font = "10pt Calibri";
+          ctx.fillStyle = "white";
+          ctx.textAlign = "center";
+          ctx.fillText(i + 1, item.x, item.y + 3);
+        });
+      }
+
+      setTimeout(pintar, 100);
+    }
+
+    // a function to detect the mouse position
+    function oMousePos(canvas, evt) {
+      var ClientRect = canvas.getBoundingClientRect();
+      return {
+        x: Math.round(evt.clientX - ClientRect.left),
+        y: Math.round(evt.clientY - ClientRect.top),
+      };
+    }
+
+    function updateCanvas() {
+      const canvas = document.getElementById("mycanvas");
+      const ctx = canvas.getContext("2d");
+      let fileInput = document.getElementById("myImg");
+      fileInput.addEventListener("change", function (ev) {
+        if (ev.target.files) {
+          let file = ev.target.files[0];
+
+          var reader = new FileReader();
+
+          reader.readAsDataURL(file);
+        }
+
+        reader.onloadend = function (e) {
+          var image = new Image();
+          image.src = e.target.result;
+          image.onload = function (ev) {
+            canvas.width = image.width;
+            canvas.height = image.height;
+            ctx.drawImage(image, 0, 0);
+          };
+        };
+      });
+    }
+
+    function clearAll() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let file = document.getElementById("myImg").files[0];
+
+      var reader = new FileReader();
+
+      reader.readAsDataURL(file);
+      reader.onloadend = function (e) {
+        var image = new Image();
+        image.src = e.target.result;
+        image.onload = function (ev) {
+          canvas.width = image.width;
+          canvas.height = image.height;
+          ctx.drawImage(image, 0, 0);
+        };
+      };
+
+      clicks = 0;
+      points = [];
+    }
+
+    document.getElementById("clear").addEventListener("click", clearAll);
+
+    function removeAll() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      clicks = 0;
+      points = [];
+
+      document.getElementById("myImg").value = "";
+    }
+
+    document.getElementById("remove").addEventListener("click", removeAll);
   }
+
+  handleClose = () => {
+    this.props.onClose();
+  };
 
   render() {
     return (
       <Dialog title="Canvas" onClose={this.handleClose} isOpen>
         <input type="file" id="myImg" />
-        <canvas ref="canvas"> </canvas>
-        <button onClick={this.handleSelect}> Sauvegarder </button>
-        <button
-          onClick={() =>
-            this.refs.canvas
-              .getContext("2d")
-              .clearRect(0, 0, this.refs.canvas.width, this.refs.canvas.height)
-          }
-        >
-          {" "}
-          Éliminer{" "}
-        </button>
+        <div>
+          <canvas ref="canvas" id="mycanvas"></canvas>
+        </div>
+        <div>
+          <button onClick={this.handleSelect}> Sauveguarder </button>
+          <button id="undo"> Annuler </button>
+          <div>
+            <button id="clear"> Tout Effacer </button>
+            <button id="remove"> Supprimer </button>
+          </div>
+        </div>
       </Dialog>
     );
   }

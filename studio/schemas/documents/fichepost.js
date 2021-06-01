@@ -1,9 +1,11 @@
 import canvas from "part:sanity-plugin-canvas-asset/image-asset-source";
+import { GrDocumentUser } from "react-icons/gr";
 
 export default {
   name: "fiches",
   title: "Fiche de Poste",
   type: "document",
+  icon: GrDocumentUser,
   fields: [
     {
       name: "version",
@@ -80,18 +82,18 @@ export default {
       name: "tache",
       type: "array",
       title: "Tâche exposant l’opérateur  à un risque :",
-      of: [{ type: "lestaches" }],
+      of: [{ type: "taches" }],
     },
     {
-      name: "risques",
+      name: "qualifications",
       type: "array",
-      title: "Risques/dangers :",
-      of: [{ type: "reference", to: [{ type: "pictos" }] }],
+      title: "Qualifications et Autorisation:",
+      of: [{ type: "string" }],
     },
     {
-      name: "mesures",
+      name: "formation",
       type: "array",
-      title: "Mesures de prévention/opérations ou procédures à respecter :",
+      title: "Formation obligatoire:",
       of: [{ type: "string" }],
     },
   ],

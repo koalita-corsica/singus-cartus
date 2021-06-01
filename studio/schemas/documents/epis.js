@@ -1,7 +1,10 @@
+import { RiErrorWarningLine } from "react-icons/ri";
+
 export default {
   name: "epis",
   type: "document",
   title: "EPIs",
+  icon: RiErrorWarningLine,
   fields: [
     {
       name: "title",

@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
 import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
-import IframePreview from "../previews/IframePreview";
+import IframePreviewNews from "../previews/IframePreviewNews";
+import IframePreviewFiche from "../previews/IframePreviewFiches";
 
 // Web preview configuration
 const remoteURL = "https://evrpro-nl.netlify.app";
@@ -22,7 +24,15 @@ export const getDefaultDocumentNode = (props) => {
     return S.document().views([
       S.view.form(),
       S.view
-        .component(IframePreview)
+        .component(IframePreviewNews)
+        .title("Web preview")
+        .options({ previewURL }),
+    ]);
+  } else if (schemaType == "fiches") {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(IframePreviewFiche)
         .title("Web preview")
         .options({ previewURL }),
     ]);

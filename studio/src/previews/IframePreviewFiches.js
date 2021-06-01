@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-multi-comp, react/no-did-mount-set-state */
 import React from "react";
 import PropTypes from "prop-types";
@@ -17,7 +18,7 @@ const assemblePostUrl = ({ displayed, options }) => {
     return "";
   }
   const path = `/${slug.current}/`;
-  return `${previewURL}/newsletter${path}`;
+  return `${previewURL}/fichesdeposte${path}`;
 };
 
 const IframePreview = (props) => {

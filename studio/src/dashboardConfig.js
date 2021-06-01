@@ -7,7 +7,15 @@ export default {
         title: "Newsletter",
         types: ["newsletter"],
       },
-      layout: { width: "large" },
+      layout: { width: "medium" },
+    },
+    {
+      name: "document-list",
+      options: {
+        title: "Fiches de Poste",
+        types: ["fiches"],
+      },
+      layout: { width: "medium" },
     },
   ],
 };

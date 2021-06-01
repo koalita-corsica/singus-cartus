@@ -35,18 +35,16 @@ async function createNewsLetter(graphql, actions) {
   });
 }
 
-async function createFichePoste(graphql, actions) {
+async function createFiche(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
     {
       allSanityFiches {
-        edges {
-          node {
-            id
-            slug {
-              current
-            }
+        nodes {
+          slug {
+            current
           }
+          id
         }
       }
     }
@@ -54,15 +52,15 @@ async function createFichePoste(graphql, actions) {
 
   if (result.errors) throw result.errors;
 
-  const ficheNodes = (result.data.allSanityFiches || {}).nodes || [];
+  const newsletterNodes = (result.data.allSanityFiches || {}).nodes || [];
 
-  ficheNodes.forEach((node) => {
+  newsletterNodes.forEach((node) => {
     const { id, slug = {} } = node;
     if (!slug) return;
     const path = `/fichesdeposte/${slug.current}`;
     createPage({
       path,
-      component: require.resolve("./src/templates/ficheTemplate.js"),
+      component: require.resolve("./src/templates/fichesTemplate.js"),
       context: { id },
     });
   });
@@ -70,7 +68,7 @@ async function createFichePoste(graphql, actions) {
 
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
-  await createFichePoste(graphql, actions);
+  await createFiche(graphql, actions);
 };
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {

@@ -1,7 +1,10 @@
+import { BiCopyright } from "react-icons/bi";
+
 export default {
   name: "entreprise",
   type: "document",
   title: "Entreprise",
+  icon: BiCopyright,
   fields: [
     {
       name: "name",

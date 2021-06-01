@@ -1,22 +1,33 @@
 export default {
-  name: "lestaches",
+  name: "taches",
   type: "object",
-  title: "Tache",
+  title: "Taches",
   fields: [
     {
-      name: "quandname",
+      name: "quand",
       type: "string",
       title: "Quand?",
     },
     {
-      name: "qtachename",
+      name: "quelle",
       type: "string",
-      title: "Quelle tâche?",
+      title: "Quelle tache?",
     },
     {
       name: "qui",
       type: "string",
-      title: "Qui?",
+      title: "Par qui?",
+    },
+    {
+      name: "risques",
+      type: "array",
+      title: "Risques/dangers :",
+      of: [{ type: "reference", to: [{ type: "pictos" }] }],
+    },
+    {
+      name: "mesures",
+      type: "string",
+      title: "Mesures de prévention/opérations ou procédures à respecter :",
     },
   ],
 };

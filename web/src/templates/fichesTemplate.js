@@ -8,7 +8,7 @@ import Fiche from "../components/fiche";
 
 export const query = graphql`
   query FicheTemplateQuery($id: String!) {
-    fiche: sanityFiches(id: { eq: $id }) {
+    newsletter: sanityFiches(id: { eq: $id }) {
       slug {
         current
       }
@@ -18,6 +18,8 @@ export const query = graphql`
         name
       }
       machine
+      qualifications
+      formation
       marque
       caract
       miseenservice
@@ -36,25 +38,26 @@ export const query = graphql`
         }
       }
       tache {
-        qtachename
-        quandname
+        _key
+        quand
+        quelle
         qui
-      }
-      risques {
-        picto {
-          asset {
-            url
+        mesures
+        risques {
+          picto {
+            asset {
+              url
+            }
           }
         }
       }
-      mesures
     }
   }
 `;
 
 const FicheTemplate = (props) => {
   const { data, errors } = props;
-  const fiche = data && data.fiche;
+  const news = data && data.newsletter;
   return (
     <Layout>
       {errors && <SEO title="GraphQL Error" />}
@@ -65,7 +68,7 @@ const FicheTemplate = (props) => {
         </Container>
       )}
 
-      {fiche && <Fiche {...fiche} />}
+      {news && <Fiche {...news} />}
     </Layout>
   );
 };
