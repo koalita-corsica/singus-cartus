@@ -182,7 +182,7 @@ export default class CanvasCreator extends Component {
           <canvas ref="canvas" id="mycanvas"></canvas>
         </div>
         <div>
-          <button onClick={this.handleSelect}> Sauveguarder </button>
+          <button onClick={this.handleSelect}> Sauvegarder </button>
           <button id="undo"> Annuler </button>
           <div>
             <button id="clear"> Tout Effacer </button>

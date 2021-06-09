@@ -2,13 +2,57 @@ export default {
   name: "newsletter",
   type: "document",
   title: "Newsletter",
+  initialValue: () => ({
+    imgArt1: {
+      _type: "mainImage",
+      asset: {
+        _type: "reference",
+        _ref: "image-a1c47763707c577d2b42ab004ad11504012ef820-1200x630-jpg",
+      },
+    },
+    imgArt4: {
+      _type: "mainImage",
+      asset: {
+        _type: "reference",
+        _ref: "image-a1c47763707c577d2b42ab004ad11504012ef820-1200x630-jpg",
+      },
+    },
+    imgArt5: {
+      _type: "mainImage",
+      asset: {
+        _type: "reference",
+        _ref: "image-a1c47763707c577d2b42ab004ad11504012ef820-1200x630-jpg",
+      },
+    },
+    imgArt6: {
+      _type: "mainImage",
+      asset: {
+        _type: "reference",
+        _ref: "image-a1c47763707c577d2b42ab004ad11504012ef820-1200x630-jpg",
+      },
+    },
+    iconEdito: {
+      _type: "reference",
+      _ref: "86c88711-f71a-4b6b-b62f-d2bac12b8659",
+    },
+    titleNewsLetter: "Title Newsletter",
+    titleArt1: "Title #1",
+    titleArt2: "Title #2",
+    titleArt3: "Title #3",
+    titleArt4: "Title #4",
+    titleArt5: "Title #5",
+    titleArt6: "Title #6",
+  }),
   fields: [
     {
       name: "titleNewsLetter",
       type: "string",
       title: "Title Newsletter",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -22,15 +66,16 @@ export default {
         maxLength: 96,
         isHighlighted: true,
       },
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
     },
     {
       name: "titleArt1",
       type: "string",
       title: "Title article 1",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -40,8 +85,6 @@ export default {
       name: "imgArt1",
       type: "mainImage",
       title: "Image article  1",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -52,6 +95,7 @@ export default {
       title: "Article 1",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
+          console.log(articleNoImage);
           var result = 0;
           const emptyBlocks = (articleNoImage || []).filter(
             (articleNoImage) =>
@@ -81,8 +125,6 @@ export default {
       name: "titleArt2",
       type: "string",
       title: "Title article 2",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -122,8 +164,6 @@ export default {
       name: "iconEdito",
       type: "reference",
       title: "iconEdito",
-      validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
       options: {
         isHighlighted: true,
       },
@@ -134,7 +174,10 @@ export default {
       type: "string",
       title: "Title edito",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -175,7 +218,10 @@ export default {
       type: "string",
       title: "Titre article 3",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -257,7 +303,10 @@ export default {
       type: "string",
       title: "Title article 4",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -307,7 +356,10 @@ export default {
       type: "string",
       title: "Title article 5",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },
@@ -358,7 +410,10 @@ export default {
       type: "string",
       title: "Title article 6",
       validation: (Rule) =>
-        Rule.error("You have to fill out the alternative text.").required(),
+        Rule.custom((string) => {
+          string = " ";
+          return string.length > 0 ? true : false;
+        }),
       options: {
         isHighlighted: true,
       },

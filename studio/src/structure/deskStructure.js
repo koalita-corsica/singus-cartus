@@ -25,7 +25,7 @@ export const getDefaultDocumentNode = (props) => {
       S.view.form(),
       S.view
         .component(IframePreviewNews)
-        .title("Web preview")
+        .title("Aperçu Web")
         .options({ previewURL }),
     ]);
   } else if (schemaType == "fiches") {
@@ -33,7 +33,7 @@ export const getDefaultDocumentNode = (props) => {
       S.view.form(),
       S.view
         .component(IframePreviewFiche)
-        .title("Web preview")
+        .title("Aperçu Web")
         .options({ previewURL }),
     ]);
   }
@@ -51,7 +51,7 @@ export const getDefaultDocumentNode = (props) => {
 
 export default () =>
   S.list()
-    .title("Content")
+    .title("Contenu")
     .items([
       S.listItem()
         .title("Settings")
