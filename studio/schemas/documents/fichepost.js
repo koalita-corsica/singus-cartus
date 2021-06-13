@@ -62,10 +62,6 @@ export default {
       name: "ogImage",
       title: "Image",
       type: "image",
-      validation: (Rule) =>
-        Rule.custom((image) => {
-          console.log(image);
-        }),
       options: {
         sources: [canvas],
       },

@@ -1,161 +1,161 @@
 .container {
-    border: 2px solid black;
-    height: 29.7cm;
-    width: 21cm;
-    position: relative;
+  border: 2px solid black;
+  height: 29.7cm;
+  width: 21cm;
+  position: relative;
 }
 
 .first {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
 }
 
 .first p {
-    align-items: center;
-    text-align: center;
-    width: 30%;
+  align-items: center;
+  text-align: center;
+  width: 30%;
 }
 
 .txt {
-    display: flex;
-    flex-direction: column;
-    line-height: 0;
-    margin-left: 1%;
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+  margin-left: 1%;
 }
 
 .container span {
-    display: block !important;
-    color: black;
-    align-items: center;
+  display: block !important;
+  color: black;
+  align-items: center;
 }
 
 .second {
-    width: 30%;
-    margin-left: 1%;
-    border-right: 1px solid black;
+  width: 30%;
+  margin-left: 1%;
+  border-right: 1px solid black;
 }
 
 .produits {
-    width: 30%;
-    margin-left: 1%;
-    border-right: 1px solid black;
+  width: 30%;
+  margin-left: 1%;
+  border-right: 1px solid black;
 }
 
 .machine {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 65%;
 }
 
 .machine img {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .containerDeux {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 28%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 28%;
 }
 
 .epi {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .third {
-    display:grid;
-    grid-template-columns:55% 15% 30%;
-    grid-template-rows: 45px;
-    border-bottom: 1px solid black;
-    height: 38%;
+  display: grid;
+  grid-template-columns: 55% 15% 30%;
+  grid-template-rows: 45px;
+  border-bottom: 1px solid black;
+  height: 38%;
 }
 
 .tache {
-    line-height: 1;
-    font-size: 11px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    display: grid;
-    grid-template-rows: 35px 35px;
+  line-height: 1;
+  font-size: 11px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  display: grid;
+  grid-template-rows: 35px 35px;
 }
 
 .tache span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .tache p {
-    margin-left: 5%;
+  margin-left: 5%;
 }
 
 .tache h5 {
-    text-align: center;
+  text-align: center;
 }
 
 .picto h5 {
-    margin-left: -40px;
-    grid-column: 2;
+  margin-left: -40px;
+  grid-column: 2;
 }
 
 .mesures h5 {
-    text-align: center;
+  text-align: center;
 }
 
 .picto {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    font-size: 11px;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 11px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: 100%;
 }
 
 .mesures {
-    font-size: 11px;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    width: 100%;
+  font-size: 11px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  width: 100%;
 }
 
-.mesures p{
-    margin-left: 5%;
+.mesures p {
+  margin-left: 5%;
 }
 
 .fourth {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid black;
-    line-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid black;
+  line-height: 0;
 }
 
 .fourth p {
-    margin-left: 15%;
+  margin-left: 15%;
 }
 
 .fifth {
-    display: flex;
-    flex-direction: row;
-    margin-left: 2%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 2%;
 }
 
 .fifthcontent {
-    margin-left: 5%;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
 }
 
-.fifthcontent img{
-    margin-top: 2.5%;
-    padding: 7px;
+.fifthcontent img {
+  margin-top: 2.5%;
+  padding: 7px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

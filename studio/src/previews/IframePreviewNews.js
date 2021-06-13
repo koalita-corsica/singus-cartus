@@ -18,7 +18,7 @@ const assemblePostUrl = ({ displayed, options }) => {
     return "";
   }
   const path = `/${slug.current}/`;
-  return `${previewURL}/newsletter${path}`;
+  return `https://evrpronl.gatsbyjs.io/newsletter${path}`;
 };
 
 const IframePreview = (props) => {
