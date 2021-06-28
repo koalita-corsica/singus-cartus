@@ -45,9 +45,9 @@ const IframePreview = (props) => {
 
   return (
     <div className={styles.componentWrapper}>
-      <div className={styles.iframeContainer}>
-        <iframe src={url} frameBorder={"0"} />
-      </div>
+      <object data={url} width="793.70" height="1122.51" type="text/html">
+        Alternative Content
+      </object>
     </div>
   );
 };
