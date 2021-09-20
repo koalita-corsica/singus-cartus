@@ -37,6 +37,13 @@ export const query = graphql`
           }
         }
       }
+      interdiction {
+        image {
+          asset {
+            url
+          }
+        }
+      }
       tache {
         _key
         quand

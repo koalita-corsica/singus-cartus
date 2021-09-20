@@ -75,7 +75,13 @@ export default {
     {
       name: "epi",
       type: "array",
-      title: "EPI obligatoires  ou interdits :",
+      title: "EPI obligatoires :",
+      of: [{ type: "reference", to: [{ type: "epis" }] }],
+    },
+    {
+      name: "interdiction",
+      type: "array",
+      title: "EPI Interdits :",
       of: [{ type: "reference", to: [{ type: "epis" }] }],
     },
     {

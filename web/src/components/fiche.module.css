@@ -3,159 +3,171 @@
   height: 29.7cm;
   width: 21cm;
   position: relative;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .first {
+  width: 100%;
+  height: 127px;
+  background: #161314 0% 0% no-repeat padding-box;
+  color: white;
+}
+
+.fwrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  border-bottom: 1px solid black;
+  justify-content: center;
+  height: 55px;
+  padding-top: 1rem;
+}
+
+.fwrapper img{
+  object-fit: fill;
+}
+
+.ftxt{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .first p {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
   align-items: center;
   text-align: center;
   width: 30%;
+  letter-spacing: 0px;
+}
+
+.fiche {
+  font-size: 14px;
+}
+
+.first span {
+  display: block !important;
+  color: white;
 }
 
 .txt {
+  color: white;
   display: flex;
   flex-direction: column;
   line-height: 0;
   margin-left: 1%;
-}
-
-.container span {
-  display: block !important;
-  color: black;
-  align-items: center;
-}
-
-.second {
-  width: 30%;
-  margin-left: 1%;
-  border-right: 1px solid black;
-}
-
-.produits {
-  width: 30%;
-  margin-left: 1%;
-  border-right: 1px solid black;
-}
-
-.machine {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 65%;
-}
-
-.machine img {
-  margin-top: 5%;
 }
 
 .containerDeux {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 28%;
+  height: 319px;
+  background: #E5E5E5 0% 0% no-repeat padding-box;
 }
 
-.epi {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+.containerDeux img {
+  position: absolute;
+  left: 20rem;
+  top: 11rem;
+  width: 330px;
+  height: 250px;
 }
 
-.third {
-  display: grid;
-  grid-template-columns: 55% 15% 30%;
-  grid-template-rows: 45px;
-  border-bottom: 1px solid black;
-  height: 38%;
-}
-
-.tache {
-  line-height: 1;
-  font-size: 11px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  display: grid;
-  grid-template-rows: 35px 35px;
-}
-
-.tache span {
-  font-weight: bold;
-}
-
-.tache p {
-  margin-left: 5%;
-}
-
-.tache h5 {
-  text-align: center;
-}
-
-.picto h5 {
-  margin-left: -40px;
-  grid-column: 2;
-}
-
-.mesures h5 {
-  text-align: center;
-}
-
-.picto {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  font-size: 11px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  width: 100%;
-}
-
-.mesures {
-  font-size: 11px;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  width: 100%;
-}
-
-.mesures p {
-  margin-left: 5%;
-}
-
-.fourth {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid black;
-  line-height: 0;
-}
-
-.fourth p {
-  margin-left: 15%;
-}
-
-.fifth {
-  display: flex;
-  flex-direction: row;
-  margin-left: 2%;
-}
-
-.fifthcontent {
-  margin-left: 5%;
-  display: flex;
-  flex-direction: row;
+.second {
+  margin-top: 20rem;
   width: 80%;
+  height: 280px;
+  background-color: #AF0013;
+  border-radius: 5px;
+  padding-top: 1rem;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 3px 2px 18px #04040573;
 }
 
-.fifthcontent img {
-  margin-top: 2.5%;
-  padding: 7px;
+.specs {
+  color: white;
+  width: 10vw;
+  margin-right: 2.5rem;
+  font-weight: bold;
+  font-size: 10px;
+  margin-top: 1rem;
 }
 
-.form {
+.specs span {
+display: block !important;
+font-weight: normal;
+color: white;
+font-size: 9px;
+}
+
+.bar {
+  width: 2px;
+  height: 6rem;
+  background-color: white;
+  margin-right: 2rem;
+}
+
+.machine {
+  display: flex;
+  flex-direction: row;
+  margin-top: 9rem;
+  margin-left: 3rem;
+  width: 20vw;
+  height: 10vh;
+}
+
+.machine .txt {
+  text-align: left;
+  font-size: 9px;
+  margin-top: 1rem;
+}
+
+.machine .txt1 {
+  color: white;
+  text-align: left;
+  font-size: 9px;
+  margin-left: 2rem;
+}
+
+.containerTrois {
+  display: flex !important;
+  flex-direction: row !important;
+  margin-top: 11rem;
+  margin-left: 3.5rem;
+}
+
+.epi{
+  width: 20vw;
+}
+
+.epi h2 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #161615
+}
+
+.inter{
+  width: 20vw;
+}
+
+.inter h2 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #161615
+}
+
+.containerQuatre {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 21cm;
 }

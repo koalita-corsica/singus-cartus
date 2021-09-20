@@ -11,6 +11,7 @@ import { jsPDF } from "jspdf";
 
 const Newsletter = (props) => {
   const {
+    titleNewsLetter,
     slug,
     titleArt1,
     imgArt1,
@@ -87,6 +88,7 @@ const Newsletter = (props) => {
             </div>
           </div>
           <div className={styles.article2}>
+            <h2> {titleNewsLetter} </h2>
             <h1> {titleArt1} </h1>
             <span className={styles.bar} />
             <p className={styles.quote}>{imgArt1.caption}</p>
