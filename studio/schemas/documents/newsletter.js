@@ -92,7 +92,7 @@ export default {
     {
       name: "article1",
       type: "articleNoImage",
-      title: "Article 1",
+      title: "Article 1:  Max-caractères = 752",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           console.log(articleNoImage);
@@ -132,7 +132,7 @@ export default {
     {
       name: "article2",
       type: "articleNoImage",
-      title: "Article 2",
+      title: "Article 2: Max-caractères = 411",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -163,7 +163,7 @@ export default {
     {
       name: "iconEdito",
       type: "reference",
-      title: "iconEdito",
+      title: "Mascottes :",
       options: {
         isHighlighted: true,
       },
@@ -185,7 +185,7 @@ export default {
     {
       name: "articleEdito",
       type: "articleNoImage",
-      title: "Article Edito",
+      title: "Article Edito: Max-caractères = 612",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -229,7 +229,7 @@ export default {
     {
       name: "article3p1",
       type: "articleNoImage",
-      title: "Article 3 para 1",
+      title: "Article 3 para 1: Max-caractères = 581",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -260,7 +260,7 @@ export default {
     {
       name: "article3p2",
       type: "articleNoImage",
-      title: "Article 3 para 2",
+      title: "Article 3 para 2: Max-caractères = 576",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -314,7 +314,7 @@ export default {
     {
       name: "article4",
       type: "articleNoImage",
-      title: "Article 4",
+      title: "Article 4: Max-caractères = 282",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -367,7 +367,7 @@ export default {
     {
       name: "article5",
       type: "articleNoImage",
-      title: "Article 5",
+      title: "Article 5: Max-caractères = 530",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;
@@ -421,7 +421,7 @@ export default {
     {
       name: "article6",
       type: "articleNoImage",
-      title: "Article 6",
+      title: "Article 6: Max-caractères = 413",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           var result = 0;

@@ -92,7 +92,9 @@ const Newsletter = (props) => {
             <h1> {titleArt1} </h1>
             <span className={styles.bar} />
             <p className={styles.quote}>{imgArt1.caption}</p>
-            <img src={imgArt1.asset.url} alt="" />
+            <div data-imag>
+              <img src={imgArt1.asset.url} alt="" />
+            </div>
             <div className={styles.desc1}>
               <PortableText blocks={_rawArticle1} />
             </div>
@@ -107,7 +109,9 @@ const Newsletter = (props) => {
         </div>
         <div className={styles.containerSecond}>
           <div className={styles.secondLeft}>
-            <img src={imgArt4.asset.url} alt="" />
+            <div data-imag4>
+              <img src={imgArt4.asset.url} alt="" />
+            </div>
             <h1> {titleArt4} </h1>
             <span className={styles.bar3} />
             <div className={styles.desc4}>
@@ -129,14 +133,18 @@ const Newsletter = (props) => {
             </div>
           </div>
           <div className={styles.secondSection}>
-            <img src={imgArt5.asset.url} alt="" />
+            <div data-imag5>
+              <img src={imgArt5.asset.url} alt="" />
+            </div>
             <div className={styles.cont5}>
               <h1> {titleArt5} </h1>
               <PortableText blocks={_rawArticle5} />
             </div>
           </div>
           <div className={styles.thirdSection}>
-            <img src={imgArt6.asset.url} alt="" />
+            <div data-imag6>
+              <img src={imgArt6.asset.url} alt="" />
+            </div>
             <div className={styles.cont6}>
               <h1> {titleArt6} </h1>
               <PortableText blocks={_rawArticle6} />

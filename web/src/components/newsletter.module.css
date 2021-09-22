@@ -25,21 +25,28 @@ p {
 
 .logo img {
   width: 7.3411cm;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .logo {
   position: absolute;
   top: 1cm;
+  width: 60%;
 }
 
 .icon img {
   width: 60%;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .icon {
   position: absolute;
-  top: 3.5cm;
-  left: 1.5cm;
+  top: 4.5cm;
+  left: 1cm;
+  text-align: center;
+  width: 60%;
 }
 
 .article1 {
@@ -75,6 +82,8 @@ p {
   font-family: "Montserrat", sans-serif;
   font-size: 10pt;
 }
+
+
 
 .contact {
   top: 5cm;
@@ -139,11 +148,14 @@ p {
   top: 2.3cm;
 }
 
-.article2 img {
-  width: 85%;
+
+[data-imag] {
   height: 6cm;
+  width: 85%;
   position: absolute;
   top: 3.5cm;
+  object-fit: fill;
+  text-align: center;
 }
 
 .quote {
@@ -213,9 +225,17 @@ p {
   left: 0.5cm;
 }
 
-.secondLeft img {
+
+
+[data-imag4] {
   width: 6.133cm;
   height: 4.4cm;
+}
+[data-imag4] img {
+  width: 6.133cm;
+  height: 4.4cm;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .secondLeft h1 {
@@ -286,9 +306,15 @@ p {
   height: 7.0333cm;
 }
 
-.secondSection img {
+[data-imag5] {
   height: 7.0333cm;
   width: 6.7333cm;
+}
+[data-imag5] img {
+  height: 7.0333cm;
+  width: 6.7333cm;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .cont5 {
@@ -326,9 +352,15 @@ p {
   height: 7.0333cm;
 }
 
-.thirdSection img {
+[data-imag6] {
   height: 7.89cm;
   width: 6.7539cm;
+}
+[data-imag6] img {
+  height: 7.89cm;
+  width: 6.7539cm;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .cont6 {

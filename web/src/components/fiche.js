@@ -56,80 +56,65 @@ const Fiche = (props) => {
       />
       <div id="capture">
         <div className={styles.container}>
-          <div className={styles.first}>
-            <div className={styles.fwrapper}>
-              <img src={logo} alt="" />
+          <div data-header>
+            <img src={logo} alt="Logo EvRPro" height="50"/>
+            <div data-headerCont>
+              <h6> Version n° / date <span> {version} </span> </h6>
+              <h4> Fiche de Sécurité Au Poste </h4>
+              <h6> Entreprise <span> {entreprise.name} </span> </h6>
             </div>
-            <div className={styles.ftxt}>
-                <p>
-                  Version nº/date: <span> {version} </span>
-                </p>
-                <p className={styles.fiche}>
-                  Fiche de Poste: <span> {fichedeposte} </span>
-                </p>
-                <p>
-                  Entreprise: <span> {entreprise.name} </span>
-                </p>
-              </div>
           </div>
-          <div className={styles.containerDeux}>
-          <img src={ogImage.asset.url} alt=""  />
-            <div className={styles.second}>
-            <div className={styles.specs}>
-                <p> Machine: <span> {machine} </span> </p>
-                <p> Marque/Type: <span> {marque} </span> </p>
-                <p>
-                  Caractéristiques principales de la machine:{" "}
-                  <span> {caract} </span>
-                </p>
-                <p>
-                  Date de mise en service : <span> {miseenservice} </span>
-                </p>
-                <p>
-                  Produits ou matériaux à utiliser: <span> {produits} </span>
-                </p>
-              </div>
-                <div className={styles.machine}>
-                  <div className={styles.bar} />
-                  <div className={styles.txt}>
-                    {legend4.map((item) => (
-                      <p> {item} </p>
-                    ))}
-                  </div>
-                  <div className={styles.txt}>
-                    {legend8 && legend8.length != 0 ?
-                      legend8.map((item) => (
-                      <p className={styles.txt1} > {item} </p>
-                    )) : ''}
-                  </div>
-                  <div className={styles.txt}>
-                    {legend12 && legend12.length != 0 ?
-                      legend12.map((item) => (
-                      <p className={styles.txt1} > {item} </p>
-                    )) : ''}
-                  </div>
-                </div>
-              </div>
+          <div data-gray> </div>
+          <div data-machine>
+          </div>
+          <div data-icons>
+            <div data-obli>
+            <h3> EPI obligatoires </h3>
+              {epi.map((item) =>
+                <img src={item.image.asset.url} alt="" width="55" height="55"/>
+              )}
             </div>
-            <div className={styles.containerTrois}>
-              <div className={styles.epi}>
-                <h2> EPI Obligatoires </h2>
-                {epi.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="50" height="50"/>
-                )}
-              </div>
-              <div className={styles.inter}>
-                <h2> Interdictions </h2>
-                {interdiction.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="50" height="50"/>
-                )}
-              </div>
+            <div data-inter>
+            <h3> Interdictions </h3>
+              {interdiction.map((item) =>
+                <img src={item.image.asset.url} alt="" width="55" height="55"/>
+              )}
             </div>
-            <div className={styles.containerQuatre}>
-            
+          </div>
+          <div data-table>
+            <div data-headerTab>
+              <div data-1> <h5> Tâche exposant l’opérateur à un risque </h5> </div>
+              <div data-2> <h5> Risques - Dangers </h5> </div>
+              <div data-3> <h5> Mesures de prévention - Opérations ou procédures à respecter </h5> </div>
             </div>
+            <div data-tableContent>
+              {tache2.map((item) =>
+                <ul>
+                  <li>
+                  <div data-tache>
+                    <h5> Quand ? </h5>
+                    <p> {item.quand} </p>
+                    <h5> Quelle tâche ? </h5>
+                    <p> {item.quelle} </p>
+                    <h5> Par qui ? </h5>
+                    <p> {item.qui} </p>
+                  </div>
+                  <div data-risque>
+                    {item.risques.map((imag) =>
+                      <img src={imag.picto.asset.url} alt="" width="47" height="44"/>
+                    )}
+                  </div>
+                  <div data-mesures>
+                    {item.mesures}
+                  </div>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
+          <div data-footer />
+          </div>
         </div>
-      </div>
       <input
         type="button"
         value="SAVE TO PDF"
