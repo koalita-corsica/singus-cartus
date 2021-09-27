@@ -66,6 +66,29 @@ const Fiche = (props) => {
           </div>
           <div data-gray> </div>
           <div data-machine>
+          <div data-specs>
+              <p> Machine: <span> {machine} </span> </p>
+              <p> Marque/Type: <span> {marque} </span> </p>
+              <p>
+                Caractéristiques principales:
+                <span> {caract} </span>
+              </p>
+              <p>
+                Date de mise en service : <span> {miseenservice} </span>
+              </p>
+              <p>
+                Produits ou matériaux à utiliser: <span> {produits} </span>
+              </p>
+            </div>
+            <div data-bar/>
+              <div data-rsec>
+                <img src={ogImage.asset.url} alt="" width="196" height="130"/>
+                <div data-legend>
+                {legend.map((item) =>
+                  <p> {item} </p>
+                )}
+                </div>
+            </div>
           </div>
           <div data-icons>
             <div data-obli>
@@ -81,36 +104,39 @@ const Fiche = (props) => {
               )}
             </div>
           </div>
-          <div data-table>
-            <div data-headerTab>
-              <div data-1> <h5> Tâche exposant l’opérateur à un risque </h5> </div>
-              <div data-2> <h5> Risques - Dangers </h5> </div>
-              <div data-3> <h5> Mesures de prévention - Opérations ou procédures à respecter </h5> </div>
+          <div data-grid>
+            <div class={styles.empty1}> </div>
+            <div class={styles.headerg}>
+              <p>Tâche exposant <br />l’opérateur à un risque</p>
             </div>
-            <div data-tableContent>
-              {tache2.map((item) =>
+            <div class={styles.headerm}>
+              <p>Risques - Dangers</p>
+            </div>
+            <div class={styles.headerd}>
+              <p>Mesures de prévention - Opérations ou procédures à respecter</p>
+            </div>
+            <div class={styles.empty2}></div>
+            {tache2.map((item) =>
+            <>
+            <div class={styles.empty} data-odd="data-odd"></div>
+              <div data-g="data-g" data-odd="data-odd">
                 <ul>
-                  <li>
-                  <div data-tache>
-                    <h5> Quand ? </h5>
-                    <p> {item.quand} </p>
-                    <h5> Quelle tâche ? </h5>
-                    <p> {item.quelle} </p>
-                    <h5> Par qui ? </h5>
-                    <p> {item.qui} </p>
-                  </div>
-                  <div data-risque>
-                    {item.risques.map((imag) =>
-                      <img src={imag.picto.asset.url} alt="" width="47" height="44"/>
-                    )}
-                  </div>
-                  <div data-mesures>
-                    {item.mesures}
-                  </div>
-                  </li>
+                  {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                  {item.quelle && (<li> <span>Quelle tache?</span><br/> {item.quelle} </li> )}
+                  {item.qui && (<li> <span> Par qui? </span><br/>{item.qui} </li> )}
                 </ul>
-              )}
-            </div>
+              </div>
+                <div data-m="data-m" data-odd="data-odd">
+                {item.risques.map((imag) =>
+                  <img src={imag.picto.asset.url} alt=""/>
+                )}
+                </div>
+                <div data-d="data-d" data-odd="data-odd">
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                </div>
+                <div class={styles.empty} data-odd="data-odd"></div>
+            </>
+            )}
           </div>
           <div data-footer />
           </div>

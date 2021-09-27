@@ -22,6 +22,12 @@ import entreprise from "./documents/entreprise";
 import epis from "./documents/epis";
 import pictos from "./documents/pictos";
 import tache from "./objects/tache";
+import livret from "./documents/livret.js";
+import couverture from './objects/couverture.js'
+import renseignement from './objects/renseignement.js'
+import regles from './objects/regles.js'
+import equipement from './objects/equipement.js'
+import incendie from './objects/incendie.js';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -45,6 +51,12 @@ export default createSchema({
     epis,
     pictos,
     tache,
+    livret,
+    couverture,
+    renseignement,
+    regles,
+    equipement,
+    incendie,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

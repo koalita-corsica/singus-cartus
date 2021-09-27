@@ -16,5 +16,10 @@ export default {
       type: "image",
       title: "Image",
     },
+    {
+      name: 'description',
+      type: 'bodyPortableText',
+      title: 'Description: '
+    }
   ],
 };

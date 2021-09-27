@@ -12,6 +12,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { Link } from "gatsby";
+import Livret from '../components/livret.js';
 
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
@@ -54,27 +55,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       <Container>
-        <div className={styles.container}>
-          {newsInfo.map((newsletter) => (
-            <Link
-              to={
-                newsletter.node.slug.current
-                  ? "/newsletter/" + `${newsletter.node.slug.current}`
-                  : ""
-              }
-            >
-              <div className={styles.show}>
-                <h3> {newsletter.node.titleNewsLetter} </h3>
-              </div>
-            </Link>
-          ))}
-          <div className={styles.plus}>
-            <Link to="https://evrpro-nl-studio.netlify.app/">
-              <BsFillPlusSquareFill />
-              <p> Add Newsletter </p>
-            </Link>
-          </div>
-        </div>
+        <Livret />
       </Container>
     </Layout>
   );
