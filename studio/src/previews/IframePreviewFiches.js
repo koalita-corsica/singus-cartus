@@ -18,7 +18,7 @@ const assemblePostUrl = ({ displayed, options }) => {
     return "";
   }
   const path = `/${slug.current}/`;
-  return `http://localhost:8000/fichesdeposte${path}`;
+  return `https://evrpronl.gatsbyjs.io//fichesdeposte${path}`;
 };
 
 const IframePreview = (props) => {
