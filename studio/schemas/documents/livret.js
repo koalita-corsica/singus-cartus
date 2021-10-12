@@ -9,6 +9,16 @@ export default {
       title: 'Title'
     },
     {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "fichedeposte",
+        maxLength: 96,
+        isHighlighted: true,
+      },
+    },
+    {
       name: 'livret',
       type: 'array',
       title: 'Créér le Livret',

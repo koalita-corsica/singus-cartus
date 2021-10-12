@@ -7,6 +7,7 @@ import fire from "../assets/fire.jpg";
 import secours from "../assets/secours.png";
 import { jsPDF } from "jspdf";
 import logo from "../assets/logo.png";
+import { GiDiploma } from 'react-icons/gi';
 
 const Fiche = (props) => {
   const {
@@ -138,7 +139,8 @@ const Fiche = (props) => {
             </>
             )}
           </div>
-          <div data-footer />
+          <div data-footer2>
+          </div>
           </div>
         </div>
       <input

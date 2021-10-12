@@ -237,3 +237,20 @@
     height: 56px;
     background: #161314 0% 0% no-repeat padding-box;
   }
+
+  [data-footer2] {
+    width: 100%;
+    margin-top: 9.4rem;
+    height: 109px;
+    background: #161314 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: center;
+    
+
+  }
+
+[data-sep] {
+  width: 1px;
+  height: 45px;
+  background: white;
+}

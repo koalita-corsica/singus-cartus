@@ -66,9 +66,41 @@ async function createFiche(graphql, actions) {
   });
 }
 
+async function createLivret(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityLivrets {
+        nodes {
+          id
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const newsletterNodes = (result.data.allSanityLivrets || {}).nodes || [];
+
+  newsletterNodes.forEach((node) => {
+    const { id, slug = {} } = node;
+    if (!slug) return;
+    const path = `/livret/${slug.current}`;
+    createPage({
+      path,
+      component: require.resolve("./src/templates/livretTemplate.js"),
+      context: { id },
+    });
+  });
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
   await createFiche(graphql, actions);
+  await createLivret(graphql, actions);
 };
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
