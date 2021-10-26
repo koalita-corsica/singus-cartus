@@ -158,6 +158,10 @@ p {
   text-align: center;
 }
 
+[data-imag] img {
+    max-height: 100%;
+}
+
 .quote {
   position: absolute;
   top: 9.5cm;
@@ -375,10 +379,10 @@ p {
 }
 
 .cont6 p {
-  font-size: 11pt;
+  font-size: 10pt;
   font-family: "Montserrat", sans-serif;
   width: 60%;
-  line-height: 1.3;
+  margin: 0;
 }
 
 .cont6 ul {
