@@ -3,11 +3,15 @@
 import * as styles from "./fiche.module.css";
 import React from "react";
 
-import fire from "../assets/fire.jpg";
+import fire from "../assets/fire.png";
 import secours from "../assets/secours.png";
 import { jsPDF } from "jspdf";
 import logo from "../assets/logo.png";
+import qualifi from "../assets/qualifications.png";
+import forma from "../assets/formations.png";
 import { GiDiploma } from 'react-icons/gi';
+import html2canvas from "html2canvas";
+import $ from "jquery";
 
 const Fiche = (props) => {
   const {
@@ -20,6 +24,7 @@ const Fiche = (props) => {
     caract,
     miseenservice,
     produits,
+    type,
     ogImage,
     legend,
     epi,
@@ -34,8 +39,8 @@ const Fiche = (props) => {
   var legend12 = legend.slice(8, 12)
 
   var tache2 = tache.slice(0,2);
+  var tacheO = tache.slice(2,9);
 
-  console.log(tache2)
 
   function getPDF() {
     var doc = new jsPDF("p", "pt", [780, 1127]);
@@ -66,6 +71,7 @@ const Fiche = (props) => {
             </div>
           </div>
           <div data-gray> </div>
+          {type && type == "horizontal" ?
           <div data-machine>
           <div data-specs>
               <p> Machine: <span> {machine} </span> </p>
@@ -91,6 +97,33 @@ const Fiche = (props) => {
                 </div>
             </div>
           </div>
+          :
+          <div data-machinev>
+          <div data-specsv>
+              <p> Machine: <span> {machine} </span> </p>
+              <p> Marque/Type: <span> {marque} </span> </p>
+              <p>
+                Caractéristiques principales:
+                <span> {caract} </span>
+              </p>
+              <p>
+                Date de mise en service : <span> {miseenservice} </span>
+              </p>
+              <p>
+                Produits ou matériaux à utiliser: <span> {produits} </span>
+              </p>
+            </div>
+            <div data-barv/>
+              <div data-rsecv>
+              <div data-legendv>
+              {legend.map((item) =>
+                <p> {item} </p>
+              )}
+              </div>
+                <img src={ogImage.asset.url} alt="" height="211px"/>
+            </div>
+          </div>
+          }
           <div data-icons>
             <div data-obli>
             <h3> EPI obligatoires </h3>
@@ -139,16 +172,126 @@ const Fiche = (props) => {
             </>
             )}
           </div>
-          <div data-footer2>
+          {tache && tache.length != 2 ?
+            <>
+          <div data-footer/>
+          <div data-page2 id="page2">
+            <div data-header>
+              <img src={logo} alt="Logo EvRPro" height="50"/>
+              <div data-headerCont>
+                <h6> Version n° / date <span> {version} </span> </h6>
+                <h4> Fiche de Sécurité Au Poste </h4>
+                <h6> Entreprise <span> {entreprise.name} </span> </h6>
+              </div>
+            </div>
+            <div data-grid1>
+              <div class={styles.empty1}> </div>
+              <div class={styles.headerg}>
+                <p>Tâche exposant <br />l’opérateur à un risque</p>
+              </div>
+              <div class={styles.headerm}>
+                <p>Risques - Dangers</p>
+              </div>
+              <div class={styles.headerd}>
+                <p>Mesures de prévention - Opérations ou procédures à respecter</p>
+              </div>
+              <div class={styles.empty2}></div>
+              {tache2.map((item) =>
+              <>
+              <div class={styles.empty} data-odd="data-odd"></div>
+                <div data-g="data-g" data-odd="data-odd">
+                  <ul>
+                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                    {item.quelle && (<li> <span>Quelle tache?</span><br/> {item.quelle} </li> )}
+                    {item.qui && (<li> <span> Par qui? </span><br/>{item.qui} </li> )}
+                  </ul>
+                </div>
+                  <div data-m="data-m" data-odd="data-odd">
+                  {item.risques.map((imag) =>
+                    <img src={imag.picto.asset.url} alt=""/>
+                  )}
+                  </div>
+                  <div data-d="data-d" data-odd="data-odd">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                  </div>
+                  <div class={styles.empty} data-odd="data-odd"></div>
+              </>
+              )}
+            </div>
+            <div data-footer2>
+              <div data-fflex>
+              <div data-qualif>
+                <img src={qualifi} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
+                <div data-qualit>
+                  <h3> Qualification et autorisation </h3>
+                  <p> {qualifications} </p>
+                </div>
+              </div>
+              <div data-formatf>
+                <img src={forma} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
+                <div data-formatt>
+                  <h3> Formations </h3>
+                  <p> {formation} </p>
+                </div>
+              </div>
+              </div>
+              <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                <div data-secours>
+                  <img src={secours} width="48px" height="48px"/>
+                  <div data-secourst>
+                    <h3> En cas d’accident, alerter un secouriste du travail. </h3>
+                    <p>n° tél SAMU : 15 </p>
+                  </div>
+                </div>
+                <div data-incend>
+                <img src={fire} width="48px" height="48px"/>
+                <div data-incendt>
+                  <h3> En cas d’incendie, alerter le responsable. </h3>
+                  <p>n° tél pompiers : 18 </p>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
+          </>
+          :
+          <div data-footer2>
+            <div data-fflex>
+            <div data-qualif>
+              <img src={qualifi} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
+              <div data-qualit>
+                <h3> Qualification et autorisation </h3>
+                <p> {qualifications} </p>
+              </div>
+            </div>
+            <div data-formatf>
+              <img src={forma} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
+              <div data-formatt>
+                <h3> Formations </h3>
+                <p> {formation} </p>
+              </div>
+            </div>
+            </div>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <div data-secours>
+                <img src={secours} width="48px" height="48px"/>
+                <div data-secourst>
+                  <h3> En cas d’accident, alerter un secouriste du travail. </h3>
+                  <p>n° tél SAMU : 15 </p>
+                </div>
+              </div>
+              <div data-incend>
+              <img src={fire} width="48px" height="48px"/>
+              <div data-incendt>
+                <h3> En cas d’incendie, alerter le responsable. </h3>
+                <p>n° tél pompiers : 18 </p>
+              </div>
+              </div>
+            </div>
+          </div>
+        }
           </div>
         </div>
-      <input
-        type="button"
-        value="SAVE TO PDF"
-        onClick={getPDF}
-        className={styles.button1}
-      />
     </React.Fragment>
   );
 };

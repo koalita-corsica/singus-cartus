@@ -59,6 +59,17 @@ export default {
       title: "Date de mise en service:",
     },
     {
+      title: "Type d'image",
+      name: "type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Horizontal", value: "horizontal" },
+          { title: "Vertical", value: "vertical" },
+        ],
+      },
+    },
+    {
       name: "ogImage",
       title: "Image",
       type: "image",

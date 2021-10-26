@@ -24,6 +24,7 @@ export const query = graphql`
       caract
       miseenservice
       produits
+      type
       ogImage {
         asset {
           url
@@ -66,17 +67,9 @@ const FicheTemplate = (props) => {
   const { data, errors } = props;
   const news = data && data.newsletter;
   return (
-    <Layout>
-      {errors && <SEO title="GraphQL Error" />}
-
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
-
+    <>
       {news && <Fiche {...news} />}
-    </Layout>
+    </>
   );
 };
 

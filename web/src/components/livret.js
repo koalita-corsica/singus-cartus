@@ -6,11 +6,14 @@ import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { BsTelephoneOutbound } from 'react-icons/bs';
 import { GiFirstAidKit } from 'react-icons/gi';
 import { BsShieldFillX } from 'react-icons/bs';
+import PortableText from "../components/portableText";
 
 import * as styles from './livret.module.css';
 
 const Livret = (props) => {
-  console.log(props);
+  const {title, livret} = props;
+
+  console.log(livret);
 
   // function getPDF() {
   //   var doc = new jsPDF('p', 'mm', [420, 595]);
@@ -40,10 +43,18 @@ const Livret = (props) => {
         </div>
         <div data-lgray />
         <div data-square>
+          {/*<img src={livret[0].image.asset.url} alt="" height="96px" />*/}
+          <div data-descp>
+            {/* <PortableText blocks={livret[0]._rawTexte} /> */}
+          </div>
+          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
         </div>
         <div data-lfooter>
           <div data-contact>
           </div>
+          {/*  <p style={{marginTop: '1rem'}}> {livret[0].adresse} </p>
+            <p> {livret[0].numero} </p>
+            <p> {livret[0].mail} </p> */}
         </div>
       </div>
       <div data-containerSommaire>
@@ -61,10 +72,36 @@ const Livret = (props) => {
       <div data-som>
       </div>
       <div data-mid>
-        <div data-rightGray> </div>
-        <div data-redLeft> </div>
+        <div data-rightGray>
+        {/*
+        <p> {livret[1].gerant} </p>
+        <p> {livret[1].activite} </p>
+        <p> {livret[1].nbSalaries} </p>
+        <p> {livret[1].codeRisque} </p>
+        <p> {livret[1].taux} </p>
+        <p> {livret[1].documentUnique} </p>
+        <p> {livret[1].affObligatoire} </p>
+        <p> {livret[1].affPrevention} </p>
+        <p> {livret[1].affCovid} </p>
+        <p> {livret[1].unite} </p>*/}
+        </div>
+        <div data-redLeft>
+        {/*
+          <div data-leftC> <p> Gérant </p></div>
+          <div data-leftC> <p> Activite </p> </div>
+          <div data-leftC> <p> Nb de salaries </p></div>
+          <div data-leftC> <p> Code Risque </p></div>
+          <div data-leftC> <p> Taux AT/MP </p></div>
+          <div data-leftC> <p> Document Unique </p></div>
+          <div data-leftC> <p> Aff.Olbigatoire </p></div>
+          <div data-leftC> <p> Aff.prevention </p></div>
+          <div data-leftC> <p> Aff.COVID </p></div>
+          <div data-leftC> <p> Unité de Travail </p></div>
+          */}
+        </div>
       </div>
       <div data-rfooter>
+        {/*<img src={livret[1].image.asset.url} alt="" height="115px" />*/}
       <div data-hfooter/>
       </div>
       </div>
@@ -114,48 +151,23 @@ const Livret = (props) => {
         <div data-som>
         </div>
         <div data-listRegles>
+        <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr., Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod. Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. Duo dolores et ea rebum. Stet clita kasd gubergren. Sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. </p>
         </div>
         <div data-listPartn>
         <div data-title>
           <h1> Les responsabilités du salarié (C.T). </h1>
         </div>
         <div data-partnGrid>
+        {/*
+        {livret[2].infos.map((item) =>
           <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
+            <img src={item.logo.asset.url} alt="" width="53px" />
+            <p data-func> {item.function} </p>
+            <p data-name> {item.value} </p>
+            <p data-name> {item.numero} </p>
           </div>
-          <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
-          </div>
-          <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
-          </div>
-          <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
-          </div>
-          <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
-          </div>
-          <div data-partner>
-            <img src={logo} alt="" width="73" height="26" />
-            <p data-func> Moyens d'extinctions Prévention des Risques </p>
-            <p data-name> M. David GIBERT </p>
-            <p data-name> 06 00 00 00 00 </p>
-          </div>
+          )}
+          */}
         </div>
         <div data-fregles/>
         </div>

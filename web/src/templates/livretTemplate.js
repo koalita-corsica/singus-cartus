@@ -34,6 +34,11 @@ query Livrett($id: String!) {
         affPrevention
         affCovid
         unite
+        image {
+          asset {
+            url
+          }
+        }
       }
       ... on SanityRegles {
         _key

@@ -57,9 +57,6 @@ export default {
       name: 'image',
       type: 'image',
       title: "Plan d'acces",
-      options: {
-        hotspot: true,
-      },
     },
   ]
 }

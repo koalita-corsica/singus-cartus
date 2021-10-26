@@ -53,11 +53,7 @@ const IndexPage = (props) => {
   }
 
   return (
-    <Layout>
-      <Container>
         <Livret />
-      </Container>
-    </Layout>
   );
 };
 
