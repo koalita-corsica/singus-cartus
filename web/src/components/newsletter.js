@@ -71,7 +71,7 @@ const Newsletter = (props) => {
               <h1> CONTACTEZ-NOUS </h1>
               <span>
                 <img src={phone} alt="phone" width="25px" />{" "}
-                <p> 4 95 23 18 92 </p>
+                <p> 04 95 23 18 92 </p>
               </span>
               <span>
                 <img src={email} alt="phone" width="25px" />
