@@ -7,13 +7,17 @@ import { BsTelephoneOutbound } from 'react-icons/bs';
 import { GiFirstAidKit } from 'react-icons/gi';
 import { BsShieldFillX } from 'react-icons/bs';
 import PortableText from "../components/portableText";
+import mascotteM from "../assets/mascotteM.png"
+import risqueC from "../assets/risqueC.png"
+import mascotteG from "../assets/mascotteG.png"
+import risqueCC from "../assets/risqueCC.png"
 
 import * as styles from './livret.module.css';
 
 const Livret = (props) => {
   const {title, livret} = props;
 
-  console.log(livret);
+  console.log(livret[4]._rawEvacuer);
 
   // function getPDF() {
   //   var doc = new jsPDF('p', 'mm', [420, 595]);
@@ -43,37 +47,50 @@ const Livret = (props) => {
         </div>
         <div data-lgray />
         <div data-square>
-          {/*<img src={livret[0].image.asset.url} alt="" height="96px" />*/}
+          <img src={livret[0].image.asset.url} alt="" height="96px" />
           <div data-descp>
-            {/* <PortableText blocks={livret[0]._rawTexte} /> */}
+            <PortableText blocks={livret[0]._rawTexte} />
           </div>
           <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
         </div>
         <div data-lfooter>
           <div data-contact>
+            <h2> Contact </h2>
           </div>
-          {/*  <p style={{marginTop: '1rem'}}> {livret[0].adresse} </p>
+            <p style={{marginTop: '1rem'}}> {livret[0].adresse} </p>
             <p> {livret[0].numero} </p>
-            <p> {livret[0].mail} </p> */}
+            <p> {livret[0].mail} </p>
         </div>
       </div>
       <div data-containerSommaire>
         <div data-headSommaire />
         <div data-som>
+          <h2> Sommaire </h2>
         </div>
         <div data-mid>
           <div data-rightGray> </div>
-          <div data-redLeft> </div>
+          <div data-redLeft>
+            <div data-leftC> Renseignement pratique  P.00</div>
+            <div data-leftC> Responsabilité de chacun  P.00</div>
+            <div data-leftC> Règles générales de sécurité  P.00</div>
+            <div data-leftC> Restauration et repos  P.00</div>
+            <div data-leftC> Equipement de protection individuelle  P.00</div>
+            <div data-leftC> Risques généraux de l'entreprise  P.00</div>
+            <div data-leftC> En cas d'accident  P.00</div>
+            <div data-leftC> En cas d'incendie  P.00</div>
+            <div data-leftC> En cas d'incendie  P.00</div>
+            <div data-leftC> Certificat de formation  P.00</div>
+          </div>
         </div>
         <div data-fsommaire />
       </div>
       <div data-renseigment>
       <div data-headSommaire />
       <div data-som>
+        <h2> Renseignement sur l'entreprise </h2>
       </div>
       <div data-mid>
         <div data-rightGray>
-        {/*
         <p> {livret[1].gerant} </p>
         <p> {livret[1].activite} </p>
         <p> {livret[1].nbSalaries} </p>
@@ -83,10 +100,9 @@ const Livret = (props) => {
         <p> {livret[1].affObligatoire} </p>
         <p> {livret[1].affPrevention} </p>
         <p> {livret[1].affCovid} </p>
-        <p> {livret[1].unite} </p>*/}
+        <p> {livret[1].unite} </p>
         </div>
         <div data-redLeft>
-        {/*
           <div data-leftC> <p> Gérant </p></div>
           <div data-leftC> <p> Activite </p> </div>
           <div data-leftC> <p> Nb de salaries </p></div>
@@ -97,17 +113,20 @@ const Livret = (props) => {
           <div data-leftC> <p> Aff.prevention </p></div>
           <div data-leftC> <p> Aff.COVID </p></div>
           <div data-leftC> <p> Unité de Travail </p></div>
-          */}
         </div>
       </div>
       <div data-rfooter>
-        {/*<img src={livret[1].image.asset.url} alt="" height="115px" />*/}
-      <div data-hfooter/>
+        <h2> Plan d'accès </h2>
+        <div data-cont>
+          <img src={livret[1].image.asset.url} alt="" height="100px" />
+        </div>
+        <div style={{height: '25px', background: 'black', width: '100%'}}/>
       </div>
       </div>
       <div data-responsabilite>
         <div data-headSommaire />
         <div data-som>
+          <h2> Responsabilité de chacun </h2>
         </div>
         <div data-responCont>
           <div data-title>
@@ -149,6 +168,7 @@ const Livret = (props) => {
       <div data-regles>
         <div data-headSommaire />
         <div data-som>
+          <h2> Règles générales de sécutité </h2>
         </div>
         <div data-listRegles>
         <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr., Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod. Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo. Duo dolores et ea rebum. Stet clita kasd gubergren. Sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. </p>
@@ -158,7 +178,6 @@ const Livret = (props) => {
           <h1> Les responsabilités du salarié (C.T). </h1>
         </div>
         <div data-partnGrid>
-        {/*
         {livret[2].infos.map((item) =>
           <div data-partner>
             <img src={item.logo.asset.url} alt="" width="53px" />
@@ -167,16 +186,15 @@ const Livret = (props) => {
             <p data-name> {item.numero} </p>
           </div>
           )}
-          */}
         </div>
         <div data-fregles/>
         </div>
       </div>
       <div data-restauration>
         <div data-headSommaire/>
-        <div data-som> </div>
+        <div data-som> <h2> Restauration et repos </h2> </div>
         <div data-contain>
-          <div data-leftR> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> </div>
+          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> </div> </div>
           <div data-rightR>
             <div data-elem1>
             <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos </p>
@@ -200,6 +218,7 @@ const Livret = (props) => {
       <div data-equip>
         <div data-headSommaire/>
         <div data-som>
+          <h2> Equipement de protection individuelle </h2>
          </div>
           <div data-content>
             <div data-noir>
@@ -207,87 +226,41 @@ const Livret = (props) => {
             <p> La gêne qu'ils vous occasionnent momentanément est moindre comparée à l'invalidité qu'ils vous éviteront. </p>
             </div>
             <div data-epi>
+            {livret[3].epi.map((item) =>
               <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
+                <img src={item.image.asset.url} width="75" height="75" alt="" />
+                <PortableText blocks={item._rawDescription} />
               </div>
-              <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-              </div>
-              <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-              </div>
-              <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-              </div>
-              <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-              </div>
-              <div data-card>
-                <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-                <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-              </div>
+              )}
             </div>
-          </div>
-          <div data-footerRes />
-      </div>
-      <div data-equipv2>
-        <div data-headSommaire/>
-        <div data-som>
-         </div>
-         <div data-content>
-           <div data-epi>
-             <div data-card>
-               <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-               <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-             </div>
-             <div data-card>
-               <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-               <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-             </div>
-             <div data-card>
-               <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-               <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-             </div>
-             <div data-card>
-               <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-               <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-             </div>
-           </div>
-           <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </p>
-           <div data-picto>
-             <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-           </div>
           </div>
           <div data-footerRes />
       </div>
       <div data-risques>
       <div data-headSommaire/>
-      <div data-som> </div>
-      <div data-content>
-        <div data-noir>
-          <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" alt="" />
+      <div data-som> <h2> Risques généraux de l'entreprise </h2> </div>
+      <div data-contentR>
+        <div data-noirC>
+          <img src={mascotteM} alt="" />
         </div>
-        <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" alt="" data-danger/>
-        <div data-gray>
-        <p> <span> L'échelle </span> : c'est un moyen d'accès, non un poste de travail </p>
-        <p data-bold> Pour la sécurité de tous, il faut : </p>
-        <ul>
-        <li> - Installer des échelles sur le sol stable. </li>
-         <li> - Faire dépasser les échelles d'un mètre au moins au-dessus du plancher de travail auquel elles donnent accès.</li>
-         <li> - Veiller au bon écartement du pied par rapport à la surface d'appui.</li>
-         <li> - Ne jamais se servir du dernier échelon.</li>
-         <li> - Chevaucher les échelles coulissantes d'au moins 5 échelons.</li>
-         <li> - Attacher les échelles. - Vérifier l'état général du matériel.</li>
-         <li> - Vérifier la présence de patins antidérapants.</li>
-        </ul>
+        <div data-danger>
+          <img src={risqueC} alt="" height="47px" />
+        </div>
+        <div data-grayd>
+          <p> <span> L'échelle </span> : c'est un moyen d'accès, non un poste de travail </p>
+          <p data-title> Pour la sécurité de tous, il faut : </p>
+          <ul>
+          <li> - Installer des échelles sur le sol stable. </li>
+           <li> - Faire dépasser les échelles d'un mètre au moins au-dessus du plancher de travail auquel elles donnent accès.</li>
+           <li> - Veiller au bon écartement du pied par rapport à la surface d'appui.</li>
+           <li> - Ne jamais se servir du dernier échelon.</li>
+           <li> - Chevaucher les échelles coulissantes d'au moins 5 échelons.</li>
+           <li> - Attacher les échelles. - Vérifier l'état général du matériel.</li>
+           <li> - Vérifier la présence de patins antidérapants.</li>
+          </ul>
         </div>
         <div data-white>
-        <p> Echafaudages, pour la sécurité de tous, il faut : </p>
+        <p data-title> Echafaudages, pour la sécurité de tous, il faut : </p>
         <ul>
           <li> - Respecter les conditions de montage. </li>
           <li> - Être formé à leurs utilisations et leurs montages. </li>
@@ -302,20 +275,22 @@ const Livret = (props) => {
       </div>
       <div data-risquesv2>
         <div data-headSommaire/>
-        <div data-som> </div>
-      <div data-content>
-        <div data-noir>
-          <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" alt="" />
+        <div data-som> <h2> Risques de chute de plain-pied </h2> </div>
+      <div data-contentR>
+        <div data-noirC>
+          <img src={mascotteG} alt="" />
         </div>
-        <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" alt="" data-danger/>
-        <div data-gray>
+        <div data-danger>
+          <img src={risqueCC} alt="" height="47px" />
+        </div>
+          <div data-grayd>
           <p data-bold> Quelques causes de glissades : </p>
         <ul>
           <li> - Lorem ipsum dolor sit amet, consetetur sadipscing elitr. </li>
           <li> - Lorem ipsum dolor sit amet, consetetur sadipscing elitr. </li>
         </ul>
         </div>
-        <div data-white>
+        <div data-whiteF>
           <p data-bold> Quelques causes de trébuchementd : </p>
           <ul>
             <li> - Lorem ipsum dolor sit amet, consetetur sadipscing elitr. </li>
@@ -345,16 +320,29 @@ const Livret = (props) => {
       <div data-containerSommaire>
         <div data-headSommaire />
         <div data-som>
+          <h2> Sommaire des risques </h2>
         </div>
         <div data-mid>
           <div data-rightGray> </div>
-          <div data-redLeft> </div>
+          <div data-redLeft>
+            <div data-leftC> Renseignement pratique  P.00</div>
+            <div data-leftC> Responsabilité de chacun  P.00</div>
+            <div data-leftC> Règles générales de sécurité  P.00</div>
+            <div data-leftC> Restauration et repos  P.00</div>
+            <div data-leftC> Equipement de protection individuelle  P.00</div>
+            <div data-leftC> Risques généraux de l'entreprise  P.00</div>
+            <div data-leftC> En cas d'accident  P.00</div>
+            <div data-leftC> En cas d'incendie  P.00</div>
+            <div data-leftC> En cas d'incendie  P.00</div>
+            <div data-leftC> Certificat de formation  P.00</div>
+          </div>
         </div>
         <div data-fsommaire />
       </div>
       <div data-equipPersonnel>
       <div data-headSommaire />
       <div data-som>
+        <h2> Equipement de protection individuelle </h2>
       </div>
       <div data-content>
         <div data-noir>
@@ -377,28 +365,29 @@ const Livret = (props) => {
           </div>
           <p data-para> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </p>
         </div>
-        <div data-picto>
-          <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
+        <div data-footerRes>
+          <div data-picto>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
+          </div>
         </div>
-        <div data-footerRes />
       </div>
       <div data-accident>
         <div data-headSommaire />
-        <div data-som></div>
+        <div data-som> <h2> En cas d'accident </h2> </div>
         <div data-content>
           <div data-first>
-
+            <div data-num1> <h2> 1 </h2> </div>
             <p> Protéger : se protéger et protéger la victime (afin d'éviter le sur-accident </p>
           </div>
           <div data-second>
-
+            <div data-num1> <h2> 3 </h2> </div>
             <p> Secourir : porter assistance à la victime </p>
             <p data-t9> Couvrir le blessé (ne pas bouger la victime </p>
             <p data-t9> Ne pas donner à boire </p>
             <p data-t9> Eloigner les curieux </p>
           </div>
           <div data-third>
-
+          <div data-num1> <h2> 2 </h2> </div>
           <p data-bold data-t9> Téléphonez au : </p>
           <div data-nums>
             <div data-line>
@@ -438,10 +427,11 @@ const Livret = (props) => {
       </div>
       <div data-incendie>
         <div data-headSommaire />
-        <div data-som></div>
+        <div data-som> <h2> En cas d'incendie </h2> </div>
         <div data-content>
           <div data-line>
             <div data-first>
+              <div data-num1> <h2> 1 </h2> </div>
               <p data-t9 data-bold>  <span> Alerter </span> </p>
               <p> Prévenir les Urgences adéquates : </p>
               <div data-contat>
@@ -450,45 +440,52 @@ const Livret = (props) => {
               <p> Prévenir l'employeur (si possible) </p>
             </div>
             <div data-second>
+            <div data-num1> <h2> 2 </h2> </div>
             <p data-t9 data-bold>  <span> Lutter (si possible) </span> </p>
             <p> Utiliser les moyens de secours Extincteurs </p>
             <p> Sans mettre votre vie en danger </p>
             </div>
           </div>
         <div data-third>
-          <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgL/>
-          <div data-line>
-            <span> Evacuer </span>
-            <p> Mettre votre poste de travail en sécurité et rejoindre le point de rassemblement. Suivre les Blocs d'Eclairage de Sécurité BAES qui indiquent le chemin à suivre vers la sortie de secours la plus proche. Dans la fumée, baissez-vous l'ai frais est près du sol. </p>
+        <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgL/>
+            <div style={{display: 'flex'}}>
+            <div data-num1> <h2> 3 </h2> </div>
+            <div data-line>
+              <span> Evacuer </span>
+              <PortableText blocks={livret[4]._rawEvacuer} />
+            </div>
           </div>
         </div>
         <div data-fourth>
-          <span> Conseils : </span>
-            <div data-line1>
-              <div data-wrpT>
+            <div data-txt>
+              <h3> Conseils: </h3>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
               <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
-              </div>
-              <div data-wrpI>
-              <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
-              <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
-              </div>
+              <h6> Chaque seconde compte, Agissez ! </h6>
             </div>
-          <h6> Chaque seconde compte, Agissez ! </h6>
-          <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgR/>
+          <div data-cont>
+          <div data-ic>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
+          </div>
+          <div data-imgP>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" height="97" alt="" data-imgR/>
+          </div>
+          </div>
         </div>
         </div>
         <div data-footerRes>
           <p> Notre partenaire Verification Incendie: </p>
+          <img src={livret[4].logo.asset.url} alt="" height="22px" />
         </div>
       </div>
       <div data-certificat>
         <div data-headSommaire />
-        <div data-som></div>
+        <div data-som> <h2> Certificat de Formation à la Sécurité Générale </h2> </div>
         <div data-content>
           <div data-imgContain>
             <img src={logo} alt="" />
@@ -516,7 +513,7 @@ const Livret = (props) => {
       </div>
       <div data-notes>
         <div data-headSommaire />
-        <div data-som></div>
+        <div data-som> <h2> Notes </h2> </div>
         <div data-content>
           <hr />
           <hr />
@@ -556,3 +553,22 @@ const Livret = (props) => {
 }
 
 export default Livret;
+
+
+// <div data-fourth>
+//   <span> Conseils : </span>
+//     <div data-line1>
+//       <div data-wrpT>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//       <p> - Lorem ipsum dolor sit amet, consetetur sadipscing </p>
+//         <h6> Chaque seconde compte, Agissez ! </h6>
+//       </div>
+//       <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
+//       <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="25" height="25" alt="" />
+//     </div>
+//   <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgR/>
+// </div>

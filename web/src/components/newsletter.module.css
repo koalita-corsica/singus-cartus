@@ -4,13 +4,16 @@ span {
   display: inline !important;
 }
 
-p {
+p ul{
   text-align: justify;
+}
+
+h1 {
+  text-align: center;
 }
 /* FIRST PAGE */
 
 .container {
-  border: 2px solid black;
   height: 29.7cm;
   width: 21cm;
   position: relative;
@@ -232,7 +235,6 @@ p {
 /* START SECOND PAGE */
 
 .containerSecond {
-  border: 2px solid black;
   height: 29.7cm;
   width: 21cm;
   position: relative;
@@ -264,6 +266,7 @@ p {
   line-height: 1.3;
   margin: 0;
   width: 90%;
+  margin-top: 1rem;
 }
 
 .bar3 {
@@ -271,7 +274,8 @@ p {
   width: 83%;
   display: block;
   position: absolute;
-  top: 6.8cm;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
 }
 
 .desc4 {
@@ -280,7 +284,7 @@ p {
   width: 85%;
   line-height: 1.3;
   position: absolute;
-  top: 7.1cm;
+  margin-top: 1rem;
 }
 
 .article4 {
@@ -295,7 +299,7 @@ p {
   font-size: 18pt;
   font-family: "Montserrat", sans-serif;
   line-height: 1.3;
-  top: 0;
+  top: 27px;
 }
 
 .bar4 {
@@ -385,6 +389,8 @@ p {
 }
 
 .cont6 {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0.8cm;
   left: 1cm;
@@ -393,6 +399,7 @@ p {
 .cont6 h1 {
   font-size: 15pt;
   font-family: "Montserrat", sans-serif;
+  margin-left: -18rem;
 }
 
 .cont6 p {

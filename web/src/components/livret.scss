@@ -87,9 +87,20 @@
 }
 
 [data-contact] {
-  background: #C40005 0% 0% no-repeat padding-box;
+  background-image: url(../assets/barre.png);
   display: flex;
+  align-items: center;
+  align-content: center;
+  background-repeat: no-repeat;
+  background-position-x: 25%;
+  background-position-y: center;
   height: 25px;
+  h2 {
+    font-size: 12px;
+    margin: 0;
+    margin-left: .5rem;
+
+  }
 }
 
 // FIN data-containerCouverture
@@ -105,8 +116,20 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
+    h2 {
+      font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
+      color: white;
+    }
   }
   [data-mid] {
     height: 417px;
@@ -124,6 +147,22 @@
       background: #A50408 0% 0% no-repeat padding-box;
       box-shadow: 4px 5px 14px #00000038;
       border-radius: 0px 10px 10px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: right;
+      [data-leftC] {
+        background: #C40005 0% 0% no-repeat padding-box;
+        border-radius: 0px 10px 10px 0px;
+        width: 349px;
+        height: 19px;
+        font-size: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-end;
+      }
     }
   }
   [data-fsommaire] {
@@ -146,8 +185,20 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
+    h2 {
+      font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
+      color: white;
+    }
   }
   [data-mid] {
     height: 417px;
@@ -198,22 +249,35 @@
     }
   }
   [data-rfooter] {
-    width: 420px;
-    height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    opacity: 1;
     position: relative;
-    top: -8%;
-    img {
-      margin-top: 1.6rem;
-      margin-left: 1rem;
+    top: -45px;
+    background-image: url(../assets/barre.png);
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
+    height: 25px;
+    width: 100%;
+    align-items: center;
+    h2 {
+      margin: 0;
+      font-size: 12px;
+      margin-left: .5rem;
+      margin-top: .3rem;
+      color: white;
+      width: 100% !important;
     }
-    [data-hfooter] {
-      width: 420px;
-      background: #161314 0% 0% no-repeat padding-box;
-      opacity: 1;
-      position: relative;
-      top: 250%;
+    [data-cont]{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        margin: 0;
+        border: 4px solid #0C090C;
+        border-radius: 0px 0px 10px 10px;
+      }
     }
   }
 }
@@ -231,8 +295,20 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
+    h2 {
+      font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
+      color: white;
+    }
   }
   [data-responCont] {
     width: 419px;
@@ -430,8 +506,20 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
+    h2 {
+      font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
+      color: white;
+    }
   }
   [data-listRegles] {
     margin-left: 2.7rem;
@@ -483,8 +571,8 @@
         height: 86px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        align-content: center;
         p {
           margin: 0;
         }
@@ -492,6 +580,7 @@
           color: #C40005;
           font-size: 9px;
           font-weight: bold;
+          text-align: center;
         }
         [data-name] {
           font-size: 9px;
@@ -519,8 +608,20 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
+    h2 {
+      font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
+      color: white;
+    }
   }
   [data-contain] {
     display: flex;
@@ -542,17 +643,21 @@
   }
   [data-rightR] {
     width: 286px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     [data-elem1] {
       background: #FFFFFF 0% 0% no-repeat padding-box;
       box-shadow: 0px 3px 6px #00000029;
       height: 71px;
+      margin-top: 3rem;
+      box-shadow: 0px 3px 6px #00000029;
       p {
         letter-spacing: 0px;
         color: #161314;
         font-size: 9px;
-        margin-top: 3rem;
         text-align: center;
-        padding: 1rem;
       }
     }
     [data-elem2] {
@@ -564,11 +669,11 @@
         color: #161314;
         font-size: 9px;
         text-align: center;
-        padding: 1rem;
       }
     }
     [data-elem3] {
       background: #FFFFFF 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #00000029;
       box-shadow: 0px 3px 6px #00000029;
       height: 71px;
       p {
@@ -576,7 +681,6 @@
         color: #161314;
         font-size: 9px;
         text-align: center;
-        padding: 1rem;
       }
     }
     [data-elem4] {
@@ -588,19 +692,18 @@
         color: #161314;
         font-size: 9px;
         text-align: center;
-        padding: 1rem;
       }
     }
     [data-elem5] {
       background: #FFFFFF 0% 0% no-repeat padding-box;
       box-shadow: 0px 3px 6px #00000029;
       height: 71px;
+      box-shadow: 0px 3px 6px #00000029;
       p {
         letter-spacing: 0px;
         color: #161314;
         font-size: 9px;
         text-align: center;
-        padding: 1rem;
       }
     }
   }
@@ -623,12 +726,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -697,12 +807,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -773,70 +890,96 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
-  [data-content] {
+  [data-contentR] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-  }
-  [data-noir] {
-    background: #0C090C 0% 0% no-repeat padding-box;
-    border-radius: 0px 0px 10px 10px;
-    width: 219px;
-    height: 79px;
-    img {
-      width: 113px;
-      height: 126px;
-      margin-left: 3.5rem;
+    [data-noirC]{
+      width: 219px;
+      height: 79px;
+      background: #0C090C 0% 0% no-repeat padding-box;
+      border-radius: 0px 0px 10px 10px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 136px;
+      }
+    }
+    [data-danger] {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        margin-right: 1rem;
+      }
+    }
+    [data-grayd] {
+      height: 199px;
+      background: #ECECEC 0% 0% no-repeat padding-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: 9px;
+        text-align: left;
+        margin: 0;
+      }
+      ul {
+        font-size: 9px;
+        list-style: none;
+        width: 70%;
+        font-weight: medium;
+      }
+      span {
+        font-weight: bold;
+        color: #161314;
+      }
+      [data-title] {
+        margin-left: -7rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    }
+    [data-white] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      [data-title] {
+        margin-top: 1rem;
+        font-weight: bold;
+        margin-left: .8rem;
+      }
+      p {
+        font-size: 9px;
+        text-align: left;
+        margin: 0;
+      }
+      ul {
+        font-size: 9px;
+        list-style: none;
+        width: 90%;
+        font-weight: medium;
+        margin-left: -1rem;
+      }
     }
   }
-  [data-danger] {
-    width: 47px;
-    height: 47px;
-    margin-left: 21rem;
-  }
-  [data-gray] {
-    height: 190px;
-    line-height: 1.3;
-    span {
-      color: #161314;
-      font-weight: bold;
-    }
-    p {
-      font-size: 9px;
-      text-align: left;
-      margin-left: 3rem;
-    }
-    ul {
-      list-style: none;
-      font-size: 9px;
-      width: 60%;
-      text-align: left;
-      margin-left: 2rem;
-    }
-  }
-  [data-white] {
-    p {
-      font-size: 9px;
-      font-weight: bold;
-      text-align: left;
-      margin-left: -0.5rem;
-    }
-    ul {
-      list-style: none;
-      font-size: 9px;
-      width: 90%;
-      text-align: left;
-    }
-  }
+
   [data-footerRes] {
     background: #161314 0% 0% no-repeat padding-box;
     height: 74px;
@@ -854,95 +997,122 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
-  [data-content] {
+  [data-contentR] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-  }
-  [data-noir] {
-    background: #0C090C 0% 0% no-repeat padding-box;
-    border-radius: 0px 0px 10px 10px;
-    width: 219px;
-    height: 79px;
-    img {
-      width: 113px;
-      height: 126px;
-      margin-left: 3.5rem;
+    [data-noirC]{
+      width: 219px;
+      height: 79px;
+      background: #0C090C 0% 0% no-repeat padding-box;
+      border-radius: 0px 0px 10px 10px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 112px;
+      }
+    }
+    [data-danger] {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        margin-right: 1rem;
+      }
+    }
+    [data-grayd] {
+      width: 419px;
+      height: 71px;
+      background: #ECECEC 0% 0% no-repeat padding-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 9px;
+        margin: 0;
+      }
+      ul {
+        font-size: 9px;
+        list-style: none;
+        width: 70%;
+        font-weight: medium;
+      }
+      span {
+        font-weight: bold;
+        color: #161314;
+      }
+      [data-title] {
+        margin-left: -7rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+    }
+    [data-whiteF] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      [data-title] {
+        margin-top: 1rem;
+        font-weight: bold;
+        margin-left: .8rem;
+      }
+      p {
+        font-size: 9px;
+        text-align: left;
+        margin: 0;
+      }
+      ul {
+        font-size: 9px;
+        list-style: none;
+        width: 90%;
+        font-weight: medium;
+        margin-left: -1rem;
+      }
+    }
+    [data-agray] {
+      width: 419px;
+      height: 71px;
+      background: #ECECEC 0% 0% no-repeat padding-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 9px;
+        margin: 0;
+      }
+      ul {
+        font-size: 9px;
+        list-style: none;
+        width: 70%;
+        font-weight: medium;
+      }
+      span {
+        font-weight: bold;
+        color: #161314;
+      }
+      [data-title] {
+        margin-left: -7rem;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
     }
   }
-  [data-danger] {
-    width: 47px;
-    height: 47px;
-    margin-left: 21rem;
-  }
-  [data-gray] {
-    line-height: 1.3;
-    height: 80px;
-    span {
-      color: #161314;
-      font-weight: bold;
-    }
-    p {
-      font-size: 9px;
-      text-align: left;
-      margin-left: 3rem;
-    }
-    ul {
-      list-style: none;
-      font-size: 9px;
-      width: 60%;
-      text-align: left;
-      margin-left: 2rem;
-    }
-  }
-  [data-white] {
-    height: 100px;
-    height: 80px;
-    p {
-      font-size: 9px;
-      font-weight: bold;
-      text-align: left;
-      margin-left: -0.5rem;
-    }
-    ul {
-      list-style: none;
-      font-size: 9px;
-      width: 90%;
-      text-align: left;
-    }
-  }
-  [data-agray] {
-    line-height: 1.3;
-    height: 100px;
-    width: 100%;
-    background: #ECECEC 0% 0% no-repeat padding-box;
-    p {
-      font-size: 9px;
-      text-align: left;
-      margin-left: 3rem;
-    }
-    ul {
-      list-style: none;
-      font-size: 9px;
-      width: 90%;
-      text-align: left;
-      margin-left: 2rem;
-    }
-  }
-  [data-wrpIcon] {
-    display: flex;
-    gap: 0.5rem;
-    margin-left: 9rem;
-  }
+
   [data-footerRes] {
     background: #161314 0% 0% no-repeat padding-box;
     height: 74px;
@@ -967,12 +1137,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -1026,9 +1203,12 @@
     margin-top: 2rem;
   }
   [data-picto] {
-    position: absolute;
-    left: 13.7rem;
-    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    img {
+      margin-top: -2rem;
+    }
   }
   [data-footerRes] {
     background: #161314 0% 0% no-repeat padding-box;
@@ -1046,17 +1226,26 @@
   width: 419px;
   height: 595px;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
   [data-headSommaire] {
     height: 55.5px;
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -1065,7 +1254,7 @@
     grid-template-rows: repeat(2, 170px);
     gap: 1rem;
     margin-left: 3rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     [data-first] {
       width: 151px;
       height: 143px;
@@ -1076,12 +1265,28 @@
       border-radius: 10px;
       grid-row: 1;
       grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
         font-size: 11px;
         color: white;
         width: 80%;
         text-align: center;
-        margin-left: 1rem;
+      }
+      [data-num1] {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background: #0C090C 0% 0% no-repeat padding-box;
+        border: 2px solid #FFFFFF;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -1.5rem;
       }
     }
     [data-second] {
@@ -1094,12 +1299,28 @@
       border-radius: 10px;
       grid-row: 2;
       grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
         font-size: 11px;
         color: white;
         width: 80%;
         text-align: center;
-        margin-left: 1rem;
+      }
+      [data-num1] {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background: #0C090C 0% 0% no-repeat padding-box;
+        border: 2px solid #FFFFFF;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -1.5rem;
       }
     }
     [data-third] {
@@ -1110,9 +1331,26 @@
       box-shadow: 0px 3px 6px #00000029;
       border: 2px solid #FFFFFF;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       p {
         margin-left: 1rem;
         color: white;
+      }
+      [data-num1] {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background: #0C090C 0% 0% no-repeat padding-box;
+        border: 2px solid #FFFFFF;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -1.5rem;
       }
       li {
         font-size: 9px;
@@ -1254,12 +1492,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -1283,10 +1528,26 @@
     border-radius: 10px;
     font-size: 9px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    [data-num1] {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background: #0C090C 0% 0% no-repeat padding-box;
+      border: 2px solid #FFFFFF;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1.5rem;
+    }
     p {
       text-align: center;
       width: 80%;
-      margin-left: 1rem;
     }
     span {
       font-size: 11px;
@@ -1299,11 +1560,11 @@
       border-radius: 10px;
       color: #C40005;
       font-size: 25px;
+      font-weight: bold;
       display: flex;
       align-items: center;
       align-content: center;
       justify-content: center;
-      margin-left: .5rem;
       p {
         margin-left: 0;
       }
@@ -1319,6 +1580,23 @@
     border-radius: 10px;
     font-size: 9px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    [data-num1] {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background: #0C090C 0% 0% no-repeat padding-box;
+      border: 2px solid #FFFFFF;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1.5rem;
+    }
     p {
       text-align: center;
       width: 80%;
@@ -1341,70 +1619,94 @@
     font-size: 9px;
     color: white;
     display: flex;
+    [data-num1] {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background: #0C090C 0% 0% no-repeat padding-box;
+      border: 2px solid #FFFFFF;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1.3rem;
+      width: 70%;
+    }
     [data-line] {
       display: flex;
       flex-direction: column;
-      line-height: 1;
+      justify-content: center;
+      color: white;
+      margin: 0;
       p {
         text-align: left;
         width: 80%;
-        margin-top: -1rem;
+        margin-top: -1.5rem;
+        line-height: 1;
+        margin-left: 1rem;
       }
       span {
         font-size: 11px;
         color: white;
         font-weight: bold;
+        padding-top: .8rem;
+        margin-left: 1rem;
       }
     }
   }
   [data-fourth] {
-    margin-top: .5rem;
-    width: 326px;
-    height: 106px;
-    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     border: 2px solid var(--unnamed-color-c40005);
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 2px solid #C40005;
     border-radius: 10px;
+    width: 326px;
+    height: 106px;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    span {
+    justify-content: center;
+    h3 {
+      margin: 0;
       font-size: 9px;
-      font-weight: bold;
-      margin-left: .2rem;
-      margin-top: .3rem;
-      margin-bottom: .5rem;
-    }
-    p {
-      margin-left: -.5rem;
-      font-size: 8px;
-      line-height: .4;
-      margin-left: .4rem;
-      margin-top: -.5px;
-    }
-    h6 {
       color: #C40005;
-      font-size: 11px;
-      font-weight: bold;
-      margin-top: -2px;
-      margin-left: 5rem;
+      margin-bottom: .8rem;
+    }
+    [data-txt] {
+      margin-top: 1rem;
+      font-size: 8px;
+      color: #161314;
+      line-height: 0.3;
+      h6 {
+        margin: 0;
+        margin-top: .8rem;
+        color: #C40005;
+        font-size: 11px;
+        text-align: center;
+      }
+    }
+    [data-cont] {
+      display: flex;
+      justify-content: center;
+      margin-left: .5rem;
+      width: 30%;
+    }
+    [data-ic] {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      margin-left: 3rem;
+      align-items: center;
+      justify-content: center;
+    }
+    [data-imgP] {
+      position: relative;
+      left: 12%;
+      margin: 0;
     }
   }
-  [data-line1] {
-    display: flex;
-  }
-  [data-wrpT] {
-    display: flex;
-    flex-direction: column;
-  }
-  [data-wrpI] {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.5rem;
-  }
-  [data-imgR] {
-    position: absolute;
-    left: 22rem;
+  [data-imgL] {
+    margin-left: -2rem;
   }
   [data-footerRes] {
     background: #161314 0% 0% no-repeat padding-box;
@@ -1420,6 +1722,11 @@
       font-size: 10px;
       color: white;
       padding-top: 1.5rem;
+    }
+    img {
+      margin-top: 10px;
+      padding-top: 1rem;
+      padding-left: .5rem;
     }
   }
 }
@@ -1437,12 +1744,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 5%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {
@@ -1506,12 +1820,19 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
+    background-image: url(../assets/barre.png);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-position-x: 10%;
     height: 25px;
-    background: #C40005 0% 0% no-repeat padding-box;
-    p {
+    h2 {
       font-size: 12px;
+      margin: 0;
+      margin-left: .5rem;
       color: white;
-      font-weight: bold;
     }
   }
   [data-content] {

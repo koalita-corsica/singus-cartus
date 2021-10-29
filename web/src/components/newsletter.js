@@ -8,6 +8,7 @@ import globe from "../assets/globe.png";
 import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 const Newsletter = (props) => {
   const {
@@ -36,16 +37,18 @@ const Newsletter = (props) => {
   } = props;
 
   function getPDF() {
-    var doc = new jsPDF("p", "pt", [780, 1127]);
-    doc.html(document.querySelector("#capture"), {
-      callback: function (pdf) {
-        pdf.save("newsletter" + `${slug.current.toString()}` + ".pdf");
-      },
+      var doc = new jsPDF("p", "pt", "a4");
+    html2canvas(document.querySelector("#capture"), {useCORS: true}).then(canvas => {
+      doc.addImage(canvas, 'JPEG', 0, 0)
     });
-    alert("Le download va commencer!");
+    html2canvas(document.querySelector("#containerSecond"), {useCORS: true}).then(canvas => {
+      doc.addPage();
+      doc.setPage(2);
+      doc.addImage(canvas, 'JPEG', 0, 0)
+      doc.save(`${slug.current.toString()}` + ".pdf")
+    });
   }
 
-  console.log(slug.current.toString());
   return (
     <React.Fragment>
       <input
@@ -107,7 +110,7 @@ const Newsletter = (props) => {
             </div>
           </div>
         </div>
-        <div className={styles.containerSecond}>
+        <div id="containerSecond" className={styles.containerSecond}>
           <div className={styles.secondLeft}>
             <div data-imag4>
               <img src={imgArt4.asset.url} alt="" />
@@ -152,7 +155,7 @@ const Newsletter = (props) => {
           </div>
         </div>
       </div>
-
+      <div id="res" />
       <input
         type="button"
         value="SAVE TO PDF"

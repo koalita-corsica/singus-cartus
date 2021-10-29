@@ -92,7 +92,6 @@ export default {
     {
       name: "article1",
       type: "articleNoImage",
-      title: "Article 1:  Max-caractères = 752",
       validation: (Rule) =>
         Rule.custom((articleNoImage) => {
           console.log(articleNoImage);
@@ -109,7 +108,6 @@ export default {
           const emptyPaths = emptyBlocks.map(
             (block, index) => [{ _key: block._key }] || [index]
           );
-          console.log("article1 " + result);
           return result <= 752
             ? true
             : {
@@ -120,6 +118,7 @@ export default {
       options: {
         isHighlighted: true,
       },
+      title: "Article 1:  Max-caractères = 752",
     },
     {
       name: "titleArt2",
