@@ -38,14 +38,18 @@ const Newsletter = (props) => {
 
   function getPDF() {
       var doc = new jsPDF("p", "pt", "a4");
+      doc.addPage();
     html2canvas(document.querySelector("#capture"), {useCORS: true}).then(canvas => {
-      doc.addImage(canvas, 'JPEG', 0, 0)
+      const imgData = canvas.toDataURL('image/png');
+      doc.setPage(1);
+      doc.addImage(imgData, 'JPEG', 0, 0)
+      doc.save(`${slug.current.toString()}` + ".pdf")
     });
     html2canvas(document.querySelector("#containerSecond"), {useCORS: true}).then(canvas => {
-      doc.addPage();
       doc.setPage(2);
-      doc.addImage(canvas, 'JPEG', 0, 0)
-      doc.save(`${slug.current.toString()}` + ".pdf")
+      const imgData = canvas.toDataURL('image/png');
+      doc.addImage(imgData, 'JPEG', 0, 0)
+      doc.save(`${slug.current.toString()}` + "final.pdf")
     });
   }
 
