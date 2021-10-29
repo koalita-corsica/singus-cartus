@@ -49,8 +49,9 @@ const Newsletter = (props) => {
       doc.setPage(2);
       const imgData = canvas.toDataURL('image/png');
       doc.addImage(imgData, 'JPEG', 0, 0)
-      doc.save(`${slug.current.toString()}` + "final.pdf")
+      doc.save(`${slug.current.toString()}` + ".pdf")
     });
+    alert("download va commencer!")
   }
 
   return (

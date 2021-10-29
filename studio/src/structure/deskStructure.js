@@ -36,6 +36,14 @@ export const getDefaultDocumentNode = (props) => {
         .title("Aperçu Web")
         .options({ previewURL }),
     ]);
+  } else if (schemaType == "livret") {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(IframePreviewLivret)
+        .title("Aperçu Web")
+        .options({ previewURL }),
+    ]);
   }
   return S.document().views([S.view.form()]);
 };
