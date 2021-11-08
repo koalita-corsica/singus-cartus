@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@page { size: auto;  margin: 0mm; }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  [data-page2] {
+    visibility: hidden;
+  }
+
+  #capture, #capture * {
+    visibility: visible;
+  }
+
+  #capture {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .container {
   height: 29.7cm;
   width: 21cm;
@@ -132,19 +154,21 @@
       width:21cm;
       margin:2.1rem auto;
       box-sizing:border-box;
-      // here goes the sun
-
+      background-image: url('../assets/barre.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      box-sizing:border-box;
       display:grid;
       grid-template-columns: 66.94px 180px 190px 260px 96.79px;
       grid-template-rows:34.24px 131px;
     .empty1 {
-      background:black;
+      // background:black;
     }
     .empty2 {
-      background:#AF0013;
+      // background:#AF0013;
     }
     .headerg {
-      background:#000;
+      // background:#000;
       background-size: cover;
       background-position: bottom left;
       font-weight:bold;
@@ -156,7 +180,7 @@
     }
 
     .headerm {
-      background:#AF0013;
+      // background:#AF0013;
       color:white;
       font-size:10px;
       text-align:center;
@@ -166,7 +190,7 @@
       }
     }
      .headerd {
-      background:#AF0013;
+      // background:#AF0013;
       color:white;
       font-size:10px;
       text-align:left;
@@ -185,6 +209,7 @@
         display:flex;
         flex-direction:column;
         line-height:15px;
+        margin-top: 1rem;
         color: #161314;
         li {
           font-size: 9px;
@@ -235,7 +260,7 @@
 
   [data-footer] {
     margin-top: 12.8rem;
-    height: 56px;
+    height: 48px;
     background: #161314 0% 0% no-repeat padding-box;
   }
 
@@ -404,13 +429,13 @@
       grid-template-columns: 66.94px 180px 190px 260px 96.79px;
       grid-template-rows:34.24px 131px 131px 131px 131px 150.6px;
     .empty1 {
-      background:black;
+      // background:black;
     }
     .empty2 {
-      background:#AF0013;
+      // background:#AF0013;
     }
     .headerg {
-      background:#000;
+      // background:#000;
       background-size: cover;
       background-position: bottom left;
       font-weight:bold;
@@ -422,7 +447,7 @@
     }
 
     .headerm {
-      background:#AF0013;
+      // background:#AF0013;
       color:white;
       font-size:10px;
       text-align:center;
@@ -432,7 +457,7 @@
       }
     }
      .headerd {
-      background:#AF0013;
+      // background:#AF0013;
       color:white;
       font-size:10px;
       text-align:left;
@@ -451,6 +476,7 @@
         display:flex;
         flex-direction:column;
         line-height:15px;
+        margin-top: 1rem;
         color: #161314;
         li {
           font-size: 9px;

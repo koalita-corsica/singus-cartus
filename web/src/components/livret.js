@@ -42,7 +42,14 @@ const Livret = (props) => {
 
   return(
     <>
-    <div data-livret id="capture">
+    <input
+      type="button"
+      value="SAVE TO PDF"
+      onClick={() => window.print()}
+      className={styles.button1}
+    />
+    <div id={styles.capture}>
+    <div data-livret id={styles.livret}>
       <div data-containerCouverture>
         <div data-livretH>
           <div data-imgLogo>
@@ -556,6 +563,7 @@ const Livret = (props) => {
         </div>
         <div data-footerF />
       </div>
+    </div>
     </div>
     </>
   )

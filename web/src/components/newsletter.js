@@ -61,65 +61,69 @@ const Newsletter = (props) => {
         className={styles.button1}
       />
       <div id={styles.capture} className={styles.capture}>
-        <div className={styles.container}>
-          <div className={styles.firstLeft}>
-            <div className={styles.logo}>
-              <img src={logo} alt="" />
-            </div>
-            <div className={styles.icon}>
-              <img src={iconEdito.iconsGallery.asset.url} alt="" />
-            </div>
-            <div className={styles.article1}>
-              <h1> {titleEdito} </h1>
-              <PortableText blocks={_rawArticleEdito} />
-            </div>
-            <div className={styles.contact}>
-              <h1> CONTACTEZ-NOUS </h1>
-              <span>
-                <img src={phone} alt="phone" width="25px" />{" "}
-                <p> 04 95 23 18 92 </p>
-              </span>
-              <span>
-                <img src={email} alt="phone" width="25px" />
-                <p> secretariat@evr-pro.com </p>
-              </span>
-              <span>
-                <img src={globe} alt="phone" width="25px" />{" "}
-                <p> www.evrpro.fr </p>
-              </span>
-              <span>
-                <img src={location} alt="phone" width="25px" />{" "}
-                <p> Lot Michel Ange, 20167 Afa </p>
-              </span>
-            </div>
+        <div className={styles.container} id={styles.container}>
+        <div className={styles.firstLeft}>
+          <div className={styles.logo}>
+            <img src={logo} alt="" />
           </div>
-          <div className={styles.article2}>
-            <h2> {titleNewsLetter} </h2>
-            <h1> {titleArt1} </h1>
-            <span className={styles.bar} />
-            <p className={styles.quote}>{imgArt1.caption}</p>
-            <div data-imag>
-              <img src={imgArt1.asset.url} alt="" />
-            </div>
-            <div className={styles.desc1}>
-              <PortableText blocks={_rawArticle1} />
-            </div>
+          <div className={styles.icon}>
+            <img src={iconEdito.iconsGallery.asset.url} alt="" />
           </div>
-          <span className={styles.bar2} />
-          <div className={styles.article3}>
-            <h1> {titleArt2} </h1>
-            <div className={styles.desc2}>
-              <PortableText blocks={_rawArticle2} />
-            </div>
+          <div className={styles.article1}>
+            <h1> {titleEdito} </h1>
+            <PortableText blocks={_rawArticleEdito} />
+          </div>
+          <div className={styles.contact}>
+            <h1> CONTACTEZ-NOUS </h1>
+            <span>
+              <img src={phone} alt="phone" width="25px" />{" "}
+              <p> 04 95 23 18 92 </p>
+            </span>
+            <span>
+              <img src={email} alt="phone" width="25px" />
+              <p> secretariat@evr-pro.com </p>
+            </span>
+            <span>
+              <img src={globe} alt="phone" width="25px" />{" "}
+              <p> www.evrpro.fr </p>
+            </span>
+            <span>
+              <img src={location} alt="phone" width="25px" />{" "}
+              <p> Lot Michel Ange, 20167 Afa </p>
+            </span>
           </div>
         </div>
-        <div id="containerSecond" className={styles.containerSecond}>
+        <div data-wrap>
+        <div className={styles.article2}>
+          <h2> {titleNewsLetter} </h2>
+          <h1> {titleArt1} </h1>
+          <span className={styles.bar} />
+          <p className={styles.quote}>{imgArt1.caption}</p>
+          <div data-imag>
+            <img src={imgArt1.asset.url} alt="" />
+          </div>
+          <div className={styles.desc1}>
+            <PortableText blocks={_rawArticle1} />
+          </div>
+        </div>
+        <span className={styles.bar2} />
+         <div className={styles.article3}>
+           <h1> {titleArt2} </h1>
+           <div className={styles.desc2}>
+             <PortableText blocks={_rawArticle2} />
+           </div>
+         </div>
+        </div>
+        </div>
+        </div>
+        <div id={styles.containerSecond} className={styles.containerSecond}>
+        <div data-wrap1>
           <div className={styles.secondLeft}>
             <div data-imag4>
               <img src={imgArt4.asset.url} alt="" />
             </div>
             <h1> {titleArt4} </h1>
-            <span className={styles.bar3} />
+            <span data-bar3 />
             <div className={styles.desc4}>
               <PortableText blocks={_rawArticle4} />
             </div>
@@ -137,6 +141,7 @@ const Newsletter = (props) => {
                 <PortableText blocks={_rawArticle3P2} />{" "}
               </div>
             </div>
+          </div>
           </div>
           <div className={styles.secondSection}>
             <div data-imag5>
@@ -156,15 +161,7 @@ const Newsletter = (props) => {
               <PortableText blocks={_rawArticle6} />
             </div>
           </div>
-        </div>
       </div>
-      <div id="res" />
-      <input
-        type="button"
-        value="SAVE TO PDF"
-        onClick={getPDF}
-        className={styles.button}
-      />
     </React.Fragment>
   );
 };

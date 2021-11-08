@@ -39,28 +39,17 @@ const Fiche = (props) => {
   var legend12 = legend.slice(8, 12)
 
   var tache2 = tache.slice(0,2);
-  var tacheO = tache.slice(2,9);
-
-
-  function getPDF() {
-    var doc = new jsPDF("p", "pt", [780, 1127]);
-    doc.html(document.querySelector("#capture"), {
-      callback: function (pdf) {
-        pdf.save("fichedeposte" + `${slug.current.toString()}` + ".pdf");
-      },
-    });
-    alert("Le download va commencer!");
-  }
+  var tache0 = tache.slice(2,9);
 
   return (
     <React.Fragment>
       <input
         type="button"
         value="SAVE TO PDF"
-        onClick={getPDF}
+        onClick={() => window.print()}
         className={styles.button1}
       />
-      <div id="capture">
+      <div id={styles.capture}>
         <div className={styles.container}>
           <div data-header>
             <img src={logo} alt="Logo EvRPro" height="50"/>
@@ -196,7 +185,7 @@ const Fiche = (props) => {
                 <p>Mesures de prévention - Opérations ou procédures à respecter</p>
               </div>
               <div class={styles.empty2}></div>
-              {tache2.map((item) =>
+              {tache0.map((item) =>
               <>
               <div class={styles.empty} data-odd="data-odd"></div>
                 <div data-g="data-g" data-odd="data-odd">
