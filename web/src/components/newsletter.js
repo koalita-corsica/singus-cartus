@@ -38,7 +38,7 @@ const Newsletter = (props) => {
 
   return (
     <React.Fragment>
-    {window.location.href.indexOf("studio") ?
+    {typeof window !== "undefined" && window.location.href.indexOf("studio") ?
       <a href={`https://evrpronl.gatsbyjs.io/newsletter/${slug.current}`}> Cliquez ici pour vous rendre sur l'export </a>
         :
       <input
