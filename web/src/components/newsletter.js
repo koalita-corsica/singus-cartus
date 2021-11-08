@@ -36,30 +36,18 @@ const Newsletter = (props) => {
     _rawArticle6,
   } = props;
 
-  function getPDF() {
-    //   var doc = new jsPDF("p", "pt", "a4");
-    //   doc.addPage();
-    // html2canvas(document.querySelector("#capture"), {useCORS: true}).then(canvas => {
-    //   doc.setPage(1);
-    //   doc.addImage(canvas, 'JPEG', 0, 0)
-    //   doc.save(`${slug.current.toString()}` + ".pdf")
-    // });
-    // html2canvas(document.querySelector("#containerSecond"), {useCORS: true}).then(canvas => {
-    //   doc.setPage(2);
-    //   doc.addImage(canvas, 'JPEG', 0, 0)
-    //   doc.save(`${slug.current.toString()}` + ".pdf")
-    // });
-    // alert("download va commencer!")
-  }
-
   return (
     <React.Fragment>
+    {window.location.href.indexOf("studio") ?
+      <a href={`https://evrpronl.gatsbyjs.io/newsletter/${slug.current}`}> Cliquez ici pour vous rendre sur l'export </a>
+        :
       <input
         type="button"
         value="SAVE TO PDF"
         onClick={() => window.print()}
         className={styles.button1}
       />
+      }
       <div id={styles.capture} className={styles.capture}>
         <div className={styles.container} id={styles.container}>
         <div className={styles.firstLeft}>
