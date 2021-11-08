@@ -397,7 +397,9 @@
       margin:2.1rem auto;
       box-sizing:border-box;
       // here goes the sun
-
+      background-image: url('../assets/barre.png');
+      background-repeat: no-repeat;
+      background-size: contain;
       display:grid;
       grid-template-columns: 66.94px 180px 190px 260px 96.79px;
       grid-template-rows:34.24px 131px 131px 131px 131px 150.6px;

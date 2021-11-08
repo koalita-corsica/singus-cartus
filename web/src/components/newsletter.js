@@ -37,19 +37,19 @@ const Newsletter = (props) => {
   } = props;
 
   function getPDF() {
-      var doc = new jsPDF("p", "pt", "a4");
-      doc.addPage();
-    html2canvas(document.querySelector("#capture"), {useCORS: true}).then(canvas => {
-      doc.setPage(1);
-      doc.addImage(canvas, 'JPEG', 0, 0)
-      doc.save(`${slug.current.toString()}` + ".pdf")
-    });
-    html2canvas(document.querySelector("#containerSecond"), {useCORS: true}).then(canvas => {
-      doc.setPage(2);
-      doc.addImage(canvas, 'JPEG', 0, 0)
-      doc.save(`${slug.current.toString()}` + ".pdf")
-    });
-    alert("download va commencer!")
+    //   var doc = new jsPDF("p", "pt", "a4");
+    //   doc.addPage();
+    // html2canvas(document.querySelector("#capture"), {useCORS: true}).then(canvas => {
+    //   doc.setPage(1);
+    //   doc.addImage(canvas, 'JPEG', 0, 0)
+    //   doc.save(`${slug.current.toString()}` + ".pdf")
+    // });
+    // html2canvas(document.querySelector("#containerSecond"), {useCORS: true}).then(canvas => {
+    //   doc.setPage(2);
+    //   doc.addImage(canvas, 'JPEG', 0, 0)
+    //   doc.save(`${slug.current.toString()}` + ".pdf")
+    // });
+    // alert("download va commencer!")
   }
 
   return (
@@ -57,10 +57,10 @@ const Newsletter = (props) => {
       <input
         type="button"
         value="SAVE TO PDF"
-        onClick={getPDF}
+        onClick={() => window.print()}
         className={styles.button1}
       />
-      <div id="capture" className={styles.capture}>
+      <div id={styles.capture} className={styles.capture}>
         <div className={styles.container}>
           <div className={styles.firstLeft}>
             <div className={styles.logo}>

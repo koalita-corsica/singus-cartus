@@ -1,7 +1,6 @@
 import React from 'react';
 import { jsPDF } from "jspdf";
 import logo from "../assets/logo.png";
-import { GiDiploma } from 'react-icons/gi';
 import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { BsTelephoneOutbound } from 'react-icons/bs';
 import { GiFirstAidKit } from 'react-icons/gi';
@@ -11,13 +10,19 @@ import mascotteM from "../assets/mascotteM.png"
 import risqueC from "../assets/risqueC.png"
 import mascotteG from "../assets/mascotteG.png"
 import risqueCC from "../assets/risqueCC.png"
+import diplomeN from "../assets/diplomeN.png"
+import diplomeB from "../assets/diplomeB.png"
+import manger from "../assets/manger.png"
+import mSecours from "../assets/mSecours.png"
+import phoneA from "../assets/phoneA.png"
+import proteger from "../assets/proteger.png"
+import secoursA from "../assets/secoursA.png"
+
 
 import * as styles from './livret.module.css';
 
 const Livret = (props) => {
   const {title, livret} = props;
-
-  console.log(livret[4]._rawEvacuer);
 
   // function getPDF() {
   //   var doc = new jsPDF('p', 'mm', [420, 595]);
@@ -134,17 +139,17 @@ const Livret = (props) => {
           </div>
           <div data-wrapArtic>
             <div data-artic1>
-            <div data-bouble> <GiDiploma /> </div>
+            <div data-bouble> <img src={diplomeB} height="28px"/> </div>
               <p> Article 4121-1 </p>
               <p> " l'employeur est tenu envers le salarié d'une obligation de sécurité qui est une obligation de résultat ". </p>
              </div>
             <div data-artic2>
-            <div data-bouble> <GiDiploma /> </div>
+            <div data-bouble> <img src={diplomeB} height="28px"/> </div>
               <p> Article 4121-2 </p>
               <p> " l'employeur met en œuvre les mesures prévues à l'Article 4121-1 sur le fondement des principes généraux de prévention ", qui sont au nombre de 9. </p>
              </div>
             <div data-artic3>
-            <div data-bouble> <GiDiploma /> </div>
+            <div data-bouble> <img src={diplomeB} height="28px"/> </div>
               <p> Article 4121-3 </p>
               <p> " l'employeur, compte tenu de la nature des activités de l'établissement, doit procéder à l'évaluation des risques pour assurer la santé physique et mentale de ses salariés ". </p>
             </div>
@@ -157,7 +162,7 @@ const Livret = (props) => {
             <p> Tout salarié a une obligation de sécurité pour lui et pour les autres. Un manquement à cette obligation peut être considéré comme une faute et entraîner des poursuites en cas d'accident. </p>
           </div>
           <div data-artic4>
-          <div data-bouble> <GiDiploma /> </div>
+          <div data-bouble> <img src={diplomeN} height="28px"/> </div>
             <p> Article 4122-1 </p>
             <p> Conformément aux instructions qui lui sont données par l'employeur, dans les conditions prévues au règlement intérieur (…), il incombe à chaque travailleur de prendre soin, en fonction de sa formation et selon ses possibilités, de sa santé et de sa sécurité ainsi que de celles des autres personnes concernées par ses actes ou ses omissions au travail. </p>
           </div>
@@ -194,7 +199,7 @@ const Livret = (props) => {
         <div data-headSommaire/>
         <div data-som> <h2> Restauration et repos </h2> </div>
         <div data-contain>
-          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> <MdDoNotDisturbAlt /> </div> </div>
+          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={manger} height="48px" /> <img src={manger} height="48px" /> <img src={manger} height="48px" /></div> </div>
           <div data-rightR>
             <div data-elem1>
             <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos </p>
@@ -377,10 +382,12 @@ const Livret = (props) => {
         <div data-content>
           <div data-first>
             <div data-num1> <h2> 1 </h2> </div>
+            <img src={proteger} height="21px" />
             <p> Protéger : se protéger et protéger la victime (afin d'éviter le sur-accident </p>
           </div>
           <div data-second>
             <div data-num1> <h2> 3 </h2> </div>
+            <img src={secoursA} height="21px" />
             <p> Secourir : porter assistance à la victime </p>
             <p data-t9> Couvrir le blessé (ne pas bouger la victime </p>
             <p data-t9> Ne pas donner à boire </p>
@@ -388,6 +395,7 @@ const Livret = (props) => {
           </div>
           <div data-third>
           <div data-num1> <h2> 2 </h2> </div>
+          <img src={phoneA} height="21px" />
           <p data-bold data-t9> Téléphonez au : </p>
           <div data-nums>
             <div data-line>
@@ -432,6 +440,7 @@ const Livret = (props) => {
           <div data-line>
             <div data-first>
               <div data-num1> <h2> 1 </h2> </div>
+              <img src={phoneA} height="21px" />
               <p data-t9 data-bold>  <span> Alerter </span> </p>
               <p> Prévenir les Urgences adéquates : </p>
               <div data-contat>
