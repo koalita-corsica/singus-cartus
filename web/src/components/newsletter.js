@@ -38,8 +38,8 @@ const Newsletter = (props) => {
 
   return (
     <React.Fragment>
-    {typeof window !== "undefined" && window.location.href.indexOf("studio") ?
-      <a href={`https://evrpronl.gatsbyjs.io/newsletter/${slug.current}`}> Cliquez ici pour vous rendre sur l'export </a>
+    {typeof window !== "undefined" && window.location !== window.parent.location ?
+      <a href={`https://evrpronl.gatsbyjs.io/newsletter/${slug.current}`} target="_blank"> Cliquez ici pour vous rendre sur l'export </a>
         :
       <input
         type="button"
