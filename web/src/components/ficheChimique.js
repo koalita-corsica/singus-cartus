@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import * as styles from "./fiche.module.css";
+import * as styles from "./ficheChimique.module.css";
 import React from "react";
 
 import fire from "../assets/fire.png";

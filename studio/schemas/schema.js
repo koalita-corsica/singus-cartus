@@ -29,6 +29,7 @@ import regles from './objects/regles.js'
 import equipement from './objects/equipement.js'
 import incendie from './objects/incendie.js';
 import info from "./objects/info.js"
+import fichechimique from "./documents/fichechimque";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -59,6 +60,7 @@ export default createSchema({
     equipement,
     incendie,
     info,
+    fichechimique,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

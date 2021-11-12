@@ -38,16 +38,12 @@ const Newsletter = (props) => {
 
   return (
     <React.Fragment>
-    {typeof window !== "undefined" && window.location !== window.parent.location ?
-      <a href={`https://evrpronl.gatsbyjs.io/newsletter/${slug.current}`} target="_blank"> Cliquez ici pour vous rendre sur l'export </a>
-        :
-      <input
-        type="button"
-        value="SAVE TO PDF"
-        onClick={() => window.print()}
-        className={styles.button1}
-      />
-      }
+    <input
+      type="button"
+      value="Télécharger le pdf"
+      onClick={() => window.print()}
+      className={styles.button1}
+    />
       <div id={styles.capture} className={styles.capture}>
         <div className={styles.container} id={styles.container}>
         <div className={styles.firstLeft}>

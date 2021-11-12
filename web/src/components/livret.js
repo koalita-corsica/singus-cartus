@@ -44,7 +44,7 @@ const Livret = (props) => {
     <>
     <input
       type="button"
-      value="SAVE TO PDF"
+      value="Télécharger le pdf"
       onClick={() => window.print()}
       className={styles.button1}
     />
