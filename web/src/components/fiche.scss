@@ -105,10 +105,23 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  line-height: 5px;
   margin-left: 4rem;
   margin-top: 1rem;
   width: 100%;
+  gap: .5rem;
+  div::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content : attr(data-number) " ";
+    border:solid 2px white;
+    border-radius:100%;
+    font-size:10px;
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    text-align:center;
+  }
 }
 
 [data-bar] {
@@ -130,6 +143,7 @@
 
 [data-obli] {
   line-height: 0;
+  height: 83px;
   h3 {
     letter-spacing: 0px;
     color: #161615;
@@ -140,6 +154,7 @@
 }
 
 [data-inter] {
+  height: 83px;
   line-height: 0;
   h3 {
     letter-spacing: 0px;
@@ -166,6 +181,9 @@
     }
     .empty2 {
       // background:#AF0013;
+        :nth-child(even) {
+          background: #000;
+        }
     }
     .headerg {
       // background:#000;
@@ -209,7 +227,7 @@
         display:flex;
         flex-direction:column;
         line-height:15px;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         color: #161314;
         li {
           font-size: 9px;
@@ -293,7 +311,8 @@
       }
       [data-qualit] p {
         font-size: 11px;
-        font-weight: lighter;
+        font-weight: normal;
+        margin-top: -0.5rem;
       }
     }
     [data-formatf] {
@@ -312,7 +331,8 @@
       }
       [data-formatt] p {
         font-size: 11px;
-        font-weight: lighter;
+        font-weight: normal;
+        margin-top: -0.5rem;
       }
     }
     [data-secours] {
@@ -326,6 +346,7 @@
       [data-secourst] h3 {
         font-size: 11px;
         font-weight: bolder;
+        width: 90%;
       }
       [data-secourst] p {
         font-size: 11px;
@@ -400,8 +421,18 @@
   width: 100%;
   align-items: center;
   padding-left: 3rem;
-  p {
-    text-align: left !important;
+  div::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content : attr(data-number) " ";
+    border:solid 2px white;
+    border-radius:100%;
+    font-size:10px;
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    text-align:center;
   }
 }
 
@@ -476,7 +507,7 @@
         display:flex;
         flex-direction:column;
         line-height:15px;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         color: #161314;
         li {
           font-size: 9px;

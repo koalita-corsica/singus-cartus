@@ -41,6 +41,8 @@ const Fiche = (props) => {
   var tache2 = tache.slice(0,2);
   var tache0 = tache.slice(2,9);
 
+  console.log(document.getElementById('1'))
+
   return (
     <React.Fragment>
       <input
@@ -63,25 +65,25 @@ const Fiche = (props) => {
           {type && type == "horizontal" ?
           <div data-machine>
           <div data-specs>
-              <p> Machine: <span> {machine} </span> </p>
-              <p> Marque/Type: <span> {marque} </span> </p>
+              <p> Machine : <span> {machine} </span> </p>
+              <p> Marque - Type : <span> {marque} </span> </p>
               <p>
-                Caractéristiques principales:
+                Caractéristiques principales :
                 <span> {caract} </span>
               </p>
               <p>
                 Date de mise en service : <span> {miseenservice} </span>
               </p>
               <p>
-                Produits ou matériaux à utiliser: <span> {produits} </span>
+                Produits ou matériaux à utiliser : <span> {produits} </span>
               </p>
             </div>
             <div data-bar/>
               <div data-rsec>
                 <img src={ogImage.asset.url} alt="" width="196" height="130"/>
                 <div data-legend>
-                {legend.map((item) =>
-                  <p> {item} </p>
+                {legend.map((item, i) =>
+                  <div data-number={`${i+1}`}> {item} </div>
                 )}
                 </div>
             </div>
@@ -104,12 +106,12 @@ const Fiche = (props) => {
             </div>
             <div data-barv/>
               <div data-rsecv>
-              <div data-legendv>
-              {legend.map((item) =>
-                <p> {item} </p>
+              <div style={{alignItems: 'flex-start'}} data-legendv>
+              {legend.map((item, i) =>
+                <div data-number={`${i+1}`}> {item} </div>
               )}
               </div>
-                <img src={ogImage.asset.url} alt="" height="211px"/>
+                <img style={{margin: '0', marginTop: '-3rem', marginLeft: '3.5rem'}} src={ogImage.asset.url} alt="" height="231"/>
             </div>
           </div>
           }
@@ -139,25 +141,25 @@ const Fiche = (props) => {
               <p>Mesures de prévention - Opérations ou procédures à respecter</p>
             </div>
             <div class={styles.empty2}></div>
-            {tache2.map((item) =>
+            {tache2.map((item, i) =>
             <>
-            <div class={styles.empty} data-odd="data-odd"></div>
-              <div data-g="data-g" data-odd="data-odd">
+            <div class={styles.empty} data-odd id={`${i+1}`}></div>
+              <div data-g="data-g" data-odd>
                 <ul>
                   {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                  {item.quelle && (<li> <span>Quelle tache?</span><br/> {item.quelle} </li> )}
-                  {item.qui && (<li> <span> Par qui? </span><br/>{item.qui} </li> )}
+                  {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                  {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
                 </ul>
               </div>
-                <div data-m="data-m" data-odd="data-odd">
+                <div data-m="data-m" data-odd id={`${i+1}`}>
                 {item.risques.map((imag) =>
-                  <img src={imag.picto.asset.url} alt=""/>
+                  <img src={imag.picto.asset.url} alt="" height="44"/>
                 )}
                 </div>
-                <div data-d="data-d" data-odd="data-odd">
+                <div data-d="data-d" data-odd id={`${i+1}`}>
                   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                 </div>
-                <div class={styles.empty} data-odd="data-odd"></div>
+                <div class={styles.empty} data-odd id={`${i+1}`}></div >
             </>
             )}
           </div>
@@ -191,8 +193,8 @@ const Fiche = (props) => {
                 <div data-g="data-g" data-odd="data-odd">
                   <ul>
                     {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                    {item.quelle && (<li> <span>Quelle tache?</span><br/> {item.quelle} </li> )}
-                    {item.qui && (<li> <span> Par qui? </span><br/>{item.qui} </li> )}
+                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
                   </ul>
                 </div>
                   <div data-m="data-m" data-odd="data-odd">

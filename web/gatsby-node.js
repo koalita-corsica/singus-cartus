@@ -134,18 +134,3 @@ exports.createPages = async ({ graphql, actions }) => {
   await createLivret(graphql, actions);
   await createFicheChimique(graphql, actions);
 };
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /jspdf/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    });
-  }
-};
