@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import Fiche from "../components/ficheChimique";
 
 export const query = graphql`
-  query FicheTemplateQuery1($id: String!) {
+  query FicheTemplateQuer1y($id: String!) {
     newsletter: sanityFichesChmique(id: { eq: $id }) {
       slug {
         current
@@ -63,16 +63,14 @@ export const query = graphql`
   }
 `;
 
-const FicheTemplate = (props) => {
+const FicheChimiTemplate = (props) => {
   const { data, errors } = props;
   const news = data && data.newsletter;
   return (
-    <>
     <Layout>
-      <h1> it works </h1>
+      {news && <Fiche {...news} />}
     </Layout>
-    </>
   );
 };
 
-export default FicheTemplate;
+export default FicheChimiTemplate;

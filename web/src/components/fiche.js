@@ -140,6 +140,27 @@ const Fiche = (props) => {
             </div>
             <div class={styles.empty2}></div>
             {tache2.map((item, i) =>
+             i % 2 == 0 ?
+            <>
+            <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div>
+              <div style={{background: 'gray'}} data-g="data-g" data-odd>
+                <ul style={{background: 'gray'}}>
+                  {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                  {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                  {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                </ul>
+              </div>
+                <div style={{background: 'gray'}} data-m="data-m" data-odd id={`${i+1}`}>
+                {item.risques.map((imag) =>
+                  <img src={imag.picto.asset.url} alt="" height="44"/>
+                )}
+                </div>
+                <div style={{background: 'gray'}} data-d="data-d" data-odd id={`${i+1}`}>
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                </div>
+                <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div >
+            </>
+            :
             <>
             <div class={styles.empty} data-odd id={`${i+1}`}></div>
               <div data-g="data-g" data-odd>
@@ -161,7 +182,7 @@ const Fiche = (props) => {
             </>
             )}
           </div>
-          {tache && tache.length != 2 ?
+          {tache && tache.length > 2 ?
             <>
           <div data-footer/>
           <div data-page2 id="page2">
@@ -185,25 +206,46 @@ const Fiche = (props) => {
                 <p>Mesures de prévention - Opérations ou procédures à respecter</p>
               </div>
               <div class={styles.empty2}></div>
-              {tache0.map((item) =>
+              {tache0.map((item, i) =>
+               i % 2 == 0 ?
               <>
-              <div class={styles.empty} data-odd="data-odd"></div>
-                <div data-g="data-g" data-odd="data-odd">
+              <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div>
+                <div style={{background: 'gray'}} data-g="data-g" data-odd>
+                  <ul style={{background: 'gray'}}>
+                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                  </ul>
+                </div>
+                  <div style={{background: 'gray'}} data-m="data-m" data-odd id={`${i+1}`}>
+                  {item.risques.map((imag) =>
+                    <img src={imag.picto.asset.url} alt="" height="44"/>
+                  )}
+                  </div>
+                  <div style={{background: 'gray'}} data-d="data-d" data-odd id={`${i+1}`}>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                  </div>
+                  <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div >
+              </>
+              :
+              <>
+              <div class={styles.empty} data-odd id={`${i+1}`}></div>
+                <div data-g="data-g" data-odd>
                   <ul>
                     {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
                     {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
                     {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
                   </ul>
                 </div>
-                  <div data-m="data-m" data-odd="data-odd">
+                  <div data-m="data-m" data-odd id={`${i+1}`}>
                   {item.risques.map((imag) =>
-                    <img src={imag.picto.asset.url} alt=""/>
+                    <img src={imag.picto.asset.url} alt="" height="44"/>
                   )}
                   </div>
-                  <div data-d="data-d" data-odd="data-odd">
+                  <div data-d="data-d" data-odd id={`${i+1}`}>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
                   </div>
-                  <div class={styles.empty} data-odd="data-odd"></div>
+                  <div class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
               )}
             </div>

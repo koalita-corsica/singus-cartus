@@ -66,6 +66,37 @@ async function createFiche(graphql, actions) {
   });
 }
 
+async function createChimique(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityFichesChmique {
+        nodes {
+          slug {
+            current
+          }
+          id
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const newsletterNodes = (result.data.allSanityFichesChmique || {}).nodes || [];
+
+  newsletterNodes.forEach((node) => {
+    const { id, slug = {} } = node;
+    if (!slug) return;
+    const path = `/ficheschimique/${slug.current}`;
+    createPage({
+      path,
+      component: require.resolve("./src/templates/fichesChimiquesTemplate.js"),
+      context: { id },
+    });
+  });
+}
+
 async function createLivret(graphql, actions) {
   const { createPage } = actions;
   const result = await graphql(`
@@ -97,40 +128,9 @@ async function createLivret(graphql, actions) {
   });
 }
 
-async function createFicheChimique(graphql, actions) {
-  const { createPage } = actions;
-  const result = await graphql(`
-    {
-      allSanityFichesChmique {
-        nodes {
-          id
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `);
-
-  if (result.errors) throw result.errors;
-
-  const newsletterNodes = (result.data.allSanityFichesChimique || {}).nodes || [];
-
-  newsletterNodes.forEach((node) => {
-    const { id, slug = {} } = node;
-    if (!slug) return;
-    const path = `/ficheschimiques/${slug.current}`;
-    createPage({
-      path,
-      component: require.resolve("./src/templates/fichesChimiquesTemplate.js"),
-      context: { id },
-    });
-  });
-}
-
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
   await createFiche(graphql, actions);
   await createLivret(graphql, actions);
-  await createFicheChimique(graphql, actions);
+  await createChimique(graphql, actions);
 };

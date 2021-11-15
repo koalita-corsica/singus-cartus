@@ -70,7 +70,7 @@
   height: 240px;
 }
 
-[data-machine] {
+[data-machinec] {
   background: #F59F2C 0% 0% no-repeat padding-box;
   box-shadow: 3px 2px 18px #04040573;
   border-radius: 5px;
@@ -79,13 +79,14 @@
   margin-left: 5rem;
   margin-top: -9rem;
   display: flex;
+  color: black;
   img {
     margin-left: 5rem;
     margin-top: -2rem;
   }
-  [data-specs] {
+  [data-specsc] {
     padding: 1rem;
-    color: white;
+    color: black;
     p {
       font-size: 10px;
       font-weight: bold;
@@ -99,8 +100,8 @@
   }
 }
 
-[data-legend] {
-  color: white;
+[data-legendc] {
+  color: black;
   font-size: 9px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -109,6 +110,20 @@
   margin-left: 4rem;
   margin-top: 1rem;
   width: 100%;
+  div::before {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content : attr(data-number) " ";
+    border:solid 2px black;
+    border-radius:100%;
+    font-size:10px;
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    text-align:center;
+  }
 }
 
 [data-bar] {
@@ -357,8 +372,8 @@
   background: white;
 }
 
-[data-machinev] {
-  background: #AF0013 0% 0% no-repeat padding-box;
+[data-machinevc] {
+  background: #F59F2C 0% 0% no-repeat padding-box;
   box-shadow: 3px 2px 18px #04040573;
   border-radius: 5px;
   width: 80%;
@@ -371,9 +386,9 @@
     margin-left: 5rem;
     margin-top: -2rem;
   }
-  [data-specsv] {
+  [data-specsvc] {
     padding: 1rem;
-    color: white;
+    color: black;
     padding-right: 3rem;
     p {
       font-size: 10px;
@@ -381,19 +396,19 @@
     }
     span {
       display: block !important;
-      color: white;
+      color: black;
       font-size: 9px;
       font-weight: normal;
     }
   }
 }
 
-[data-rsecv] {
+[data-rsecvc] {
   display: flex;
 }
 
-[data-legendv] {
-  color: white;
+[data-legendvc] {
+  color: black;
   font-size: 9px;
   display: flex;
   flex-direction: column;
@@ -403,6 +418,24 @@
   p {
     text-align: left !important;
   }
+  div::before {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content : attr(data-number) " ";
+    border:solid 2px black;
+    border-radius:100%;
+    font-size:10px;
+    display:inline-block;
+    width:15px;
+    height: 15px;
+    text-align:center;
+  }
+}
+
+[data-numberc] {
+  color: black !important;
 }
 
 [data-barv] {

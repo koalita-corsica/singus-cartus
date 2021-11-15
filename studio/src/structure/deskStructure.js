@@ -4,6 +4,8 @@ import { MdSettings } from "react-icons/md";
 import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
 import IframePreviewNews from "../previews/IframePreviewNews";
 import IframePreviewFiche from "../previews/IframePreviewFiches";
+import IframePreviewLivret from "../previews/IframePreviewLivret";
+import IframePreviewFichesChimi from "../previews/IframePreviewFichesChimi";
 
 // Web preview configuration
 const remoteURL = "https://evrpro-nl.netlify.app";
@@ -41,6 +43,15 @@ export const getDefaultDocumentNode = (props) => {
       S.view.form(),
       S.view
         .component(IframePreviewLivret)
+        .title("Aperçu Web")
+        .options({ previewURL }),
+    ]);
+  }
+  else if (schemaType == "fichesChmique") {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(IframePreviewFichesChimi)
         .title("Aperçu Web")
         .options({ previewURL }),
     ]);
