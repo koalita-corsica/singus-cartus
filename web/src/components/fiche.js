@@ -5,7 +5,6 @@ import React from "react";
 
 import fire from "../assets/fire.png";
 import secours from "../assets/secours.png";
-import { jsPDF } from "jspdf";
 import logo from "../assets/logo.png";
 import qualifi from "../assets/qualifications.png";
 import forma from "../assets/formations.png";
@@ -41,7 +40,6 @@ const Fiche = (props) => {
   var tache2 = tache.slice(0,2);
   var tache0 = tache.slice(2,9);
 
-  console.log(document.getElementById('1'))
 
   return (
     <React.Fragment>

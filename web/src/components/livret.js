@@ -1,5 +1,4 @@
 import React from 'react';
-import { jsPDF } from "jspdf";
 import logo from "../assets/logo.png";
 import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { BsTelephoneOutbound } from 'react-icons/bs';
@@ -24,15 +23,6 @@ import * as styles from './livret.module.css';
 const Livret = (props) => {
   const {title, livret} = props;
 
-  // function getPDF() {
-  //   var doc = new jsPDF('p', 'mm', [420, 595]);
-  //   doc.html(document.querySelector("#capture"), {
-  //     callback: function (pdf) {
-  //       pdf.save("livret.pdf");
-  //     },
-  //   });
-  //   alert("Le download va commencer!");
-  // }
 
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"

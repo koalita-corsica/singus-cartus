@@ -7,8 +7,6 @@ import email from "../assets/email.png";
 import globe from "../assets/globe.png";
 import phone from "../assets/phone.png";
 import location from "../assets/location.png";
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
 
 const Newsletter = (props) => {
   const {

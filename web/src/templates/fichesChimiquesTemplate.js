@@ -68,7 +68,9 @@ const FicheTemplate = (props) => {
   const news = data && data.newsletter;
   return (
     <>
-      {news && <Fiche {...news} />}
+    <Layout>
+      <h1> it works </h1>
+    </Layout>
     </>
   );
 };
