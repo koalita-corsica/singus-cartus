@@ -10,6 +10,21 @@ export const query = graphql`
 query Livrett($id: String!) {
   newsletter: sanityLivrets(id: { eq: $id }) {
     title
+    wRisques {
+       title
+       picto {
+         asset {
+           url
+         }
+       }
+       warn {
+         asset {
+           url
+         }
+       }
+       _rawDescription
+       sensi
+     }
     livret {
       ... on SanityCouverture {
         _rawTexte

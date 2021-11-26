@@ -1,11 +1,11 @@
 import canvas from "part:sanity-plugin-canvas-asset/image-asset-source";
-import { GrDocumentUser } from "react-icons/gr";
+import { FaBiohazard } from "react-icons/fa";
 
 export default {
   name: "fichesChmique",
-  title: "Fiche de Poste Produits Chimiques",
+  title: "Fiche de sécurite Produits Chimiques",
   type: "document",
-  icon: GrDocumentUser,
+  icon: FaBiohazard,
   fields: [
     {
       name: "version",

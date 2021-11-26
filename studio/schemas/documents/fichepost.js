@@ -3,7 +3,7 @@ import { GrDocumentUser } from "react-icons/gr";
 
 export default {
   name: "fiches",
-  title: "Fiche de Poste",
+  title: "Fiche sécurité au poste",
   type: "document",
   icon: GrDocumentUser,
   fields: [
