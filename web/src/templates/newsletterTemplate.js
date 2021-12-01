@@ -1,10 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
-import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../containers/layout";
-import Container from "../components/container";
-import SEO from "../components/seo";
-import Newsletter from "../components/newsletter";
+import Newsletter from "../components/LettrePro/newsletter";
 
 export const query = graphql`
   query NewsletterTemplateQuery($id: String!) {
@@ -65,14 +62,6 @@ const NewsLetterTemplate = (props) => {
   const news = data && data.newsletter;
   return (
     <Layout>
-      {errors && <SEO title="GraphQL Error" />}
-
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
-
       {news && <Newsletter {...news} />}
     </Layout>
   );

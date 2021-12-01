@@ -3,11 +3,11 @@
 import * as styles from "./ficheChimique.module.css";
 import React from "react";
 
-import fire from "../assets/fire.png";
-import secours from "../assets/secours.png";
-import logo from "../assets/logo.png";
-import qualifi from "../assets/qualifications.png";
-import forma from "../assets/formations.png";
+import fire from "../../assets/fire.png";
+import secours from "../../assets/secours.png";
+import logo from "../../assets/logo.png";
+import qualifi from "../../assets/qualifications.png";
+import forma from "../../assets/formations.png";
 import { GiDiploma } from 'react-icons/gi';
 import html2canvas from "html2canvas";
 import $ from "jquery";
@@ -55,7 +55,7 @@ const Fiche = (props) => {
             <img src={logo} alt="Logo EvRPro" height="50"/>
             <div data-headerCont>
               <h6> Version n° / date <span> {version} </span> </h6>
-              <h4> Fiche de Sécurité Au Poste </h4>
+              <h4> Fiche de Sécurité Produits Chimiques </h4>
               <h6> Entreprise <span> {entreprise.name} </span> </h6>
             </div>
           </div>

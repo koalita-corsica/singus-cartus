@@ -1,12 +1,12 @@
 import * as styles from "./newsletter.module.css";
 import React from "react";
-import PortableText from "./portableText";
-import logo from "../assets/logo.png";
+import PortableText from "../portableText";
+import logo from "../../assets/logo.png";
 
-import email from "../assets/email.png";
-import globe from "../assets/globe.png";
-import phone from "../assets/phone.png";
-import location from "../assets/location.png";
+import email from "../../assets/email.png";
+import globe from "../../assets/globe.png";
+import phone from "../../assets/phone.png";
+import location from "../../assets/location.png";
 
 const Newsletter = (props) => {
   const {

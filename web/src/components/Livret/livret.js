@@ -1,22 +1,22 @@
 import React from 'react';
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { BsTelephoneOutbound } from 'react-icons/bs';
 import { GiFirstAidKit } from 'react-icons/gi';
 import { BsShieldFillX } from 'react-icons/bs';
-import PortableText from "../components/portableText";
-import mascotteM from "../assets/mascotteM.png"
-import risqueC from "../assets/risqueC.png"
-import mascotteG from "../assets/mascotteG.png"
-import risqueCC from "../assets/risqueCC.png"
-import diplomeN from "../assets/diplomeN.png"
-import diplomeB from "../assets/diplomeB.png"
-import manger from "../assets/manger.png"
-import mSecours from "../assets/mSecours.png"
-import phoneA from "../assets/phoneA.png"
-import feu from "../assets/feu.png"
-import proteger from "../assets/proteger.png"
-import secoursA from "../assets/secoursA.png"
+import PortableText from "../portableText";
+import mascotteM from "../../assets/mascotteM.png"
+import risqueC from "../../assets/risqueC.png"
+import mascotteG from "../../assets/mascotteG.png"
+import risqueCC from "../../assets/risqueCC.png"
+import diplomeN from "../../assets/diplomeN.png"
+import diplomeB from "../../assets/diplomeB.png"
+import manger from "../../assets/manger.png"
+import mSecours from "../../assets/mSecours.png"
+import phoneA from "../../assets/phoneA.png"
+import feu from "../../assets/feu.png"
+import proteger from "../../assets/proteger.png"
+import secoursA from "../../assets/secoursA.png"
 
 
 import * as styles from './livret.module.css';
@@ -488,12 +488,10 @@ const Livret = (props) => {
           </div>
           <div data-line>
             <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgL/>
-             <div style={{display: 'flex'}}>
              <div data-num1> <h2> 3 </h2> </div>
-             <div data-line>
+             <div data-txtL>
                <span> Evacuer </span>
                <PortableText blocks={livret[4]._rawEvacuer} />
-             </div>
              </div>
           </div>
         </div>

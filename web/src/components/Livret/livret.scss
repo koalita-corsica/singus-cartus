@@ -109,7 +109,7 @@
 }
 
 [data-contact] {
-  background-image: url(../assets/barre.png);
+  background-image: url(../../assets/barre.png);
   display: flex;
   align-items: center;
   align-content: center;
@@ -138,7 +138,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -208,7 +208,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -304,7 +304,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -528,7 +528,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -636,7 +636,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -780,7 +780,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -871,7 +871,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -954,7 +954,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -1050,7 +1050,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -1375,7 +1375,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -1490,6 +1490,52 @@
     }
     [data-line] {
       display: flex;
+      background: #161314 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #00000029;
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      margin-top: 3rem;
+      color: white;
+      width: 72.2%;
+      margin-left: 4.7rem;
+      align-items: center;
+      justify-content: space-between !important;
+      img {
+        width: 111px;
+        height: 125px;
+        position: relative;
+        right: 8%;
+      }
+      [data-num1] {
+        width: 100%;
+        position: relative;
+        h2{
+          background: #0C090C 0% 0% no-repeat padding-box;
+          border: 2px solid #FFFFFF;
+          width: 40%;
+          height: 40%;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      [data-txtL] {
+
+        span {
+          color: white;
+          font-weight: bold;
+          font-size: 12px;
+          margin: 0;
+          text-align: left !important;
+        }
+        p {
+          margin: 0;
+          font-weight: 500;
+          font-size: 10px;
+          width: 80%;
+        }
+      }
     }
   }
   [data-footerRes] {
@@ -1526,7 +1572,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;
@@ -1602,7 +1648,7 @@
     background: #0C090C 0% 0% no-repeat padding-box;
   }
   [data-som] {
-    background-image: url(../assets/barre.png);
+    background-image: url(../../assets/barre.png);
     display: flex;
     align-items: center;
     align-content: center;

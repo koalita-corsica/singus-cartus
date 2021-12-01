@@ -6,13 +6,8 @@ import {
   filterOutDocsWithoutSlugs,
   mapEdgesToNodes,
 } from "../lib/helpers";
-import BlogPostPreviewList from "../components/blog-post-preview-list";
-import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
-import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { Link } from "gatsby";
-import Livret from '../components/livret.js';
 
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
@@ -43,14 +38,6 @@ export const query = graphql`
 const IndexPage = (props) => {
   const { data, errors } = props;
   const newsInfo = data.allSanityNewsletter.edges;
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    );
-  }
 
   return (
         <Layout />

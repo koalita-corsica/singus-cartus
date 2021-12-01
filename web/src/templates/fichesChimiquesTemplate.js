@@ -1,10 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
-import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../containers/layout";
-import Container from "../components/container";
-import SEO from "../components/seo";
-import Fiche from "../components/ficheChimique";
+import Fiche from "../components/ficheChimique/ficheChimique";
 
 export const query = graphql`
   query FicheTemplateQuer1y($id: String!) {
