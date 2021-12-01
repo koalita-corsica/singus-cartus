@@ -43,11 +43,11 @@ export const query = graphql`
         }
       }
       tache {
+        _rawMesures
         _key
         quand
         quelle
         qui
-        mesures
         risques {
           picto {
             asset {

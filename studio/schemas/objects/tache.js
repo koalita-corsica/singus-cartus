@@ -26,7 +26,7 @@ export default {
     },
     {
       name: "mesures",
-      type: "string",
+      type: "bodyPortableText",
       title: "Mesures de prévention/opérations ou procédures à respecter :",
     },
   ],

@@ -29,19 +29,23 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+[data-contentF] {
+  height: 64.35%;
+}
+
 [data-header] {
   background: #161314 0% 0% no-repeat padding-box;
   width: 100%;
-  height: 127px;
+  height: 12%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: white;
   img {
     margin-top: 1.5rem;
-    margin-left: 21rem;
-    width: 150px;
-    height: 50px;
+    margin-left: 23rem;
+    width: 80px;
+    height: 25px;
   }
 }
 
@@ -285,7 +289,7 @@
   [data-footer2] {
     width: 100%;
     margin-top: 9.4rem;
-    height: 109px;
+    height: 10%;
     background: #161314 0% 0% no-repeat padding-box;
     display: flex;
     justify-content: center;

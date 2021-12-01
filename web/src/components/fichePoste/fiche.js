@@ -11,6 +11,7 @@ import forma from "../../assets/formations.png";
 import { GiDiploma } from 'react-icons/gi';
 import html2canvas from "html2canvas";
 import $ from "jquery";
+import PortableText from "../portableText";
 
 const Fiche = (props) => {
   const {
@@ -59,131 +60,133 @@ const Fiche = (props) => {
               <h6> Entreprise <span> {entreprise.name} </span> </h6>
             </div>
           </div>
-          <div data-gray> </div>
-          {type && type == "horizontal" ?
-          <div data-machine>
-          <div data-specs>
-              <p> Machine : <span> {machine} </span> </p>
-              <p> Marque - Type : <span> {marque} </span> </p>
-              <p>
-                Caractéristiques principales :
-                <span> {caract} </span>
-              </p>
-              <p>
-                Date de mise en service : <span> {miseenservice} </span>
-              </p>
-              <p>
-                Produits ou matériaux à utiliser : <span> {produits} </span>
-              </p>
+          <div data-contentF>
+            <div data-gray> </div>
+            {type && type == "horizontal" ?
+            <div data-machine>
+            <div data-specs>
+                <p> Machine : <span> {machine} </span> </p>
+                <p> Marque - Type : <span> {marque} </span> </p>
+                <p>
+                  Caractéristiques principales :
+                  <span> {caract} </span>
+                </p>
+                <p>
+                  Date de mise en service : <span> {miseenservice} </span>
+                </p>
+                <p>
+                  Produits ou matériaux à utiliser : <span> {produits} </span>
+                </p>
+              </div>
+              <div data-bar/>
+                <div data-rsec>
+                  <img src={ogImage.asset.url} alt="" width="196" height="130"/>
+                  <div data-legend>
+                  {legend.map((item, i) =>
+                    <div data-number={`${i+1}`}> {item} </div>
+                  )}
+                  </div>
+              </div>
             </div>
-            <div data-bar/>
-              <div data-rsec>
-                <img src={ogImage.asset.url} alt="" width="196" height="130"/>
-                <div data-legend>
+            :
+            <div data-machinev>
+            <div data-specsv>
+                <p> Machine : <span> {machine} </span> </p>
+                <p> Marque/Type : <span> {marque} </span> </p>
+                <p>
+                  Caractéristiques principales:
+                  <span> {caract} </span>
+                </p>
+                <p>
+                  Date de mise en service : <span> {miseenservice} </span>
+                </p>
+                <p>
+                  Produits ou matériaux à utiliser : <span> {produits} </span>
+                </p>
+              </div>
+              <div data-barv/>
+                <div data-rsecv>
+                <div style={{alignItems: 'flex-start'}} data-legendv>
                 {legend.map((item, i) =>
                   <div data-number={`${i+1}`}> {item} </div>
                 )}
                 </div>
-            </div>
-          </div>
-          :
-          <div data-machinev>
-          <div data-specsv>
-              <p> Machine: <span> {machine} </span> </p>
-              <p> Marque/Type: <span> {marque} </span> </p>
-              <p>
-                Caractéristiques principales:
-                <span> {caract} </span>
-              </p>
-              <p>
-                Date de mise en service : <span> {miseenservice} </span>
-              </p>
-              <p>
-                Produits ou matériaux à utiliser: <span> {produits} </span>
-              </p>
-            </div>
-            <div data-barv/>
-              <div data-rsecv>
-              <div style={{alignItems: 'flex-start'}} data-legendv>
-              {legend.map((item, i) =>
-                <div data-number={`${i+1}`}> {item} </div>
-              )}
+                  <img style={{margin: '0', marginTop: '-3rem', marginLeft: '3.5rem'}} src={ogImage.asset.url} alt="" height="231"/>
               </div>
-                <img style={{margin: '0', marginTop: '-3rem', marginLeft: '3.5rem'}} src={ogImage.asset.url} alt="" height="231"/>
             </div>
-          </div>
-          }
-          <div data-icons>
-            <div data-obli>
-            <h3> EPI obligatoires </h3>
-              {epi.map((item) =>
-                <img src={item.image.asset.url} alt="" width="55" height="55"/>
-              )}
-            </div>
-            <div data-inter>
-            <h3> Interdictions </h3>
-              {interdiction.map((item) =>
-                <img src={item.image.asset.url} alt="" width="55" height="55"/>
-              )}
-            </div>
-          </div>
-          <div data-grid>
-            <div class={styles.empty1}> </div>
-            <div class={styles.headerg}>
-              <p>Tâche exposant <br />l’opérateur à un risque</p>
-            </div>
-            <div class={styles.headerm}>
-              <p>Risques - Dangers</p>
-            </div>
-            <div class={styles.headerd}>
-              <p>Mesures de prévention - Opérations ou procédures à respecter</p>
-            </div>
-            <div class={styles.empty2}></div>
-            {tache2.map((item, i) =>
-             i % 2 == 0 ?
-            <>
-            <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div>
-              <div style={{background: 'gray'}} data-g="data-g" data-odd>
-                <ul style={{background: 'gray'}}>
-                  {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                  {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
-                  {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
-                </ul>
-              </div>
-                <div style={{background: 'gray'}} data-m="data-m" data-odd id={`${i+1}`}>
-                {item.risques.map((imag) =>
-                  <img src={imag.picto.asset.url} alt="" height="44"/>
+            }
+            <div data-icons>
+              <div data-obli>
+              <h3> EPI obligatoires </h3>
+                {epi.map((item) =>
+                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
                 )}
-                </div>
-                <div style={{background: 'gray'}} data-d="data-d" data-odd id={`${i+1}`}>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
-                </div>
-                <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div >
-            </>
-            :
-            <>
-            <div class={styles.empty} data-odd id={`${i+1}`}></div>
-              <div data-g="data-g" data-odd>
-                <ul>
-                  {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                  {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
-                  {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
-                </ul>
               </div>
-                <div data-m="data-m" data-odd id={`${i+1}`}>
-                {item.risques.map((imag) =>
-                  <img src={imag.picto.asset.url} alt="" height="44"/>
+              <div data-inter>
+              <h3> Interdictions </h3>
+                {interdiction.map((item) =>
+                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
                 )}
+              </div>
+            </div>
+            <div data-grid>
+              <div class={styles.empty1}> </div>
+              <div class={styles.headerg}>
+                <p>Tâche exposant <br />l’opérateur à un risque</p>
+              </div>
+              <div class={styles.headerm}>
+                <p>Risques - Dangers</p>
+              </div>
+              <div class={styles.headerd}>
+                <p>Mesures de prévention - Opérations ou procédures à respecter</p>
+              </div>
+              <div class={styles.empty2}></div>
+              {tache2.map((item, i) =>
+               i % 2 == 0 ?
+              <>
+              <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div>
+                <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
+                  <ul style={{background: '#E5E5E5'}}>
+                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                  </ul>
                 </div>
-                <div data-d="data-d" data-odd id={`${i+1}`}>
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                  <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
+                  {item.risques.map((imag) =>
+                    <img src={imag.picto.asset.url} alt="" height="44"/>
+                  )}
+                  </div>
+                  <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
+                    <PortableText blocks={item._rawMesures} />
+                  </div>
+                  <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div >
+              </>
+              :
+              <>
+              <div class={styles.empty} data-odd id={`${i+1}`}></div>
+                <div data-g="data-g" data-odd>
+                  <ul>
+                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
+                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
+                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                  </ul>
                 </div>
-                <div class={styles.empty} data-odd id={`${i+1}`}></div >
-            </>
-            )}
-          </div>
-          {tache && tache.length > 2 ?
-            <>
+                  <div data-m="data-m" data-odd id={`${i+1}`}>
+                  {item.risques.map((imag) =>
+                    <img src={imag.picto.asset.url} alt="" height="44"/>
+                  )}
+                  </div>
+                  <div data-d="data-d" data-odd id={`${i+1}`}>
+                    <PortableText blocks={item._rawMesures} />
+                  </div>
+                  <div class={styles.empty} data-odd id={`${i+1}`}></div >
+              </>
+              )}
+              </div>
+            </div>
+            {tache && tache.length > 2 ?
+              <>
           <div data-footer/>
           <div data-page2 id="page2">
             <div data-header>
@@ -209,23 +212,23 @@ const Fiche = (props) => {
               {tache0.map((item, i) =>
                i % 2 == 0 ?
               <>
-              <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div>
-                <div style={{background: 'gray'}} data-g="data-g" data-odd>
-                  <ul style={{background: 'gray'}}>
+              <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div>
+                <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
+                  <ul style={{background: '#E5E5E5'}}>
                     {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
                     {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
                     {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
                   </ul>
                 </div>
-                  <div style={{background: 'gray'}} data-m="data-m" data-odd id={`${i+1}`}>
+                  <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
                   {item.risques.map((imag) =>
                     <img src={imag.picto.asset.url} alt="" height="44"/>
                   )}
                   </div>
-                  <div style={{background: 'gray'}} data-d="data-d" data-odd id={`${i+1}`}>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                  <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
+                    <PortableText blocks={item._rawMesures} />
                   </div>
-                  <div style={{background: 'gray'}} class={styles.empty} data-odd id={`${i+1}`}></div >
+                  <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
               :
               <>
@@ -243,7 +246,7 @@ const Fiche = (props) => {
                   )}
                   </div>
                   <div data-d="data-d" data-odd id={`${i+1}`}>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis.</p>
+                    <PortableText blocks={item._rawMesures} />
                   </div>
                   <div class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
@@ -308,14 +311,14 @@ const Fiche = (props) => {
                 <img src={secours} width="48px" height="48px"/>
                 <div data-secourst>
                   <h3> En cas d’accident, alerter un secouriste du travail. </h3>
-                  <p>n° tél SAMU : 15 </p>
+                  <p>n° tél SAMU : <span style={{color: 'white', fontSize: '18px'}}> 15 </span> </p>
                 </div>
               </div>
               <div data-incend>
               <img src={fire} width="48px" height="48px"/>
               <div data-incendt>
                 <h3> En cas d’incendie, alerter le responsable. </h3>
-                <p>n° tél pompiers : 18 </p>
+                <p>n° tél pompiers : <span style={{color: 'white', fontSize: '18px'}}> 18 </span> </p>
               </div>
               </div>
             </div>

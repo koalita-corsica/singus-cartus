@@ -47,7 +47,7 @@ export const query = graphql`
         quand
         quelle
         qui
-        mesures
+        _rawMesures
         risques {
           picto {
             asset {

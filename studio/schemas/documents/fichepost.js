@@ -92,7 +92,7 @@ export default {
     {
       name: "interdiction",
       type: "array",
-      title: "EPI Interdits :",
+      title: "Interdiction :",
       of: [{ type: "reference", to: [{ type: "epis" }] }],
     },
     {
@@ -114,4 +114,11 @@ export default {
       of: [{ type: "string" }],
     },
   ],
+  preview: {
+    select: {
+      title: 'fichedeposte',
+      subtitle: 'version',
+      media: 'ogImage'
+    }
+  }
 };

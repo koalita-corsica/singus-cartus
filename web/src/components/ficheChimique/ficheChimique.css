@@ -44,9 +44,9 @@
 }
 [data-header] img {
   margin-top: 1.5rem;
-  margin-left: 23rem;
-  width: 80px;
-  height: 25px;
+  margin-left: 21rem;
+  width: 150px;
+  height: 50px;
 }
 
 [data-headerCont] {
@@ -74,8 +74,8 @@
   height: 240px;
 }
 
-[data-machine] {
-  background: #AF0013 0% 0% no-repeat padding-box;
+[data-machinec] {
+  background: #F59F2C 0% 0% no-repeat padding-box;
   box-shadow: 3px 2px 18px #04040573;
   border-radius: 5px;
   width: 80%;
@@ -83,43 +83,45 @@
   margin-left: 5rem;
   margin-top: -9rem;
   display: flex;
+  color: black;
 }
-[data-machine] img {
+[data-machinec] img {
   margin-left: 5rem;
   margin-top: -2rem;
 }
-[data-machine] [data-specs] {
+[data-machinec] [data-specsc] {
   padding: 1rem;
-  color: white;
+  color: black;
 }
-[data-machine] [data-specs] p {
+[data-machinec] [data-specsc] p {
   font-size: 10px;
   font-weight: bold;
 }
-[data-machine] [data-specs] span {
+[data-machinec] [data-specsc] span {
   display: block !important;
   color: white;
   font-size: 9px;
   font-weight: normal;
 }
 
-[data-legend] {
-  color: white;
+[data-legendc] {
+  color: black;
   font-size: 9px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  line-height: 5px;
   margin-left: 4rem;
   margin-top: 1rem;
   width: 100%;
-  gap: 0.5rem;
 }
-[data-legend] div::before {
+[data-legendc] div::before {
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   content: attr(data-number) " ";
-  border: solid 2px white;
+  border: solid 2px black;
   border-radius: 100%;
   font-size: 10px;
   display: inline-block;
@@ -147,7 +149,6 @@
 
 [data-obli] {
   line-height: 0;
-  height: 83px;
 }
 [data-obli] h3 {
   letter-spacing: 0px;
@@ -158,7 +159,6 @@
 }
 
 [data-inter] {
-  height: 83px;
   line-height: 0;
 }
 [data-inter] h3 {
@@ -180,9 +180,6 @@
   display: grid;
   grid-template-columns: 66.94px 180px 190px 260px 96.79px;
   grid-template-rows: 34.24px 131px;
-}
-[data-grid] .empty2 :nth-child(even) {
-  background: #000;
 }
 [data-grid] .headerg {
   background-size: cover;
@@ -222,7 +219,7 @@
   display: flex;
   flex-direction: column;
   line-height: 15px;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #161314;
 }
 [data-grid] [data-g] ul li {
@@ -305,8 +302,7 @@
 }
 [data-footer2] [data-qualif] [data-qualit] p {
   font-size: 11px;
-  font-weight: normal;
-  margin-top: -0.5rem;
+  font-weight: lighter;
 }
 [data-footer2] [data-formatf] {
   color: white;
@@ -325,8 +321,7 @@
 }
 [data-footer2] [data-formatf] [data-formatt] p {
   font-size: 11px;
-  font-weight: normal;
-  margin-top: -0.5rem;
+  font-weight: lighter;
 }
 [data-footer2] [data-secours] {
   width: 30%;
@@ -340,7 +335,6 @@
 [data-footer2] [data-secours] [data-secourst] h3 {
   font-size: 11px;
   font-weight: bolder;
-  width: 90%;
 }
 [data-footer2] [data-secours] [data-secourst] p {
   font-size: 11px;
@@ -370,8 +364,8 @@
   background: white;
 }
 
-[data-machinev] {
-  background: #AF0013 0% 0% no-repeat padding-box;
+[data-machinevc] {
+  background: #F59F2C 0% 0% no-repeat padding-box;
   box-shadow: 3px 2px 18px #04040573;
   border-radius: 5px;
   width: 80%;
@@ -381,32 +375,32 @@
   display: flex;
   align-items: center;
 }
-[data-machinev] img {
+[data-machinevc] img {
   margin-left: 5rem;
   margin-top: -2rem;
 }
-[data-machinev] [data-specsv] {
+[data-machinevc] [data-specsvc] {
   padding: 1rem;
-  color: white;
+  color: black;
   padding-right: 3rem;
 }
-[data-machinev] [data-specsv] p {
+[data-machinevc] [data-specsvc] p {
   font-size: 10px;
   font-weight: bold;
 }
-[data-machinev] [data-specsv] span {
+[data-machinevc] [data-specsvc] span {
   display: block !important;
-  color: white;
+  color: black;
   font-size: 9px;
   font-weight: normal;
 }
 
-[data-rsecv] {
+[data-rsecvc] {
   display: flex;
 }
 
-[data-legendv] {
-  color: white;
+[data-legendvc] {
+  color: black;
   font-size: 9px;
   display: flex;
   flex-direction: column;
@@ -414,18 +408,26 @@
   align-items: center;
   padding-left: 3rem;
 }
-[data-legendv] div::before {
+[data-legendvc] p {
+  text-align: left !important;
+}
+[data-legendvc] div::before {
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   content: attr(data-number) " ";
-  border: solid 2px white;
+  border: solid 2px black;
   border-radius: 100%;
   font-size: 10px;
   display: inline-block;
   width: 15px;
   height: 15px;
   text-align: center;
+}
+
+[data-numberc] {
+  color: black !important;
 }
 
 [data-barv] {
@@ -489,7 +491,7 @@
   display: flex;
   flex-direction: column;
   line-height: 15px;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #161314;
 }
 [data-grid1] [data-g] ul li {
@@ -535,4 +537,4 @@
   border-bottom: black solid 1px;
 }
 
-/*# sourceMappingURL=fiche.module.css.map */
+/*# sourceMappingURL=ficheChimique.css.map */
