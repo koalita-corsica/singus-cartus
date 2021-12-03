@@ -46,7 +46,8 @@ const IframePreview = (props) => {
   return (
     <div className={styles.componentWrapper}>
       <object data={url} width="793.70" height="1122.51" type="text/html">
-        Alternative Content
+        Aperçu non disponible : tous les champs ne sont pas remplis.
+        Code erreur : 166-2000
       </object>
     </div>
   );
