@@ -61,7 +61,9 @@ const Fiche = (props) => {
             </div>
           </div>
           <div data-contentF>
-            <div data-gray> </div>
+            <div data-gray>
+              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem'}}> {fichedeposte} </h3>
+            </div>
             {type && type == "horizontal" ?
             <div data-machine>
             <div data-specs>

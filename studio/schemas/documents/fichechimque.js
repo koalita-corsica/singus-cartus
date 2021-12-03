@@ -3,7 +3,7 @@ import { FaBiohazard } from "react-icons/fa";
 
 export default {
   name: "fichesChmique",
-  title: "Fiche de sécurite Produits Chimiques",
+  title: "Notice de Poste Produit Chimique",
   type: "document",
   icon: FaBiohazard,
   fields: [
@@ -15,7 +15,7 @@ export default {
     {
       name: "fichedeposte",
       type: "string",
-      title: "Fiche de poste",
+      title: "Notice de poste",
     },
     {
       name: "slug",
@@ -36,27 +36,27 @@ export default {
     {
       name: "machine",
       type: "string",
-      title: "Machine",
+      title: "Nom du Produit",
     },
     {
       name: "marque",
       type: "string",
-      title: "Marque/type:",
+      title: "Fournisseur",
     },
     {
       name: "caract",
       type: "string",
-      title: "Caractéristiques principales de la machine:",
+      title: "Caractéristiques principales du produit",
     },
     {
       name: "produits",
       type: "string",
-      title: "Produits ou matériaux  à utiliser:",
+      title: "Lieu de consultation FDS",
     },
     {
       name: "miseenservice",
       type: "date",
-      title: "Date de mise en service:",
+      title: "Date FDS",
     },
     {
       title: "Type d'image",

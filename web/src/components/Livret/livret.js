@@ -1,5 +1,6 @@
-import React from 'react';
-import logo from "../../assets/logo.png";
+import React, {useEffect} from 'react';
+import logo from "../../assets/logoL.png";
+import logoN from "../../assets/logoLN.png";
 import { MdDoNotDisturbAlt } from 'react-icons/md';
 import { BsTelephoneOutbound } from 'react-icons/bs';
 import { GiFirstAidKit } from 'react-icons/gi';
@@ -17,6 +18,7 @@ import phoneA from "../../assets/phoneA.png"
 import feu from "../../assets/feu.png"
 import proteger from "../../assets/proteger.png"
 import secoursA from "../../assets/secoursA.png"
+import $ from "jquery"
 
 
 import * as styles from './livret.module.css';
@@ -24,8 +26,15 @@ import * as styles from './livret.module.css';
 const Livret = (props) => {
   const {title, livret, wRisques} = props;
 
-  console.log(livret[3].epi);
-
+  // useEffect(() => {
+  //   var livret = document.getElementById('main')
+  //   var total = livret.childElementCount
+  //   for(var i = 1; i <= total; i++) {
+  //     const para = document.createElement('p');
+  //     para.innerHTML = i
+  //     console.log(livret.childNodes[i].childNodes[livret.childNodes[i].childElementCount - 1])
+  //   }
+  // });
 
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -42,23 +51,23 @@ const Livret = (props) => {
       className={styles.button1}
     />
     <div id={styles.capture}>
-    <div data-livret id={styles.livret}>
+    <div data-livret id="main">
       <div data-containerCouverture>
         <div data-livretH>
           <div data-imgLogo>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" width="155"/>
           </div>
           <h1> Livret Accueil Sécurité </h1>
         </div>
         <div data-height>
         <div data-lgray>
-          <div data-square>
-            <img src={livret[0].image.asset.url} alt="" height="96px" />
-            <div data-descp>
-              <PortableText blocks={livret[0]._rawTexte} />
-            </div>
-            <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
+        </div>
+        <div data-square>
+          <img src={livret[0].image.asset.url} alt="" height="129" height="136" />
+          <div data-descp>
+            <PortableText blocks={livret[0]._rawTexte} />
           </div>
+          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
         </div>
       </div>
         <div data-lfooter>
@@ -78,20 +87,21 @@ const Livret = (props) => {
         <div data-mid>
           <div data-rightGray>
             <div data-redLeft>
-              <div data-leftC> Renseignement pratique  P.00</div>
-              <div data-leftC> Responsabilité de chacun  P.00</div>
-              <div data-leftC> Règles générales de sécurité  P.00</div>
-              <div data-leftC> Restauration et repos  P.00</div>
-              <div data-leftC> Equipement de protection individuelle  P.00</div>
-              <div data-leftC> Risques généraux de l'entreprise  P.00</div>
-              <div data-leftC> En cas d'accident  P.00</div>
-              <div data-leftC> En cas d'incendie  P.00</div>
-              <div data-leftC> En cas d'incendie  P.00</div>
-              <div data-leftC> Certificat de formation  P.00</div>
+              <div data-leftC> <p> Renseignement sur l’entreprise </p> <p>P.00 </p> </div>
+              <div data-leftC> <p> Responsabilité de chacun</p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Règles générales de sécurité </p> <p> P.00 </p></div>
+              <div data-leftC> <p> Restauration et repos </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Equipement de protection individuelle </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Risques généraux de l'entreprise </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> En cas d'accident </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> En cas d'incendie </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Notes </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Certificat de formation </p> <p> P.00 </p> </div>
             </div>
           </div>
         </div>
-        <div data-fsommaire />
+        <div data-fsommaire>
+        </div>
       </div>
       <div data-renseigment>
       <div data-headSommaire />
@@ -106,9 +116,9 @@ const Livret = (props) => {
             <div data-leftC> <p> Code Risque </p></div>
             <div data-leftC> <p> Taux AT/MP </p></div>
             <div data-leftC> <p> Document Unique </p></div>
-            <div data-leftC> <p> Aff.Olbigatoire </p></div>
-            <div data-leftC> <p> Aff.prevention </p></div>
-            <div data-leftC> <p> Aff.COVID </p></div>
+            <div data-leftC> <p> Affichage Olbigatoire </p></div>
+            <div data-leftC> <p> Affichage prevention </p></div>
+            <div data-leftC> <p> Affichage COVID </p></div>
             <div data-leftC> <p> Unité de Travail </p></div>
           </div>
           <div data-rightGray>
@@ -117,7 +127,7 @@ const Livret = (props) => {
             <p> {livret[1].nbSalaries} </p>
             <p> {livret[1].codeRisque} </p>
             <p> {livret[1].taux} </p>
-            <p> {livret[1].documentUnique} </p>
+            <p style={{width: '90%'}}> {livret[1].documentUnique} </p>
             <p> {livret[1].affObligatoire} </p>
             <p> {livret[1].affPrevention} </p>
             <p> {livret[1].affCovid} </p>
@@ -145,21 +155,21 @@ const Livret = (props) => {
             <div data-articles>
               <div data-artic1>
                 <div data-bouble>
-                  <img src={diplomeB} height="28px"/>
+                  <img src={diplomeB} height="38"/>
                 </div>
                 <p> Article 4121-1 </p>
                 <p> " l'employeur est tenu envers le salarié d'une obligation de sécurité qui est une obligation de résultat ". </p>
               </div>
               <div data-artic2>
                 <div data-bouble>
-                  <img src={diplomeB} height="28px"/>
+                  <img src={diplomeB} height="38"/>
                 </div>
                 <p> Article 4121-2 </p>
                 <p> " l'employeur met en œuvre les mesures prévues à l'Article 4121-1 sur le fondement des principes généraux de prévention ", qui sont au nombre de 9. </p>
               </div>
               <div data-artic3>
                 <div data-bouble>
-                  <img src={diplomeB} height="28px"/>
+                  <img src={diplomeB} height="38"/>
                 </div>
                 <p> Article 4121-3 </p>
                 <p>" l'employeur, compte tenu de la nature des activités de l'établissement, doit procéder à l'évaluation des risques pour assurer la santé physique et mentale de ses salariés ". </p>
@@ -175,10 +185,10 @@ const Livret = (props) => {
             </div>
             <div data-lastArtc>
               <div data-bouble>
-                <img src={diplomeN} height="28px"/>
+                <img src={diplomeN} height="38"/>
               </div>
               <p> Article 4122-1 </p>
-              <p> Conformément aux instructions qui lui sont données par l'employeur, dans les conditions prévues au règlement intérieur (…), il incombe à chaque travailleur de prendre soin, en fonction de sa formation et selon ses possibilités, de sa santé et de sa sécurité ainsi que de celles des autres personnes concernées par ses actes ou ses omissions au travail. </p>
+              <p> Conformément aux instructions qui lui sont données par l'employeur, dans les conditions prévues au règlement intérieur (…), <strong> il incombe à chaque travailleur de prendre soin </strong>, en fonction de sa formation et selon ses possibilités, <strong> de sa santé et de sa sécurité </strong> ainsi que de celles des <strong> autres personnes </strong> concernées par ses actes ou ses omissions au travail. </p>
             </div>
           </div>
         </div>
@@ -220,12 +230,11 @@ const Livret = (props) => {
           </div>
           <div data-contS>
             <div data-titCont>
-              <h5> Contacts </h5>
+              <p> Contacts </p>
             </div>
             <div data-gridContact>
               {livret[2].infos.map((item) =>
                 <div data-partner>
-                  <img src={item.logo.asset.url} alt="" width="53" />
                   <p data-func style={{color: '#C40005', textAlign: 'center'}}> {item.function} </p>
                   <p data-name> {item.value} </p>
                   <p data-name> {item.numero} </p>
@@ -242,7 +251,7 @@ const Livret = (props) => {
         <div data-headSommaire/>
         <div data-som> <h2> Restauration et repos </h2> </div>
         <div data-contain>
-          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={manger} height="48px" /> <img src={manger} height="48px" /> <img src={manger} height="48px" /></div> </div>
+          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={manger} height="68" /> <img src={manger} height="68" /> <img src={manger} height="68" /></div> </div>
             <div data-rightR>
               <div data-elem1>
                 <p> En application de l’article R.4228-21 du CTl, il est interdit au personnel de prendre ses repas dans les locaux affectés au travail. </p>
@@ -278,7 +287,7 @@ const Livret = (props) => {
             <div data-gridEquip>
               {livret[3].epi.map((item) =>
                 <div data-card>
-                  <img src={item.image.asset.url} width="75" height="75" alt="" />
+                  <img src={item.image.asset.url} width="95" alt="" />
                   <PortableText blocks={item._rawDescription} />
                 </div>
               )}
@@ -359,7 +368,7 @@ const Livret = (props) => {
       </div>
         <div data-footerRes>
           {item.sensi != null ?
-            <h5 style={{color: 'white', textAlign: 'center'}}> {item.sensi} </h5>
+            <p style={{color: 'white', textAlign: 'center'}}> {item.sensi} </p>
             :
             <>
             </>
@@ -367,40 +376,6 @@ const Livret = (props) => {
         </div>
       </div>
       )}
-      {/*
-      <div data-equipPersonnel>
-      <div data-headSommaire />
-      <div data-som>
-        <h2> Equipement de protection individuelle </h2>
-      </div>
-      <div data-content>
-        <div data-noir>
-          <p> Sur le chantier et au dépôt, le port des EPI (Chaussures et Gants) est obligatoire. </p>
-          <p> La gêne qu'ils vous occasionnent momentanément est moindre comparée à l'invalidité qu'ils vous éviteront. </p>
-        </div>
-          <div data-epi>
-            <div data-card>
-              <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-            </div>
-            <div data-card>
-              <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-            </div>
-            <div data-card>
-              <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-              <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et </p>
-            </div>
-          </div>
-          <p data-para> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </p>
-        </div>
-        <div data-footerRes>
-          <div data-picto>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="75" height="75" alt="" />
-          </div>
-        </div>
-      </div>
-      */}
       <div data-accident>
         <div data-headSommaire />
         <div data-som> <h2> En cas d'accident </h2> </div>
@@ -459,7 +434,7 @@ const Livret = (props) => {
               <h5> Sauveteur Secouriste du Travail : </h5>
               <p> Ici la liste du personnel formé sur affichage séparé </p>
             </div>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="95" height="95" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="140" height="140" alt="" />
           </div>
         </div>
       </div>
@@ -470,7 +445,7 @@ const Livret = (props) => {
           <div data-wrapF>
             <div data-first>
               <div data-num1> <h2> 1 </h2> </div>
-              <img src={phoneA} height="21px" />
+              <img src={phoneA} height="41" />
               <p> Alerter</p>
               <p> Prévenir les Urgences adéquates : </p>
               <div data-contat>
@@ -480,24 +455,51 @@ const Livret = (props) => {
             </div>
             <div data-second>
               <div data-num1> <h2> 2 </h2> </div>
-              <img src={feu} height="21px" />
+              <img src={feu} height="41" />
               <p> Lutter (si possible) </p>
               <p> Utiliser les moyens de secours Extincteurs </p>
               <p> Sans mettre votre vie en danger </p>
             </div>
           </div>
           <div data-line>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="110" height="110" alt="" data-imgL/>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" height="167" alt="" data-imgL/>
              <div data-num1> <h2> 3 </h2> </div>
              <div data-txtL>
                <span> Evacuer </span>
                <PortableText blocks={livret[4]._rawEvacuer} />
              </div>
           </div>
+          <div data-line2>
+             <div data-txtL>
+               <span> Conseils : </span>
+               <ul>
+                <li>
+                  Réaliser une installation conforme ;
+                </li>
+                <li>
+                  Maintenir le libre accès aux issues de secours ;
+                </li>
+                <li>
+                  Rappeler l’interdiction de fumer ;
+                </li>
+                <li>
+                  Etablir des consignes d’incendie / Plan d’Évacuation ;
+                </li>
+                <li>
+                  Faire vérifier les extincteurs, alarmes, désenfumages, …
+                </li>
+                <li>
+                  Sensibiliser et former les salariés.
+                </li>
+               </ul>
+               <p> Chaque seconde compte, Agissez ! </p>
+             </div>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="157" height="157" alt="" data-imgL/>
+          </div>
         </div>
         <div data-footerRes>
           <p> Notre partenaire Verification Incendie: </p>
-          <img src={livret[4].logo.asset.url} alt="" height="22px" />
+          <img src={livret[4].logo.asset.url} alt="" height="45" />
         </div>
       </div>
       <div data-certificat>
@@ -505,55 +507,55 @@ const Livret = (props) => {
         <div data-som> <h2> Certificat de Formation à la Sécurité Générale </h2> </div>
         <div data-content>
           <div data-imgContain>
-            <img src={logo} alt="" />
+            <img style={{marginTop: '1rem'}} src={logoN} alt="" width="180"/>
           </div>
-          <p> Je soussigné(e) …………………………………………………………………….. avoir reçu l'information et la formation en interne à la sécurité générale spécifique au lieu de travail de la société NOM DE LA SOCIÉTÉ ainsi que le livret d'accueil sécurité. </p>
+          <p style={{lineHeight: '2'}}> Je soussigné(e) …………………………………………………………………….. avoir reçu l'information et la formation en interne à la sécurité générale spécifique au lieu de travail de la société ……………………………………………… ainsi que le livret d'accueil sécurité. </p>
           <p> Je reconnais également avoir reçu ou avoir à disposition le kit Equipement de Protection Individuelle (EPI) </p>
-          <div>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="56" height="56" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="56" height="56" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="56" height="56" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="56" height="56" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="56" height="56" alt="" />
+          <div style={{display: 'flex', gap: '1rem'}}>
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
+            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
           </div>
           <div data-line>
-          <p> Fait le …………….. </p>
+          <p> Fait le ……………............ </p>
           <p> Signature </p>
           </div>
           <p> À ……………………… </p>
-          <p> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
+          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
         </div>
         <div data-footerRes />
       </div>
       <div data-logo>
-        <img src={logo} alt="" width="258" height="74" />
+        <img src={logoN} alt="" width="258" height="74" />
       </div>
       <div data-notes>
         <div data-headSommaire />
         <div data-som> <h2> Notes </h2> </div>
         <div data-content>
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
-          <hr />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
         </div>
       <div data-footerRes />
       </div>
       <div data-final>
         <div data-head />
         <div data-content>
-          <img src={logo} alt="" width="255" />
+          <img src={logoN} alt="" width="255" />
           <h3> www.evrpro.fr </h3>
           <div data-center>
             <p> Z.I de Baléone - Lot Michel Ange </p>
