@@ -23,6 +23,8 @@
     height: 297mm;
     width: 210mm;
     margin: 0;
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
 }
 
 [data-containerCouverture] {
@@ -265,7 +267,7 @@
       font-size:15px;
       font-weight: 500;
       p {
-        width: 100%;
+        width: 90%;
         margin: 0;
         margin-left: 3rem;
         font-weight: medium;
@@ -390,18 +392,24 @@
           justify-content: flex-start;
           [data-bouble] {
             position: relative;
-            top: -10%;
+            top: -13%;
             display: flex;
             align-items: center;
             align-content: center;
             justify-content: center;
             color: white;
             font-size: 60px;
-            width: 57px;
-            height: 57px;
+            width: 77px;
+            height: 77px;
             background: #BCBCBC 0% 0% no-repeat padding-box;
             border: 2px solid #FFFFFF;
             border-radius: 50%;
+            margin: 0;
+          }
+          span {
+            color: #fff;
+            margin: 0;
+            margin-top: -1rem;
           }
           p {
             width: 80%;
@@ -422,18 +430,23 @@
           justify-content: flex-start;
           [data-bouble] {
             position: relative;
-            top: -10%;
+            top: -13%;
             display: flex;
             align-items: center;
             align-content: center;
             justify-content: center;
             color: white;
             font-size: 40px;
-            width: 57px;
-            height: 57px;
+            width: 77px;
+            height: 77px;
             background: #0C090C 0% 0% no-repeat padding-box;
             border: 2px solid #FFFFFF;
             border-radius: 50%;
+          }
+          span {
+            color: #fff;
+            margin: 0;
+            margin-top: -1rem;
           }
           p {
             width: 80%;
@@ -454,18 +467,23 @@
           justify-content: flex-start;
           [data-bouble] {
             position: relative;
-            top: -10%;
+            top: -13%;
             display: flex;
             align-items: center;
             align-content: center;
             justify-content: center;
             color: white;
             font-size: 40px;
-            width: 57px;
-            height: 57px;
+            width: 77px;
+            height: 77px;
             background: #C40005 0% 0% no-repeat padding-box;
             border: 2px solid #FFFFFF;
             border-radius: 50%;
+          }
+          span {
+            color: #fff;
+            margin: 0;
+            margin-top: -1rem;
           }
           p {
             width: 80%;
@@ -517,22 +535,25 @@
       font-weight: 500;
       font-size: 14px;
       [data-bouble] {
-        position: relative;
-        top: -16%;
         display: flex;
         align-items: center;
         align-content: center;
         justify-content: center;
         color: white;
         font-size: 40px;
-        width: 57px;
-        height: 57px;
+        width: 77px;
+        height: 77px;
         background: #ECECEC 0% 0% no-repeat padding-box;
         border: 2px solid #FFFFFF;
         border-radius: 50%;
+        margin: 0;
+        margin-top: -2.5rem;
+      }
+      span {
+        color: #000;
+        margin: 0;
       }
       p {
-        margin: 0;
         width: 95%;
         text-align: center;
       }
@@ -869,11 +890,11 @@
     [data-gridEquip] {
       margin-top: 5rem;
       display: grid;
-      grid-column-gap: 1rem;
+      grid-column-gap: .5rem;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 65%);
-      margin-left: 2rem;
-      margin-right: 2rem;
+      margin-left: 4rem;
+      margin-right: 4rem;
       [data-card] {
         width: 90%;
         height: 80%;
@@ -887,6 +908,7 @@
         font-weight: 500;
         text-align: center;
         border-radius: 10px;
+        z-index: 1;
         p {
           width: 90%;
         }
@@ -963,8 +985,8 @@
       margin: -.5rem;
     }
     [data-contentRisque] {
-      margin-left: 3rem;
-      margin-right: 6rem;
+      margin-left: 6rem;
+      margin-right: 3rem;
       height: 322px;
       font-size: 15px;
       font-weight: 500;
@@ -1379,7 +1401,7 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 2px solid #1DA16A;
     border-radius: 10px;
-    width: 80%;
+    width: 85%;
     height: 153px;
     display: flex;
     h5 {
@@ -1399,7 +1421,7 @@
     }
     img {
       position: relative;
-      left: 15%;
+      left: 19%;
     }
   }
   [data-footerRes] {

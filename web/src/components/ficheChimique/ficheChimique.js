@@ -56,13 +56,13 @@ const Fiche = (props) => {
             <img src={logo} alt="Logo EvRPro" height="50"/>
             <div data-headerCont>
               <h6> Version n° / date <span> {version} </span> </h6>
-              <h4> Notice de poste </h4>
+              <h4> Notice de Poste Produit Chimique </h4>
               <h6> Entreprise <span> {entreprise.name} </span> </h6>
             </div>
           </div>
           <div data-contentF>
             <div data-gray>
-              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem'}}> {fichedeposte} </h3>
+              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', marginLeft: '1.5rem'}}> {fichedeposte} </h3>
             </div>
             {type && type == "horizontal" ?
             <div data-machinec>

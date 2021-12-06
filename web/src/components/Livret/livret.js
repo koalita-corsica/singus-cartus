@@ -26,15 +26,13 @@ import * as styles from './livret.module.css';
 const Livret = (props) => {
   const {title, livret, wRisques} = props;
 
-  // useEffect(() => {
-  //   var livret = document.getElementById('main')
-  //   var total = livret.childElementCount
-  //   for(var i = 1; i <= total; i++) {
-  //     const para = document.createElement('p');
-  //     para.innerHTML = i
-  //     console.log(livret.childNodes[i].childNodes[livret.childNodes[i].childElementCount - 1])
-  //   }
-  // });
+  useEffect(() => {
+    var livret = document.getElementById('main')
+    var total = livret.childElementCount
+    for(var i = 1; i <= total; i++) {
+      console.log(livret.childNodes[i])
+    }
+  });
 
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -50,7 +48,7 @@ const Livret = (props) => {
       onClick={() => window.print()}
       className={styles.button1}
     />
-    <div id={styles.capture}>
+    <div id={styles.capture} >
     <div data-livret id="main">
       <div data-containerCouverture>
         <div data-livretH>
@@ -157,21 +155,21 @@ const Livret = (props) => {
                 <div data-bouble>
                   <img src={diplomeB} height="38"/>
                 </div>
-                <p> Article 4121-1 </p>
+                <span> Article 4121-1 </span>
                 <p> " l'employeur est tenu envers le salarié d'une obligation de sécurité qui est une obligation de résultat ". </p>
               </div>
               <div data-artic2>
                 <div data-bouble>
                   <img src={diplomeB} height="38"/>
                 </div>
-                <p> Article 4121-2 </p>
+                <span> Article 4121-2 </span>
                 <p> " l'employeur met en œuvre les mesures prévues à l'Article 4121-1 sur le fondement des principes généraux de prévention ", qui sont au nombre de 9. </p>
               </div>
               <div data-artic3>
                 <div data-bouble>
                   <img src={diplomeB} height="38"/>
                 </div>
-                <p> Article 4121-3 </p>
+                <span> Article 4121-3 </span>
                 <p>" l'employeur, compte tenu de la nature des activités de l'établissement, doit procéder à l'évaluation des risques pour assurer la santé physique et mentale de ses salariés ". </p>
               </div>
             </div>
@@ -187,7 +185,7 @@ const Livret = (props) => {
               <div data-bouble>
                 <img src={diplomeN} height="38"/>
               </div>
-              <p> Article 4122-1 </p>
+              <span> Article 4122-1 </span>
               <p> Conformément aux instructions qui lui sont données par l'employeur, dans les conditions prévues au règlement intérieur (…), <strong> il incombe à chaque travailleur de prendre soin </strong>, en fonction de sa formation et selon ses possibilités, <strong> de sa santé et de sa sécurité </strong> ainsi que de celles des <strong> autres personnes </strong> concernées par ses actes ou ses omissions au travail. </p>
             </div>
           </div>

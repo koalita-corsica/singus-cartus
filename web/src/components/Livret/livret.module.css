@@ -23,6 +23,8 @@
   height: 297mm;
   width: 210mm;
   margin: 0;
+  -webkit-print-color-adjust: exact;
+  -webkit-filter: opacity(1);
 }
 
 [data-containerCouverture] {
@@ -260,7 +262,7 @@
   font-weight: 500;
 }
 [data-renseigment] [data-mid] [data-rightGray] p {
-  width: 100%;
+  width: 90%;
   margin: 0;
   margin-left: 3rem;
   font-weight: medium;
@@ -383,18 +385,24 @@
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic1] [data-bouble] {
   position: relative;
-  top: -10%;
+  top: -13%;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   color: white;
   font-size: 60px;
-  width: 57px;
-  height: 57px;
+  width: 77px;
+  height: 77px;
   background: #BCBCBC 0% 0% no-repeat padding-box;
   border: 2px solid #FFFFFF;
   border-radius: 50%;
+  margin: 0;
+}
+[data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic1] span {
+  color: #fff;
+  margin: 0;
+  margin-top: -1rem;
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic1] p {
   width: 80%;
@@ -415,18 +423,23 @@
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic2] [data-bouble] {
   position: relative;
-  top: -10%;
+  top: -13%;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   color: white;
   font-size: 40px;
-  width: 57px;
-  height: 57px;
+  width: 77px;
+  height: 77px;
   background: #0C090C 0% 0% no-repeat padding-box;
   border: 2px solid #FFFFFF;
   border-radius: 50%;
+}
+[data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic2] span {
+  color: #fff;
+  margin: 0;
+  margin-top: -1rem;
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic2] p {
   width: 80%;
@@ -447,18 +460,23 @@
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic3] [data-bouble] {
   position: relative;
-  top: -10%;
+  top: -13%;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   color: white;
   font-size: 40px;
-  width: 57px;
-  height: 57px;
+  width: 77px;
+  height: 77px;
   background: #C40005 0% 0% no-repeat padding-box;
   border: 2px solid #FFFFFF;
   border-radius: 50%;
+}
+[data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic3] span {
+  color: #fff;
+  margin: 0;
+  margin-top: -1rem;
 }
 [data-responsabilite] [data-wrapResp] [data-grayR] [data-articles] [data-artic3] p {
   width: 80%;
@@ -508,22 +526,25 @@
   font-size: 14px;
 }
 [data-responsabilite] [data-wrapResp] [data-lastArtc] [data-bouble] {
-  position: relative;
-  top: -16%;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   color: white;
   font-size: 40px;
-  width: 57px;
-  height: 57px;
+  width: 77px;
+  height: 77px;
   background: #ECECEC 0% 0% no-repeat padding-box;
   border: 2px solid #FFFFFF;
   border-radius: 50%;
+  margin: 0;
+  margin-top: -2.5rem;
+}
+[data-responsabilite] [data-wrapResp] [data-lastArtc] span {
+  color: #000;
+  margin: 0;
 }
 [data-responsabilite] [data-wrapResp] [data-lastArtc] p {
-  margin: 0;
   width: 95%;
   text-align: center;
 }
@@ -847,11 +868,11 @@
 [data-equip] [data-contentE] [data-gridEquip] {
   margin-top: 5rem;
   display: grid;
-  grid-column-gap: 1rem;
+  grid-column-gap: 0.5rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 65%);
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 [data-equip] [data-contentE] [data-gridEquip] [data-card] {
   width: 90%;
@@ -866,6 +887,7 @@
   font-weight: 500;
   text-align: center;
   border-radius: 10px;
+  z-index: 1;
 }
 [data-equip] [data-contentE] [data-gridEquip] [data-card] p {
   width: 90%;
@@ -936,8 +958,8 @@
   margin: -0.5rem;
 }
 [data-risques] [data-contentR] [data-contentRisque] {
-  margin-left: 3rem;
-  margin-right: 6rem;
+  margin-left: 6rem;
+  margin-right: 3rem;
   height: 322px;
   font-size: 15px;
   font-weight: 500;
@@ -1344,7 +1366,7 @@
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border: 2px solid #1DA16A;
   border-radius: 10px;
-  width: 80%;
+  width: 85%;
   height: 153px;
   display: flex;
 }
@@ -1365,7 +1387,7 @@
 }
 [data-accident] [data-sauv] img {
   position: relative;
-  left: 15%;
+  left: 19%;
 }
 [data-accident] [data-footerRes] {
   background: #161314 0% 0% no-repeat padding-box;
