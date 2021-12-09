@@ -28,9 +28,21 @@ const Livret = (props) => {
 
   useEffect(() => {
     var livret = document.getElementById('main')
-    var total = livret.childElementCount
-    for(var i = 1; i <= total; i++) {
-      console.log(livret.childNodes[i])
+    var total = livret.childElementCount;
+    var tRisques = wRisques.length
+    livret.childNodes.forEach((item, i) => {
+      if( i != 0 && i != 1 && i != 13 && i != 14 && i != 15) {
+        let myElm = document.createElement("p");	// Create a new element
+        myElm.innerText = i;
+        myElm.style.fontSize = '15px';
+        myElm.style.fontWeight = 'bold';
+        item.childNodes[item.childNodes.length - 1].appendChild(myElm);
+      }
+    });
+    if (total % 4 == 0) {
+      //do nothing
+    } else {
+      //add pages to make it multiple of 4
     }
   });
 
@@ -68,14 +80,14 @@ const Livret = (props) => {
           <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
         </div>
       </div>
-        <div data-lfooter>
+        <footer data-lfooter>
           <div data-contact>
             <h2> Contact </h2>
           </div>
             <p style={{marginTop: '1rem'}}> {livret[0].adresse} </p>
             <p> {livret[0].numero} </p>
             <p> {livret[0].mail} </p>
-        </div>
+        </footer>
       </div>
       <div data-containerSommaire>
         <div data-headSommaire />
@@ -85,16 +97,16 @@ const Livret = (props) => {
         <div data-mid>
           <div data-rightGray>
             <div data-redLeft>
-              <div data-leftC> <p> Renseignement sur l’entreprise </p> <p>P.00 </p> </div>
-              <div data-leftC> <p> Responsabilité de chacun</p> <p> P.00 </p> </div>
-              <div data-leftC> <p> Règles générales de sécurité </p> <p> P.00 </p></div>
-              <div data-leftC> <p> Restauration et repos </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> Equipement de protection individuelle </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> Risques généraux de l'entreprise </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> En cas d'accident </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> En cas d'incendie </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> Notes </p> <p> P.00 </p> </div>
-              <div data-leftC> <p> Certificat de formation </p> <p> P.00 </p> </div>
+              <div data-leftC> <p> Renseignement sur l’entreprise </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Responsabilité de chacun</p> <span>P.00 </span></div>
+              <div data-leftC> <p> Règles générales de sécurité </p> <span>P.00 </span></div>
+              <div data-leftC> <p> Restauration et repos </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Equipement de protection individuelle </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Risques généraux de l'entreprise </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> En cas d'accident </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> En cas d'incendie </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Notes </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Certificat de formation </p> <span>P.00 </span> </div>
             </div>
           </div>
         </div>
@@ -137,7 +149,6 @@ const Livret = (props) => {
         </div>
         <div data-rsfooter>
           <img src={livret[1].image.asset.url} alt="" height="100px" />
-          <p style={{color: 'white', textAlign: 'center'}}> 2 </p>
         </div>
       </div>
       <div data-responsabilite>
@@ -496,8 +507,10 @@ const Livret = (props) => {
           </div>
         </div>
         <div data-footerRes>
-          <p> Notre partenaire Verification Incendie: </p>
-          <img src={livret[4].logo.asset.url} alt="" height="45" />
+          <div style={{display: 'flex'}}>
+            <p> Notre partenaire Verification Incendie: </p>
+            <img src={livret[4].logo.asset.url} alt="" height="45" />
+          </div>
         </div>
       </div>
       <div data-certificat>
