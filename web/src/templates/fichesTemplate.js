@@ -13,6 +13,11 @@ export const query = graphql`
       fichedeposte
       entreprise {
         name
+        logo {
+          asset {
+            url
+          }
+        }
       }
       machine
       qualifications
