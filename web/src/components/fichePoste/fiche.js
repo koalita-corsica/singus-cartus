@@ -138,13 +138,13 @@ const Fiche = (props) => {
               </div>
               <div data-risquesD>
                 <h5> Risques - Dangers généraux </h5>
-                {risquesD.map((item) =>
+                {risquesD != null && risquesD.map((item) =>
                   <img src={item.picto.asset.url} alt=""/>
                 )}
               </div>
               <div data-inter1>
                 <h5> Interdictions </h5>
-                {interdiction.map((item) =>
+                {interdiction != null && interdiction.map((item) =>
                   <img src={item.picto.asset.url} alt=""/>
                 )}
               </div>
