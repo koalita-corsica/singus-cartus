@@ -33,40 +33,6 @@
   height: 64.35%;
 }
 
-[data-header] {
-  background: #161314 0% 0% no-repeat padding-box;
-  width: 100%;
-  height: 12%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: white;
-  img {
-    margin-top: 1.5rem;
-    margin-left: 21rem;
-    width: 150px;
-    height: 50px;
-  }
-}
-
-[data-headerCont] {
-  display: flex;
-  justify-content: space-around;
-  h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 10px;
-  }
-  h4 {
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-  }
-  span {
-    display: block !important;
-    text-align: center;
-    color: white;
-  }
-}
 
 [data-gray] {
   background: #E5E5E5 0% 0% no-repeat padding-box;
@@ -81,23 +47,25 @@
   width: 80%;
   height: 240px;
   margin-left: 5rem;
-  margin-top: -9rem;
+  margin-top: -13rem;
   display: flex;
   color: black;
+  align-items: center;
+  justify-content: center;
   img {
-    margin-left: 5rem;
-    margin-top: -2rem;
+    margin-left: 2rem;
   }
   [data-specsc] {
     padding: 1rem;
     color: black;
+    width: 50%;
     p {
       font-size: 10px;
       font-weight: bold;
     }
     span {
       display: block !important;
-      color: white;
+      color: black;
       font-size: 9px;
       font-weight: normal;
     }
@@ -132,7 +100,7 @@
 
 [data-bar] {
   height: 163px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid black;
   margin-top: 2.5rem;
 }
 
@@ -383,12 +351,12 @@
   width: 80%;
   height: 240px;
   margin-left: 5rem;
-  margin-top: -9rem;
+  margin-top: -13rem;
   display: flex;
   align-items: center;
   img {
-    margin-left: 5rem;
-    margin-top: -2rem;
+    margin: 0 !important;
+    margin-left: 1rem !important;
   }
   [data-specsvc] {
     padding: 1rem;
@@ -416,8 +384,9 @@
   font-size: 9px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   align-items: center;
+  justify-content: center;
   padding-left: 3rem;
   p {
     text-align: left !important;
@@ -444,7 +413,7 @@
 
 [data-barv] {
   height: 163px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid black !important;
 }
 
 [data-page2] {

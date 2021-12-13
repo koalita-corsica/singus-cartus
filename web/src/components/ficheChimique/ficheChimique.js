@@ -32,6 +32,7 @@ const Fiche = (props) => {
     qualifications,
     formation,
     interdiction,
+    risquesD,
   } = props;
 
   var legend4 = legend.slice(0, 4)
@@ -52,17 +53,28 @@ const Fiche = (props) => {
       />
       <div id={styles.capture}>
         <div className={styles.container}>
-          <div data-header>
-            <img src={logo} alt="Logo EvRPro" height="50"/>
-            <div data-headerCont>
-              <h6> Version n° / date <span> {version} </span> </h6>
-              <h4> Notice de Poste Produit Chimique </h4>
-              <h6> Entreprise <span> {entreprise.name} </span> </h6>
+        <div data-headerF>
+          <div data-headerContF>
+            <h2 style={{padding: '1rem'}}> Notice de Poste Produit Chimique </h2>
+            <div style={{display: 'flex', justifyContent: 'space-around', padding: '-1rem'}}>
+              <div data-line2h>
+                <h6> Version n° / date <span> {version} </span> </h6>
+              </div>
+              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte} </h3>
+              <div data-entre>
+                <span> {entreprise.name} </span>
+                {entreprise.logo != null ?
+                <img data-img src={entreprise.logo.asset.url} alt="logo entreprise" width="60"/>
+                :
+                <>
+                </>
+                }
+              </div>
             </div>
           </div>
+        </div>
           <div data-contentF>
             <div data-gray>
-              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', marginLeft: '1.5rem'}}> {fichedeposte} </h3>
             </div>
             {type && type == "horizontal" ?
             <div data-machinec>
@@ -117,17 +129,23 @@ const Fiche = (props) => {
               </div>
             </div>
             }
-            <div data-icons>
-              <div data-obli>
-              <h3> EPI obligatoires </h3>
+            <div data-iconsP>
+              <div data-epi>
+                <h5> EPI obligatoires </h5>
                 {epi.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
+                  <img src={item.image.asset.url} alt=""/>
                 )}
               </div>
-              <div data-inter>
-              <h3> Interdictions </h3>
+              <div data-risquesD>
+                <h5> Risques - Dangers généraux </h5>
+                {risquesD.map((item) =>
+                  <img src={item.picto.asset.url} alt=""/>
+                )}
+              </div>
+              <div data-inter1>
+                <h5> Interdictions </h5>
                 {interdiction.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
+                  <img src={item.picto.asset.url} alt=""/>
                 )}
               </div>
             </div>
@@ -149,9 +167,7 @@ const Fiche = (props) => {
               <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div>
                 <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
                   <ul style={{background: '#E5E5E5'}}>
-                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
-                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                    {item.quelle && (<li><br/> {item.quelle} </li> )}
                   </ul>
                 </div>
                   <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
@@ -169,9 +185,7 @@ const Fiche = (props) => {
               <div class={styles.empty} data-odd id={`${i+1}`}></div>
                 <div data-g="data-g" data-odd>
                   <ul>
-                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
-                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                    {item.quelle && (<li> <br/> {item.quelle} </li> )}
                   </ul>
                 </div>
                   <div data-m="data-m" data-odd id={`${i+1}`}>
@@ -305,6 +319,7 @@ const Fiche = (props) => {
               </div>
               </div>
             </div>
+          <img style={{marginLeft: '44rem'}} src={logo} width="70" />
           </div>
         }
           </div>

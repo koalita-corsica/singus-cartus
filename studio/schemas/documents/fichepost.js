@@ -90,10 +90,16 @@ export default {
       of: [{ type: "reference", to: [{ type: "epis" }] }],
     },
     {
+      name: "risquesD",
+      type: "array",
+      title: "Risques - Dangers généraux :",
+      of: [{ type: "reference", to: [{ type: "pictosD" }] }],
+    },
+    {
       name: "interdiction",
       type: "array",
       title: "Interdiction :",
-      of: [{ type: "reference", to: [{ type: "epis" }] }],
+      of: [{ type: "reference", to: [{ type: "pictosI" }] }],
     },
     {
       name: "tache",

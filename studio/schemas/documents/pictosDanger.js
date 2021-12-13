@@ -1,10 +1,10 @@
-import { BiSticker } from "react-icons/bi";
+import { MdOutlineDangerous } from "react-icons/md";
 
 export default {
-  name: "pictos",
+  name: "pictosD",
   type: "document",
-  title: "Pictos",
-  icon: BiSticker,
+  title: "Pictos Danger",
+  icon: MdOutlineDangerous,
   fields: [
     {
       name: "title",

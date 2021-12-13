@@ -41,7 +41,14 @@ export const query = graphql`
         }
       }
       interdiction {
-        image {
+           picto {
+             asset {
+               url
+             }
+           }
+         }
+      risquesD {
+        picto {
           asset {
             url
           }
@@ -54,12 +61,31 @@ export const query = graphql`
         quelle
         qui
         risques {
+        ... on SanityPictosD {
+          id
           picto {
             asset {
               url
             }
           }
         }
+        ... on SanityPictosI {
+          id
+          picto {
+            asset {
+              url
+            }
+          }
+        }
+        ... on SanityPictosO {
+          id
+          picto {
+            asset {
+              url
+            }
+          }
+        }
+      }
       }
     }
   }

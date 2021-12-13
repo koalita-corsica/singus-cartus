@@ -13,6 +13,11 @@ export const query = graphql`
       fichedeposte
       entreprise {
         name
+        logo {
+          asset {
+            url
+          }
+        }
       }
       machine
       qualifications
@@ -36,12 +41,19 @@ export const query = graphql`
         }
       }
       interdiction {
-        image {
-          asset {
-            url
-          }
-        }
-      }
+           picto {
+             asset {
+               url
+             }
+           }
+         }
+         risquesD {
+           picto {
+             asset {
+               url
+             }
+           }
+         }
       tache {
         _key
         quand
@@ -49,12 +61,31 @@ export const query = graphql`
         qui
         _rawMesures
         risques {
+        ... on SanityPictosD {
+          id
           picto {
             asset {
               url
             }
           }
         }
+        ... on SanityPictosI {
+          id
+          picto {
+            asset {
+              url
+            }
+          }
+        }
+        ... on SanityPictosO {
+          id
+          picto {
+            asset {
+              url
+            }
+          }
+        }
+      }
       }
     }
   }

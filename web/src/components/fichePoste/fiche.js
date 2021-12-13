@@ -32,6 +32,7 @@ const Fiche = (props) => {
     qualifications,
     formation,
     interdiction,
+    risquesD,
   } = props;
 
   var legend4 = legend.slice(0, 4)
@@ -52,22 +53,24 @@ const Fiche = (props) => {
       />
       <div id={styles.capture}>
         <div className={styles.container}>
-          <div data-header>
-            <div data-headerCont>
-              <h2> Fiche de Sécurité Au Poste </h2>
-              <div data-line2h>
-                <h6> Version n° / date <span> {version} </span> </h6>
+          <div data-headerF>
+            <div data-headerContF>
+              <h2 style={{padding: '1rem'}}> Fiche de Sécurité Au Poste </h2>
+              <div style={{display: 'flex', justifyContent: 'space-around', padding: '-1rem'}}>
+                <div data-line2h>
+                  <h6> Version n° / date <span> {version} </span> </h6>
+                </div>
+                <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte} </h3>
+                <div data-entre>
+                  <span> {entreprise.name} </span>
+                  {entreprise.logo.asset.url != null ?
+                  <img data-img src={entreprise.logo.asset.url} alt="logo entreprise" width="60"/>
+                  :
+                  <>
+                  </>
+                  }
+                </div>
               </div>
-              <div data-entre>
-                <span> {entreprise.name} </span>
-                {entreprise.logo.asset.url != null ?
-                <img data-img src={entreprise.logo.asset.url} alt="logo entreprise" width="60"/>
-                :
-                <>
-                </>
-                }
-              </div>
-              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px'}}> {fichedeposte} </h3>
             </div>
           </div>
           <div data-contentF>
@@ -126,20 +129,23 @@ const Fiche = (props) => {
               </div>
             </div>
             }
-            <div data-icons>
-              <div data-obli>
-              <h3> EPI obligatoires </h3>
+            <div data-iconsP>
+              <div data-epi>
+                <h5> EPI obligatoires </h5>
                 {epi.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
+                  <img src={item.image.asset.url} alt=""/>
+                )}
+              </div>
+              <div data-risquesD>
+                <h5> Risques - Dangers généraux </h5>
+                {risquesD.map((item) =>
+                  <img src={item.picto.asset.url} alt=""/>
                 )}
               </div>
               <div data-inter1>
-              <h3> Risques - Dangers généraux </h3>
-              </div>
-              <div data-inter>
-              <h3> Interdictions </h3>
+                <h5> Interdictions </h5>
                 {interdiction.map((item) =>
-                  <img src={item.image.asset.url} alt="" width="55" height="55"/>
+                  <img src={item.picto.asset.url} alt=""/>
                 )}
               </div>
             </div>
@@ -327,7 +333,7 @@ const Fiche = (props) => {
               </div>
               </div>
             </div>
-            <img src={logo} width="60" height="17" />
+            <img style={{marginLeft: '44rem'}} src={logo} width="70" />
           </div>
         }
           </div>

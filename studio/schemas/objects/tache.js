@@ -22,7 +22,7 @@ export default {
       name: "risques",
       type: "array",
       title: "Risques/dangers :",
-      of: [{ type: "reference", to: [{ type: "pictos" }] }],
+      of: [{ type: "reference", to: [{ type: "pictosD" }, { type: "pictosI" }, { type: "pictosO" }] }],
     },
     {
       name: "mesures",

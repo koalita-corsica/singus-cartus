@@ -20,7 +20,6 @@ import icon from "./documents/icon";
 import fichepost from "./documents/fichepost";
 import entreprise from "./documents/entreprise";
 import epis from "./documents/epis";
-import pictos from "./documents/pictos";
 import tache from "./objects/tache";
 import livret from "./documents/livret.js";
 import couverture from './objects/couverture.js'
@@ -31,6 +30,10 @@ import incendie from './objects/incendie.js';
 import info from "./objects/info.js"
 import fichechimique from "./documents/fichechimque";
 import risques from "./documents/risques.js";
+import pictosD from "./documents/pictosDanger";
+import pictosI from "./documents/pictosInterdiction";
+import pictosO from "./documents/pictosObligation";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -52,7 +55,9 @@ export default createSchema({
     fichepost,
     entreprise,
     epis,
-    pictos,
+    pictosD,
+    pictosI,
+    pictosO,
     tache,
     livret,
     couverture,
