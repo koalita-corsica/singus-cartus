@@ -145,7 +145,9 @@ const Fiche = (props) => {
               <div data-inter1>
                 <h5> Interdictions </h5>
                 {interdiction.map((item) =>
+                  <>
                   <img src={item.picto.asset.url} alt=""/>
+                  </>
                 )}
               </div>
             </div>
