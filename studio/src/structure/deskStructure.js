@@ -38,7 +38,7 @@ export const getDefaultDocumentNode = (props) => {
         .title("Aperçu Web")
         .options({ previewURL }),
     ]);
-  } else if (schemaType == "livret") {
+  } else if (schemaType == "livrets") {
     return S.document().views([
       S.view.form(),
       S.view
