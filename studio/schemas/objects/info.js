@@ -4,11 +4,6 @@ title: 'Actor name',
 type: 'object',
 fields: [
     {
-      title: 'Logo: ',
-      name: 'logo',
-      type: 'image'
-    },
-    {
       title: 'Function: ',
       name: 'function',
       type: 'string'

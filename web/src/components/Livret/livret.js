@@ -37,6 +37,27 @@ const Livret = (props) => {
         myElm.style.fontSize = '15px';
         myElm.style.fontWeight = 'bold';
         item.childNodes[item.childNodes.length - 1].appendChild(myElm);
+      } else if (i == 1) {
+        item.childNodes.forEach((sitem, i) => {
+          if(i == 2){
+            sitem.childNodes.forEach((Sitem, i) => {
+              Sitem.childNodes.forEach((som, i) => {
+                som.childNodes.forEach((item, i) => {
+                  let ind = document.createElement("p");	// Create a new element
+                  ind.innerText = "P.0" + (i + 2);
+                  if(i == 6) {
+                    ind.innerText = "P." + (i + tRisques + 1);
+                  } else if (i > 6) {
+                    ind.innerText = "P." + (i + tRisques + 1);
+                  }
+                  ind.style.fontSize = '15px';
+                  ind.style.fontWeight = 'bold';
+                  item.appendChild(ind)
+                });
+              });
+            });
+          }
+        });
       }
     });
     if (total % 4 == 0) {
@@ -97,16 +118,16 @@ const Livret = (props) => {
         <div data-mid>
           <div data-rightGray>
             <div data-redLeft>
-              <div data-leftC> <p> Renseignement sur l’entreprise </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> Responsabilité de chacun</p> <span>P.00 </span></div>
-              <div data-leftC> <p> Règles générales de sécurité </p> <span>P.00 </span></div>
-              <div data-leftC> <p> Restauration et repos </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> Equipement de protection individuelle </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> Risques généraux de l'entreprise </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> En cas d'accident </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> En cas d'incendie </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> Notes </p> <span>P.00 </span> </div>
-              <div data-leftC> <p> Certificat de formation </p> <span>P.00 </span> </div>
+              <div data-leftC> <p> Renseignement sur l’entreprise </p> </div>
+              <div data-leftC> <p> Responsabilité de chacun</p></div>
+              <div data-leftC> <p> Règles générales de sécurité </p></div>
+              <div data-leftC> <p> Restauration et repos </p></div>
+              <div data-leftC> <p> Equipement de protection individuelle </p></div>
+              <div data-leftC> <p> Risques généraux de l'entreprise </p></div>
+              <div data-leftC> <p> En cas d'accident </p></div>
+              <div data-leftC> <p> En cas d'incendie </p></div>
+              <div data-leftC> <p> Certificat de formation </p></div>
+              <div data-leftC> <p> Notes</p></div>
             </div>
           </div>
         </div>
@@ -372,7 +393,10 @@ const Livret = (props) => {
           <h5> {item.title} </h5>
         </div>
         <div data-contentRisque>
-          <PortableText blocks={item._rawDescription} />
+          <div style={{background: '#ececec', borderBottom: '1px solid black', margin: '0', paddingTop: '.5rem'}}> <PortableText blocks={item._rawP1}/> </div>
+          <div style={{margin: '0'}}> <PortableText blocks={item._rawP2}/> </div>
+          <div style={{background: '#ececec', margin: '0', borderTop: '1px solid black'}}> <PortableText blocks={item._rawP3}/> </div>
+          <div> <PortableText blocks={item._rawP4}/> </div>
         </div>
       </div>
         <div data-footerRes>

@@ -19,7 +19,10 @@ query Livrett($id: String!) {
            url
          }
        }
-       _rawDescription
+       _rawP1
+       _rawP2
+       _rawP3
+       _rawP4
        sensi
      }
     livret {
@@ -56,11 +59,6 @@ query Livrett($id: String!) {
         _key
         infos {
           function
-          logo {
-            asset {
-              url
-            }
-          }
           value
           numero
         }

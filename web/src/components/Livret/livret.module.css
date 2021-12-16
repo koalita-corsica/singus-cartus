@@ -976,14 +976,19 @@
   margin: -0.5rem;
 }
 [data-risques] [data-contentR] [data-contentRisque] {
-  margin-left: 6rem;
-  margin-right: 3rem;
   height: 322px;
   font-size: 15px;
   font-weight: 500;
+  margin: 0;
 }
 [data-risques] [data-contentR] [data-contentRisque] ul {
   line-height: 1.1;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+[data-risques] [data-contentR] [data-contentRisque] p {
+  padding-left: 3rem;
+  padding-right: 6rem;
 }
 [data-risques] [data-footerRes] {
   background: #161314 0% 0% no-repeat padding-box;

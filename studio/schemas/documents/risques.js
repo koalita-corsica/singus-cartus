@@ -1,7 +1,10 @@
+import { GiSurprised } from "react-icons/gi"
+
 export default {
   name: 'risques',
   type: 'document',
   title: 'Risques',
+  icon: GiSurprised,
   fields:[
     {
       name: 'picto',
@@ -19,9 +22,24 @@ export default {
       title: 'Warning',
     },
     {
-      name: 'description',
+      name: 'p1',
       type: 'articleNoImage',
-      title: 'Description',
+      title: 'Paragraph 1',
+    },
+    {
+      name: 'p2',
+      type: 'articleNoImage',
+      title: 'Paragraph 2',
+    },
+    {
+      name: 'p3',
+      type: 'articleNoImage',
+      title: 'Paragraph 3',
+    },
+    {
+      name: 'p4',
+      type: 'articleNoImage',
+      title: 'Paragraph 4',
     },
     {
       name: 'sensi',
