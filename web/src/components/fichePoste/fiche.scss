@@ -255,7 +255,12 @@
         line-height:15px;
         color: #161314;
         margin: 0;
-        font-style: italic;
+        :nth-child(1) {
+          font-weight: bold;
+        }
+        :nth-child(3) {
+          font-style: italic;
+        }
         li {
           font-size: 11px;
           span {
