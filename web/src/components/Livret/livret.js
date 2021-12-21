@@ -26,8 +26,6 @@ import * as styles from './livret.module.css';
 const Livret = (props) => {
   const {title, livret, wRisques} = props;
 
-  console.log(livret[2].infos)
-
   useEffect(() => {
     var livret = document.getElementById('main')
     var total = livret.childElementCount;
