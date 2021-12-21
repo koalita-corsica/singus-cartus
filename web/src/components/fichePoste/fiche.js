@@ -58,7 +58,7 @@ const Fiche = (props) => {
               <h2 style={{padding: '1rem'}}> Fiche de Sécurité Au Poste </h2>
               <div style={{display: 'flex', justifyContent: 'space-around', padding: '-1rem'}}>
                 <div data-line2h>
-                  <h6> Version n° / date <span> {version} </span> </h6>
+                  <h6> Version n° / date <span> {version != null ? version : ''} </span> </h6>
                 </div>
                 <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte} </h3>
                 <div data-entre>

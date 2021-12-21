@@ -16,7 +16,7 @@ export default {
       type: "slug",
       title: "Slug",
       options: {
-        source: "fichedeposte",
+        source: "title",
         maxLength: 96,
         isHighlighted: true,
       },
