@@ -63,7 +63,7 @@ const Fiche = (props) => {
                 <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte != null ? fichedeposte : ''} </h3>
                 <div data-entre>
                   <span> {entreprise != null ? entreprise.name : ''} </span>
-                  {entreprise != null ?
+                  {entreprise.logo != null ?
                   <img data-img src={entreprise.logo.asset.url} alt="logo entreprise" width="60"/>
                   :
                   <>
