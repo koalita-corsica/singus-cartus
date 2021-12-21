@@ -60,7 +60,7 @@ const Fiche = (props) => {
                 <div data-line2h>
                   <h6> Version n° / date <span> {version != null ? version : ''} </span> </h6>
                 </div>
-                <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte != null ? fichedeposte : ''} </h3>
+                <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte != null ? fichedeposte : ' '} </h3>
                 <div data-entre>
                   <span> {entreprise.name != null ? entreprise.name : ''} </span>
                   {entreprise.logo != null ?
