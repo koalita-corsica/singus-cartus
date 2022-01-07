@@ -169,7 +169,9 @@ const Fiche = (props) => {
               <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div>
                 <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
                   <ul style={{background: '#E5E5E5'}}>
-                    {item.quelle && (<li><br/> {item.quelle} </li> )}
+                  {item.quand && (<li style={{fontWeigth: 'bold'}}> {item.quand} </li> )}
+                  {item.quelle && (<li> {item.quelle} </li> )}
+                  {item.qui && (<li> {item.qui} </li> )}
                   </ul>
                 </div>
                   <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
@@ -187,7 +189,9 @@ const Fiche = (props) => {
               <div class={styles.empty} data-odd id={`${i+1}`}></div>
                 <div data-g="data-g" data-odd>
                   <ul>
-                    {item.quelle && (<li> <br/> {item.quelle} </li> )}
+                    {item.quand && (<li style={{fontWeigth: 'bold'}}> {item.quand} </li> )}
+                    {item.quelle && (<li> {item.quelle} </li> )}
+                    {item.qui && (<li> {item.qui} </li> )}
                   </ul>
                 </div>
                   <div data-m="data-m" data-odd id={`${i+1}`}>
@@ -233,9 +237,9 @@ const Fiche = (props) => {
               <div class={styles.empty} data-odd="data-odd"></div>
                 <div data-g="data-g" data-odd="data-odd">
                   <ul>
-                    {item.quand && (<li> <span>Quand ?</span><br/> {item.quand} </li> )}
-                    {item.quelle && (<li> <span>Quelle tache ?</span><br/> {item.quelle} </li> )}
-                    {item.qui && (<li> <span> Par qui ? </span><br/>{item.qui} </li> )}
+                    {item.quand && (<li style={{fontWeigth: 'bold'}}> {item.quand} </li> )}
+                    {item.quelle && (<li> {item.quelle} </li> )}
+                    {item.qui && (<li> {item.qui} </li> )}
                   </ul>
                 </div>
                   <div data-m="data-m" data-odd="data-odd">
