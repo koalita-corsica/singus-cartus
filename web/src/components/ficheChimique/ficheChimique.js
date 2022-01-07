@@ -39,7 +39,7 @@ const Fiche = (props) => {
   var legend8 = legend.slice(4, 8)
   var legend12 = legend.slice(8, 12)
 
-  var tache2 = tache.slice(0,2);
+  var tache2 = tache.slice(0,3);
   var tache0 = tache.slice(2,9);
 
 
@@ -203,7 +203,7 @@ const Fiche = (props) => {
               )}
             </div>
           </div>
-          {tache && tache.length > 2 ?
+          {tache && tache.length > 3 ?
             <>
           <div data-footer/>
           <div data-page2 id="page2">
