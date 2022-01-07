@@ -234,7 +234,7 @@ const Fiche = (props) => {
               <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div>
                 <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
                   <ul style={{background: '#E5E5E5'}}>
-                  {item.quand && (<li style={{fontWeigth: 'bold'}}> {item.quand} </li> )}
+                    {item.quand && (<li style={{fontWeigth: 'bold'}}> {item.quand} </li> )}
                     {item.quelle && (<li> {item.quelle} </li> )}
                     {item.qui && (<li> {item.qui} </li> )}
                   </ul>

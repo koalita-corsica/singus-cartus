@@ -462,8 +462,16 @@
   margin-top: 1rem;
   color: #161314;
 }
+
+[data-grid] [data-g] ul :nth-child(1) {
+  font-weight: bold;
+}
+[data-grid] [data-g] ul :nth-child(3) {
+  font-style: italic;
+}
 [data-grid1] [data-g] ul li {
   font-size: 9px;
+
 }
 [data-grid1] [data-g] ul li span {
   color: #161314;
