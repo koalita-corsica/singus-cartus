@@ -58,11 +58,11 @@ const Fiche = (props) => {
             <h2 style={{padding: '1rem'}}> Notice de Poste Produit Chimique </h2>
             <div style={{display: 'flex', justifyContent: 'space-around', padding: '-1rem'}}>
               <div data-line2h>
-                <h6> Version n° / date <span> {version} </span> </h6>
+                <h6> Version n° / date <span> {version != null ? version : '' } </span> </h6>
               </div>
-              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte} </h3>
+              <h3 style={{margin: '0', textAlign: 'center', padding: '1rem', textTransform: 'Uppercase', fontSize: '27px', marginTop: '-1rem'}}> {fichedeposte != null ? fichedeposte : ''} </h3>
               <div data-entre>
-                <span> {entreprise.name} </span>
+                <span> {entreprise != null ? entreprise.name : ''} </span>
                 {entreprise.logo != null ?
                 <img data-img src={entreprise.logo.asset.url} alt="logo entreprise" width="60"/>
                 :
@@ -79,51 +79,51 @@ const Fiche = (props) => {
             {type && type == "horizontal" ?
             <div data-machinec>
             <div data-specsc>
-                <p> Nom du Produit : <span> {machine} </span> </p>
-                <p> Fournisseur : <span> {marque} </span> </p>
+                <p> Nom du Produit : <span> {machine != null ? machine : ''} </span> </p>
+                <p> Fournisseur : <span> {marque != null ? machine : ''} </span> </p>
                 <p>
                   Caractéristiques principales du produit :
-                  <span> {caract} </span>
+                  <span> {caract != null ? caract : ''} </span>
                 </p>
                 <p>
-                  Lieu de consultation FDS : <span> {produits} </span>
+                  Lieu de consultation FDS : <span> {produits != null ? produits : ''} </span>
                 </p>
                 <p>
-                  Date FDS : <span> {miseenservice} </span>
+                  Date FDS : <span> {miseenservice != null ? produits : ''} </span>
                 </p>
               </div>
               <div data-bar/>
                 <div data-rsec>
                   <img src={ogImage.asset.url} alt="" width="196" height="130"/>
                   <div data-legendc>
-                  {legend.map((item, i) =>
+                  {legend != null ? legend.map((item, i) =>
                     <div data-number={`${i+1}`}> {item} </div>
-                  )}
+                  ): ''}
                   </div>
               </div>
             </div>
             :
             <div data-machinevc>
             <div data-specsvc>
-                <p> Nom du Produit : <span> {machine} </span> </p>
-                <p> Fournisseur : <span> {marque} </span> </p>
+                <p> Nom du Produit : <span> {machine != null ? machine : ''} </span> </p>
+                <p> Fournisseur : <span> {marque != null ? machine : ''} </span> </p>
                 <p>
                   Caractéristiques principales du produit :
-                  <span> {caract} </span>
+                  <span> {caract != null ? machine : ''} </span>
                 </p>
                 <p>
-                  Lieu de consultation FDS : <span> {produits} </span>
+                  Lieu de consultation FDS : <span> {produits != null ? produits : ''} </span>
                 </p>
                 <p>
-                  Date FDS : <span> {miseenservice} </span>
+                  Date FDS : <span> {miseenservice != null ? miseenservice : ''} </span>
                 </p>
               </div>
               <div data-barv/>
                 <div data-rsecvc>
                 <div style={{alignItems: 'flex-start'}} data-legendvc>
-                {legend.map((item, i) =>
+                {legend != null ? legend.map((item, i) =>
                   <div data-number={`${i+1}`}> {item} </div>
-                )}
+                ): ''}
                 </div>
                   <img style={{margin: '0', marginTop: '-3rem', marginLeft: '3.5rem'}} src={ogImage.asset.url} alt="" height="231"/>
               </div>
@@ -132,23 +132,23 @@ const Fiche = (props) => {
             <div data-iconsP>
               <div data-epi>
                 <h5> EPI obligatoires </h5>
-                {epi.map((item) =>
+                {epi != null ? epi.map((item) =>
                   <img src={item.image.asset.url} alt=""/>
-                )}
+                ): ''}
               </div>
               <div data-risquesD>
                 <h5> Risques - Dangers généraux </h5>
-                {risquesD.map((item) =>
+                {risquesD != null ? risquesD.map((item) =>
                   <img src={item.picto.asset.url} alt=""/>
-                )}
+                ): ''}
               </div>
               <div data-inter1>
                 <h5> Interdictions </h5>
-                {interdiction.map((item) =>
+                {interdiction != null ? interdiction.map((item) =>
                   <>
                   <img src={item.picto.asset.url} alt=""/>
                   </>
-                )}
+                ): ''}
               </div>
             </div>
             <div data-grid>
@@ -257,14 +257,14 @@ const Fiche = (props) => {
                 <img src={qualifi} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
                 <div data-qualit>
                   <h3> Qualification et autorisation </h3>
-                  <p> {qualifications} </p>
+                  <p> {qualifications != null ? qualifications : ''} </p>
                 </div>
               </div>
               <div data-formatf>
                 <img src={forma} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
                 <div data-formatt>
                   <h3> Formations </h3>
-                  <p> {formation} </p>
+                  <p> {formation != null ? qualifications : ''} </p>
                 </div>
               </div>
               </div>
@@ -294,14 +294,14 @@ const Fiche = (props) => {
               <img src={qualifi} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
               <div data-qualit>
                 <h3> Qualification et autorisation </h3>
-                <p> {qualifications} </p>
+                <p> {qualifications != null ? qualifications : ''} </p>
               </div>
             </div>
             <div data-formatf>
               <img src={forma} style={{color: 'white', fontSize: '35px', borderRight: '1px solid white', marginLeft: '15px', marginRight: '10px', paddingRight: '10px'}} width="29px"/>
               <div data-formatt>
                 <h3> Formations </h3>
-                <p> {formation} </p>
+                <p> {formation != null ? formation : ''} </p>
               </div>
             </div>
             </div>
