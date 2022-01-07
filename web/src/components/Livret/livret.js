@@ -166,7 +166,7 @@ const Livret = (props) => {
           </div>
         </div>
         <div data-som>
-          <h2> Sommaire </h2>
+          <h2> Plan d'accès </h2>
         </div>
         <div data-rsfooter>
           <img src={livret[1].image.asset.url} alt="" height="100px" />
@@ -334,7 +334,7 @@ const Livret = (props) => {
          </div>
           <div data-contentE>
             <div data-titleE>
-              <p style={{color: '#C40005'}}>Lors des Livraisons et à la Centrale, le port est obligatoire.</p>
+              <p style={{color: '#C40005'}}>Lors des activités en entreprise, le port est obligatoire.</p>
               <p>  Sur chantier et au dépôt, le port des EPI est obligatoire. </p>
             </div>
             <div data-gridEquip>

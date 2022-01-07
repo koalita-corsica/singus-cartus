@@ -85,7 +85,7 @@
   align-items: center;
 }
 [data-square] img {
-  margin-top: -3.5rem;
+  margin-top: -7.5rem;
 }
 [data-square] [data-descp] {
   display: flex;
@@ -93,10 +93,9 @@
   justify-content: center;
   width: 75%;
   text-align: center;
-  margin-top: 3rem;
 }
 [data-square] [data-descp] p {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
 }
 
