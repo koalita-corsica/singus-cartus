@@ -19,8 +19,6 @@ body {
 
   #container, #containerSecond, #containerSecond *, #container * {
     visibility: visible;
-    /* box-sizing: border-box;
-    border: 1px solid black; */
   }
 
   #container {
@@ -32,7 +30,7 @@ body {
   #containerSecond {
     position: absolute;
     left: 0;
-    top: 30cm;
+    top: 30.1cm;
   }
 }
 
@@ -260,7 +258,7 @@ h1 {
 /* START SECOND PAGE */
 
 .containerSecond {
-  height: 29.95cm;
+  height: 29.7cm;
   width: 21cm;
   text-align: justify !important;
   display: flex;
@@ -270,6 +268,7 @@ h1 {
 [data-wrap1] {
   display: flex;
   flex-direction: row;
+  gap: 3rem;
 }
 
 .secondLeft {
@@ -282,8 +281,8 @@ h1 {
   justify-content: center;
 }
 [data-imag4] img {
-  width: 6.133cm;
-  height: 4.4cm;
+  width: 5cm;
+  height: 3cm;
   object-position: center center;
   object-fit: cover;
 }
@@ -319,8 +318,8 @@ h1 {
 }
 
 .article4 {
+  margin-top: 5rem;
   width: 13.2cm;
-  margin-top: 4rem;
   margin-right: 2rem;
 }
 
@@ -391,7 +390,7 @@ h1 {
 .cont5 ul {
   font-size: 11pt;
   font-family: "Montserrat", sans-serif;
-  width: 94%;
+  width: 85%;
   line-height: 1.3;
 }
 
