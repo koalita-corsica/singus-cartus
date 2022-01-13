@@ -19,6 +19,9 @@ import feu from "../../assets/feu.png"
 import proteger from "../../assets/proteger.png"
 import secoursA from "../../assets/secoursA.png"
 import $ from "jquery"
+import secourisme from "../../assets/secourisme.png";
+import evacuation from "../../assets/evacuation.png";
+import feuM from "../../assets/feuM.png";
 
 
 import * as styles from './livret.module.css';
@@ -31,7 +34,7 @@ const Livret = (props) => {
     var total = livret.childElementCount;
     var tRisques = wRisques.length
     livret.childNodes.forEach((item, i) => {
-      if( i != 0 && i != 1 && i != 13 && i != 14 && i != 15) {
+      if( i != 0 && i != 1) {
         let myElm = document.createElement("p");	// Create a new element
         myElm.innerText = i;
         myElm.style.fontSize = '15px';
@@ -67,9 +70,9 @@ const Livret = (props) => {
     }
   });
 
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+  const monthNames = {0 : "Janvier", 1 : "Février", 2 : "Mars" , 3 : "Avril", 4 : "Mai", 5 : "Juin",
+  6 : "Juillet", 7  : "Août", 8 : "Septembre", 9 : "Octobre", 10 : "Novembre", 11 : "Décembre"
+};
 
   const d = new Date();
 
@@ -95,10 +98,8 @@ const Livret = (props) => {
         </div>
         <div data-square>
           <img src={livret[0].image.asset.url} alt="" height="129" height="136" />
-          <div data-descp>
-            <PortableText blocks={livret[0]._rawTexte} />
-          </div>
-          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
+          <PortableText blocks={livret[0]._rawTexte} />
+          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} {d.getFullYear()}</p>
         </div>
       </div>
         <footer data-lfooter>
@@ -274,7 +275,6 @@ const Livret = (props) => {
           </div>
         </div>
         <div data-fregles>
-          <p> Attention le week-end Code astreinte à donner en cas de problème </p>
         </div>
       </div>
       <div data-restauration>
@@ -345,23 +345,6 @@ const Livret = (props) => {
                 </div>
               )}
             </div>
-          </div>
-          <div data-footerRes />
-      </div>
-      <div data-equip>
-        <div data-headSommaire/>
-        <div data-som>
-          <h2> Equipement de protection individuelle </h2>
-         </div>
-          <div data-contentE>
-          <div data-gridEquip>
-            {livret[3].epi.map((item) =>
-              <div data-card>
-                <img src={item.image.asset.url} width="75" height="75" alt="" />
-                <PortableText blocks={item._rawDescription} />
-              </div>
-            )}
-          </div>
           </div>
           <div data-footerRes />
       </div>
@@ -467,7 +450,7 @@ const Livret = (props) => {
               <h5> Sauveteur Secouriste du Travail : </h5>
               <p> Ici la liste du personnel formé sur affichage séparé </p>
             </div>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="140" height="140" alt="" />
+            <img src={secourisme} width="140" height="140" alt="" />
           </div>
         </div>
       </div>
@@ -495,7 +478,7 @@ const Livret = (props) => {
             </div>
           </div>
           <div data-line>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" height="167" alt="" data-imgL/>
+            <img src={evacuation} height="167" alt="" data-imgL/>
              <div data-num1> <h2> 3 </h2> </div>
              <div data-txtL>
                <span> Evacuer </span>
@@ -527,13 +510,13 @@ const Livret = (props) => {
                </ul>
                <p> Chaque seconde compte, Agissez ! </p>
              </div>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="157" height="157" alt="" data-imgL/>
+            <img src={feuM} width="157" height="157" alt="" data-imgL/>
           </div>
         </div>
         <div data-footerRes>
           <div style={{display: 'flex'}}>
             <p> Notre partenaire Verification Incendie: </p>
-            <img src={livret[4].logo.asset.url} alt="" height="45" />
+            <img src={livret[4].logo.asset.url} alt="" height="60" />
           </div>
         </div>
       </div>
@@ -547,18 +530,16 @@ const Livret = (props) => {
           <p style={{lineHeight: '2'}}> Je soussigné(e) …………………………………………………………………….. avoir reçu l'information et la formation en interne à la sécurité générale spécifique au lieu de travail de la société ……………………………………………… ainsi que le livret d'accueil sécurité. </p>
           <p> Je reconnais également avoir reçu ou avoir à disposition le kit Equipement de Protection Individuelle (EPI) </p>
           <div style={{display: 'flex', gap: '1rem'}}>
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
-            <img src="https://cdn.sanity.io/images/zpdf06rn/production/45f726c6482c2e8c9a49bbe55e1456e1c94da91d-1563x1680.png" width="66" height="66" alt="" />
+          {livret[3].epi.map((item) =>
+            <img src={item.image.asset.url} width="66" height="66" alt="" />
+          )}
           </div>
           <div data-line>
           <p> Fait le ……………............ </p>
           <p> Signature </p>
           </div>
           <p> À ……………………… </p>
-          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} </p>
+          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} {d.getFullYear()}</p>
         </div>
         <div data-footerRes />
       </div>
