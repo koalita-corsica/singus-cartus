@@ -61,6 +61,7 @@
     align-items: center;
     justify-content: center;
     margin-top: -2rem;
+    width:130px;
     h6 {
       font-size: 15px;
       font-weight: bold;
@@ -74,7 +75,7 @@
   }
   [data-entre] {
     margin: 0;
-    width: 80px;
+    width:130px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,6 +85,7 @@
       color: white;
       font-size: 15px;
       font-weight: bold;
+      text-align: center;
     }
   }
   h3 {
@@ -431,7 +433,6 @@
   [data-specsv] {
     padding: 1rem;
     color: white;
-    padding-right: 3rem;
     p {
       font-size: 10px;
       font-weight: bold;
@@ -475,7 +476,7 @@
 
 [data-barv] {
   height: 163px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #FFFFFF !important;
   margin-right: 1rem;
 }
 

@@ -137,7 +137,7 @@ const Fiche = (props) => {
                 ): ''}
               </div>
               <div data-risquesD>
-                <h5> Risques - Dangers généraux </h5>
+                <h5> Dangers - Obligations </h5>
                 {risquesD != null ? risquesD.map((item) =>
                   <img src={item.picto.asset.url} alt=""/>
                 ): ''}
@@ -155,7 +155,7 @@ const Fiche = (props) => {
                 <p>Tâche exposant <br />l’opérateur à un risque</p>
               </div>
               <div class={styles.headerm}>
-                <p>Risques - Dangers</p>
+                <p>Dangers - Obligations</p>
               </div>
               <div class={styles.headerd}>
                 <p>Mesures de prévention - Opérations ou procédures à respecter</p>
@@ -222,7 +222,7 @@ const Fiche = (props) => {
                 <p>Tâche exposant <br />l’opérateur à un risque</p>
               </div>
               <div class={styles.headerm}>
-                <p>Risques - Dangers</p>
+                <p>Dangers - Obligations</p>
               </div>
               <div class={styles.headerd}>
                 <p>Mesures de prévention - Opérations ou procédures à respecter</p>
