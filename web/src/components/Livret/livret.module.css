@@ -978,6 +978,7 @@
   font-size: 15px;
   font-weight: 500;
   margin: 0;
+  line-height: 1;
 }
 [data-risques] [data-contentR] [data-contentRisque] ul {
   line-height: 1.1;
@@ -1395,7 +1396,7 @@
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border: 2px solid #1DA16A;
   border-radius: 10px;
-  width: 85%;
+  width: 75%;
   height: 153px;
   display: flex;
 }
@@ -1416,7 +1417,7 @@
 }
 [data-accident] [data-sauv] img {
   position: relative;
-  left: 19%;
+  left: 12%;
 }
 [data-accident] [data-footerRes] {
   background: #161314 0% 0% no-repeat padding-box;

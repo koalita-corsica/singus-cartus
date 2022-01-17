@@ -27,6 +27,7 @@ query Livrett($id: String!) {
      }
     livret {
       ... on SanityCouverture {
+        precision
         _rawTexte
         image {
           asset {

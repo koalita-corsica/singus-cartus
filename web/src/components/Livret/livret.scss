@@ -1005,6 +1005,7 @@
       font-size: 15px;
       font-weight: 500;
       margin: 0;
+      line-height: 1;
       ul {
         line-height: 1.1;
         padding-left: 6rem;
@@ -1430,7 +1431,7 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 2px solid #1DA16A;
     border-radius: 10px;
-    width: 85%;
+    width: 75%;
     height: 153px;
     display: flex;
     h5 {
@@ -1450,7 +1451,7 @@
     }
     img {
       position: relative;
-      left: 19%;
+      left: 12%;
     }
   }
   [data-footerRes] {

@@ -28,6 +28,7 @@ import * as styles from './livret.module.css';
 
 const Livret = (props) => {
   const {title, livret, wRisques} = props;
+  var total = livret.childElementCount;
 
   useEffect(() => {
     var livret = document.getElementById('main')
@@ -63,12 +64,6 @@ const Livret = (props) => {
         });
       }
     });
-    if (total % 4 == 0) {
-      //do nothing
-    } else {
-      //add pages to make it multiple of 4
-      console.log("YAS")
-    }
   });
 
   const monthNames = {0 : "Janvier", 1 : "Février", 2 : "Mars" , 3 : "Avril", 4 : "Mai", 5 : "Juin",
@@ -93,7 +88,7 @@ const Livret = (props) => {
             <img src={logo} alt="" width="155"/>
           </div>
           <h1 style={{margin: '0'}}> Livret Accueil Sécurité </h1>
-          <h2 style={{margin: '0', color: 'white'}}> Precision </h2>
+          <h2 style={{margin: '0', color: 'white'}}> {livret[0].precision} </h2>
         </div>
         <div data-height>
         <div data-lgray>
@@ -548,6 +543,8 @@ const Livret = (props) => {
       <div data-logo>
         <img src={logoN} alt="" width="258" height="74" />
       </div>
+      {total % 4 !== 0 ?
+        <>
       <div data-notes>
         <div data-headSommaire />
         <div data-som> <h2> Notes </h2> </div>
@@ -570,6 +567,80 @@ const Livret = (props) => {
         </div>
       <div data-footerRes />
       </div>
+      <div data-notes>
+        <div data-headSommaire />
+        <div data-som> <h2> Notes </h2> </div>
+        <div data-content>
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+        </div>
+      <div data-footerRes />
+      </div>
+      {total % 4 !== 0 ?
+        <div data-notes>
+          <div data-headSommaire />
+          <div data-som> <h2> Notes </h2> </div>
+          <div data-content>
+          <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+          </div>
+        <div data-footerRes />
+        </div>
+      :
+      <>
+      </>
+      }
+      </>
+      :
+      <div data-notes>
+        <div data-headSommaire />
+        <div data-som> <h2> Notes </h2> </div>
+        <div data-content>
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+        </div>
+      <div data-footerRes />
+      </div>
+      }
       <div data-final>
         <div data-head />
         <div data-content>

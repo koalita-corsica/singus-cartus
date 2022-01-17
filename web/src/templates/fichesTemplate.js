@@ -48,9 +48,18 @@ export const query = graphql`
            }
          }
       risquesD {
-        picto {
-          asset {
-            url
+        ... on SanityPictosD {
+          picto {
+            asset {
+              url
+            }
+          }
+        }
+        ... on SanityPictosO {
+          picto {
+            asset {
+              url
+            }
           }
         }
       }
