@@ -33,6 +33,7 @@ query Livrett($id: String!) {
             url
           }
         }
+        version
         adresse
         numero
         mail

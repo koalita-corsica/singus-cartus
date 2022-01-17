@@ -67,6 +67,7 @@ const Livret = (props) => {
       //do nothing
     } else {
       //add pages to make it multiple of 4
+      console.log("YAS")
     }
   });
 
@@ -91,7 +92,8 @@ const Livret = (props) => {
           <div data-imgLogo>
             <img src={logo} alt="" width="155"/>
           </div>
-          <h1> Livret Accueil Sécurité </h1>
+          <h1 style={{margin: '0'}}> Livret Accueil Sécurité </h1>
+          <h2 style={{margin: '0', color: 'white'}}> Precision </h2>
         </div>
         <div data-height>
         <div data-lgray>
@@ -99,7 +101,7 @@ const Livret = (props) => {
         <div data-square>
           <img src={livret[0].image.asset.url} alt="" height="129" height="136" />
           <PortableText blocks={livret[0]._rawTexte} />
-          <p data-ps> LAS Version n°1 - {monthNames[d.getMonth()]} {d.getFullYear()}</p>
+          <p data-ps> LAS Version n°{livret[0].version} - {monthNames[d.getMonth()]} {d.getFullYear()}</p>
         </div>
       </div>
         <footer data-lfooter>
@@ -148,7 +150,7 @@ const Livret = (props) => {
             <div data-leftC> <p> Code Risque </p></div>
             <div data-leftC> <p> Taux AT/MP </p></div>
             <div data-leftC> <p> Document Unique </p></div>
-            <div data-leftC> <p> Affichage Olbigatoire </p></div>
+            <div data-leftC> <p> Affichage obligatoire </p></div>
             <div data-leftC> <p> Affichage prevention </p></div>
             <div data-leftC> <p> Affichage COVID </p></div>
             <div data-leftC> <p> Unité de Travail </p></div>
@@ -448,7 +450,7 @@ const Livret = (props) => {
           <div data-sauv>
             <div data-text>
               <h5> Sauveteur Secouriste du Travail : </h5>
-              <p> Ici la liste du personnel formé sur affichage séparé </p>
+              <p> Son rôle est de porter les premiers secours à toute victime d'un accident du travail ou d'un malaise, mais aussi d’être acteur de la prévention dans son entreprise. Liste du personnel formé sur affichage séparé. </p>
             </div>
             <img src={secourisme} width="140" height="140" alt="" />
           </div>

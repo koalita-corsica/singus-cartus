@@ -92,8 +92,8 @@ export default {
     {
       name: "risquesD",
       type: "array",
-      title: "Risques - Dangers généraux :",
-      of: [{ type: "reference", to: [{ type: "pictosD" }] }],
+      title: "Dangers - Obligations :",
+      of: [{ type: "reference", to: [{ type: "pictosD" }, {type: 'pictosO'}] }],
     },
     {
       name: "interdiction",

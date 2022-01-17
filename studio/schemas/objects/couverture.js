@@ -4,6 +4,11 @@ export default {
   title: "Couverture",
   fields: [
     {
+      name: 'precision',
+      type: 'string',
+      title: 'Precision :', 
+    },
+    {
       name: 'image',
       type: 'image',
       title: 'Logo',
@@ -15,6 +20,11 @@ export default {
       name: 'texte',
       type: 'bodyPortableText',
       title: 'Texte: '
+    },
+    {
+      name: 'version',
+      type: 'string',
+      title: 'Version: '
     },
     {
       name: 'adresse',
