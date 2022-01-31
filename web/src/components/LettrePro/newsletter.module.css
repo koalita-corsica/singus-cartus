@@ -50,13 +50,13 @@ h1 {
 /* FIRST PAGE */
 
 .container {
-  height: 29.95cm;
+  height: 29.9cm;
   width: 21cm;
   display: flex;
 }
 
 .firstLeft {
-  height: 99.9%;
+  height: 99.2%;
   width: 7.8cm;
   background-color: #1a181b;
 }
@@ -193,7 +193,7 @@ h1 {
 
 
 [data-imag] {
-  height: 6cm;
+  height: 5cm;
   object-fit: fill;
   text-align: center;
 }

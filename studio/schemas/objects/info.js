@@ -1,20 +1,20 @@
 export default{
 name: 'info',
-title: 'Actor name',
+title: 'Modifier un contact',
 type: 'object',
 fields: [
     {
-      title: 'Function: ',
+      title: 'Fonction : ',
       name: 'function',
       type: 'string'
     },
     {
-      title: 'Name: ',
+      title: 'Nom : ',
       name: 'value',
       type: 'string'
     },
     {
-      title: 'Telephone: ',
+      title: 'Téléphone : ',
       name: 'numero',
       type: 'string'
     }

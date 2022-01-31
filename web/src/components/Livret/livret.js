@@ -12,7 +12,9 @@ import mascotteG from "../../assets/mascotteG.png"
 import risqueCC from "../../assets/risqueCC.png"
 import diplomeN from "../../assets/diplomeN.png"
 import diplomeB from "../../assets/diplomeB.png"
-import manger from "../../assets/manger.png"
+import alcool from "../../assets/alcool.jpg"
+import drogue from "../../assets/drogue.gif"
+import ivresse from "../../assets/ivresse.jpg"
 import mSecours from "../../assets/mSecours.png"
 import phoneA from "../../assets/phoneA.png"
 import feu from "../../assets/feu.png"
@@ -278,7 +280,7 @@ const Livret = (props) => {
         <div data-headSommaire/>
         <div data-som> <h2> Restauration et repos </h2> </div>
         <div data-contain>
-          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={manger} height="68" /> <img src={manger} height="68" /> <img src={manger} height="68" /></div> </div>
+          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={drogue} height="68" /> <img src={alcool} height="68" /> <img src={ivresse} height="68" /></div> </div>
             <div data-rightR>
               <div data-elem1>
                 <p> En application de l’article R.4228-21 du CTl, il est interdit au personnel de prendre ses repas dans les locaux affectés au travail. </p>
@@ -308,13 +310,13 @@ const Livret = (props) => {
          </div>
           <div data-contentE>
             <div data-titleE>
-              <p style={{color: '#C40005'}}>Lors des Livraisons et à la Centrale, le port est obligatoire.</p>
-              <p>  Sur chantier et au dépôt, le port des EPI est obligatoire. </p>
+              <p> Lors des différentes activités pour l'entreprise, le port des EPI suivants est obligatoire. </p>
             </div>
             <div data-gridEquip>
               {livret[3].epi.map((item) =>
                 <div data-card>
                   <img src={item.image.asset.url} width="95" alt="" />
+                  <h4> {item.title} </h4>
                   <PortableText blocks={item._rawDescription} />
                 </div>
               )}
@@ -331,13 +333,13 @@ const Livret = (props) => {
          </div>
           <div data-contentE>
             <div data-titleE>
-              <p style={{color: '#C40005'}}>Lors des activités en entreprise, le port est obligatoire.</p>
-              <p>  Sur chantier et au dépôt, le port des EPI est obligatoire. </p>
+              <p style={{textAlign: 'center'}}> Lors des différentes activités pour l'entreprise, le port des EPI suivants est obligatoire. </p>
             </div>
             <div data-gridEquip>
               {livret[3].epi.map((item) =>
                 <div data-card>
                   <img src={item.image.asset.url} width="75" height="75" alt="" />
+                  <h4> {item.title} </h4>
                   <PortableText blocks={item._rawDescription} />
                 </div>
               )}
@@ -447,7 +449,7 @@ const Livret = (props) => {
               <h5> Sauveteur Secouriste du Travail : </h5>
               <p> Son rôle est de porter les premiers secours à toute victime d'un accident du travail ou d'un malaise, mais aussi d’être acteur de la prévention dans son entreprise. Liste du personnel formé sur affichage séparé. </p>
             </div>
-            <img src={secourisme} width="140" height="140" alt="" />
+            <img src={secourisme} width="210" height="210" alt="" />
           </div>
         </div>
       </div>
@@ -475,7 +477,7 @@ const Livret = (props) => {
             </div>
           </div>
           <div data-line>
-            <img src={evacuation} height="167" alt="" data-imgL/>
+            <img src={evacuation} height="217" alt="" data-imgL/>
              <div data-num1> <h2> 3 </h2> </div>
              <div data-txtL>
                <span> Evacuer </span>
@@ -507,7 +509,7 @@ const Livret = (props) => {
                </ul>
                <p> Chaque seconde compte, Agissez ! </p>
              </div>
-            <img src={feuM} width="157" height="157" alt="" data-imgL/>
+            <img src={feuM} width="217" height="217" alt="" data-imgL/>
           </div>
         </div>
         <div data-footerRes>
@@ -524,7 +526,7 @@ const Livret = (props) => {
           <div data-imgContain>
             <img style={{marginTop: '1rem'}} src={logoN} alt="" width="180"/>
           </div>
-          <p style={{lineHeight: '2'}}> Je soussigné(e) …………………………………………………………………….. avoir reçu l'information et la formation en interne à la sécurité générale spécifique au lieu de travail de la société ……………………………………………… ainsi que le livret d'accueil sécurité. </p>
+          <p style={{lineHeight: '2'}}> Je soussigné(e) …………………………………………………………………….. avoir reçu l'information et la formation en interne à la sécurité générale spécifique au lieu de travail de la société <strong> {title} </strong> ainsi que le livret d'accueil sécurité. </p>
           <p> Je reconnais également avoir reçu ou avoir à disposition le kit Equipement de Protection Individuelle (EPI) </p>
           <div style={{display: 'flex', gap: '1rem'}}>
           {livret[3].epi.map((item) =>
@@ -640,6 +642,84 @@ const Livret = (props) => {
         </div>
       <div data-footerRes />
       </div>
+      }
+      {total % 4 !== 0 ?
+        <>
+      <div data-notes>
+        <div data-headSommaire />
+        <div data-som> <h2> Notes </h2> </div>
+        <div data-content>
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+        </div>
+      <div data-footerRes />
+      </div>
+      <div data-notes>
+        <div data-headSommaire />
+        <div data-som> <h2> Notes </h2> </div>
+        <div data-content>
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+          <div data-tray />
+        </div>
+      <div data-footerRes />
+      </div>
+      {total % 4 !== 0 ?
+        <div data-notes>
+          <div data-headSommaire />
+          <div data-som> <h2> Notes </h2> </div>
+          <div data-content>
+          <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+            <div data-tray />
+          </div>
+        <div data-footerRes />
+        </div>
+      :
+      <>
+      </>
+      }
+      </>
+      :
+      <>
+      </>
       }
       <div data-final>
         <div data-head />

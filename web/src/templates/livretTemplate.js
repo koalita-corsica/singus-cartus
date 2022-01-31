@@ -68,6 +68,7 @@ query Livrett($id: String!) {
       ... on SanityEquipement {
         _key
         epi {
+          title
           image {
             asset {
               url
