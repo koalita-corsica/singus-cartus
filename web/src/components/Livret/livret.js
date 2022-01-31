@@ -169,7 +169,12 @@ const Livret = (props) => {
           <h2> Plan d'accès </h2>
         </div>
         <div data-rsfooter>
+        {livret[1].image != null ?
           <img src={livret[1].image.asset.url} alt="" height="100px" />
+          :
+          <>
+          </>
+        }
         </div>
       </div>
       <div data-responsabilite>
@@ -515,7 +520,12 @@ const Livret = (props) => {
         <div data-footerRes>
           <div style={{display: 'flex'}}>
             <p> Notre partenaire Verification Incendie: </p>
+            {livret[4].logo != null ?
             <img src={livret[4].logo.asset.url} alt="" height="60" />
+            :
+            <>
+            </>
+            }
           </div>
         </div>
       </div>
