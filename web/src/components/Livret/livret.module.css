@@ -646,6 +646,7 @@
 [data-regles] [data-wrapRegl] [data-contS] [data-gridContact] [data-partner] p {
   font-size: 13px;
   margin: 0;
+  text-align: center;
 }
 [data-regles] [data-fregles] {
   height: 12%;
@@ -1574,6 +1575,7 @@
   color: white;
   width: 73%;
   height: 150px;
+  justify-content: center;
 }
 [data-incendie] [data-wrapInc] [data-line] img {
   position: relative;
@@ -1584,12 +1586,12 @@
 [data-incendie] [data-wrapInc] [data-line] [data-num1] {
   background: #0C090C 0% 0% no-repeat padding-box;
   border: 2px solid #FFFFFF;
+  height: 40px;
+  width: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30%;
-  width: 10%;
   margin-top: -1.5rem;
   margin-left: -2rem;
   margin-right: 1rem;

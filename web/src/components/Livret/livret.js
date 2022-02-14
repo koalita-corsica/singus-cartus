@@ -12,9 +12,10 @@ import mascotteG from "../../assets/mascotteG.png"
 import risqueCC from "../../assets/risqueCC.png"
 import diplomeN from "../../assets/diplomeN.png"
 import diplomeB from "../../assets/diplomeB.png"
-import alcool from "../../assets/alcool.jpg"
-import drogue from "../../assets/drogue.gif"
-import ivresse from "../../assets/ivresse.jpg"
+import manger from "../../assets/manger.png"
+import alcool from "../../assets/alcool.png"
+import drogue from "../../assets/drogue.png"
+import ivresse from "../../assets/ivresse.png"
 import mSecours from "../../assets/mSecours.png"
 import phoneA from "../../assets/phoneA.png"
 import feu from "../../assets/feu.png"
@@ -37,7 +38,7 @@ const Livret = (props) => {
     var total = livret.childElementCount;
     var tRisques = wRisques.length
     livret.childNodes.forEach((item, i) => {
-      if( i != 0 && i != 1 && i != 39) {
+      if( i != 0 && i != 1 && i != total - 2) {
         let myElm = document.createElement("p");	// Create a new element
         myElm.innerText = i;
         myElm.style.fontSize = '15px';
@@ -185,7 +186,7 @@ const Livret = (props) => {
         <div data-wrapResp>
           <div data-grayR>
             <div data-respE>
-              <h5> Les responsabilités de l'employeur (C.T.) </h5>
+              <h5> Les responsabilités du salarié (C.T.) </h5>
             </div>
             <div data-articles>
               <div data-artic1>
@@ -285,7 +286,7 @@ const Livret = (props) => {
         <div data-headSommaire/>
         <div data-som> <h2> Restauration et repos </h2> </div>
         <div data-contain>
-          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={drogue} height="68" /> <img src={alcool} height="68" /> <img src={ivresse} height="68" /></div> </div>
+          <div data-leftR> <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem' }}> <img src={manger} height="100" /> <img src={drogue} height="100" /> <img src={alcool} height="100" /> <img src={ivresse} height="100" /></div> </div>
             <div data-rightR>
               <div data-elem1>
                 <p> En application de l’article R.4228-21 du CTl, il est interdit au personnel de prendre ses repas dans les locaux affectés au travail. </p>
