@@ -4,6 +4,11 @@ export default {
     title: 'Company',
     fields: [
         {
+            name: 'id',
+            type: 'string',
+            title: 'Id dans la BD'
+        },
+        {
             name: 'title',
             type: 'string',
             title: 'Raison Sociale'
