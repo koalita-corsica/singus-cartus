@@ -35,10 +35,11 @@ const Livret = (props) => {
 
   useEffect(() => {
     var livret = document.getElementById('main')
-    var total = livret.childElementCount;
+    var total = livret.childElementCount - 1;
+    console.log(total)
     var tRisques = wRisques.length
     livret.childNodes.forEach((item, i) => {
-      if( i != 0 && i != 1 && i != total - 2) {
+      if( i != 0 && i != 1 && i != total - 3) {
         let myElm = document.createElement("p");	// Create a new element
         myElm.innerText = i;
         myElm.style.fontSize = '15px';
@@ -186,7 +187,7 @@ const Livret = (props) => {
         <div data-wrapResp>
           <div data-grayR>
             <div data-respE>
-              <h5> Les responsabilités du salarié (C.T.) </h5>
+              <h5> Les responsabilités de l'employeur (C.T.) </h5>
             </div>
             <div data-articles>
               <div data-artic1>
@@ -214,7 +215,7 @@ const Livret = (props) => {
           </div>
           <div data-tray>
             <div data-respS>
-              <h5> Les responsabilités de l'employeur (C.T.) </h5>
+              <h5> Les responsabilités du salarié (C.T.) </h5>
             </div>
             <div data-sTxt>
               <p> Tout salarié a une obligation de sécurité pour lui et pour les autres. Un manquement à cette obligation peut être considéré comme une faute et entraîner des poursuites en cas d'accident. </p>
@@ -233,7 +234,7 @@ const Livret = (props) => {
       <div data-regles>
         <div data-headSommaire />
         <div data-som>
-          <h2> Règles générales de sécutité </h2>
+          <h2> Règles générales de sécurité </h2>
         </div>
         <div data-wrapRegl>
           <div data-noirR>
@@ -530,182 +531,136 @@ const Livret = (props) => {
           </div>
         </div>
       </div>
-      {total % 4 !== 0 ?
+      <div data-notes>
+            <div data-headSommaire />
+            <div data-som> <h2> Notes </h2> </div>
+            <div data-content>
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+            </div>
+          <div data-footerRes />
+        </div>
+      { total % 4 == 0 ?
         <>
-      <div data-notes>
-        <div data-headSommaire />
-        <div data-som> <h2> Notes </h2> </div>
-        <div data-content>
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-        </div>
-      <div data-footerRes />
-      </div>
-      <div data-notes>
-        <div data-headSommaire />
-        <div data-som> <h2> Notes </h2> </div>
-        <div data-content>
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-        </div>
-      <div data-footerRes />
-      </div>
-      {total % 4 !== 0 ?
+        </>
+        :
         <div data-notes>
-          <div data-headSommaire />
-          <div data-som> <h2> Notes </h2> </div>
-          <div data-content>
-          <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
+            <div data-headSommaire />
+            <div data-som> <h2> Notes </h2> </div>
+            <div data-content>
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+              <div data-tray />
+            </div>
+          <div data-footerRes />
+        </div>
+        }
+        {(total + 1) % 4 == 0 ?
+          <>
+          </>
+          :
+          <div data-notes>
+              <div data-headSommaire />
+              <div data-som> <h2> Notes </h2> </div>
+              <div data-content>
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+              </div>
+            <div data-footerRes />
           </div>
-        <div data-footerRes />
-        </div>
-      :
-      <>
-      </>
-      }
-      </>
-      :
-      <div data-notes>
-        <div data-headSommaire />
-        <div data-som> <h2> Notes </h2> </div>
-        <div data-content>
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-        </div>
-      <div data-footerRes />
-      </div>
-      }
-      {total % 4 !== 0 ?
-        <>
-      <div data-notes>
-        <div data-headSommaire />
-        <div data-som> <h2> Notes </h2> </div>
-        <div data-content>
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-        </div>
-      <div data-footerRes />
-      </div>
-      <div data-notes>
-        <div data-headSommaire />
-        <div data-som> <h2> Notes </h2> </div>
-        <div data-content>
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-          <div data-tray />
-        </div>
-      <div data-footerRes />
-      </div>
-      {total % 4 !== 0 ?
-        <div data-notes>
-          <div data-headSommaire />
-          <div data-som> <h2> Notes </h2> </div>
-          <div data-content>
-          <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
-            <div data-tray />
+        }
+        {(total + 2) % 4 == 0 ?
+          <>
+          </>
+          :
+          <div data-notes>
+              <div data-headSommaire />
+              <div data-som> <h2> Notes </h2> </div>
+              <div data-content>
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+              </div>
+            <div data-footerRes />
           </div>
-        <div data-footerRes />
-        </div>
-      :
-      <>
-      </>
-      }
-      </>
-      :
-      <>
-      </>
-      }
+        }
+        {(total + 3) % 4 == 0 ?
+          <>
+          </>
+          :
+          <div data-notes>
+              <div data-headSommaire />
+              <div data-som> <h2> Notes </h2> </div>
+              <div data-content>
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+                <div data-tray />
+              </div>
+            <div data-footerRes />
+          </div>
+        }
       <div data-certificat>
         <div data-headSommaire />
         <div data-som> <h2> Certificat de Formation à la Sécurité Générale </h2> </div>

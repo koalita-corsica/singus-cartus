@@ -33,6 +33,10 @@ import risques from "./documents/risques.js";
 import pictosD from "./documents/pictosDanger";
 import pictosI from "./documents/pictosInterdiction";
 import pictosO from "./documents/pictosObligation";
+import company from "./documents/company";
+import adress from './objects/adress';
+import contact from './objects/contact';
+import activite from "./objects/activite";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -68,6 +72,10 @@ export default createSchema({
     info,
     fichechimique,
     risques,
+    company,
+    adress,
+    contact,
+    activite,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
