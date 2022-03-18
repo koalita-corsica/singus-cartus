@@ -36,10 +36,9 @@ const Livret = (props) => {
   useEffect(() => {
     var livret = document.getElementById('main')
     var total = livret.childElementCount - 1;
-    console.log(total)
     var tRisques = wRisques.length
     livret.childNodes.forEach((item, i) => {
-      if( i != 0 && i != 1 && i != total - 3) {
+      if( i != 0 && i != 1 && i != total - 1) {
         let myElm = document.createElement("p");	// Create a new element
         myElm.innerText = i;
         myElm.style.fontSize = '15px';
@@ -68,6 +67,46 @@ const Livret = (props) => {
         });
       }
     });
+    var notesDiv = document.createElement('div');
+    var headerDiv = document.createElement('div');
+    var somDiv = document.createElement('div');
+    var contentDiv = document.createElement('div');
+    var footerDiv = document.createElement('div');
+    var title = document.createElement('h2');
+    title.innerHTML = "Notes"
+    notesDiv.setAttribute('data-notes', 'true');
+    notesDiv.appendChild(headerDiv);
+    notesDiv.appendChild(somDiv);
+    notesDiv.appendChild(contentDiv);
+    notesDiv.appendChild(footerDiv);
+    headerDiv.setAttribute('data-headsommaire', 'true');
+    somDiv.setAttribute('data-som', 'true');
+    somDiv.appendChild(title);
+    contentDiv.setAttribute('data-content', 'true');
+    for (var i = 0; i <= 15; i++) {
+      var trayDiv = document.createElement('div');
+      trayDiv.setAttribute('data-tray', 'true');
+      contentDiv.appendChild(trayDiv);
+    }
+    footerDiv.setAttribute('data-footerres', 'true');
+    if ((total + 1) % 4 != 0) {
+      livret.insertBefore(notesDiv, livret.children[total-3]);
+      if ((total + 1) % 4 != 0) {
+        livret.insertBefore(notesDiv, livret.children[total-3]);
+        if ((total + 1) % 4 != 0) {
+          livret.insertBefore(notesDiv, livret.children[total-3]);
+          if ((total + 1) % 4 != 0) {
+            livret.insertBefore(notesDiv, livret.children[total-3]);
+            if ((total + 1) % 4 != 0) {
+              livret.insertBefore(notesDiv, livret.children[total-3]);
+              if ((total + 1) % 4 != 0) {
+                livret.insertBefore(notesDiv, livret.children[total-3]);
+              }
+            }
+          }
+        }
+      }
+    }
   });
 
   const monthNames = {0 : "Janvier", 1 : "Février", 2 : "Mars" , 3 : "Avril", 4 : "Mai", 5 : "Juin",
@@ -553,114 +592,6 @@ const Livret = (props) => {
             </div>
           <div data-footerRes />
         </div>
-      { total % 4 == 0 ?
-        <>
-        </>
-        :
-        <div data-notes>
-            <div data-headSommaire />
-            <div data-som> <h2> Notes </h2> </div>
-            <div data-content>
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-              <div data-tray />
-            </div>
-          <div data-footerRes />
-        </div>
-        }
-        {(total + 1) % 4 == 0 ?
-          <>
-          </>
-          :
-          <div data-notes>
-              <div data-headSommaire />
-              <div data-som> <h2> Notes </h2> </div>
-              <div data-content>
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-              </div>
-            <div data-footerRes />
-          </div>
-        }
-        {(total + 2) % 4 == 0 ?
-          <>
-          </>
-          :
-          <div data-notes>
-              <div data-headSommaire />
-              <div data-som> <h2> Notes </h2> </div>
-              <div data-content>
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-              </div>
-            <div data-footerRes />
-          </div>
-        }
-        {(total + 3) % 4 == 0 ?
-          <>
-          </>
-          :
-          <div data-notes>
-              <div data-headSommaire />
-              <div data-som> <h2> Notes </h2> </div>
-              <div data-content>
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-                <div data-tray />
-              </div>
-            <div data-footerRes />
-          </div>
-        }
       <div data-certificat>
         <div data-headSommaire />
         <div data-som> <h2> Certificat de Formation à la Sécurité Générale </h2> </div>
