@@ -37,6 +37,7 @@ import company from "./documents/company";
 import adress from './objects/adress';
 import contact from './objects/contact';
 import activite from "./objects/activite";
+import fichepostApi from "./documents/fichepostAPI";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -76,6 +77,7 @@ export default createSchema({
     adress,
     contact,
     activite,
+    fichepostApi,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
