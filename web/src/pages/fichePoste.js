@@ -124,7 +124,6 @@ const FichePoste = (props) => {
     const [tachesPictoPreview, setTachesPictoPreview] = useState([])
     const [clicks, setClicks] = useState(1)
 
-    var canvas = document.getElementById('imageCanvas');
     var tache2 = taches.slice(0,3);
     var tache0 = taches.slice(2,9);
 
@@ -226,6 +225,8 @@ const FichePoste = (props) => {
 
         client.create(doc).then((res) => {
             console.log(`Doc was created, document ID is ${res._id}`)
+            
+            var canvas = document.getElementById('imageCanvas');
             
             canvas.toBlob(uploadImageBlob, 'image/png')
 
