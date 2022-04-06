@@ -120,37 +120,32 @@ const FichePoste = (props) => {
     const [formation, setFormation] = useState("")
     const [qualifications, setQualifications] = useState("")
     const [imageID, setImageID] = useState("")
+    const [tachesPicto, setTachesPicto] = useState([])
+    const [tachesPictoPreview, setTachesPictoPreview] = useState([])
+    const [clicks, setClicks] = useState(1)
 
-
+    var canvas = document.getElementById('imageCanvas');
     var tache2 = taches.slice(0,3);
     var tache0 = taches.slice(2,9);
 
-    const getDataCompany = async () => {
-        // requette pour les infos de la Entreprise
-        axios.get('https://api.dev.evrpro.com/societes/1', {
+    useEffect( async () => {
+
+        const response = await axios.get('https://api.dev.evrpro.com/societes/1', {
             headers: {
                 'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
                 'Content-Type' : 'application/json',
                 'Accept' : 'application/json',
             }
         })
-        .then(function (response) {
-            // handle success
-            // console.log(response.data.data)
-            setEntreprise(response.data.data.raison_sociale)
-            for(var i in companys) {
-                if(companys[i].node.title == entreprise) {
-                    log(companys[i].node._id)
-                    setEntrepriseId(companys[i].node._id)
-                }
+
+        let data = response.data.data
+        setEntreprise(data.raison_sociale)
+        for(var i in companys) {
+            if(companys[i].node.title == entreprise) {
+                setEntrepriseId(companys[i].node._id)
             }
-            
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-    }
+        }
+    })
 
 
     const getDataMachines = async () => {
@@ -175,15 +170,38 @@ const FichePoste = (props) => {
         });
     }
 
-    useEffect(() => {
-        setTimeout(getDataCompany(), 2000)
-
+    function draw(e) {
+        var canvas = document.getElementById('imageCanvas'); 
+        var ctx = canvas.getContext("2d");
+        var pos = getCursorPosition(canvas, e);
+        var clickX = pos.x;
+        var clickY = pos.y;
         
-    })
+        ctx.fillStyle = "#ff2626"; // Red color
+        ctx.beginPath();
+        ctx.arc(clickX, clickY, 15, 0, Math.PI * 2, true);
+        ctx.fill();
+  
+        ctx.font = "10pt Calibri";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText(clicks, clickX, clickY + 3);
+        setClicks(clicks+1)
+    }
+
+    function getCursorPosition(canvas, e) {
+        // Gets click position
+        let rect = canvas.getBoundingClientRect();
+        
+        
+        return {
+          x: e.clientX - rect.left, 
+          y: e.clientY - rect.top
+        };
+    }
+
 
     function handleSubmit1() {
-
-        log(epiData)
 
         const doc = {
             _type: 'fichesAPI',
@@ -261,11 +279,10 @@ const FichePoste = (props) => {
 
           })
 
-    }
-
-    var canvas = document.getElementById('imageCanvas');
+    }    
 
     function handleImage(event){
+        var canvas = document.getElementById('imageCanvas');
         var ctx = canvas.getContext('2d');
         var reader = new FileReader();
         reader.onload = function(event){
@@ -319,9 +336,8 @@ const FichePoste = (props) => {
         }
     }
 
-    function actionTache(item) {
-
-        setTaches(taches => [...taches, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value, "risques": risquesData}]);
+    function actionTache() {
+        setTaches(taches => [...taches, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value}]);
     }
 
 
@@ -334,10 +350,6 @@ const FichePoste = (props) => {
                         <label for="version"> Version </label>
                         <input name="version" type="text" onChange={(event) => setVersion(event.target.value)}/>
                     </div>                    
-                    <div data-slug>
-                        <label for="slug"> Slug </label>
-                        <input name="slug" type="text" onChange={(event) => setSlug(event.target.value)}/>
-                    </div>
                     <div data-fiche>
                         <label for="fiche"> Nom de la Fiche </label>
                         <input name="fiche" type="text" onChange={(event) => setFiche(event.target.value)}/>
@@ -378,14 +390,19 @@ const FichePoste = (props) => {
                         <button onClick={actionLegend}> add </button>
                     </div>
                     <div data-epi>
+                        <details>
+                            <summary> Pictos EPI </summary>
                         {data.map((item, i) => 
                         <>
                             <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.image.asset.url} onClick={() => actionEPI(item)} />
                             <label for={item.node.title}> <img src={item.node.image.asset.url} width="50" /> </label>
                         </>
                         )}
+                        </details>
                     </div>
                     <div data-dangers>
+                        <details>
+                            <summary> Pictos Dangers </summary>
                         {dangers.map((item, i) => 
                         <>
                             <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionDanger(item)} />
@@ -398,14 +415,18 @@ const FichePoste = (props) => {
                             <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
                         </>
                         )}
+                        </details>
                     </div>
                     <div data-interdictions>
+                        <details>
+                            <summary> Pictos Interdiction </summary>
                         {interdictions.map((item, i) => 
                         <>
                             <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionInterdiction(item)} />
                             <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
                         </>
                         )}
+                        </details>
                     </div>
                     <div data-taches>
                         <label for="quand"> Quand </label>
@@ -477,7 +498,7 @@ const FichePoste = (props) => {
                             </div>
                             <div data-bar/>
                             <div data-rsec>
-                                <canvas id="imageCanvas"></canvas>
+                                <canvas id="imageCanvas" onClick={(e) => draw(e)}/>
                                 <div data-legend>
                                     {legend != null ? legend.map((item, i) =>
                                         <div data-number={`${i+1}`}> {item} </div>
@@ -508,7 +529,7 @@ const FichePoste = (props) => {
                                         <div data-number={`${i+1}`}> {item} </div>
                                     ): ''}
                                 </div>
-                                <canvas style={{margin: '0', marginLeft: '3rem', marginRight: '1rem'}} id="imageCanvas"></canvas>
+                                <canvas style={{margin: '0', marginLeft: '3rem', marginRight: '1rem'}} id="imageCanvas" onClick={(e) => draw(e)} />
                             </div>
                         </div>
                         }
@@ -737,3 +758,26 @@ const FichePoste = (props) => {
 
 export default FichePoste;
 
+
+
+{/* <details>
+                            <summary> Pictos pour les taches </summary>
+                            {dangers.map((item, i) => 
+                            <>
+                                <input type="checkbox" name={item.node.title} value={item.node.picto.asset.url} />
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                            {obligations.map((item, i) => 
+                            <>
+                                <input type="checkbox"  name={item.node.title} value={item.node.picto.asset.url} />
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                            {interdictions.map((item, i) => 
+                            <>
+                                <input type="checkbox"  name={item.node.title} value={item.node.picto.asset.url}  />
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                        </details> */}
