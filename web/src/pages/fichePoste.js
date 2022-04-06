@@ -96,7 +96,7 @@ const FichePoste = (props) => {
     const [version, setVersion ] = useState("")
     const [slug, setSlug ] = useState("")
     const [entreprise, setEntreprise ] = useState("")
-    const [entrepriseId, setEntrepriseId] = useState("")
+    const [entrepriseId, setEntrepriseId] = useState("VuN4qDX3jQKM1aB3VsAAjY")
     const [fiche, setFiche] = useState("")
     const [machine, setMachine] = useState("")
     const [machineCat, setMachineCat] = useState("")
@@ -112,6 +112,7 @@ const FichePoste = (props) => {
     const [interdictionsData, setInterdictionsData] = useState([]);
     const [interdictionsPreview, setInterdictionsPreview] = useState([]);
     const [taches, setTaches] = useState([])
+    const [tachesPreview, setTachesPreview] = useState([])
     const [risquesData, setRisquesData] = useState([])
     const [risquesPreview, setRisquesPreview] = useState([]);
     const [qui, setQui] = useState("")
@@ -124,32 +125,17 @@ const FichePoste = (props) => {
     const [tachesPictoPreview, setTachesPictoPreview] = useState([])
     const [clicks, setClicks] = useState(1)
 
-    var tache2 = taches.slice(0,3);
-    var tache0 = taches.slice(2,9);
+    var tache2 = tachesPreview.slice(0,3);
+    var tache0 = tachesPreview.slice(2,9);
 
-    useEffect( async () => {
-
-        const response = await axios.get('https://api.dev.evrpro.com/societes/1', {
-            headers: {
-                'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json',
-            }
-        })
-
-        let data = response.data.data
-        setEntreprise(data.raison_sociale)
-        for(var i in companys) {
-            if(companys[i].node.title == entreprise) {
-                setEntrepriseId(companys[i].node._id)
-            }
-        }
+    useEffect(() => {
+        setTimeout(getDataCompany(), 2000)
+        
     })
 
-
-    const getDataMachines = async () => {
+    const getDataCompany = async () => {
         // requette pour les infos de la Entreprise
-        axios.get('https://api.dev.evrpro.com/societes/1/engins', {
+        axios.get('https://api.dev.evrpro.com/societes/1', {
             headers: {
                 'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
                 'Content-Type' : 'application/json',
@@ -158,16 +144,37 @@ const FichePoste = (props) => {
         })
         .then(function (response) {
             // handle success
-            // console.log(response.data.data[0])
-            setMachine(response.data.data[0].nom)
-            setMachineCat(response.data.data[0].marque)
-            setDate(response.data.data[0].date_mise_en_circulation)
+            // console.log(response.data.data)
+            setEntreprise(response.data.data.raison_sociale)
         })
         .catch(function (error) {
             // handle error
             console.log(error);
         });
     }
+
+    
+    // const getDataMachines = async () => {
+    //     // requette pour les infos de la Entreprise
+    //     axios.get('https://api.dev.evrpro.com/societes/1/engins', {
+    //         headers: {
+    //             'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
+    //             'Content-Type' : 'application/json',
+    //             'Accept' : 'application/json',
+    //         }
+    //     })
+    //     .then(function (response) {
+    //         // handle success
+    //         // console.log(response.data.data[0])
+    //         setMachine(response.data.data[0].nom)
+    //         setMachineCat(response.data.data[0].marque)
+    //         setDate(response.data.data[0].date_mise_en_circulation)
+    //     })
+    //     .catch(function (error) {
+    //         // handle error
+    //         console.log(error);
+    //     });
+    // }
 
     function draw(e) {
         var canvas = document.getElementById('imageCanvas'); 
@@ -225,10 +232,11 @@ const FichePoste = (props) => {
 
         client.create(doc).then((res) => {
             console.log(`Doc was created, document ID is ${res._id}`)
-            
+
             var canvas = document.getElementById('imageCanvas');
             
             canvas.toBlob(uploadImageBlob, 'image/png')
+
 
 
             epiData.map((item, i) => {
@@ -337,8 +345,20 @@ const FichePoste = (props) => {
         }
     }
 
+    function helperTache(item) {
+        if(!tachesPicto.includes(item.node.id)) {
+            setTachesPicto(tachesPicto => [...tachesPicto, {"_key": 1, "_ref": item.node._id}])
+            setTachesPictoPreview(tachesPictoPreview => [...tachesPictoPreview, item.node.picto.asset.url])
+        } else {
+            tachesPicto.splice(tachesPicto.indexOf(item.node._id), 1); 
+            tachesPictoPreview.splice(tachesPictoPreview.indexOf(item.node.picto.asset.url), 1); 
+        }
+    }
+
     function actionTache() {
-        setTaches(taches => [...taches, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value}]);
+        setTaches(taches => [...taches, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value, "risques": tachesPicto}]);
+        setTachesPreview(tachesPreview => [...tachesPreview, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value, "risques": tachesPictoPreview}]);
+
     }
 
 
@@ -436,6 +456,27 @@ const FichePoste = (props) => {
                         <input name="quelle" type="text" id="quelle" />
                         <label for="qui"> Qui </label>
                         <input name="qui" type="text" id="qui" />
+                        <details>
+                            <summary> Pictos pour les taches </summary>
+                            {dangers.map((item, i) => 
+                            <>
+                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                            {obligations.map((item, i) => 
+                            <>
+                                <input type="checkbox" value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                            {interdictions.map((item, i) => 
+                            <>
+                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            </>
+                            )}
+                        </details>
                         <label for="mesure"> Mesure </label>
                         <input name="mesure" type="text" id="mesure" />
                         <button onClick={actionTache}> add </button>
@@ -569,6 +610,7 @@ const FichePoste = (props) => {
                             {tache2.map((item, i) =>
                                 i % 2 == 0 ?
                             <>
+                                {log(item)}
                                 <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`} />
                                 <div style={{background: '#E5E5E5'}} data-g="data-g" data-odd>
                                     <ul style={{background: '#E5E5E5'}}>
@@ -578,9 +620,9 @@ const FichePoste = (props) => {
                                     </ul>
                                 </div>
                                 <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
-                                    {/* {item.risques.map((imag) =>
-                                        <img src={imag.picto.asset.url} alt="" height="44"/>
-                                    )} */}
+                                    {item.risques.map((imag) =>
+                                        <img src={imag} alt="" height="44"/>
+                                    )}
                                 </div>
                                 <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
                                     <p> {item.mesures} </p>
@@ -598,9 +640,9 @@ const FichePoste = (props) => {
                                     </ul>
                                 </div>
                                 <div data-m="data-m" data-odd id={`${i+1}`}>
-                                    {/* {item.risques.map((imag) =>
-                                        <img src={imag.picto.asset.url} alt="" height="44"/>
-                                    )} */}
+                                    {item.risques.map((imag) =>
+                                        <img src={imag} alt="" height="44"/>
+                                    )}
                                 </div>
                                 <div data-d="data-d" data-odd id={`${i+1}`}>
                                     <p> {item.mesures} </p>
@@ -645,7 +687,7 @@ const FichePoste = (props) => {
                                 </div>
                                 <div style={{background: '#E5E5E5'}} data-m="data-m" data-odd id={`${i+1}`}>
                                 {item.risques.map((imag) =>
-                                    <img src={imag.picto.asset.url} alt="" height="44"/>
+                                    <img src={imag} alt="" height="44"/>
                                 )}
                                 </div>
                                 <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
@@ -664,9 +706,9 @@ const FichePoste = (props) => {
                                 </ul>
                                 </div>
                                 <div data-m="data-m" data-odd id={`${i+1}`}>
-                                {/* {item.risques.map((imag) =>
-                                    <img src={imag.picto.asset.url} alt="" height="44"/>
-                                )} */}
+                                {item.risques.map((imag) =>
+                                    <img src={imag} alt="" height="44"/>
+                                )}
                                 </div>
                                 <div data-d="data-d" data-odd id={`${i+1}`}>
                                     <p> {item.mesures} </p>
@@ -761,24 +803,3 @@ export default FichePoste;
 
 
 
-{/* <details>
-                            <summary> Pictos pour les taches </summary>
-                            {dangers.map((item, i) => 
-                            <>
-                                <input type="checkbox" name={item.node.title} value={item.node.picto.asset.url} />
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
-                            {obligations.map((item, i) => 
-                            <>
-                                <input type="checkbox"  name={item.node.title} value={item.node.picto.asset.url} />
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
-                            {interdictions.map((item, i) => 
-                            <>
-                                <input type="checkbox"  name={item.node.title} value={item.node.picto.asset.url}  />
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
-                        </details> */}
