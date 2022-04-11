@@ -40,7 +40,12 @@ const IndexPage = (props) => {
   const newsInfo = data.allSanityNewsletter.edges;
 
   return (
-        <Layout />
+        <Layout>
+          <Link to="/fichePoste"
+                state={{ string: "Hello there"}}>
+            Go
+          </Link>
+        </Layout>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import * as styles from "../components/fichePosteAPI/fiche.css";
 import { graphql } from "gatsby";
-import { useForm } from "react-hook-form";
 import fire from "../assets/fire.png";
 import secours from "../assets/secours.png";
 import logo from "../assets/logo.png";
@@ -82,21 +81,21 @@ query Pictos {
   }
 `
 
-const FichePoste = (props) => {
+const FichePoste = (props, location) => {
+    // les variables de content from studio
     let log = console.log;
     let data = props.data.allSanityEpis.edges
     let dangers = props.data.allSanityPictosD.edges
     let interdictions = props.data.allSanityPictosI.edges
     let obligations = props.data.allSanityPictosO.edges
     let companys = props.data.allSanityCompany.edges;
-    const { register, handleSubmit } = useForm();
 
-
-
+    log(location)
+    
+    // Tout les variables d'etat
     const [version, setVersion ] = useState("")
-    const [slug, setSlug ] = useState("")
     const [entreprise, setEntreprise ] = useState("")
-    const [entrepriseId, setEntrepriseId] = useState("VuN4qDX3jQKM1aB3VsAAjY")
+    const [entrepriseId, setEntrepriseId] = useState("")
     const [fiche, setFiche] = useState("")
     const [machine, setMachine] = useState("")
     const [machineCat, setMachineCat] = useState("")
@@ -113,28 +112,35 @@ const FichePoste = (props) => {
     const [interdictionsPreview, setInterdictionsPreview] = useState([]);
     const [taches, setTaches] = useState([])
     const [tachesPreview, setTachesPreview] = useState([])
-    const [risquesData, setRisquesData] = useState([])
-    const [risquesPreview, setRisquesPreview] = useState([]);
-    const [qui, setQui] = useState("")
-    const [quelle, setQuelle] = useState("")
-    const [quand, setQuand] = useState("")
     const [formation, setFormation] = useState("")
     const [qualifications, setQualifications] = useState("")
-    const [imageID, setImageID] = useState("")
     const [tachesPicto, setTachesPicto] = useState([])
     const [tachesPictoPreview, setTachesPictoPreview] = useState([])
     const [clicks, setClicks] = useState(1)
+    const [quand, setQuand] = useState("")
+    const [quelle, setQuelle] = useState("")
+    const [qui, setQui] = useState("")
+    const [mesures, setMesures] = useState("")
+    const [changed, setChanged] = useState("")
+    const [logoSrc, setLogoSrc] = useState("")
 
+    //la separation pour la grid de la fiche
     var tache2 = tachesPreview.slice(0,3);
     var tache0 = tachesPreview.slice(2,9);
 
+
+    //la premiere apelle a l'API 
     useEffect(() => {
         setTimeout(getDataCompany(), 2000)
-        
+        for(var i in companys) {
+            if (entreprise == companys[i].node.title){
+                setEntrepriseId(companys[i].node._id)
+            }
+        }
     })
 
+    // requette pour les infos de la Entreprise
     const getDataCompany = async () => {
-        // requette pour les infos de la Entreprise
         axios.get('https://api.dev.evrpro.com/societes/1', {
             headers: {
                 'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
@@ -144,7 +150,8 @@ const FichePoste = (props) => {
         })
         .then(function (response) {
             // handle success
-            // console.log(response.data.data)
+            console.log(response.data.data)
+            setLogoSrc(response.data.data.logo)
             setEntreprise(response.data.data.raison_sociale)
         })
         .catch(function (error) {
@@ -154,28 +161,7 @@ const FichePoste = (props) => {
     }
 
     
-    // const getDataMachines = async () => {
-    //     // requette pour les infos de la Entreprise
-    //     axios.get('https://api.dev.evrpro.com/societes/1/engins', {
-    //         headers: {
-    //             'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
-    //             'Content-Type' : 'application/json',
-    //             'Accept' : 'application/json',
-    //         }
-    //     })
-    //     .then(function (response) {
-    //         // handle success
-    //         // console.log(response.data.data[0])
-    //         setMachine(response.data.data[0].nom)
-    //         setMachineCat(response.data.data[0].marque)
-    //         setDate(response.data.data[0].date_mise_en_circulation)
-    //     })
-    //     .catch(function (error) {
-    //         // handle error
-    //         console.log(error);
-    //     });
-    // }
-
+    // Function pour dessiner les ronds dans l'image de la machine
     function draw(e) {
         var canvas = document.getElementById('imageCanvas'); 
         var ctx = canvas.getContext("2d");
@@ -195,8 +181,8 @@ const FichePoste = (props) => {
         setClicks(clicks+1)
     }
 
+    // Pour avoir les coordones du click
     function getCursorPosition(canvas, e) {
-        // Gets click position
         let rect = canvas.getBoundingClientRect();
         
         
@@ -207,6 +193,7 @@ const FichePoste = (props) => {
     }
 
 
+    // Crée l'object pour envoyer au studio
     function handleSubmit1() {
 
         const doc = {
@@ -290,6 +277,7 @@ const FichePoste = (props) => {
 
     }    
 
+    // Pour montrer l'image dans la fiche
     function handleImage(event){
         var canvas = document.getElementById('imageCanvas');
         var ctx = canvas.getContext('2d');
@@ -310,11 +298,20 @@ const FichePoste = (props) => {
         reader.readAsDataURL(event.target.files[0]);     
     }
 
+    // Pour savegarder les legendes
     function actionLegend() {
         setLegend(legend => [...legend, document.getElementById("legend").value])
         document.getElementById("legend").value = ""
+        log(legend)
     }
 
+    function updateLegend(index) {
+        const newData = [...legend]
+        newData[index] = changed;
+        setLegend(newData)
+    }
+
+    //Pour choisir les pictos EPI pour la preview et pour le studio 
     function actionEPI(item) {
         if(!epiData.includes(item.node.id)) {
             setEpiData(epiData => [...epiData, item.node._id])
@@ -325,6 +322,7 @@ const FichePoste = (props) => {
         }
     }
 
+    //Pour choisir les pictos Danger pour la preview et pour le studio 
     function actionDanger(item) {
         if(!dangersData.includes(item.node.id)) {
             setDangersData(dangersData => [...dangersData, item.node._id])
@@ -335,6 +333,7 @@ const FichePoste = (props) => {
         }
     }
 
+    //Pour choisir les pictos Interdiction pour la preview et pour le studio 
     function actionInterdiction(item) {
         if(!interdictionsData.includes(item.node.id)) {
             setInterdictionsData(interdictionsData => [...interdictionsData, item.node._id])
@@ -345,6 +344,7 @@ const FichePoste = (props) => {
         }
     }
 
+    //Pour choisir les pictos qui seront dans les taches pour la preview et pour le studio 
     function helperTache(item) {
         if(!tachesPicto.includes(item.node.id)) {
             setTachesPicto(tachesPicto => [...tachesPicto, {"_key": 1, "_ref": item.node._id}])
@@ -355,10 +355,22 @@ const FichePoste = (props) => {
         }
     }
 
+    //Savegaurder les taches 
     function actionTache() {
-        setTaches(taches => [...taches, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value, "risques": tachesPicto}]);
-        setTachesPreview(tachesPreview => [...tachesPreview, {"quand": document.getElementById("quand").value, "quelle": document.getElementById("quelle").value, "qui": document.getElementById("qui").value, "mesures": document.getElementById("mesure").value, "risques": tachesPictoPreview}]);
+        setTaches(taches => [...taches, {"quand": quand, "quelle": quelle, "qui": qui, "mesures": mesures, "risques": tachesPicto}]);
+        setTachesPreview(tachesPreview => [...tachesPreview, {"quand": quand, "quelle": quelle, "qui": qui, "mesures": mesures, "risques": tachesPictoPreview}]);
+        document.getElementById("quand").value = ""
+        document.getElementById("quelle").value = ""
+        document.getElementById("qui").value = ""
+        document.getElementById("mesure").value = ""
+        setQuand("")
+        setQuelle("")
+        setQui("")
+        setMesures("")
+    }
 
+    function updateTache(item) {
+       setTaches({}) 
     }
 
 
@@ -366,7 +378,7 @@ const FichePoste = (props) => {
         <>
             <h1> Fiche de Poste</h1>
             <div data-ficheContainer>
-                <div data-form>
+                <div data-form style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                     <div data-version>
                         <label for="version"> Version </label>
                         <input name="version" type="text" onChange={(event) => setVersion(event.target.value)}/>
@@ -405,10 +417,16 @@ const FichePoste = (props) => {
                     <div data-image>
                         <input type="file" name="image" onChange={(e) => handleImage(e)}/>
                     </div>
-                    <div data-legend>
+                    <div data-legend3>
                         <label for="legend"> Legend </label>
                         <input name="legend" type="text" id="legend" />
                         <button onClick={actionLegend}> add </button>
+                        {legend.map((item, i) => 
+                            <div style={{display: 'flex'}}>  
+                                <span> {i + 1} </span> <input type="text" id="changedValue" onChange={(e) => setChanged(e.target.value)}/>
+                                <button onClick={() => updateLegend(i)}> Edit </button>
+                            </div>
+                        )}
                     </div>
                     <div data-epi>
                         <details>
@@ -451,11 +469,11 @@ const FichePoste = (props) => {
                     </div>
                     <div data-taches>
                         <label for="quand"> Quand </label>
-                        <input name="quand" type="text" id="quand" />
+                        <input name="quand" type="text" id="quand"  onChange={(event) => setQuand(event.target.value)}/>
                         <label for="quelle"> Quelle </label>
-                        <input name="quelle" type="text" id="quelle" />
+                        <input name="quelle" type="text" id="quelle"  onChange={(event) => setQuelle(event.target.value)}/>
                         <label for="qui"> Qui </label>
-                        <input name="qui" type="text" id="qui" />
+                        <input name="qui" type="text" id="qui"  onChange={(event) => setQui(event.target.value)}/>
                         <details>
                             <summary> Pictos pour les taches </summary>
                             {dangers.map((item, i) => 
@@ -478,7 +496,7 @@ const FichePoste = (props) => {
                             )}
                         </details>
                         <label for="mesure"> Mesure </label>
-                        <input name="mesure" type="text" id="mesure" />
+                        <input name="mesure" type="text" id="mesure"  onChange={(event) => setMesures(event.target.value)}/>
                         <button onClick={actionTache}> add </button>
                     </div>
                     <div data-qualifica>
@@ -510,7 +528,7 @@ const FichePoste = (props) => {
                                     <div data-entre>
                                     <span> {entreprise } </span>
                                     {entreprise != null ?
-                                    <img data-img alt="logo entreprise" width="60"/>
+                                    <img data-img src={logoSrc} alt="logo entreprise" width="60"/>
                                     :
                                     <>
                                     </>

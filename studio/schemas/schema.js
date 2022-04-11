@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import siteSettings from "./documents/siteSettings";
 import newsletter from "./documents/newsletter";
+import livretAPI from "./documents/livretAPI";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -38,6 +39,7 @@ import adress from './objects/adress';
 import contact from './objects/contact';
 import activite from "./objects/activite";
 import fichepostApi from "./documents/fichepostAPI";
+import fichechimqueApi from "./documents/fichechimqueAPI";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -78,6 +80,8 @@ export default createSchema({
     contact,
     activite,
     fichepostApi,
+    livretAPI,
+    fichechimqueApi,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: 'evacuer',
-      type: 'bodyPortableText',
+      type: 'string',
       title: 'Evacuer: '
     },
     {

@@ -18,7 +18,7 @@ export default {
     },
     {
       name: 'texte',
-      type: 'bodyPortableText',
+      type: 'string',
       title: 'Texte: '
     },
     {
