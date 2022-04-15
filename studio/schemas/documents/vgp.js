@@ -10,8 +10,6 @@ export default {
             options: {
                 list: [
                     {title: 'Donne 1', value: 'donne1'},
-                    {title: 'Donne 2', value: 'donne2'},
-                    {title: 'Donne 3', value: 'donne3'}
                 ]
             }
         },

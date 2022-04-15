@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Layout from "../components/layout";
+import ChariotElevateur from '../components/VGPTypes/chariotElevateur';
+import Nacelle from '../components/VGPTypes/nacelle';
+import Pelle from '../components/VGPTypes/pelle';
 const sanityClient = require('@sanity/client');
 const axios = require('axios');
 const client = sanityClient({
@@ -11,58 +14,39 @@ const client = sanityClient({
 
 
 const VGP = (props) => {
-    let log = console.log;
-
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();
-
-    let newdate = year + "/" + month + "/" + day;
-
-    const [date, setDate] = useState(newdate)
-    const [nClient, setNClient] = useState("")
-    const [nRapport, setNRapport] = useState("")
-    const [nControle, setNControle] = useState("")
-    const [typeService, setTypeService] = useState("")
-
-    useEffect(() => {
-        setTimeout(getDataCompany(), 2000)
-    })
-
-    const getDataCompany = async () => {
-        axios.get('https://api.dev.evrpro.com/societes/1', {
-            headers: {
-                'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json',
-                "Access-Control-Allow-Origin": "*",
-            }
-        })
-        .then(function (response) {
-            // handle success
-            console.log(response.data.data)
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-    }
-
-
+    
+    const [type, setType] = useState("")
 
     return ( 
         <Layout>
-            <div data-vgpWrapper>
-                <div data-form>
-                    <div data-first>
-                    <details>
-                        <summary> Infos Rapport </summary>
-                            <p> Date: <span> {date} </span> </p>
-                        </details>
-                    </div>
-                </div>
-            </div>
+            <select onChange={(e) => setType(e.target.value)}> 
+                <option> Type de controlle </option>
+                <option value="chariot"> Chariot Elevateur </option>
+                <option value="nacelle"> Nacelle </option>
+                <option value="pelle"> Pelle </option>
+            </select>
+            {type == "chariot" ?
+                <ChariotElevateur />
+                :
+                <>
+                    {type == "nacelle"
+                    ?
+                    <Nacelle />
+                    :
+                    <>
+                    {type == "pelle"
+                    ?
+                        <>
+                            <Pelle />
+                        </>
+                        :
+                        ""
+                    }
+                    </>
+                    }
+                </>
+                
+            }
         </Layout>
      );
 }
