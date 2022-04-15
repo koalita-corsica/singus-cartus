@@ -11,24 +11,14 @@ import { Link } from "gatsby";
 
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
-import * as styles from "../pages/index.module.css";
+import * as styles from "../styles/home.css";
 
 export const query = graphql`
-  query allNewsletterPageQuery {
-    allSanityNewsletter(filter: { slug: { current: { ne: "null" } } }) {
+  query Home {
+    allSanityCompany {
       edges {
         node {
-          titleNewsLetter
-          iconEdito {
-            iconsGallery {
-              asset {
-                url
-              }
-            }
-          }
-          slug {
-            current
-          }
+          title
         }
       }
     }
@@ -37,14 +27,25 @@ export const query = graphql`
 
 const IndexPage = (props) => {
   const { data, errors } = props;
-  const newsInfo = data.allSanityNewsletter.edges;
+  const company = data.allSanityCompany.edges;
+  let log = console.log;
+
+  log(company)
 
   return (
         <Layout>
-          <Link to="/fichePoste"
-                state={{ string: "Hello there"}}>
-            Go
-          </Link>
+          <div data-homeWrapper>
+            <div data-gridHome>
+              {company.map((item, i) =>
+              <Link to="/company">
+                <div data-item>
+                  <img src="" alt={`logo de ${item.node.title}`} width="30" />
+                  <h3> {item.node.title} </h3>
+                </div>
+              </Link>
+              )}
+            </div>
+          </div>
         </Layout>
   );
 };

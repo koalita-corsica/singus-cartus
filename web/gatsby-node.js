@@ -128,6 +128,7 @@ async function createLivret(graphql, actions) {
   });
 }
 
+
 exports.createPages = async ({ graphql, actions }) => {
   await createNewsLetter(graphql, actions);
   await createFiche(graphql, actions);

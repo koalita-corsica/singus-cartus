@@ -1,0 +1,36 @@
+[data-homeWrapper] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    [data-gridHome] {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(6, 200px);
+        gap: 2rem;
+        a{
+            text-decoration: none;
+            color: #fff;
+            [data-item] {
+                background-color: gray;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 300ms ease-in-out;
+                img {
+                    height: 80%;
+                }
+                h3 {
+                    color: white;
+                    text-transform: uppercase;
+                    font-family: 'Montserrat', sans-serif;
+                }
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

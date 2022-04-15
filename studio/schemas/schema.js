@@ -40,6 +40,7 @@ import contact from './objects/contact';
 import activite from "./objects/activite";
 import fichepostApi from "./documents/fichepostAPI";
 import fichechimqueApi from "./documents/fichechimqueAPI";
+import VGP from "./documents/vgp"
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -82,6 +83,7 @@ export default createSchema({
     fichepostApi,
     livretAPI,
     fichechimqueApi,
+    VGP,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

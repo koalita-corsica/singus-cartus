@@ -1,0 +1,42 @@
+[data-fsapWrapper] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    [data-fsapGrid] {
+        display: grid;
+        grid-template-columns: repeat(4, 250px);
+        gap: 3rem;
+        padding: 3rem;
+        [data-item] {
+            background-color: gray;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: all 300ms ease-in-out;
+            [data-main] {
+                background-color: white;
+                height: 100%;
+                padding: 1rem;
+            }
+            [data-icons1] {
+                width: 100%;
+                height: 8vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                font-size: 20px;
+                color: white;
+                transition: all 300ms ease-in-out;
+            }
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}

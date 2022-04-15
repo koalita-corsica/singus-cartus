@@ -6,6 +6,7 @@ import secours from "../assets/secours.png";
 import logo from "../assets/logo.png";
 import qualifi from "../assets/qualifications.png";
 import forma from "../assets/formations.png";
+import $ from "jquery";
 const sanityClient = require('@sanity/client');
 const axios = require('axios');
 const client = sanityClient({
@@ -89,8 +90,6 @@ const FichePoste = (props, location) => {
     let interdictions = props.data.allSanityPictosI.edges
     let obligations = props.data.allSanityPictosO.edges
     let companys = props.data.allSanityCompany.edges;
-
-    log(location)
     
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")
@@ -123,6 +122,7 @@ const FichePoste = (props, location) => {
     const [mesures, setMesures] = useState("")
     const [changed, setChanged] = useState("")
     const [logoSrc, setLogoSrc] = useState("")
+    const [options, setOptions] = useState([])
 
     //la separation pour la grid de la fiche
     var tache2 = tachesPreview.slice(0,3);
@@ -150,7 +150,7 @@ const FichePoste = (props, location) => {
         })
         .then(function (response) {
             // handle success
-            console.log(response.data.data)
+            // console.log(response.data.data)
             setLogoSrc(response.data.data.logo)
             setEntreprise(response.data.data.raison_sociale)
         })
@@ -302,7 +302,6 @@ const FichePoste = (props, location) => {
     function actionLegend() {
         setLegend(legend => [...legend, document.getElementById("legend").value])
         document.getElementById("legend").value = ""
-        log(legend)
     }
 
     function updateLegend(index) {
@@ -345,20 +344,22 @@ const FichePoste = (props, location) => {
     }
 
     //Pour choisir les pictos qui seront dans les taches pour la preview et pour le studio 
-    function helperTache(item) {
-        if(!tachesPicto.includes(item.node.id)) {
-            setTachesPicto(tachesPicto => [...tachesPicto, {"_key": 1, "_ref": item.node._id}])
-            setTachesPictoPreview(tachesPictoPreview => [...tachesPictoPreview, item.node.picto.asset.url])
-        } else {
-            tachesPicto.splice(tachesPicto.indexOf(item.node._id), 1); 
-            tachesPictoPreview.splice(tachesPictoPreview.indexOf(item.node.picto.asset.url), 1); 
-        }
+    function helperTache() {
+        options.map((item, i) => {
+            if(!tachesPicto.includes(item.node.id)) {
+                setTachesPicto(tachesPicto => [...tachesPicto, {"_key": 1, "_ref": item.node._id}])
+                setTachesPictoPreview(tachesPictoPreview => [...tachesPictoPreview, item.node.picto.asset.url])
+            } else {
+                tachesPicto.splice(tachesPicto.indexOf(item.node._id), 1); 
+                tachesPictoPreview.splice(tachesPictoPreview.indexOf(item.node.picto.asset.url), 1); 
+            }
+        })
     }
 
     //Savegaurder les taches 
     function actionTache() {
         setTaches(taches => [...taches, {"quand": quand, "quelle": quelle, "qui": qui, "mesures": mesures, "risques": tachesPicto}]);
-        setTachesPreview(tachesPreview => [...tachesPreview, {"quand": quand, "quelle": quelle, "qui": qui, "mesures": mesures, "risques": tachesPictoPreview}]);
+        setTachesPreview(tachesPreview => [...tachesPreview, {"quand": quand, "quelle": quelle, "qui": qui, "mesures": mesures, "risques": tachesPictoPreview }]);
         document.getElementById("quand").value = ""
         document.getElementById("quelle").value = ""
         document.getElementById("qui").value = ""
@@ -367,10 +368,7 @@ const FichePoste = (props, location) => {
         setQuelle("")
         setQui("")
         setMesures("")
-    }
-
-    function updateTache(item) {
-       setTaches({}) 
+        log(options)
     }
 
 
@@ -478,22 +476,23 @@ const FichePoste = (props, location) => {
                             <summary> Pictos pour les taches </summary>
                             {dangers.map((item, i) => 
                             <>
-                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <input type="checkbox" id={item.node._id} value={item.node.picto.asset.url} onChange={() => setOptions(options => [item])}/>
                                 <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
                             </>
                             )}
                             {obligations.map((item, i) => 
                             <>
-                                <input type="checkbox" value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <input type="checkbox" id={item.node._id} value={item.node.picto.asset.url} onChange={() => setOptions(options => [...options, item])} />
                                 <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
                             </>
                             )}
                             {interdictions.map((item, i) => 
                             <>
-                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                <input type="checkbox" id={item.node._id} value={item.node.picto.asset.url} onChange={() => setOptions(options => [...options, item])} />
                                 <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
                             </>
                             )}
+                            <button onClick={helperTache}> Confirm </button>
                         </details>
                         <label for="mesure"> Mesure </label>
                         <input name="mesure" type="text" id="mesure"  onChange={(event) => setMesures(event.target.value)}/>
