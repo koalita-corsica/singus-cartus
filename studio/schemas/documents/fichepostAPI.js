@@ -3,7 +3,7 @@ import { GrDocumentUser } from "react-icons/gr";
 
 export default {
   name: "fichesAPI",
-  title: "Fiche sécurité au poste",
+  title: "Fiche sécurité au poste API",
   type: "document",
   icon: GrDocumentUser,
   fields: [
@@ -100,7 +100,7 @@ export default {
       name: "tache",
       type: "array",
       title: "Tâche exposant l’opérateur  à un risque :",
-      of: [{ type: "taches" }],
+      of: [{ type: "tachesAPI" }],
     },
     {
       name: "qualifications",

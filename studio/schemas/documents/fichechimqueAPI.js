@@ -3,7 +3,7 @@ import { FaBiohazard } from "react-icons/fa";
 
 export default {
   name: "fichesChmiqueAPI",
-  title: "Notice de Poste Produit Chimique",
+  title: "Notice de Poste Produit Chimique API",
   type: "document",
   icon: FaBiohazard,
   fields: [
@@ -26,7 +26,7 @@ export default {
       name: "entreprise",
       type: "reference",
       title: "Entreprise",
-      to: [{ type: "entreprise" }],
+      to: [{ type: "company" }],
     },
     {
       name: "machine",
@@ -100,7 +100,7 @@ export default {
       name: "tache",
       type: "array",
       title: "Tâche exposant l’opérateur  à un risque :",
-      of: [{ type: "taches" }],
+      of: [{ type: "tachesAPI" }],
     },
     {
       name: "qualifications",

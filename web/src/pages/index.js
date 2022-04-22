@@ -18,7 +18,13 @@ export const query = graphql`
     allSanityCompany {
       edges {
         node {
+          _id
           title
+          logo {
+            asset {
+              url
+            }
+          }
         }
       }
     }
@@ -37,9 +43,9 @@ const IndexPage = (props) => {
           <div data-homeWrapper>
             <div data-gridHome>
               {company.map((item, i) =>
-              <Link to="/company">
+              <Link to={`/entreprise/${item.node.title}`}>
                 <div data-item>
-                  <img src="" alt={`logo de ${item.node.title}`} width="30" />
+                  <img src="" alt={`logo de ${item.node.title}`} width="200" />
                   <h3> {item.node.title} </h3>
                 </div>
               </Link>

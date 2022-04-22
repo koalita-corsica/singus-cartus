@@ -1,17 +1,22 @@
 export default {
     name: 'company',
     type: 'document',
-    title: 'Company',
+    title: 'Entreprise API',
     fields: [
         {
             name: 'id',
-            type: 'string',
+            type: 'number',
             title: 'Id dans la BD'
         },
         {
             name: 'title',
             type: 'string',
             title: 'Raison Sociale'
+        },
+        {
+            name: 'logo',
+            type: 'image',
+            title: 'Logo'
         },
         {
             name: 'statut',

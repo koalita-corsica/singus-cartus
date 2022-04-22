@@ -1,11 +1,11 @@
 export default {
-  name: "incendie",
+  name: "incendieAPI",
   type: "object",
   title: "Incendie: ",
   fields: [
     {
       name: 'evacuer',
-      type: 'bodyPortableText',
+      type: 'string',
       title: 'Evacuer: '
     },
     {

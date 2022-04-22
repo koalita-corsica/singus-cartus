@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import ChariotElevateur from '../components/VGPTypes/chariotElevateur';
 import Nacelle from '../components/VGPTypes/nacelle';
 import Pelle from '../components/VGPTypes/pelle';
+import Hayon from '../components/VGPTypes/hayon';
 const sanityClient = require('@sanity/client');
 const axios = require('axios');
 const client = sanityClient({
@@ -24,6 +25,7 @@ const VGP = (props) => {
                 <option value="chariot"> Chariot Elevateur </option>
                 <option value="nacelle"> Nacelle </option>
                 <option value="pelle"> Pelle </option>
+                <option value="hayon"> Hayon Elevateur </option>
             </select>
             {type == "chariot" ?
                 <ChariotElevateur />
@@ -40,7 +42,16 @@ const VGP = (props) => {
                             <Pelle />
                         </>
                         :
-                        ""
+                        <>
+                        {type == "hayon" ?
+                            <>
+                            <Hayon />
+                            </>
+                        :
+                        <>
+                        </>
+                        }
+                        </>
                     }
                     </>
                     }

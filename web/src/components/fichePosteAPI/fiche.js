@@ -12,6 +12,8 @@ import { GiDiploma } from 'react-icons/gi';
 import html2canvas from "html2canvas";
 import $ from "jquery";
 import PortableText from "../portableText";
+import { FaDownload } from 'react-icons/fa'
+import { FaTrashAlt } from 'react-icons/fa'
 
 const Fiche = (props) => {
   const {
@@ -45,12 +47,8 @@ const Fiche = (props) => {
 
   return (
     <React.Fragment>
-      <input
-        type="button"
-        value="Télécharger le pdf"
-        onClick={() => window.print()}
-        className={styles.button1}
-      />
+      <FaDownload onClick={() => window.print()} style={{padding: '2rem', fontSize: '30px', cursor: 'pointer'}} />
+      < FaTrashAlt style={{padding: '2rem', fontSize: '30px'}}/>
       <div id={styles.capture}>
         <div className={styles.container}>
           <div data-headerF>
@@ -178,7 +176,7 @@ const Fiche = (props) => {
                   )}
                   </div>
                   <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
-                    <PortableText blocks={item._rawMesures} />
+                  <p> {item.mesures} </p>
                   </div>
                   <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
@@ -198,7 +196,7 @@ const Fiche = (props) => {
                   )}
                   </div>
                   <div data-d="data-d" data-odd id={`${i+1}`}>
-                    <PortableText blocks={item._rawMesures} />
+                  <p> {item.mesures} </p>
                   </div>
                   <div class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
@@ -245,7 +243,7 @@ const Fiche = (props) => {
                   )}
                   </div>
                   <div style={{background: '#E5E5E5'}} data-d="data-d" data-odd id={`${i+1}`}>
-                    <PortableText blocks={item._rawMesures} />
+                    <p> {item.mesures} </p>
                   </div>
                   <div style={{background: '#E5E5E5'}} class={styles.empty} data-odd id={`${i+1}`}></div >
               </>
@@ -265,7 +263,7 @@ const Fiche = (props) => {
                   )}
                   </div>
                   <div data-d="data-d" data-odd id={`${i+1}`}>
-                    <PortableText blocks={item._rawMesures} />
+                  <p> {item.mesures} </p>
                   </div>
                   <div class={styles.empty} data-odd id={`${i+1}`}></div >
               </>

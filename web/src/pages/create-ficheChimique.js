@@ -90,10 +90,17 @@ const FicheChimique = (props) => {
     let obligations = props.data.allSanityPictosO.edges
     let companys = props.data.allSanityCompany.edges;
 
+    let entrepriseData = window.history.state.data
+
+    //la premiere apelle a l'API 
+    useEffect(() => {
+        log(entrepriseData)
+    })
+
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")
-    const [entreprise, setEntreprise ] = useState("")
-    const [entrepriseId, setEntrepriseId] = useState("")
+    const [entreprise, setEntreprise ] = useState(entrepriseData.title)
+    const [entrepriseId, setEntrepriseId] = useState(entrepriseData._id)
     const [fiche, setFiche] = useState("")
     const [produit, setProduit] = useState("")
     const [fournisseur, setFournisseur] = useState("")
@@ -215,8 +222,6 @@ const FicheChimique = (props) => {
             var canvas = document.getElementById('imageCanvas');
             
             canvas.toBlob(uploadImageBlob, 'image/png')
-
-
 
             epiData.map((item, i) => {
                 client

@@ -1,5 +1,5 @@
 export default {
-  name: "couverture",
+  name: "couvertureAPI",
   type: "object",
   title: "Couverture",
   fields: [
@@ -18,7 +18,7 @@ export default {
     },
     {
       name: 'texte',
-      type: 'bodyPortableText',
+      type: 'string',
       title: 'Texte: '
     },
     {

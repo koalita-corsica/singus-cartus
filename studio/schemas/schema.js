@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import siteSettings from "./documents/siteSettings";
 import newsletter from "./documents/newsletter";
+import newsletterAPI from "./documents/newsletterAPI";
 import livretAPI from "./documents/livretAPI";
 
 // Object types
@@ -22,12 +23,15 @@ import fichepost from "./documents/fichepost";
 import entreprise from "./documents/entreprise";
 import epis from "./documents/epis";
 import tache from "./objects/tache";
+import tacheAPI from "./objects/tacheAPI";
 import livret from "./documents/livret.js";
 import couverture from './objects/couverture.js'
+import couvertureAPI from './objects/couvertureAPI.js'
 import renseignement from './objects/renseignement.js'
 import regles from './objects/regles.js'
 import equipement from './objects/equipement.js'
 import incendie from './objects/incendie.js';
+import incendieAPI from './objects/incendieAPI.js';
 import info from "./objects/info.js"
 import fichechimique from "./documents/fichechimque";
 import risques from "./documents/risques.js";
@@ -84,6 +88,10 @@ export default createSchema({
     livretAPI,
     fichechimqueApi,
     VGP,
+    tacheAPI,
+    couvertureAPI,
+    incendieAPI,
+    newsletterAPI,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

@@ -91,10 +91,18 @@ const FichePoste = (props, location) => {
     let obligations = props.data.allSanityPictosO.edges
     let companys = props.data.allSanityCompany.edges;
     
+    let entrepriseData = window.history.state.data
+
+    //la premiere apelle a l'API 
+    useEffect(() => {
+        log(entrepriseData)
+    })
+
+
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")
-    const [entreprise, setEntreprise ] = useState("")
-    const [entrepriseId, setEntrepriseId] = useState("")
+    const [entreprise, setEntreprise ] = useState(entrepriseData.title)
+    const [entrepriseId, setEntrepriseId] = useState(entrepriseData._id)
     const [fiche, setFiche] = useState("")
     const [machine, setMachine] = useState("")
     const [machineCat, setMachineCat] = useState("")
@@ -127,39 +135,7 @@ const FichePoste = (props, location) => {
     //la separation pour la grid de la fiche
     var tache2 = tachesPreview.slice(0,3);
     var tache0 = tachesPreview.slice(2,9);
-
-
-    //la premiere apelle a l'API 
-    useEffect(() => {
-        setTimeout(getDataCompany(), 2000)
-        for(var i in companys) {
-            if (entreprise == companys[i].node.title){
-                setEntrepriseId(companys[i].node._id)
-            }
-        }
-    })
-
-    // requette pour les infos de la Entreprise
-    const getDataCompany = async () => {
-        axios.get('https://api.dev.evrpro.com/societes/1', {
-            headers: {
-                'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json',
-            }
-        })
-        .then(function (response) {
-            // handle success
-            // console.log(response.data.data)
-            setLogoSrc(response.data.data.logo)
-            setEntreprise(response.data.data.raison_sociale)
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-    }
-
+    
     
     // Function pour dessiner les ronds dans l'image de la machine
     function draw(e) {

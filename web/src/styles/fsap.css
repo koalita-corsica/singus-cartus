@@ -16,6 +16,12 @@
           align-items: center;
 }
 
+[data-fsapWrapper] [data-search]:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
 [data-fsapWrapper] [data-fsapGrid] {
   display: -ms-grid;
   display: grid;
@@ -63,11 +69,5 @@
   color: white;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
-}
-
-[data-fsapWrapper] [data-fsapGrid] [data-item]:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 /*# sourceMappingURL=fsap.css.map */
