@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { graphql } from "gatsby";
-import * as styles from "../components/Livret/livret.css"
+import * as styles from "../components/Livret/livret.module.css"
 import logo from "../assets/logoL.png";
 import logoN from "../assets/logoLN.png";
 import diplomeN from "../assets/diplomeN.png"

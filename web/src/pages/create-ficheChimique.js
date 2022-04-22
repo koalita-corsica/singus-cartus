@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import * as styles from "../components/ficheChimique/ficheChimique.css";
+import * as styles from "../components/ficheChimique/ficheChimique.module.css";
 import { graphql } from "gatsby";
 import fire from "../assets/fire.png";
 import secours from "../assets/secours.png";
@@ -88,14 +88,9 @@ const FicheChimique = (props) => {
     let dangers = props.data.allSanityPictosD.edges
     let interdictions = props.data.allSanityPictosI.edges
     let obligations = props.data.allSanityPictosO.edges
-    let companys = props.data.allSanityCompany.edges;
 
+    //data de l'entreprise choisi
     let entrepriseData = window.history.state.data
-
-    //la premiere apelle a l'API 
-    useEffect(() => {
-        log(entrepriseData)
-    })
 
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")
@@ -129,37 +124,6 @@ const FicheChimique = (props) => {
     //la separation pour la grid de la fiche
     var tache2 = tachesPreview.slice(0,3);
     var tache0 = tachesPreview.slice(2,9);
-
-    //la premiere apelle a l'API 
-    useEffect(() => {
-        setTimeout(getDataCompany(), 2000)
-        for(var i in companys) {
-            if (entreprise == companys[i].node.title){
-                setEntrepriseId(companys[i].node._id)
-            }
-        }
-    })
-
-    // requette pour les infos de la Entreprise
-    const getDataCompany = async () => {
-        axios.get('https://api.dev.evrpro.com/societes/1', {
-            headers: {
-                'Authorization' : 'Bearer 3|kHg1Af40ugAHycMm1kJsFdZp2jchfYuioIwcMyNs',
-                'Content-Type' : 'application/json',
-                'Accept' : 'application/json',
-            }
-        })
-        .then(function (response) {
-            // handle success
-            // console.log(response.data.data)
-            setEntreprise(response.data.data.raison_sociale)
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-    }
-
     
     // Function pour dessiner les ronds dans l'image de la machine
     function draw(e) {
@@ -295,12 +259,6 @@ const FicheChimique = (props) => {
         reader.readAsDataURL(event.target.files[0]);     
     }
 
-    // Pour savegarder les legendes
-    // function actionLegend() {
-    //     setLegend(legend => [...legend, document.getElementById("legend").value])
-    //     document.getElementById("legend").value = ""
-    // }
-
     //Pour choisir les pictos EPI pour la preview et pour le studio 
     function actionEPI(item) {
         if(!epiData.includes(item.node.id)) {
@@ -358,8 +316,6 @@ const FicheChimique = (props) => {
         setQui("")
         setMesures("")
     }
-
-
 
     return ( 
         <>
@@ -528,9 +484,6 @@ const FicheChimique = (props) => {
                                     <div data-bar/>
                                     <div data-rsec>
                                         <canvas id="imageCanvas" onClick={(e) => draw(e)}/>                                    <div data-legendc>
-                                        {/* {legend != null ? legend.map((item, i) =>
-                                            <div data-number={`${i+1}`}> {item} </div>
-                                        ): ''} */}
                                         </div>
                                     </div>
                                 </div>
@@ -553,9 +506,6 @@ const FicheChimique = (props) => {
                                     <div data-barv/>
                                     <div data-rsecvc>
                                         <div style={{alignItems: 'flex-start'}} data-legendvc>
-                                        {/* {legend != null ? legend.map((item, i) =>
-                                        <div data-number={`${i+1}`}> {item} </div>
-                                        ): ''} */}
                                         </div>
                                         <canvas style={{margin: '0', marginTop: '-3rem', marginLeft: '3.5rem'}} id="imageCanvas" onClick={(e) => draw(e)}/>
                                     </div>

@@ -26,24 +26,16 @@
   display: flex;
   gap: 10rem;
   font-family: 'Montserrat', sans-serif;
+  .container {
+    width: 21cm;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+  }
+  [data-contentF] {
+    height: 64.35%;
+  }
 }
 
-[data-fichePreview] {
-  height: 29.7cm;
-  width: 21cm;
-  
-}
-
-.container {
-  height: 29.7cm;
-  width: 21cm;
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-}
-
-[data-contentF] {
-  height: 64.35%;
-}
 
 [data-headerF] {
   background: #161314 0% 0% no-repeat padding-box;

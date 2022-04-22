@@ -12,24 +12,27 @@
     visibility: hidden;
   }
 
-  #capture, #capture * {
+  [data-capture], [data-capture] * {
     visibility: visible;
   }
 
-  #capture {
+  [data-capture] {
     position: absolute;
     left: 0;
     top: 0;
   }
 }
-.container {
-  height: 29.7cm;
+[data-ficheContainer] {
+  display: flex;
+  gap: 10rem;
+  font-family: "Montserrat", sans-serif;
+}
+[data-ficheContainer] .container {
   width: 21cm;
   position: relative;
   font-family: "Montserrat", sans-serif;
 }
-
-[data-contentF] {
+[data-ficheContainer] [data-contentF] {
   height: 64.35%;
 }
 

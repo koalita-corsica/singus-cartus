@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import * as styles from "../components/fichePosteAPI/fiche.css";
+import * as styles from "../components/fichePosteAPI/fiche.module.css";
 import { graphql } from "gatsby";
 import fire from "../assets/fire.png";
 import secours from "../assets/secours.png";
@@ -89,15 +89,8 @@ const FichePoste = (props, location) => {
     let dangers = props.data.allSanityPictosD.edges
     let interdictions = props.data.allSanityPictosI.edges
     let obligations = props.data.allSanityPictosO.edges
-    let companys = props.data.allSanityCompany.edges;
     
     let entrepriseData = window.history.state.data
-
-    //la premiere apelle a l'API 
-    useEffect(() => {
-        log(entrepriseData)
-    })
-
 
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")
