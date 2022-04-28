@@ -85,7 +85,7 @@ const LivretAPI = (props) => {
     let wRisques = props.data.allSanityRisques.edges
     let companys = props.data.allSanityCompany.edges;
 
-    let entrepriseData = window.history.state.data
+    let entrepriseData = typeof window !== "undefined" && window.history.state.data
 
     //variables globals
     const [entreprise, setEntreprise ] = useState(entrepriseData.title)

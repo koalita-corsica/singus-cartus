@@ -7,8 +7,8 @@ import phone from "../assets/phone.png";
 import location from "../assets/location.png";
 import * as styles from "../components/LettrePro/newsletter.module.css";
 import {graphql} from "gatsby";
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
 const sanityClient = require('@sanity/client');
 const client = sanityClient({
     projectId: 'zpdf06rn',
@@ -58,6 +58,7 @@ const CreateNewsletter = (props) => {
     const [article5, setArticle5] = useState("")
     const [titleArticle6, setTitleArticle6] = useState("")
     const [article6, setArticle6] = useState("")
+
 
     function actionIcon(item) {
         setMascottePreview(item.node.iconsGallery.asset.url)

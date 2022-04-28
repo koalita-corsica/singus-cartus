@@ -90,7 +90,7 @@ const FicheChimique = (props) => {
     let obligations = props.data.allSanityPictosO.edges
 
     //data de l'entreprise choisi
-    let entrepriseData = window.history.state.data
+    let entrepriseData = typeof window !== "undefined" && window.history.state.data
 
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")

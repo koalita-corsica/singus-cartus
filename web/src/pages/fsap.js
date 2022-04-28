@@ -10,15 +10,17 @@ import { AiOutlinePlus } from "react-icons/ai"
 const FSAP = () => {
     let log = console.log;
 
-    const data = window.history.state.fiches.edges
+    const data = typeof window !== "undefined" && window.history.state.fiches.edges
+    const entreprise = typeof window !== "undefined" && window.history.state.entreprise
     
-    log(window.history.state.entreprise)
 
      return ( 
         <Layout>
             <div data-fsapWrapper>
-                <h2> FSAP/{window.history.state.entreprise.title} </h2>
+                <h2> FSAP/{entreprise.title} </h2>
                 <div data-fsapGrid>
+                    {data && data != null ?
+                    <>
                     {data.map((item, i) =>
                         <div data-item>
                             <div data-main>
@@ -33,8 +35,12 @@ const FSAP = () => {
                             </div>
                         </div>
                     )}
+                    </>
+                    :
+                    ""
+                    }
                     <Link to="/create-fichePoste" 
-                        state={{data: window.history.state.entreprise}}
+                        state={{data: entreprise}}
                     >
                         <div data-item>
                             <AiOutlinePlus style={{fontSize: '70px'}} />

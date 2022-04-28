@@ -68,8 +68,6 @@ const CompanyTemplate = (props) => {
 
   const entreprise = data && data.entreprise;
 
-  log(fiches)
-
   return (
     <Layout>
       <h1> Company {entreprise.title} </h1>  

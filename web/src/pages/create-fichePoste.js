@@ -90,7 +90,7 @@ const FichePoste = (props, location) => {
     let interdictions = props.data.allSanityPictosI.edges
     let obligations = props.data.allSanityPictosO.edges
     
-    let entrepriseData = window.history.state.data
+    let entrepriseData = typeof window !== "undefined" && window.history.state.data
 
     // Tout les variables d'etat
     const [version, setVersion ] = useState("")

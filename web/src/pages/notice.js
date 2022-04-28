@@ -11,17 +11,17 @@ import {Link} from "gatsby";
 const Notice = () => {
     let log = console.log;
 
-    const entreprise = window.history.state.entreprise
-    const data = window.history.state.notices.edges
+    const data = typeof window !== "undefined" && window.history.state.notices.edges
+    const entreprise = typeof window !== "undefined" && window.history.state.entreprise
 
-
-    log(window.history.state.notices.edges)
 
     return ( 
         <Layout>
             <div data-fsapWrapper>
                 <h1> NOTICE/{entreprise.title} </h1>
                 <div data-fsapGrid>
+                    {data && data != null ?
+                    <>
                         {data.map((item, i) =>
                             <div data-item>
                                 <div data-main>
@@ -36,8 +36,12 @@ const Notice = () => {
                                 </div>
                             </div>
                         )}
+                        </>
+                        :
+                            ""
+                        }
                         <Link to="/create-ficheChimique" 
-                        state={{data: window.history.state.entreprise}}
+                        state={{data: entreprise}}
                         >
                             <div data-item>
                                 <AiOutlinePlus style={{fontSize: '70px'}} />
