@@ -959,7 +959,7 @@ const LivretAPI = (props) => {
                                 <div data-head />
                                 <div data-content>
                                 <img src={logoN} alt="" width="255" />
-                                <h3> www.evrpro.fr </h3>
+                                <h3> www.evrpro.com </h3>
                                 <div data-center>
                                     <p> Z.I de Baléone - Lot Michel Ange </p>
                                     <p> 20167 AFA </p>

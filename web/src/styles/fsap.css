@@ -41,15 +41,29 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+  height: 10rem;
+  width: 18rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px black;
+          box-shadow: 2px 2px black;
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-item]:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-item] a {
+  text-decoration: none;
+  color: black;
 }
 
 [data-fsapWrapper] [data-fsapGrid] [data-item] [data-main] {
   background-color: white;
-  height: 100%;
   padding: 1rem;
+  text-align: center;
 }
 
 [data-fsapWrapper] [data-fsapGrid] [data-item] [data-icons1] {
@@ -69,5 +83,37 @@
   color: white;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-item] [data-icons1] a {
+  color: white;
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-create] {
+  height: 10rem;
+  width: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-create]:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+[data-fsapWrapper] [data-fsapGrid] [data-create]:hover::after {
+  content: "Ajouter";
+  color: black;
+  position: absolute;
+  bottom: 20%;
+  font-size: 10px;
 }
 /*# sourceMappingURL=fsap.css.map */

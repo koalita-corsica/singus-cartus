@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import React from "react";
+import React, {useState} from "react";
 import { graphql } from "gatsby";
 import {
   filterOutDocsPublishedInTheFuture,
@@ -9,9 +9,12 @@ import {
 import Layout from "../containers/layout";
 import { Link } from "gatsby";
 
+
 import { BsFillPlusSquareFill } from "react-icons/bs";
 
 import * as styles from "../styles/home.css";
+
+
 
 export const query = graphql`
   query Home {
@@ -20,6 +23,8 @@ export const query = graphql`
         node {
           _id
           title
+          email
+          activite
           logo {
             asset {
               url
@@ -31,11 +36,28 @@ export const query = graphql`
   }
 `;
 
+
 const IndexPage = (props) => {
   const { data, errors } = props;
   const company = data.allSanityCompany.edges;
   let log = console.log;
 
+
+  function recherche(input) {
+    const inputSearch = input.target.value.toLowerCase();
+    const filtered = Array.from(document.querySelectorAll(`[data-entreprise]`));
+    for (var i = 0; i < filtered.length; i++) {
+      let nom = filtered[i].dataset.entreprise.toLowerCase();
+      let parent = filtered[i].parentNode ;
+      if (nom.includes(inputSearch)){
+        parent.dataset.vue="up";
+      } else {
+        parent.dataset.vue="down";
+      }
+    }
+    //  log("hey : " + filtered.dataset.entreprise);
+
+  }
   //function createCompany() {
     // axios.get('https://api.dev.evrpro.com/societes/', {
     //   headers: {
@@ -75,16 +97,23 @@ const IndexPage = (props) => {
   //}
 
 
-
   return (
         <Layout>
+          <label>Filtrer les entreprises : <input type="text" onKeyUp={recherche} /></label>
           <div data-homeWrapper >
-            <div data-gridHome>
+            <div data-gridHome>              
               {company.map((item, i) =>
-              <Link to={`/entreprise/${item.node.title}`}>
-                <div data-item>
-                  <img src="" alt={`logo de ${item.node.title}`} width="200" />
-                  <h3> {item.node.title} </h3>
+              <Link to={`/entreprise/${item.node.title}`}  data-vue="up">
+                <div data-item data-entreprise={item.node.title}>
+                  <img src="https://images.unsplash.com/photo-1556800287-e594b229b561?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=912&q=80" alt={`logo de ${item.node.title}`} width="200" />
+                  <div>
+                    <ul>
+                      <li><strong>{item.node.title.length > 25 && item.node.title.substring(0,22) + "..."}{item.node.title.length < 26 && item.node.title}</strong></li>
+                      <li> <i>{item.node.activite.length > 50 && item.node.activite.substring(0,50) + "..."}{item.node.activite.length < 50 && item.node.activite}</i></li>
+                      <li>{item.node.email}</li>
+                    </ul>
+                  </div>
+                  
                 </div>
               </Link>
               )}

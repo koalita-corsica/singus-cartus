@@ -67,7 +67,7 @@ const Newsletter = (props) => {
             </span>
             <span>
               <img src={globe} alt="phone" width="25px" />{" "}
-              <p> www.evrpro.fr </p>
+              <p> www.evrpro.com </p>
             </span>
             <span>
               <img src={location} alt="phone" width="25px" />{" "}

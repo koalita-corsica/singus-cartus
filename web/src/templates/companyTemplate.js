@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
+import Previous from "../components/previous/previous";
 import Layout from "../containers/layout";
 import * as styles from "../styles/company.css"
 
@@ -70,35 +71,32 @@ const CompanyTemplate = (props) => {
 
   return (
     <Layout>
-      <h1> Company {entreprise.title} </h1>  
+      <Previous />
+      <h1> Entreprise : {entreprise.title} </h1>  
       <div data-companyWrapper>
         <div data-companyGrid>
             <Link to="/fsap"
               state={{fiches: fiches, entreprise: entreprise}}
             >
-                <div data-item>
-                    <img src="" alt="Preview FSAP" width="30" />
-                    <h3> FSAP </h3>
+                <div data-item data-fsap>
+                    <h3>Fiche sécurité au poste</h3>
                 </div>
             </Link>
             <Link to="/notice"
               state={{notices: notices, entreprise: entreprise}}
             >
-              <div data-item>
-                  <img src="" alt="Preview Notice" width="30" />
-                  <h3> Notice </h3>
+              <div data-item data-chem>
+                  <h3>Notice de Poste Produit Chimique</h3>
               </div>
             </Link>
             <Link to="/livret"
               state={{livrets: livrets, entreprise: entreprise}}
             >
-              <div data-item>
-                  <img src="" alt="Preview Livret" width="30" />
-                  <h3> Livret </h3>
+              <div data-item data-livret>
+                  <h3>Livret D'Accueil </h3>
               </div>
             </Link>
-            <div data-item>
-                <img src="" alt="Preview VGP" width="30" />
+            <div data-item data-vgp>
                 <h3> VGP </h3>
             </div>
         </div>

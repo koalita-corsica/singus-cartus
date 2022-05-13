@@ -5,10 +5,10 @@ import * as styles from "../styles/fsap.css";
 import { BsSearch } from 'react-icons/bs';
 import { AiOutlineArrowRight } from "react-icons/ai"
 import { AiOutlinePlus } from "react-icons/ai"
+import Previous from '../components/previous/previous';
 
 
 const FSAP = () => {
-    let log = console.log;
 
     const data = typeof window !== "undefined" && window.history.state.fiches.edges
     const entreprise = typeof window !== "undefined" && window.history.state.entreprise
@@ -16,22 +16,25 @@ const FSAP = () => {
 
      return ( 
         <Layout>
+            <Previous />
             <div data-fsapWrapper>
-                <h2> FSAP/{entreprise.title} </h2>
+                <h2>{entreprise.title} : Fiche de sécurité au poste </h2>
                 <div data-fsapGrid>
                     {data && data != null ?
                     <>
                     {data.map((item, i) =>
                         <div data-item>
+                            <Link to={`/fichesdeposteAPI/${item.node.slug}`} >
                             <div data-main>
-                                <p> Nom {item.node.fichedeposte} </p> 
-                                <p> Version/Date {item.node.version} </p>
+                                <p> Nom : {item.node.fichedeposte} </p> 
+                                <p> Version/Date : {item.node.version} </p>
                             </div>
+                            </Link>
                             <div data-icons1>
                                 <Link data-search to={`/fichesdeposteAPI/${item.node.slug}`} >
                                     <BsSearch style={{cursor: 'pointer', transform: 'scale(1.1)'}}/>
                                 </Link>
-                                <AiOutlineArrowRight style={{cursor: 'pointer', transform: 'scale(1.1)'}}/>
+                                <AiOutlineArrowRight style={{cursor: 'pointer'}}/>
                             </div>
                         </div>
                     )}
@@ -42,7 +45,7 @@ const FSAP = () => {
                     <Link to="/create-fichePoste" 
                         state={{data: entreprise}}
                     >
-                        <div data-item>
+                        <div data-create>
                             <AiOutlinePlus style={{fontSize: '70px'}} />
                         </div>
                     </Link>

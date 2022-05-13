@@ -5,6 +5,7 @@ import * as styles from "../styles/fsap.css";
 import { BsSearch } from 'react-icons/bs';
 import { AiOutlineArrowRight } from "react-icons/ai"
 import { AiOutlinePlus } from "react-icons/ai"
+import Previous from '../components/previous/previous';
 
 
 
@@ -30,6 +31,7 @@ const Newsletter = (props) => {
 
      return ( 
          <Layout>
+             <Previous />
               <div data-fsapWrapper>
                 <h2> Newsletter </h2>
                 <div data-fsapGrid>

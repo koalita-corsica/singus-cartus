@@ -7,6 +7,7 @@ import { FaTrashAlt } from 'react-icons/fa'
 import { AiOutlineArrowRight } from "react-icons/ai"
 import { AiOutlinePlus } from "react-icons/ai"
 import {Link} from "gatsby";
+import Previous from '../components/previous/previous';
 
 const Notice = () => {
     let log = console.log;
@@ -17,6 +18,7 @@ const Notice = () => {
 
     return ( 
         <Layout>
+            <Previous />
             <div data-fsapWrapper>
                 <h1> NOTICE/{entreprise.title} </h1>
                 <div data-fsapGrid>
@@ -24,15 +26,17 @@ const Notice = () => {
                     <>
                         {data.map((item, i) =>
                             <div data-item>
+                                <Link to={`/noticeAPI/${item.node.slug}`} >
                                 <div data-main>
-                                    <p> Nom {item.node.fichedeposte} </p> 
-                                    <p> Version/Date {item.node.version} </p>
+                                    <p> Nom : {item.node.fichedeposte} </p> 
+                                    <p> Version/Date : {item.node.version} </p>
                                 </div>
+                                </Link>
                                 <div data-icons1>
                                     <Link data-search to={`/noticeAPI/${item.node.slug}`} >
-                                        <BsSearch style={{cursor: 'pointer', transform: 'scale(1.1)'}}/>
+                                        <BsSearch />
                                     </Link>
-                                    <AiOutlineArrowRight style={{cursor: 'pointer', transform: 'scale(1.1)'}}/>
+                                    <AiOutlineArrowRight style={{cursor: 'pointer'}}/>
                                 </div>
                             </div>
                         )}
@@ -43,7 +47,7 @@ const Notice = () => {
                         <Link to="/create-ficheChimique" 
                         state={{data: entreprise}}
                         >
-                            <div data-item>
+                            <div data-create>
                                 <AiOutlinePlus style={{fontSize: '70px'}} />
                             </div>
                         </Link>
