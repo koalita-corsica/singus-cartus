@@ -1,0 +1,11 @@
+[data-previous] {
+    margin:2rem;
+    border:none;
+    background: white;
+    transition: all 100ms ease-in-out;
+    border-bottom: solid 1px white;
+    &:hover {
+        cursor: pointer;
+        border-bottom: solid 1px DimGray;
+    }
+}
