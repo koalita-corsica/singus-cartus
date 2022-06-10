@@ -103,6 +103,7 @@ const FicheChimique = (props) => {
     const [lieu, setLieu] = useState("")
     const [date, setDate] = useState("")
     const [type, setType] = useState("")
+    const [legend, setLegend] = useState([]);
     const [epiData, setEpiData] = useState([]);
     const [epiPreview, setEpiPreview] = useState([]);
     const [dangersData, setDangersData] = useState([]);
@@ -120,6 +121,7 @@ const FicheChimique = (props) => {
     const [quelle, setQuelle] = useState("")
     const [qui, setQui] = useState("")
     const [mesures, setMesures] = useState("")
+    const [changed, setChanged] = useState("")
 
     //la separation pour la grid de la fiche
     var tache2 = tachesPreview.slice(0,3);
@@ -261,33 +263,43 @@ const FicheChimique = (props) => {
 
     //Pour choisir les pictos EPI pour la preview et pour le studio 
     function actionEPI(item) {
-        if(!epiData.includes(item.node.id)) {
+        if(!epiData.includes(item.node._id)) {
             setEpiData(epiData => [...epiData, item.node._id])
             setEpiPreview(epiPreview => [...epiPreview, item.node.image.asset.url])
         } else {
-            epiData.splice(epiData.indexOf(item.node._id), 1); 
+            let newEpiData = [...epiData]
+            newEpiData.splice(epiPreview.indexOf(item.node.image.asset.url), 1); 
+            setEpiData(newEpiData)            
+            // epiData.splice(epiData.indexOf(item.node._id), 1); 
             epiPreview.splice(epiPreview.indexOf(item.node.image.asset.url), 1); 
         }
     }
 
+
     //Pour choisir les pictos Danger pour la preview et pour le studio 
     function actionDanger(item) {
-        if(!dangersData.includes(item.node.id)) {
+        if(!dangersData.includes(item.node._id)) {
             setDangersData(dangersData => [...dangersData, item.node._id])
             setDangersPreview(dangersPreview => [...dangersPreview, item.node.picto.asset.url])
         } else {
-            dangersData.splice(dangersData.indexOf(item.node._id), 1); 
+            let newDangersData = [...dangersData]
+            newDangersData.splice(dangersData.indexOf(item.node._id), 1); 
+            setDangersData(newDangersData);
+            // dangersData.splice(dangersData.indexOf(item.node._id), 1); 
             dangersPreview.splice(dangersPreview.indexOf(item.node.picto.asset.url), 1); 
         }
     }
 
     //Pour choisir les pictos Interdiction pour la preview et pour le studio 
     function actionInterdiction(item) {
-        if(!interdictionsData.includes(item.node.id)) {
+        if(!interdictionsData.includes(item.node._id)) {
             setInterdictionsData(interdictionsData => [...interdictionsData, item.node._id])
             setInterdictionsPreview(interdictionsPreview => [...interdictionsPreview, item.node.picto.asset.url])
         } else {
-            interdictionsData.splice(interdictionsData.indexOf(item.node._id), 1); 
+            let newInterData = [...interdictionsData]
+            newInterData.splice(interdictionsData.indexOf(item.node._id),1)
+            setInterdictionsData(newInterData)
+            // interdictionsData.splice(interdictionsData.indexOf(item.node.id), 1); 
             interdictionsPreview.splice(interdictionsPreview.indexOf(item.node.picto.asset.url), 1); 
         }
     }
@@ -321,125 +333,201 @@ const FicheChimique = (props) => {
         <>
             <h1> Notice de Poste Produit Chimique</h1>
             <div data-ficheContainer>
-                <div data-form>
-                    <div data-version>
-                        <label for="version"> Version </label>
-                        <input name="version" type="text" onChange={(event) => setVersion(event.target.value)}/>
-                    </div>                    
+                <div data-form style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
                     <div data-fiche>
                         <label for="fiche"> Nom de la Fiche </label>
                         <input name="fiche" type="text" onChange={(event) => setFiche(event.target.value)}/>
                     </div>
-                    <div data-machineF>
-                        <label for="machine"> Produit </label>
-                        <input name="machine" type="text" onChange={(event) => setProduit(event.target.value)}/>
-                    </div>
-                    <div data-typeMachine>
-                        <label for="typeMachine"> Fournisseur </label>
-                        <input name="typeMachine" type="text" onChange={(event) => setFournisseur(event.target.value)}/>
-                    </div>
-                    <div data-caract>
-                        <label for="caract"> Caractéristiques principales du Porduit </label>
-                        <input name="caract" type="text" onChange={(event) => setCaractMachine(event.target.value)}/>
-                    </div>
-                    <div data-materials>
-                        <label for="materials"> Lieu de Consultation FDS </label>
-                        <input name="materials" type="text" onChange={(event) => setLieu(event.target.value)}/>
-                    </div>
-                    <div data-date>
-                        <label for="date"> Date de mise en service </label>
-                        <input name="date" type="date" onChange={(event) => setDate(event.target.value)}/>
-                    </div>
-                    <div data-typeImage>
-                        <label for="type"> Type d'image </label>
-                        <select name="select" id="typeImage" onChange={(event) => setType(event.target.value)}>
-                            <option value="horizontal">Horizontal 196x130</option>
-                            <option value="vertical">Vertical 231</option>
-                        </select>
-                    </div>
-                    <div data-image>
-                        <input type="file" name="image" onChange={(e) => handleImage(e)}/>
-                    </div>
+                    <hr />
+
+                    <fieldset>
+                        <legend>Informations générales</legend>
+                        <details>
+                            <summary><i>Informations liées au poste et à la machine</i></summary>
+                            <div data-version>
+                                <label for="version"> Version </label>
+                                <input name="version" type="text" onChange={(event) => setVersion(event.target.value)}/>
+                            </div>                    
+                            <div data-machineF>
+                                <label for="machine"> Produit </label>
+                                <input name="machine" type="text" onChange={(event) => setProduit(event.target.value)}/>
+                            </div>
+                            <div data-typeMachine>
+                                <label for="typeMachine"> Fournisseur </label>
+                                <input name="typeMachine" type="text" onChange={(event) => setFournisseur(event.target.value)}/>
+                            </div>
+                            <div data-caract>
+                                <label for="caract"> Caractéristiques principales du Porduit </label>
+                                <input name="caract" type="text" onChange={(event) => setCaractMachine(event.target.value)}/>
+                            </div>
+                            <div data-date>
+                                <label for="date"> Date de mise en service </label>
+                                <input name="date" type="date" onChange={(event) => setDate(event.target.value)}/>
+                            </div>
+                            <div data-materials>
+                                <label for="materials"> Lieu de Consultation FDS </label>
+                                <input name="materials" type="text" onChange={(event) => setLieu(event.target.value)}/>
+                            </div>
+                        </details>
+                    </fieldset>
+                    <hr />
+
+                    <fieldset data-upload><legend>Image &amp; légende</legend>
+                    <details>
+                    <summary><i>Ajouter une image et la légender</i></summary>
+                        <div data-typeImage>
+                            <label for="type"> Type d'image </label>
+                            <select name="select" id="typeImage" onChange={(event) => setType(event.target.value)}>
+                                <option value="horizontal">Horizontal 196x130</option>
+                                <option value="vertical">Vertical 231</option>
+                            </select>
+                        </div>
+                        <div data-image>
+                            <input type="file" name="image" onChange={(e) => handleImage(e)}/>
+                        </div>
+                    </details>
+                    </fieldset>
+                    <hr />
+
+                    <fieldset><legend>Pictos </legend>
+                    <details>
+                    <summary><i>Ajouter et supprimer les pictos pour les EPI, les dangers et les interdictions</i></summary>
                     <div data-epi>
                         <details>
-                            <summary> Pictos EPI </summary>
+                            <summary> EPI Obligatoires </summary>
+                            <div data-pictocontainer>
                         {data.map((item, i) => 
                         <>
-                            <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.image.asset.url} onClick={() => actionEPI(item)} />
-                            <label for={item.node.title}> <img src={item.node.image.asset.url} width="50" /> </label>
+                            <div data-minipicto>
+                                <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.image.asset.url} onClick={() => actionEPI(item)} />
+                                <label for={item.node.title}> <img src={item.node.image.asset.url} width="50" /> </label>
+                            </div>
                         </>
                         )}
+                        </div>
                         </details>
                     </div>
                     <div data-dangers>
                         <details>
-                            <summary> Pictos Dangers </summary>
+                            <summary> Dangers / Obligations </summary>
+                            <div data-pictocontainer>
+
                         {dangers.map((item, i) => 
                         <>
-                            <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionDanger(item)} />
-                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            <div data-minipicto>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionDanger(item)} />
+                            </div>
                         </>
                         )}
+
                         {obligations.map((item, i) => 
                         <>
-                            <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionDanger(item)} />
-                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            <div data-minipicto>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionDanger(item)} />
+                            </div>
                         </>
                         )}
+                        </div>
                         </details>
                     </div>
                     <div data-interdictions>
                         <details>
-                            <summary> Pictos Interdiction </summary>
+                            <summary> Interdictions </summary>
+                            <div data-pictocontainer>
                         {interdictions.map((item, i) => 
                         <>
-                            <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionInterdiction(item)} />
-                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                            <div data-minipicto>
+                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                <input type="checkbox" id={item.node.title} name={item.node.title} value={item.node.picto.asset.url} onClick={() => actionInterdiction(item)} />
+                            </div>
                         </>
                         )}
+                        </div>
                         </details>
                     </div>
+                    </details>
+                    </fieldset>
+                    <hr />
+
+                    <fieldset><legend>Liste des tâches</legend>
+                    <details>
+                    <summary><i>Ajouter / Supprimer les tâches liées au poste</i></summary>
                     <div data-taches>
-                        <label for="quand"> Quand </label>
+                        <label for="quand"> Quand : </label>
                         <input name="quand" type="text" id="quand"  onChange={(event) => setQuand(event.target.value)}/>
-                        <label for="quelle"> Quelle </label>
+                        <br />
+                        <label for="quelle"> Quelle : </label>
                         <input name="quelle" type="text" id="quelle"  onChange={(event) => setQuelle(event.target.value)}/>
-                        <label for="qui"> Qui </label>
+                        <br />
+                        <label for="qui"> Qui : </label>
                         <input name="qui" type="text" id="qui"  onChange={(event) => setQui(event.target.value)}/>
                         <details>
                             <summary> Pictos pour les taches </summary>
-                            {dangers.map((item, i) => 
-                            <>
-                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
-                            {obligations.map((item, i) => 
-                            <>
-                                <input type="checkbox" value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
-                            {interdictions.map((item, i) => 
-                            <>
-                                <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
-                                <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
-                            </>
-                            )}
+                                <details>
+                                    <summary> Pictos dangers </summary>
+                                    <div data-pictocontainer>
+                                    {dangers.map((item, i) => 
+                                    <>
+                                        <div data-minipicto>
+                                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                            <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                        </div>
+                                    </>
+                                    )}
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary> Pictos obligations </summary>
+                                    <div data-pictocontainer>
+                                    {obligations.map((item, i) => 
+                                    <>
+                                        <div data-minipicto>
+                                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                            <input type="checkbox" value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                        </div>
+                                    </>
+                                    )}
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary> Pictos interdictions </summary>
+                                    <div data-pictocontainer>
+                                    {interdictions.map((item, i) => 
+                                    <>
+                                        <div data-minipicto>
+                                            <label for={item.node.title}> <img src={item.node.picto.asset.url} width="50" /> </label>
+                                            <input type="checkbox"  value={item.node.picto.asset.url} onClick={() => helperTache(item)}/>
+                                        </div>
+                                    </>
+                                    )}
+                                    </div>
+                                </details>
                         </details>
-                        <label for="mesure"> Mesure </label>
+                        <label for="mesure"> Mesure : </label>
                         <input name="mesure" type="text" id="mesure"  onChange={(event) => setMesures(event.target.value)}/>
-                        <button onClick={actionTache}> add </button>
+                        <br />
+                        <button onClick={actionTache}> Ajouter la tâche </button>
                     </div>
+                    </details>
+                    </fieldset>
+                    <hr />
+
                     <div data-qualifica>
-                        <label for="qualif"> Qualifications </label>
+                        <label for="qualif"> Qualifications : </label>
                         <input name="qualif" type="text" onChange={(event) => setQualifications(event.target.value)}/>
                     </div>
+                    <hr />
                     <div data-forma>
-                        <label for="forma"> Formation obligatoire </label>
+                        <label for="forma"> Formation obligatoire : </label>
                         <input name="forma" type="text" onChange={(event) => setFormation(event.target.value)}/>
                     </div>
+                    <hr />
+                    <button onClick={handleSubmit1} data-save> Enregistrer la fiche </button>
+                    <hr />
                 </div>
+
                 <div data-livePreview>
                     <div id={styles.capture}>
                         <div className={styles.container}>
@@ -730,7 +818,6 @@ const FicheChimique = (props) => {
                         </div>
                     </div>
                 </div>
-                <button onClick={handleSubmit1}> Save </button>
             </div>
         </>
      );

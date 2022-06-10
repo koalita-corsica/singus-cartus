@@ -37,6 +37,27 @@
   }
   [data-form] {
     margin: 1rem;
+    height: 85vh;
+    overflow-y: scroll;
+    border:solid 3px black;
+    border-radius: 5px;
+    box-shadow: grey 5px 5px;
+    [data-fiche], [data-qualifica], [data-forma] {
+      width: 90%;
+      margin:0 auto;
+      margin-top:1rem;
+    }
+    fieldset {
+      border-radius: 5px;
+      border: 1px black solid;
+      width:90%;
+      margin:0 auto;
+      details {
+        details {
+          padding-left: 15px;
+        }
+      }
+    }
     fieldset:not([data-upload]) input{
       border:none;
       border-bottom:solid 1px gray;
@@ -82,6 +103,26 @@
           margin:0;
         }
       }  
+    }
+    [data-taches] {
+      label {
+        pointer-events:none;
+      }
+    }
+    [data-save] {
+      width: 90%;
+      font-size: 1rem;
+      padding:1rem 0;
+      margin:0 auto;
+      text-align: center;
+      border-color: lightgreen;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: darkolivegreen 2px 2px;
+      &:hover {
+        background-color: lightgreen;
+        color:white;
+      }
     }
   }
 }

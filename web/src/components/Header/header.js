@@ -1,17 +1,26 @@
 import React from 'react';
 import * as styles from "./header.css"
+import { FaTrashAlt } from 'react-icons/fa';
+import { BiExit } from "react-icons/bi";
+
 
 
 const Header = () => {
     return ( 
         <>
         <div data-header>
-            <div data-one>
-                <h2> Déconnexion </h2>
-            </div>
+        <div>
+            Bonjour <span data-username>Davif Gibert</span>
         </div>
-        <div data-two>
-            <h1> EvrPro </h1>
+        <div>
+            EvrPro - Gestion des documents clients
+        </div>
+        <div data-logout>
+            <a href="#">
+                Déconnexion
+                <BiExit style={{fontSize: '30px'}} />
+            </a>
+        </div>
         </div>
         </>
      );

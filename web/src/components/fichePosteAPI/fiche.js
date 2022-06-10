@@ -12,11 +12,15 @@ import { GiDiploma } from 'react-icons/gi';
 import html2canvas from "html2canvas";
 import $ from "jquery";
 import PortableText from "../portableText";
-import { FaDownload } from 'react-icons/fa'
-import { FaTrashAlt } from 'react-icons/fa'
+import { FaDownload } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
+
+// // import { useDocumentOperation } from "@sanity/react-hooks";
+// import {v4 as uuid} from 'uuid';
 
 const Fiche = (props) => {
   const {
+    _id,
     slug,
     version,
     fichedeposte,
@@ -44,12 +48,18 @@ const Fiche = (props) => {
   var tache2 = tache.slice(0,3);
   var tache0 = tache.slice(2,9);
 
+  // const {duplicate} = useDocumentOperation(_id, 'document')
+
+  // const onClick = () => {
+  //   const dupeId = uuid()
+  //   duplicate.execute(dupeId)
+  // }  
 
   return (
     <React.Fragment>
       <FaDownload onClick={() => window.print()} style={{padding: '2rem', fontSize: '30px', cursor: 'pointer'}} />
-      < FaTrashAlt style={{padding: '2rem', fontSize: '30px'}}/>
-      <div id={styles.capture}>
+      < FaTrashAlt style={{padding: '2rem', fontSize: '30px'}} />
+      <div id={styles.capture} style={{width: '30cm', margin: '0 auto'}}>
         <div className={styles.container}>
           <div data-headerF>
             <div data-headerContF>

@@ -298,9 +298,9 @@ const FichePoste = (props, location) => {
             setEpiData(newEpiData)            
             // epiData.splice(epiData.indexOf(item.node._id), 1); 
             epiPreview.splice(epiPreview.indexOf(item.node.image.asset.url), 1); 
-            
         }
     }
+
 
     //Pour choisir les pictos Danger pour la preview et pour le studio 
     function actionDanger(item) {
@@ -318,8 +318,8 @@ const FichePoste = (props, location) => {
 
     //Pour choisir les pictos Interdiction pour la preview et pour le studio 
     function actionInterdiction(item) {
-        if(!interdictionsData.includes(item.node.id)) {
-            setInterdictionsData(interdictionsData => [...interdictionsData, item.node.id])
+        if(!interdictionsData.includes(item.node._id)) {
+            setInterdictionsData(interdictionsData => [...interdictionsData, item.node._id])
             setInterdictionsPreview(interdictionsPreview => [...interdictionsPreview, item.node.picto.asset.url])
         } else {
             let newInterData = [...interdictionsData]
@@ -562,16 +562,17 @@ const FichePoste = (props, location) => {
                     <hr />
 
                     <div data-qualifica>
-                        <label for="qualif"> Qualifications </label>
+                        <label for="qualif"> Qualifications : </label>
                         <input name="qualif" type="text" onChange={(event) => setQualifications(event.target.value)}/>
                     </div>
                     <hr />
-
                     <div data-forma>
-                        <label for="forma"> Formation obligatoire </label>
+                        <label for="forma"> Formation obligatoire : </label>
                         <input name="forma" type="text" onChange={(event) => setFormation(event.target.value)}/>
                     </div>
-                    <button onClick={handleSubmit1}> Save </button>
+                    <hr />
+                    <button onClick={handleSubmit1} data-save> Enregistrer la fiche </button>
+                    <hr />
                 </div>
                 <div data-fichePreview>
                     <input
