@@ -1,8 +1,6 @@
 import React from 'react';
 import * as styles from "./header.css"
-import { FaTrashAlt } from 'react-icons/fa';
 import { BiExit } from "react-icons/bi";
-
 
 
 const Header = () => {
