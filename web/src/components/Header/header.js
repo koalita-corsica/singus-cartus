@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from "./header.css"
-import { BiExit } from "react-icons/bi";
+// import { BiExit } from "@react-icons/all-files/Bi"
 
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
         <div data-logout>
             <a href="#">
                 Déconnexion
-                <BiExit style={{fontSize: '30px'}} />
+                {/* <BiExit style={{fontSize: '30px'}} /> */}
             </a>
         </div>
         </div>
