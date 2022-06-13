@@ -17,3 +17,6 @@
   text-decoration: none;
   color: white;
 }
+[data-header] [data-logout] svg {
+  margin-left: 5px;
+}
