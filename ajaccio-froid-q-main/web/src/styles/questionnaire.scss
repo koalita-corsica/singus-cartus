@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    font-family: 'Kanit', sans-serif;
+}
+[data-container] {
+    width: 80vw;
+    height: 60vh;
+    margin:0 2rem;
+    background-color:lightsteelblue;
+    display: flex;
+    flex-direction: column;
+}
+form {
+    display: flex;
+    justify-content: center;
+    ul {
+        list-style: none;
+    }
+    #launch {
+        display:flex;
+        flex-direction: column;
+        gap:1rem;
+        div {
+            label {
+                input {
+                    width:60%;
+                    height:2rem;
+                    font-size: 1.5rem;
+                }
+                span {
+                    font-size: 0.8rem;
+                    font-style: italic;
+                }
+            }
+        }
+        a { 
+            display: none;
+            text-align: center;
+            padding:1rem;
+            background: white;
+            text-decoration: none;
+            border:solid 2px black;
+            border-radius: 15px;
+            color:navy;
+            font-weight: 900;
+            font-size: 1.7rem;
+            box-shadow: black 5px 5px;
+            width: fit-content;
+            &:hover {
+                color: white;
+                background-color: navy;
+            }
+        }
+    }
+    [data-visible="non"] {
+        display: none !important;
+    }
+    [data-visible="oui"] {
+        display: block;
+    }
+    div:not(#launch) {
+        a {
+            text-align: center;
+            padding:1rem;
+            background: white;
+            text-decoration: none;
+            border:solid 2px black;
+            border-radius: 15px;
+            color:navy;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: black 5px 5px;
+            float: right;
+            &:hover {
+                color: white;
+                background-color: navy;
+            }
+        }
+        [data-titre] {
+            background:white;
+            color:navy;
+            padding:1rem 2rem;
+            border-radius: 15px;
+            position: relative;
+            h3 {
+                font-weight: 800;
+                font-size: 2rem;
+            }
+            &:before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                border-left: 2rem solid #fff;
+                border-right: 1rem solid transparent;
+                border-top: 1rem solid #fff;
+                border-bottom: 1.9rem solid transparent;
+                left: 2rem;
+                bottom: -2rem;
+              }
+        }
+        ul {
+            margin-top:2rem;
+            display: flex;
+            flex-direction: column;
+            gap:2rem;
+            li {
+                label {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    &:hover {
+                        cursor: pointer;
+                        [data-reponse] {
+                            border:solid black 2px;
+                        }
+                    }
+                    [data-circle] {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 50%;
+                        border-left: solid 2px black;
+                        border-bottom: solid 2px black;
+                        border-top: solid 2px black;
+                        transform: rotate(45deg);
+                    }
+                    [data-trait] {
+                        border-bottom: solid 2px black;
+                        width:1rem;
+                    }
+                    input[type="radio"] {
+                        display: none;
+                    }
+                    [data-reponse] {
+                        padding-right: 1rem;
+                        height: 5rem;
+                        display: flex;
+                        align-items: center;
+                        line-height: 1.5rem;
+                        background-color: white;
+                        border-radius: 15px;
+                        border: solid 2px white;
+                        font-weight: 600;
+                        font-size: 1.8rem;
+                        span {
+                            background-color: aqua;
+                            padding: 1.6rem 0.5rem;
+                            margin: 0 0.2rem;
+                            border-radius: 15px 0 0  15px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+            }
+            :nth-child(1) [data-circle], :nth-child(1) [data-reponse] span {
+                background: LightSalmon;
+            }
+            :nth-child(2) [data-circle], :nth-child(2) [data-reponse] span {
+                background: Khaki;
+            }   
+            :nth-child(3) [data-circle], :nth-child(3) [data-reponse] span {
+                background: Plum;
+            }   
+            :nth-child(4) [data-circle], :nth-child(4) [data-reponse] span {
+                background: MediumSlateBlue;
+            }            
+        }
+    }
+    #resultats {
+        .over {
+            border: 10px dotted navy;
+          }
+        &[data-visible="non"] {
+            display: none;
+        }
+        &[data-visible="oui"] {
+            display: block;
+            margin-top: 5rem;
+        }
+        display: flex;
+        flex-direction: column;
+        [data-listefinale] {
+            
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1;
+            gap:1rem;
+        }
+        [data-singlecad] {
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+            cursor: grab;
+            width: 100%;
+            
+            
+            &:hover [data-circle],&:hover [data-trait], &:hover [data-details] {
+                box-shadow: 2px 2px 5px black;
+            }
+            [data-circle] {
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                border-right: solid 2px black;
+                border-bottom: solid 2px black;
+                border-top: solid 2px black;
+                text-align: center;
+                color:#fff;
+                font-weight: 600;
+            }
+            [data-trait] {
+                border-bottom: solid 2px black;
+                width:1rem;
+            }
+            [data-details] {
+                display: flex;
+                flex-direction: row;
+                padding: 0.5rem;
+                height: 7rem;
+                width: 500px;
+                align-items: center;
+                line-height: 1.5rem;
+                background-color: white;
+                border-radius: 15px;        
+                border: solid 2px black;
+                font-weight: 600;
+                font-size: 24px;
+                img {
+                    box-sizing: border-box;
+                    padding:5px 15px 5px 5px;
+                    width:100px;
+                    height:100px;
+                    border-radius: 15px 0 0 15px;   
+                    object-fit: cover;     
+                }
+                span {
+                    margin-left: 1rem;
+                    text-transform: uppercase;
+                    width:350px;
+                }
+            }
+            &[data-order="1"] [data-circle] {
+                background-color: SkyBlue;
+            }
+            &[data-order="1"] [data-details] img {
+                background-color: SkyBlue;
+            }
+            &[data-order="2"] [data-circle] {
+                background-color: CornflowerBlue;
+            }
+            &[data-order="2"] [data-details] img {
+                background-color: CornflowerBlue;
+            }
+            &[data-order="3"] [data-circle] {
+                background-color: RoyalBlue;
+            }
+            &[data-order="3"] [data-details] img {
+                background-color: RoyalBlue;
+            }
+            &[data-order="4"] [data-circle] {
+                background-color: MediumBlue;
+            }
+            &[data-order="4"] [data-details] img {
+                background-color: MediumBlue;
+            }
+            &[data-order="5"] [data-circle] {
+                background-color: navy;
+            }
+            &[data-order="5"] [data-details] img {
+                background-color: navy;
+            }
+        }
+    }
+}

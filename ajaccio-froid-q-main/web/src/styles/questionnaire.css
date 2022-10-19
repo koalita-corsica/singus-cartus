@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: 'Kanit', sans-serif;
+}
+
+[data-container] {
+  width: 80vw;
+  height: 60vh;
+  margin: 0 2rem;
+  background-color: lightsteelblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form ul {
+  list-style: none;
+}
+
+form #launch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+form #launch div label input {
+  width: 60%;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+
+form #launch div label span {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+form #launch a {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  text-decoration: none;
+  border: solid 2px black;
+  border-radius: 15px;
+  color: navy;
+  font-weight: 900;
+  font-size: 1.7rem;
+  -webkit-box-shadow: black 5px 5px;
+          box-shadow: black 5px 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+form #launch a:hover {
+  color: white;
+  background-color: navy;
+}
+
+form [data-visible="non"] {
+  display: none !important;
+}
+
+form [data-visible="oui"] {
+  display: block;
+}
+
+form div:not(#launch) a {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  text-decoration: none;
+  border: solid 2px black;
+  border-radius: 15px;
+  color: navy;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-box-shadow: black 5px 5px;
+          box-shadow: black 5px 5px;
+  float: right;
+}
+
+form div:not(#launch) a:hover {
+  color: white;
+  background-color: navy;
+}
+
+form div:not(#launch) [data-titre] {
+  background: white;
+  color: navy;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  position: relative;
+}
+
+form div:not(#launch) [data-titre] h3 {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+form div:not(#launch) [data-titre]:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 2rem solid #fff;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid #fff;
+  border-bottom: 1.9rem solid transparent;
+  left: 2rem;
+  bottom: -2rem;
+}
+
+form div:not(#launch) ul {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+form div:not(#launch) ul li label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form div:not(#launch) ul li label:hover {
+  cursor: pointer;
+}
+
+form div:not(#launch) ul li label:hover [data-reponse] {
+  border: solid black 2px;
+}
+
+form div:not(#launch) ul li label [data-circle] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border-left: solid 2px black;
+  border-bottom: solid 2px black;
+  border-top: solid 2px black;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+form div:not(#launch) ul li label [data-trait] {
+  border-bottom: solid 2px black;
+  width: 1rem;
+}
+
+form div:not(#launch) ul li label input[type="radio"] {
+  display: none;
+}
+
+form div:not(#launch) ul li label [data-reponse] {
+  padding-right: 1rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 2px white;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+form div:not(#launch) ul li label [data-reponse] span {
+  background-color: aqua;
+  padding: 1.6rem 0.5rem;
+  margin: 0 0.2rem;
+  border-radius: 15px 0 0  15px;
+  font-weight: 900;
+}
+
+form div:not(#launch) ul :nth-child(1) [data-circle], form div:not(#launch) ul :nth-child(1) [data-reponse] span {
+  background: LightSalmon;
+}
+
+form div:not(#launch) ul :nth-child(2) [data-circle], form div:not(#launch) ul :nth-child(2) [data-reponse] span {
+  background: Khaki;
+}
+
+form div:not(#launch) ul :nth-child(3) [data-circle], form div:not(#launch) ul :nth-child(3) [data-reponse] span {
+  background: Plum;
+}
+
+form div:not(#launch) ul :nth-child(4) [data-circle], form div:not(#launch) ul :nth-child(4) [data-reponse] span {
+  background: MediumSlateBlue;
+}
+
+form #resultats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form #resultats .over {
+  border: 10px dotted navy;
+}
+
+form #resultats[data-visible="non"] {
+  display: none;
+}
+
+form #resultats[data-visible="oui"] {
+  display: block;
+  margin-top: 5rem;
+}
+
+form #resultats [data-listefinale] {
+  border-radius: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1;
+      grid-template-columns: 1;
+  gap: 1rem;
+}
+
+form #resultats [data-singlecad] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: -webkit-grab;
+  cursor: grab;
+  width: 100%;
+}
+
+form #resultats [data-singlecad]:hover [data-circle], form #resultats [data-singlecad]:hover [data-trait], form #resultats [data-singlecad]:hover [data-details] {
+  -webkit-box-shadow: 2px 2px 5px black;
+          box-shadow: 2px 2px 5px black;
+}
+
+form #resultats [data-singlecad] [data-circle] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+  border-top: solid 2px black;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+form #resultats [data-singlecad] [data-trait] {
+  border-bottom: solid 2px black;
+  width: 1rem;
+}
+
+form #resultats [data-singlecad] [data-details] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.5rem;
+  height: 7rem;
+  width: 500px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.5rem;
+  background-color: white;
+  border-radius: 15px;
+  border: solid 2px black;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+form #resultats [data-singlecad] [data-details] img {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px 15px 5px 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 15px 0 0 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+form #resultats [data-singlecad] [data-details] span {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  width: 350px;
+}
+
+form #resultats [data-singlecad][data-order="1"] [data-circle] {
+  background-color: SkyBlue;
+}
+
+form #resultats [data-singlecad][data-order="1"] [data-details] img {
+  background-color: SkyBlue;
+}
+
+form #resultats [data-singlecad][data-order="2"] [data-circle] {
+  background-color: CornflowerBlue;
+}
+
+form #resultats [data-singlecad][data-order="2"] [data-details] img {
+  background-color: CornflowerBlue;
+}
+
+form #resultats [data-singlecad][data-order="3"] [data-circle] {
+  background-color: RoyalBlue;
+}
+
+form #resultats [data-singlecad][data-order="3"] [data-details] img {
+  background-color: RoyalBlue;
+}
+
+form #resultats [data-singlecad][data-order="4"] [data-circle] {
+  background-color: MediumBlue;
+}
+
+form #resultats [data-singlecad][data-order="4"] [data-details] img {
+  background-color: MediumBlue;
+}
+
+form #resultats [data-singlecad][data-order="5"] [data-circle] {
+  background-color: navy;
+}
+
+form #resultats [data-singlecad][data-order="5"] [data-details] img {
+  background-color: navy;
+}
+/*# sourceMappingURL=questionnaire.css.map */
