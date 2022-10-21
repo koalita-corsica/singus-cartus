@@ -185,10 +185,12 @@ function Questionnaire(infos) {
 
     // Fin du drag & drop
 
+    let sorted = counting.sort((a,b) => (a.pts > b.pts) ? -1 : ((b.pts < a.pts) ? 1 : 0))
+
   return (
    <>
     <div data-container>
-    <form>
+    <form action="https://getform.io/f/459b2889-9498-42ef-89cf-1c053a1efe2b" method="POST">
       <div id={"launch"} data-launch data-visible="oui">
         <h2>Merci d'entrer votre adresse email pour commencer ce questionnaire</h2>
         <div>
@@ -230,18 +232,19 @@ function Questionnaire(infos) {
             <h3>Votre liste au pingouin de Noël</h3>
             <h4>Classez les 5 cadeaux par ordre de préférence</h4>
             <div data-listefinale>
-            {counting.map((cadeau, index, longueur) =>
-                          <div data-singlecad data-order="1" draggable="true">
-                            <div data-circle><span>1</span></div>
+            {counting.filter((el, i) => (i < 5)).map((cadeau, index, longueur) =>
+                          <div data-singlecad data-order={index + 1} draggable="true">
+                            <div data-circle><span>{index + 1}</span></div>
                             <div data-trait></div>
                             <div data-details>
                               <img src={cadeau.img} />
                               <span>{cadeau.nom}</span>
                               <em>{cadeau.pts} points</em>
-
+                              <input type="hidden" name={cadeau.nom} value={cadeau.pts} />
                             </div>
                         </div>
             )}
+            <button type="submit">Je valide !</button>
             </div>
         </div>
       </form>

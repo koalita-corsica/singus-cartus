@@ -5,8 +5,9 @@
 
 [data-container] {
   width: 80vw;
-  height: 60vh;
-  margin: 0 2rem;
+  height: 80vh;
+  margin: 0 auto;
+  border-radius: 15px;
   background-color: lightsteelblue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,6 +25,9 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 98%;
+  margin: 0 auto;
+  padding-top: 5px;
 }
 
 form ul {
@@ -243,7 +247,6 @@ form #resultats[data-visible="non"] {
 
 form #resultats[data-visible="oui"] {
   display: block;
-  margin-top: 5rem;
 }
 
 form #resultats [data-listefinale] {

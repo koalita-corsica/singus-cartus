@@ -4,8 +4,9 @@
 }
 [data-container] {
     width: 80vw;
-    height: 60vh;
-    margin:0 2rem;
+    height: 80vh;
+    margin:0 auto;
+    border-radius: 15px;
     background-color:lightsteelblue;
     display: flex;
     flex-direction: column;
@@ -13,6 +14,9 @@
 form {
     display: flex;
     justify-content: center;
+    width:98%;
+    margin: 0 auto;
+    padding-top: 5px;
     ul {
         list-style: none;
     }
@@ -175,12 +179,10 @@ form {
         }
         &[data-visible="oui"] {
             display: block;
-            margin-top: 5rem;
         }
         display: flex;
         flex-direction: column;
         [data-listefinale] {
-            
             border-radius: 15px;
             display: grid;
             grid-template-columns: 1;
@@ -191,9 +193,7 @@ form {
             flex-direction:row;
             align-items: center;
             cursor: grab;
-            width: 100%;
-            
-            
+            width: 100%;           
             &:hover [data-circle],&:hover [data-trait], &:hover [data-details] {
                 box-shadow: 2px 2px 5px black;
             }
